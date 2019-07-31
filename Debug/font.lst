@@ -1,0 +1,2951 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"font.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZL9OTF_16X19,"a",%progbits
+  16              		.align	2
+  19              	_ZL9OTF_16X19:
+  20 0000 0000     		.short	0
+  21 0002 0000     		.short	0
+  22 0004 0000     		.short	0
+  23 0006 0000     		.short	0
+  24 0008 F801     		.short	504
+  25 000a 9C03     		.short	924
+  26 000c 0603     		.short	774
+  27 000e 0003     		.short	768
+  28 0010 E003     		.short	992
+  29 0012 FC03     		.short	1020
+  30 0014 0E03     		.short	782
+  31 0016 0603     		.short	774
+  32 0018 0603     		.short	774
+  33 001a CE03     		.short	974
+  34 001c 7C03     		.short	892
+  35 001e 0000     		.short	0
+  36 0020 0000     		.short	0
+  37 0022 0000     		.short	0
+  38 0024 0000     		.short	0
+  39 0026 0600     		.short	6
+  40 0028 0600     		.short	6
+  41 002a 0600     		.short	6
+  42 002c 0600     		.short	6
+  43 002e F601     		.short	502
+  44 0030 9E03     		.short	926
+  45 0032 0E03     		.short	782
+  46 0034 0606     		.short	1542
+  47 0036 0606     		.short	1542
+  48 0038 0606     		.short	1542
+  49 003a 0606     		.short	1542
+  50 003c 0606     		.short	1542
+  51 003e 0603     		.short	774
+  52 0040 9E03     		.short	926
+  53 0042 F601     		.short	502
+  54 0044 0000     		.short	0
+  55 0046 0000     		.short	0
+  56 0048 0000     		.short	0
+  57 004a 0000     		.short	0
+  58 004c 0000     		.short	0
+  59 004e 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 2
+
+
+  60 0050 0000     		.short	0
+  61 0052 0000     		.short	0
+  62 0054 F800     		.short	248
+  63 0056 9C03     		.short	924
+  64 0058 0E03     		.short	782
+  65 005a 0600     		.short	6
+  66 005c 0600     		.short	6
+  67 005e 0600     		.short	6
+  68 0060 0600     		.short	6
+  69 0062 0600     		.short	6
+  70 0064 0603     		.short	774
+  71 0066 9C03     		.short	924
+  72 0068 F801     		.short	504
+  73 006a 0000     		.short	0
+  74 006c 0000     		.short	0
+  75 006e 0000     		.short	0
+  76 0070 0000     		.short	0
+  77 0072 0003     		.short	768
+  78 0074 0003     		.short	768
+  79 0076 0003     		.short	768
+  80 0078 0003     		.short	768
+  81 007a F803     		.short	1016
+  82 007c DC03     		.short	988
+  83 007e 0603     		.short	774
+  84 0080 0603     		.short	774
+  85 0082 0603     		.short	774
+  86 0084 0603     		.short	774
+  87 0086 0603     		.short	774
+  88 0088 0603     		.short	774
+  89 008a 0603     		.short	774
+  90 008c CC03     		.short	972
+  91 008e 7803     		.short	888
+  92 0090 0000     		.short	0
+  93 0092 0000     		.short	0
+  94 0094 0000     		.short	0
+  95 0096 0000     		.short	0
+  96 0098 0000     		.short	0
+  97 009a 0000     		.short	0
+  98 009c 0000     		.short	0
+  99 009e 0000     		.short	0
+ 100 00a0 F800     		.short	248
+ 101 00a2 9C03     		.short	924
+ 102 00a4 0E03     		.short	782
+ 103 00a6 0606     		.short	1542
+ 104 00a8 0606     		.short	1542
+ 105 00aa FE07     		.short	2046
+ 106 00ac 0600     		.short	6
+ 107 00ae 0600     		.short	6
+ 108 00b0 0E06     		.short	1550
+ 109 00b2 9C03     		.short	924
+ 110 00b4 F801     		.short	504
+ 111 00b6 0000     		.short	0
+ 112 00b8 0000     		.short	0
+ 113 00ba 0000     		.short	0
+ 114 00bc 0000     		.short	0
+ 115 00be 3800     		.short	56
+ 116 00c0 2C00     		.short	44
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 3
+
+
+ 117 00c2 0C00     		.short	12
+ 118 00c4 0C00     		.short	12
+ 119 00c6 3F00     		.short	63
+ 120 00c8 3F00     		.short	63
+ 121 00ca 0C00     		.short	12
+ 122 00cc 0C00     		.short	12
+ 123 00ce 0C00     		.short	12
+ 124 00d0 0C00     		.short	12
+ 125 00d2 0C00     		.short	12
+ 126 00d4 0C00     		.short	12
+ 127 00d6 0C00     		.short	12
+ 128 00d8 0C00     		.short	12
+ 129 00da 0C00     		.short	12
+ 130 00dc 0000     		.short	0
+ 131 00de 0000     		.short	0
+ 132 00e0 0000     		.short	0
+ 133 00e2 0000     		.short	0
+ 134 00e4 0000     		.short	0
+ 135 00e6 0000     		.short	0
+ 136 00e8 0000     		.short	0
+ 137 00ea 0000     		.short	0
+ 138 00ec F803     		.short	1016
+ 139 00ee DC03     		.short	988
+ 140 00f0 0603     		.short	774
+ 141 00f2 0603     		.short	774
+ 142 00f4 0603     		.short	774
+ 143 00f6 0603     		.short	774
+ 144 00f8 0603     		.short	774
+ 145 00fa 0603     		.short	774
+ 146 00fc 0603     		.short	774
+ 147 00fe CC03     		.short	972
+ 148 0100 7803     		.short	888
+ 149 0102 0003     		.short	768
+ 150 0104 0603     		.short	774
+ 151 0106 8E01     		.short	398
+ 152 0108 FC01     		.short	508
+ 153 010a 0600     		.short	6
+ 154 010c 0600     		.short	6
+ 155 010e 0600     		.short	6
+ 156 0110 0600     		.short	6
+ 157 0112 E601     		.short	486
+ 158 0114 BE03     		.short	958
+ 159 0116 0E03     		.short	782
+ 160 0118 0603     		.short	774
+ 161 011a 0603     		.short	774
+ 162 011c 0603     		.short	774
+ 163 011e 0603     		.short	774
+ 164 0120 0603     		.short	774
+ 165 0122 0603     		.short	774
+ 166 0124 0603     		.short	774
+ 167 0126 0603     		.short	774
+ 168 0128 0000     		.short	0
+ 169 012a 0000     		.short	0
+ 170 012c 0000     		.short	0
+ 171 012e 0000     		.short	0
+ 172 0130 0600     		.short	6
+ 173 0132 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 4
+
+
+ 174 0134 0000     		.short	0
+ 175 0136 0000     		.short	0
+ 176 0138 0600     		.short	6
+ 177 013a 0600     		.short	6
+ 178 013c 0600     		.short	6
+ 179 013e 0600     		.short	6
+ 180 0140 0600     		.short	6
+ 181 0142 0600     		.short	6
+ 182 0144 0600     		.short	6
+ 183 0146 0600     		.short	6
+ 184 0148 0600     		.short	6
+ 185 014a 0600     		.short	6
+ 186 014c 0600     		.short	6
+ 187 014e 0000     		.short	0
+ 188 0150 0000     		.short	0
+ 189 0152 0000     		.short	0
+ 190 0154 0000     		.short	0
+ 191 0156 0600     		.short	6
+ 192 0158 0600     		.short	6
+ 193 015a 0000     		.short	0
+ 194 015c 0000     		.short	0
+ 195 015e 0600     		.short	6
+ 196 0160 0600     		.short	6
+ 197 0162 0600     		.short	6
+ 198 0164 0600     		.short	6
+ 199 0166 0600     		.short	6
+ 200 0168 0600     		.short	6
+ 201 016a 0600     		.short	6
+ 202 016c 0600     		.short	6
+ 203 016e 0600     		.short	6
+ 204 0170 0600     		.short	6
+ 205 0172 0600     		.short	6
+ 206 0174 0600     		.short	6
+ 207 0176 0600     		.short	6
+ 208 0178 0600     		.short	6
+ 209 017a 0700     		.short	7
+ 210 017c 0600     		.short	6
+ 211 017e 0600     		.short	6
+ 212 0180 0600     		.short	6
+ 213 0182 0600     		.short	6
+ 214 0184 8603     		.short	902
+ 215 0186 C601     		.short	454
+ 216 0188 E600     		.short	230
+ 217 018a 7600     		.short	118
+ 218 018c 3E00     		.short	62
+ 219 018e 7E00     		.short	126
+ 220 0190 6E00     		.short	110
+ 221 0192 C600     		.short	198
+ 222 0194 8601     		.short	390
+ 223 0196 8601     		.short	390
+ 224 0198 0603     		.short	774
+ 225 019a 0000     		.short	0
+ 226 019c 0000     		.short	0
+ 227 019e 0000     		.short	0
+ 228 01a0 0000     		.short	0
+ 229 01a2 0600     		.short	6
+ 230 01a4 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 5
+
+
+ 231 01a6 0600     		.short	6
+ 232 01a8 0600     		.short	6
+ 233 01aa 0600     		.short	6
+ 234 01ac 0600     		.short	6
+ 235 01ae 0600     		.short	6
+ 236 01b0 0600     		.short	6
+ 237 01b2 0600     		.short	6
+ 238 01b4 0600     		.short	6
+ 239 01b6 0600     		.short	6
+ 240 01b8 0600     		.short	6
+ 241 01ba 0600     		.short	6
+ 242 01bc 0600     		.short	6
+ 243 01be 0600     		.short	6
+ 244 01c0 0000     		.short	0
+ 245 01c2 0000     		.short	0
+ 246 01c4 0000     		.short	0
+ 247 01c6 0000     		.short	0
+ 248 01c8 0000     		.short	0
+ 249 01ca 0000     		.short	0
+ 250 01cc 0000     		.short	0
+ 251 01ce 0000     		.short	0
+ 252 01d0 F679     		.short	31222
+ 253 01d2 BEED     		.short	-4674
+ 254 01d4 0EC3     		.short	-15602
+ 255 01d6 06C3     		.short	-15610
+ 256 01d8 06C3     		.short	-15610
+ 257 01da 06C3     		.short	-15610
+ 258 01dc 06C3     		.short	-15610
+ 259 01de 06C3     		.short	-15610
+ 260 01e0 06C3     		.short	-15610
+ 261 01e2 06C3     		.short	-15610
+ 262 01e4 06C3     		.short	-15610
+ 263 01e6 0000     		.short	0
+ 264 01e8 0000     		.short	0
+ 265 01ea 0000     		.short	0
+ 266 01ec 0000     		.short	0
+ 267 01ee 0000     		.short	0
+ 268 01f0 0000     		.short	0
+ 269 01f2 0000     		.short	0
+ 270 01f4 0000     		.short	0
+ 271 01f6 E601     		.short	486
+ 272 01f8 BE03     		.short	958
+ 273 01fa 0E03     		.short	782
+ 274 01fc 0603     		.short	774
+ 275 01fe 0603     		.short	774
+ 276 0200 0603     		.short	774
+ 277 0202 0603     		.short	774
+ 278 0204 0603     		.short	774
+ 279 0206 0603     		.short	774
+ 280 0208 0603     		.short	774
+ 281 020a 0603     		.short	774
+ 282 020c 0000     		.short	0
+ 283 020e 0000     		.short	0
+ 284 0210 0000     		.short	0
+ 285 0212 0000     		.short	0
+ 286 0214 0000     		.short	0
+ 287 0216 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 6
+
+
+ 288 0218 0000     		.short	0
+ 289 021a 0000     		.short	0
+ 290 021c F800     		.short	248
+ 291 021e 9C03     		.short	924
+ 292 0220 0E03     		.short	782
+ 293 0222 0606     		.short	1542
+ 294 0224 0606     		.short	1542
+ 295 0226 0606     		.short	1542
+ 296 0228 0606     		.short	1542
+ 297 022a 0606     		.short	1542
+ 298 022c 0603     		.short	774
+ 299 022e 9C03     		.short	924
+ 300 0230 F801     		.short	504
+ 301 0232 0000     		.short	0
+ 302 0234 0000     		.short	0
+ 303 0236 0000     		.short	0
+ 304 0238 0000     		.short	0
+ 305 023a 0000     		.short	0
+ 306 023c 0000     		.short	0
+ 307 023e 0000     		.short	0
+ 308 0240 0000     		.short	0
+ 309 0242 F601     		.short	502
+ 310 0244 9E03     		.short	926
+ 311 0246 0E03     		.short	782
+ 312 0248 0606     		.short	1542
+ 313 024a 0606     		.short	1542
+ 314 024c 0606     		.short	1542
+ 315 024e 0606     		.short	1542
+ 316 0250 0606     		.short	1542
+ 317 0252 0603     		.short	774
+ 318 0254 9E03     		.short	926
+ 319 0256 F601     		.short	502
+ 320 0258 0600     		.short	6
+ 321 025a 0600     		.short	6
+ 322 025c 0600     		.short	6
+ 323 025e 0600     		.short	6
+ 324 0260 0000     		.short	0
+ 325 0262 0000     		.short	0
+ 326 0264 0000     		.short	0
+ 327 0266 0000     		.short	0
+ 328 0268 F803     		.short	1016
+ 329 026a DC03     		.short	988
+ 330 026c 0603     		.short	774
+ 331 026e 0603     		.short	774
+ 332 0270 0603     		.short	774
+ 333 0272 0603     		.short	774
+ 334 0274 0603     		.short	774
+ 335 0276 0603     		.short	774
+ 336 0278 0603     		.short	774
+ 337 027a CC03     		.short	972
+ 338 027c 7803     		.short	888
+ 339 027e 0003     		.short	768
+ 340 0280 0003     		.short	768
+ 341 0282 0003     		.short	768
+ 342 0284 0003     		.short	768
+ 343 0286 0000     		.short	0
+ 344 0288 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 7
+
+
+ 345 028a 0000     		.short	0
+ 346 028c 0000     		.short	0
+ 347 028e 7600     		.short	118
+ 348 0290 7E00     		.short	126
+ 349 0292 0E00     		.short	14
+ 350 0294 0600     		.short	6
+ 351 0296 0600     		.short	6
+ 352 0298 0600     		.short	6
+ 353 029a 0600     		.short	6
+ 354 029c 0600     		.short	6
+ 355 029e 0600     		.short	6
+ 356 02a0 0600     		.short	6
+ 357 02a2 0600     		.short	6
+ 358 02a4 0000     		.short	0
+ 359 02a6 0000     		.short	0
+ 360 02a8 0000     		.short	0
+ 361 02aa 0000     		.short	0
+ 362 02ac 0000     		.short	0
+ 363 02ae 0000     		.short	0
+ 364 02b0 0000     		.short	0
+ 365 02b2 0000     		.short	0
+ 366 02b4 FC00     		.short	252
+ 367 02b6 CE01     		.short	462
+ 368 02b8 8601     		.short	390
+ 369 02ba 0600     		.short	6
+ 370 02bc 3E00     		.short	62
+ 371 02be F801     		.short	504
+ 372 02c0 C001     		.short	448
+ 373 02c2 0003     		.short	768
+ 374 02c4 0603     		.short	774
+ 375 02c6 8E01     		.short	398
+ 376 02c8 FC00     		.short	252
+ 377 02ca 0000     		.short	0
+ 378 02cc 0000     		.short	0
+ 379 02ce 0000     		.short	0
+ 380 02d0 0000     		.short	0
+ 381 02d2 0000     		.short	0
+ 382 02d4 0C00     		.short	12
+ 383 02d6 0C00     		.short	12
+ 384 02d8 0C00     		.short	12
+ 385 02da 1F00     		.short	31
+ 386 02dc 1F00     		.short	31
+ 387 02de 0C00     		.short	12
+ 388 02e0 0C00     		.short	12
+ 389 02e2 0C00     		.short	12
+ 390 02e4 0C00     		.short	12
+ 391 02e6 0C00     		.short	12
+ 392 02e8 0C00     		.short	12
+ 393 02ea 0C00     		.short	12
+ 394 02ec 0C00     		.short	12
+ 395 02ee 3C00     		.short	60
+ 396 02f0 0000     		.short	0
+ 397 02f2 0000     		.short	0
+ 398 02f4 0000     		.short	0
+ 399 02f6 0000     		.short	0
+ 400 02f8 0000     		.short	0
+ 401 02fa 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 8
+
+
+ 402 02fc 0000     		.short	0
+ 403 02fe 0000     		.short	0
+ 404 0300 0603     		.short	774
+ 405 0302 0603     		.short	774
+ 406 0304 0603     		.short	774
+ 407 0306 0603     		.short	774
+ 408 0308 0603     		.short	774
+ 409 030a 0603     		.short	774
+ 410 030c 0603     		.short	774
+ 411 030e 0603     		.short	774
+ 412 0310 0E03     		.short	782
+ 413 0312 CC03     		.short	972
+ 414 0314 7803     		.short	888
+ 415 0316 0000     		.short	0
+ 416 0318 0000     		.short	0
+ 417 031a 0000     		.short	0
+ 418 031c 0000     		.short	0
+ 419 031e 0000     		.short	0
+ 420 0320 0000     		.short	0
+ 421 0322 0000     		.short	0
+ 422 0324 0000     		.short	0
+ 423 0326 0703     		.short	775
+ 424 0328 0603     		.short	774
+ 425 032a 8601     		.short	390
+ 426 032c 8C01     		.short	396
+ 427 032e 8C01     		.short	396
+ 428 0330 CC00     		.short	204
+ 429 0332 D800     		.short	216
+ 430 0334 5800     		.short	88
+ 431 0336 7800     		.short	120
+ 432 0338 7000     		.short	112
+ 433 033a 3000     		.short	48
+ 434 033c 0000     		.short	0
+ 435 033e 0000     		.short	0
+ 436 0340 0000     		.short	0
+ 437 0342 0000     		.short	0
+ 438 0344 0000     		.short	0
+ 439 0346 0000     		.short	0
+ 440 0348 0000     		.short	0
+ 441 034a 0000     		.short	0
+ 442 034c 8361     		.short	24963
+ 443 034e C661     		.short	25030
+ 444 0350 C631     		.short	12742
+ 445 0352 4631     		.short	12614
+ 446 0354 6633     		.short	13158
+ 447 0356 6C13     		.short	4972
+ 448 0358 6C1A     		.short	6764
+ 449 035a 2C1E     		.short	7724
+ 450 035c 381E     		.short	7736
+ 451 035e 380E     		.short	3640
+ 452 0360 180C     		.short	3096
+ 453 0362 0000     		.short	0
+ 454 0364 0000     		.short	0
+ 455 0366 0000     		.short	0
+ 456 0368 0000     		.short	0
+ 457 036a 0000     		.short	0
+ 458 036c 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 9
+
+
+ 459 036e 0000     		.short	0
+ 460 0370 0000     		.short	0
+ 461 0372 8703     		.short	903
+ 462 0374 8E01     		.short	398
+ 463 0376 CC00     		.short	204
+ 464 0378 D800     		.short	216
+ 465 037a 7000     		.short	112
+ 466 037c 3000     		.short	48
+ 467 037e 7800     		.short	120
+ 468 0380 D800     		.short	216
+ 469 0382 CC01     		.short	460
+ 470 0384 8E01     		.short	398
+ 471 0386 0703     		.short	775
+ 472 0388 0000     		.short	0
+ 473 038a 0000     		.short	0
+ 474 038c 0000     		.short	0
+ 475 038e 0000     		.short	0
+ 476 0390 0000     		.short	0
+ 477 0392 0000     		.short	0
+ 478 0394 0000     		.short	0
+ 479 0396 0000     		.short	0
+ 480 0398 0703     		.short	775
+ 481 039a 0603     		.short	774
+ 482 039c 8601     		.short	390
+ 483 039e 8C01     		.short	396
+ 484 03a0 8C01     		.short	396
+ 485 03a2 CC00     		.short	204
+ 486 03a4 D800     		.short	216
+ 487 03a6 5800     		.short	88
+ 488 03a8 7800     		.short	120
+ 489 03aa 7000     		.short	112
+ 490 03ac 3000     		.short	48
+ 491 03ae 3000     		.short	48
+ 492 03b0 3000     		.short	48
+ 493 03b2 1A00     		.short	26
+ 494 03b4 0E00     		.short	14
+ 495 03b6 0000     		.short	0
+ 496 03b8 0000     		.short	0
+ 497 03ba 0000     		.short	0
+ 498 03bc 0000     		.short	0
+ 499 03be FE03     		.short	1022
+ 500 03c0 FE03     		.short	1022
+ 501 03c2 8001     		.short	384
+ 502 03c4 C000     		.short	192
+ 503 03c6 6000     		.short	96
+ 504 03c8 3000     		.short	48
+ 505 03ca 1800     		.short	24
+ 506 03cc 1C00     		.short	28
+ 507 03ce 0E00     		.short	14
+ 508 03d0 FF03     		.short	1023
+ 509 03d2 FF03     		.short	1023
+ 510 03d4 0000     		.short	0
+ 511 03d6 0000     		.short	0
+ 512 03d8 0000     		.short	0
+ 513 03da 0000     		.short	0
+ 514 03dc C000     		.short	192
+ 515 03de E001     		.short	480
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 10
+
+
+ 516 03e0 E001     		.short	480
+ 517 03e2 B001     		.short	432
+ 518 03e4 3003     		.short	816
+ 519 03e6 1003     		.short	784
+ 520 03e8 1806     		.short	1560
+ 521 03ea 1806     		.short	1560
+ 522 03ec 0C06     		.short	1548
+ 523 03ee FC0F     		.short	4092
+ 524 03f0 0C0C     		.short	3084
+ 525 03f2 061C     		.short	7174
+ 526 03f4 0618     		.short	6150
+ 527 03f6 0618     		.short	6150
+ 528 03f8 0330     		.short	12291
+ 529 03fa 0000     		.short	0
+ 530 03fc 0000     		.short	0
+ 531 03fe 0000     		.short	0
+ 532 0400 0000     		.short	0
+ 533 0402 FC03     		.short	1020
+ 534 0404 FC07     		.short	2044
+ 535 0406 0C0C     		.short	3084
+ 536 0408 0C0C     		.short	3084
+ 537 040a 0C0C     		.short	3084
+ 538 040c 0C0C     		.short	3084
+ 539 040e FC07     		.short	2044
+ 540 0410 FC07     		.short	2044
+ 541 0412 0C0C     		.short	3084
+ 542 0414 0C18     		.short	6156
+ 543 0416 0C18     		.short	6156
+ 544 0418 0C18     		.short	6156
+ 545 041a 0C1C     		.short	7180
+ 546 041c FC0F     		.short	4092
+ 547 041e FC03     		.short	1020
+ 548 0420 0000     		.short	0
+ 549 0422 0000     		.short	0
+ 550 0424 0000     		.short	0
+ 551 0426 0000     		.short	0
+ 552 0428 E007     		.short	2016
+ 553 042a 781E     		.short	7800
+ 554 042c 1C18     		.short	6172
+ 555 042e 0C30     		.short	12300
+ 556 0430 0E30     		.short	12302
+ 557 0432 0600     		.short	6
+ 558 0434 0600     		.short	6
+ 559 0436 0600     		.short	6
+ 560 0438 0600     		.short	6
+ 561 043a 0600     		.short	6
+ 562 043c 0E30     		.short	12302
+ 563 043e 0C30     		.short	12300
+ 564 0440 1C18     		.short	6172
+ 565 0442 781E     		.short	7800
+ 566 0444 E007     		.short	2016
+ 567 0446 0000     		.short	0
+ 568 0448 0000     		.short	0
+ 569 044a 0000     		.short	0
+ 570 044c 0000     		.short	0
+ 571 044e FC03     		.short	1020
+ 572 0450 FC0F     		.short	4092
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 11
+
+
+ 573 0452 0C1C     		.short	7180
+ 574 0454 0C18     		.short	6156
+ 575 0456 0C30     		.short	12300
+ 576 0458 0C30     		.short	12300
+ 577 045a 0C30     		.short	12300
+ 578 045c 0C30     		.short	12300
+ 579 045e 0C30     		.short	12300
+ 580 0460 0C30     		.short	12300
+ 581 0462 0C30     		.short	12300
+ 582 0464 0C18     		.short	6156
+ 583 0466 0C1C     		.short	7180
+ 584 0468 FC0F     		.short	4092
+ 585 046a FC03     		.short	1020
+ 586 046c 0000     		.short	0
+ 587 046e 0000     		.short	0
+ 588 0470 0000     		.short	0
+ 589 0472 0000     		.short	0
+ 590 0474 FC1F     		.short	8188
+ 591 0476 FC1F     		.short	8188
+ 592 0478 0C00     		.short	12
+ 593 047a 0C00     		.short	12
+ 594 047c 0C00     		.short	12
+ 595 047e 0C00     		.short	12
+ 596 0480 FC0F     		.short	4092
+ 597 0482 FC0F     		.short	4092
+ 598 0484 0C00     		.short	12
+ 599 0486 0C00     		.short	12
+ 600 0488 0C00     		.short	12
+ 601 048a 0C00     		.short	12
+ 602 048c 0C00     		.short	12
+ 603 048e FC1F     		.short	8188
+ 604 0490 FC1F     		.short	8188
+ 605 0492 0000     		.short	0
+ 606 0494 0000     		.short	0
+ 607 0496 0000     		.short	0
+ 608 0498 0000     		.short	0
+ 609 049a FC0F     		.short	4092
+ 610 049c FC0F     		.short	4092
+ 611 049e 0C00     		.short	12
+ 612 04a0 0C00     		.short	12
+ 613 04a2 0C00     		.short	12
+ 614 04a4 0C00     		.short	12
+ 615 04a6 FC07     		.short	2044
+ 616 04a8 FC07     		.short	2044
+ 617 04aa 0C00     		.short	12
+ 618 04ac 0C00     		.short	12
+ 619 04ae 0C00     		.short	12
+ 620 04b0 0C00     		.short	12
+ 621 04b2 0C00     		.short	12
+ 622 04b4 0C00     		.short	12
+ 623 04b6 0C00     		.short	12
+ 624 04b8 0000     		.short	0
+ 625 04ba 0000     		.short	0
+ 626 04bc 0000     		.short	0
+ 627 04be 0000     		.short	0
+ 628 04c0 E00F     		.short	4064
+ 629 04c2 781E     		.short	7800
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 12
+
+
+ 630 04c4 1C30     		.short	12316
+ 631 04c6 0C70     		.short	28684
+ 632 04c8 0E60     		.short	24590
+ 633 04ca 0600     		.short	6
+ 634 04cc 0600     		.short	6
+ 635 04ce 067E     		.short	32262
+ 636 04d0 067E     		.short	32262
+ 637 04d2 0660     		.short	24582
+ 638 04d4 0E60     		.short	24590
+ 639 04d6 0C60     		.short	24588
+ 640 04d8 1C70     		.short	28700
+ 641 04da 787E     		.short	32376
+ 642 04dc E06F     		.short	28640
+ 643 04de 0000     		.short	0
+ 644 04e0 0000     		.short	0
+ 645 04e2 0000     		.short	0
+ 646 04e4 0000     		.short	0
+ 647 04e6 0C18     		.short	6156
+ 648 04e8 0C18     		.short	6156
+ 649 04ea 0C18     		.short	6156
+ 650 04ec 0C18     		.short	6156
+ 651 04ee 0C18     		.short	6156
+ 652 04f0 0C18     		.short	6156
+ 653 04f2 FC1F     		.short	8188
+ 654 04f4 FC1F     		.short	8188
+ 655 04f6 0C18     		.short	6156
+ 656 04f8 0C18     		.short	6156
+ 657 04fa 0C18     		.short	6156
+ 658 04fc 0C18     		.short	6156
+ 659 04fe 0C18     		.short	6156
+ 660 0500 0C18     		.short	6156
+ 661 0502 0C18     		.short	6156
+ 662 0504 0000     		.short	0
+ 663 0506 0000     		.short	0
+ 664 0508 0000     		.short	0
+ 665 050a 0000     		.short	0
+ 666 050c 0C00     		.short	12
+ 667 050e 0C00     		.short	12
+ 668 0510 0C00     		.short	12
+ 669 0512 0C00     		.short	12
+ 670 0514 0C00     		.short	12
+ 671 0516 0C00     		.short	12
+ 672 0518 0C00     		.short	12
+ 673 051a 0C00     		.short	12
+ 674 051c 0C00     		.short	12
+ 675 051e 0C00     		.short	12
+ 676 0520 0C00     		.short	12
+ 677 0522 0C00     		.short	12
+ 678 0524 0C00     		.short	12
+ 679 0526 0C00     		.short	12
+ 680 0528 0C00     		.short	12
+ 681 052a 0000     		.short	0
+ 682 052c 0000     		.short	0
+ 683 052e 0000     		.short	0
+ 684 0530 0000     		.short	0
+ 685 0532 8001     		.short	384
+ 686 0534 8001     		.short	384
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 13
+
+
+ 687 0536 8001     		.short	384
+ 688 0538 8001     		.short	384
+ 689 053a 8001     		.short	384
+ 690 053c 8001     		.short	384
+ 691 053e 8001     		.short	384
+ 692 0540 8001     		.short	384
+ 693 0542 8001     		.short	384
+ 694 0544 8001     		.short	384
+ 695 0546 8001     		.short	384
+ 696 0548 8601     		.short	390
+ 697 054a C601     		.short	454
+ 698 054c FE00     		.short	254
+ 699 054e 7C00     		.short	124
+ 700 0550 0000     		.short	0
+ 701 0552 0000     		.short	0
+ 702 0554 0000     		.short	0
+ 703 0556 0000     		.short	0
+ 704 0558 0C3C     		.short	15372
+ 705 055a 0C0E     		.short	3596
+ 706 055c 0C06     		.short	1548
+ 707 055e 0C03     		.short	780
+ 708 0560 8C01     		.short	396
+ 709 0562 CC00     		.short	204
+ 710 0564 EC00     		.short	236
+ 711 0566 FC00     		.short	252
+ 712 0568 9C01     		.short	412
+ 713 056a 8C03     		.short	908
+ 714 056c 0C07     		.short	1804
+ 715 056e 0C06     		.short	1548
+ 716 0570 0C0C     		.short	3084
+ 717 0572 0C1C     		.short	7180
+ 718 0574 0C38     		.short	14348
+ 719 0576 0000     		.short	0
+ 720 0578 0000     		.short	0
+ 721 057a 0000     		.short	0
+ 722 057c 0000     		.short	0
+ 723 057e 0C00     		.short	12
+ 724 0580 0C00     		.short	12
+ 725 0582 0C00     		.short	12
+ 726 0584 0C00     		.short	12
+ 727 0586 0C00     		.short	12
+ 728 0588 0C00     		.short	12
+ 729 058a 0C00     		.short	12
+ 730 058c 0C00     		.short	12
+ 731 058e 0C00     		.short	12
+ 732 0590 0C00     		.short	12
+ 733 0592 0C00     		.short	12
+ 734 0594 0C00     		.short	12
+ 735 0596 0C00     		.short	12
+ 736 0598 FC07     		.short	2044
+ 737 059a FC07     		.short	2044
+ 738 059c 0000     		.short	0
+ 739 059e 0000     		.short	0
+ 740 05a0 0000     		.short	0
+ 741 05a2 0000     		.short	0
+ 742 05a4 1CE0     		.short	-8164
+ 743 05a6 1CF0     		.short	-4068
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 14
+
+
+ 744 05a8 1CF0     		.short	-4068
+ 745 05aa 3CD0     		.short	-12228
+ 746 05ac 3CD8     		.short	-10180
+ 747 05ae 2CD8     		.short	-10196
+ 748 05b0 6CC8     		.short	-14228
+ 749 05b2 6CCC     		.short	-13204
+ 750 05b4 4CCC     		.short	-13236
+ 751 05b6 CCC4     		.short	-15156
+ 752 05b8 CCC6     		.short	-14644
+ 753 05ba 8CC6     		.short	-14708
+ 754 05bc 8CC3     		.short	-15476
+ 755 05be 8CC3     		.short	-15476
+ 756 05c0 0CC3     		.short	-15604
+ 757 05c2 0000     		.short	0
+ 758 05c4 0000     		.short	0
+ 759 05c6 0000     		.short	0
+ 760 05c8 0000     		.short	0
+ 761 05ca 0C10     		.short	4108
+ 762 05cc 1C10     		.short	4124
+ 763 05ce 1C10     		.short	4124
+ 764 05d0 3C10     		.short	4156
+ 765 05d2 7C10     		.short	4220
+ 766 05d4 6C10     		.short	4204
+ 767 05d6 CC10     		.short	4300
+ 768 05d8 CC11     		.short	4556
+ 769 05da 8C11     		.short	4492
+ 770 05dc 0C13     		.short	4876
+ 771 05de 0C17     		.short	5900
+ 772 05e0 0C16     		.short	5644
+ 773 05e2 0C1C     		.short	7180
+ 774 05e4 0C1C     		.short	7180
+ 775 05e6 0C18     		.short	6156
+ 776 05e8 0000     		.short	0
+ 777 05ea 0000     		.short	0
+ 778 05ec 0000     		.short	0
+ 779 05ee 0000     		.short	0
+ 780 05f0 E00F     		.short	4064
+ 781 05f2 781E     		.short	7800
+ 782 05f4 1C38     		.short	14364
+ 783 05f6 0C70     		.short	28684
+ 784 05f8 0E60     		.short	24590
+ 785 05fa 0660     		.short	24582
+ 786 05fc 0660     		.short	24582
+ 787 05fe 0660     		.short	24582
+ 788 0600 0660     		.short	24582
+ 789 0602 0660     		.short	24582
+ 790 0604 0E60     		.short	24590
+ 791 0606 0C30     		.short	12300
+ 792 0608 1C38     		.short	14364
+ 793 060a 781E     		.short	7800
+ 794 060c E00F     		.short	4064
+ 795 060e 0000     		.short	0
+ 796 0610 0000     		.short	0
+ 797 0612 0000     		.short	0
+ 798 0614 0000     		.short	0
+ 799 0616 FC07     		.short	2044
+ 800 0618 FC0F     		.short	4092
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 15
+
+
+ 801 061a 0C1C     		.short	7180
+ 802 061c 0C18     		.short	6156
+ 803 061e 0C18     		.short	6156
+ 804 0620 0C18     		.short	6156
+ 805 0622 0C1C     		.short	7180
+ 806 0624 FC0F     		.short	4092
+ 807 0626 FC03     		.short	1020
+ 808 0628 0C00     		.short	12
+ 809 062a 0C00     		.short	12
+ 810 062c 0C00     		.short	12
+ 811 062e 0C00     		.short	12
+ 812 0630 0C00     		.short	12
+ 813 0632 0C00     		.short	12
+ 814 0634 0000     		.short	0
+ 815 0636 0000     		.short	0
+ 816 0638 0000     		.short	0
+ 817 063a 0000     		.short	0
+ 818 063c E00F     		.short	4064
+ 819 063e 781E     		.short	7800
+ 820 0640 1C38     		.short	14364
+ 821 0642 0C70     		.short	28684
+ 822 0644 0E60     		.short	24590
+ 823 0646 0660     		.short	24582
+ 824 0648 0660     		.short	24582
+ 825 064a 0660     		.short	24582
+ 826 064c 0660     		.short	24582
+ 827 064e 0660     		.short	24582
+ 828 0650 0E64     		.short	25614
+ 829 0652 0C36     		.short	13836
+ 830 0654 1C3C     		.short	15388
+ 831 0656 783E     		.short	15992
+ 832 0658 E0F7     		.short	-2080
+ 833 065a 0040     		.short	16384
+ 834 065c 0000     		.short	0
+ 835 065e 0000     		.short	0
+ 836 0660 0000     		.short	0
+ 837 0662 FC0F     		.short	4092
+ 838 0664 FC1F     		.short	8188
+ 839 0666 0C18     		.short	6156
+ 840 0668 0C30     		.short	12300
+ 841 066a 0C30     		.short	12300
+ 842 066c 0C38     		.short	14348
+ 843 066e 0C1C     		.short	7180
+ 844 0670 FC0F     		.short	4092
+ 845 0672 FC07     		.short	2044
+ 846 0674 0C0C     		.short	3084
+ 847 0676 0C1C     		.short	7180
+ 848 0678 0C18     		.short	6156
+ 849 067a 0C18     		.short	6156
+ 850 067c 0C30     		.short	12300
+ 851 067e 0C30     		.short	12300
+ 852 0680 0000     		.short	0
+ 853 0682 0000     		.short	0
+ 854 0684 0000     		.short	0
+ 855 0686 0000     		.short	0
+ 856 0688 F803     		.short	1016
+ 857 068a FC0F     		.short	4092
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 16
+
+
+ 858 068c 0C0C     		.short	3084
+ 859 068e 061C     		.short	7174
+ 860 0690 0C00     		.short	12
+ 861 0692 1C00     		.short	28
+ 862 0694 F801     		.short	504
+ 863 0696 E007     		.short	2016
+ 864 0698 000F     		.short	3840
+ 865 069a 001C     		.short	7168
+ 866 069c 0618     		.short	6150
+ 867 069e 0618     		.short	6150
+ 868 06a0 0C1C     		.short	7180
+ 869 06a2 FC0F     		.short	4092
+ 870 06a4 F007     		.short	2032
+ 871 06a6 0000     		.short	0
+ 872 06a8 0000     		.short	0
+ 873 06aa 0000     		.short	0
+ 874 06ac 0000     		.short	0
+ 875 06ae FF0F     		.short	4095
+ 876 06b0 FF0F     		.short	4095
+ 877 06b2 6000     		.short	96
+ 878 06b4 6000     		.short	96
+ 879 06b6 6000     		.short	96
+ 880 06b8 6000     		.short	96
+ 881 06ba 6000     		.short	96
+ 882 06bc 6000     		.short	96
+ 883 06be 6000     		.short	96
+ 884 06c0 6000     		.short	96
+ 885 06c2 6000     		.short	96
+ 886 06c4 6000     		.short	96
+ 887 06c6 6000     		.short	96
+ 888 06c8 6000     		.short	96
+ 889 06ca 6000     		.short	96
+ 890 06cc 0000     		.short	0
+ 891 06ce 0000     		.short	0
+ 892 06d0 0000     		.short	0
+ 893 06d2 0000     		.short	0
+ 894 06d4 0C18     		.short	6156
+ 895 06d6 0C18     		.short	6156
+ 896 06d8 0C18     		.short	6156
+ 897 06da 0C18     		.short	6156
+ 898 06dc 0C18     		.short	6156
+ 899 06de 0C18     		.short	6156
+ 900 06e0 0C18     		.short	6156
+ 901 06e2 0C18     		.short	6156
+ 902 06e4 0C18     		.short	6156
+ 903 06e6 0C18     		.short	6156
+ 904 06e8 0C18     		.short	6156
+ 905 06ea 0C18     		.short	6156
+ 906 06ec 1C18     		.short	6172
+ 907 06ee F80F     		.short	4088
+ 908 06f0 F007     		.short	2032
+ 909 06f2 0000     		.short	0
+ 910 06f4 0000     		.short	0
+ 911 06f6 0000     		.short	0
+ 912 06f8 0000     		.short	0
+ 913 06fa 0330     		.short	12291
+ 914 06fc 0618     		.short	6150
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 17
+
+
+ 915 06fe 0618     		.short	6150
+ 916 0700 0E0C     		.short	3086
+ 917 0702 0C0C     		.short	3084
+ 918 0704 0C0C     		.short	3084
+ 919 0706 1806     		.short	1560
+ 920 0708 1806     		.short	1560
+ 921 070a 1806     		.short	1560
+ 922 070c 3003     		.short	816
+ 923 070e 3003     		.short	816
+ 924 0710 A001     		.short	416
+ 925 0712 E001     		.short	480
+ 926 0714 E001     		.short	480
+ 927 0716 C000     		.short	192
+ 928 0718 0000     		.short	0
+ 929 071a 0000     		.short	0
+ 930 071c 0000     		.short	0
+ 931 071e 0000     		.short	0
+ 932 0720 0306     		.short	1539
+ 933 0722 060F     		.short	3846
+ 934 0724 060F     		.short	3846
+ 935 0726 060F     		.short	3846
+ 936 0728 8409     		.short	2436
+ 937 072a 8C19     		.short	6540
+ 938 072c 8C19     		.short	6540
+ 939 072e 8C18     		.short	6284
+ 940 0730 C890     		.short	-28472
+ 941 0732 D8B0     		.short	-20264
+ 942 0734 D8B0     		.short	-20264
+ 943 0736 58A0     		.short	-24488
+ 944 0738 70E0     		.short	-8080
+ 945 073a 70E0     		.short	-8080
+ 946 073c 30E0     		.short	-8144
+ 947 073e 0000     		.short	0
+ 948 0740 0000     		.short	0
+ 949 0742 0000     		.short	0
+ 950 0744 0000     		.short	0
+ 951 0746 0618     		.short	6150
+ 952 0748 0C0C     		.short	3084
+ 953 074a 1806     		.short	1560
+ 954 074c 3807     		.short	1848
+ 955 074e 3003     		.short	816
+ 956 0750 E001     		.short	480
+ 957 0752 E001     		.short	480
+ 958 0754 C000     		.short	192
+ 959 0756 E001     		.short	480
+ 960 0758 3003     		.short	816
+ 961 075a 3807     		.short	1848
+ 962 075c 1806     		.short	1560
+ 963 075e 0C0C     		.short	3084
+ 964 0760 0E1C     		.short	7182
+ 965 0762 0738     		.short	14343
+ 966 0764 0000     		.short	0
+ 967 0766 0000     		.short	0
+ 968 0768 0000     		.short	0
+ 969 076a 0000     		.short	0
+ 970 076c 0738     		.short	14343
+ 971 076e 0E1C     		.short	7182
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 18
+
+
+ 972 0770 0C0C     		.short	3084
+ 973 0772 1806     		.short	1560
+ 974 0774 1806     		.short	1560
+ 975 0776 3003     		.short	816
+ 976 0778 E001     		.short	480
+ 977 077a E001     		.short	480
+ 978 077c C000     		.short	192
+ 979 077e C000     		.short	192
+ 980 0780 C000     		.short	192
+ 981 0782 C000     		.short	192
+ 982 0784 C000     		.short	192
+ 983 0786 C000     		.short	192
+ 984 0788 C000     		.short	192
+ 985 078a 0000     		.short	0
+ 986 078c 0000     		.short	0
+ 987 078e 0000     		.short	0
+ 988 0790 0000     		.short	0
+ 989 0792 FE0F     		.short	4094
+ 990 0794 FE0F     		.short	4094
+ 991 0796 0006     		.short	1536
+ 992 0798 0007     		.short	1792
+ 993 079a 8003     		.short	896
+ 994 079c 8001     		.short	384
+ 995 079e C000     		.short	192
+ 996 07a0 6000     		.short	96
+ 997 07a2 7000     		.short	112
+ 998 07a4 3800     		.short	56
+ 999 07a6 1800     		.short	24
+ 1000 07a8 0C00     		.short	12
+ 1001 07aa 0600     		.short	6
+ 1002 07ac FF0F     		.short	4095
+ 1003 07ae FF0F     		.short	4095
+ 1004 07b0 0000     		.short	0
+ 1005 07b2 0000     		.short	0
+ 1006 07b4 0000     		.short	0
+ 1007 07b6 0000     		.short	0
+ 1008 07b8 F800     		.short	248
+ 1009 07ba 9C01     		.short	412
+ 1010 07bc 0C03     		.short	780
+ 1011 07be 0603     		.short	774
+ 1012 07c0 0606     		.short	1542
+ 1013 07c2 0606     		.short	1542
+ 1014 07c4 0606     		.short	1542
+ 1015 07c6 0606     		.short	1542
+ 1016 07c8 0606     		.short	1542
+ 1017 07ca 0606     		.short	1542
+ 1018 07cc 0606     		.short	1542
+ 1019 07ce 0603     		.short	774
+ 1020 07d0 0C03     		.short	780
+ 1021 07d2 9C01     		.short	412
+ 1022 07d4 F800     		.short	248
+ 1023 07d6 0000     		.short	0
+ 1024 07d8 0000     		.short	0
+ 1025 07da 0000     		.short	0
+ 1026 07dc 0000     		.short	0
+ 1027 07de C000     		.short	192
+ 1028 07e0 E000     		.short	224
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 19
+
+
+ 1029 07e2 FC00     		.short	252
+ 1030 07e4 DC00     		.short	220
+ 1031 07e6 C000     		.short	192
+ 1032 07e8 C000     		.short	192
+ 1033 07ea C000     		.short	192
+ 1034 07ec C000     		.short	192
+ 1035 07ee C000     		.short	192
+ 1036 07f0 C000     		.short	192
+ 1037 07f2 C000     		.short	192
+ 1038 07f4 C000     		.short	192
+ 1039 07f6 C000     		.short	192
+ 1040 07f8 C000     		.short	192
+ 1041 07fa C000     		.short	192
+ 1042 07fc 0000     		.short	0
+ 1043 07fe 0000     		.short	0
+ 1044 0800 0000     		.short	0
+ 1045 0802 0000     		.short	0
+ 1046 0804 F801     		.short	504
+ 1047 0806 9C03     		.short	924
+ 1048 0808 0603     		.short	774
+ 1049 080a 0606     		.short	1542
+ 1050 080c 0006     		.short	1536
+ 1051 080e 0003     		.short	768
+ 1052 0810 0003     		.short	768
+ 1053 0812 8001     		.short	384
+ 1054 0814 C000     		.short	192
+ 1055 0816 7000     		.short	112
+ 1056 0818 3800     		.short	56
+ 1057 081a 1C00     		.short	28
+ 1058 081c 0E00     		.short	14
+ 1059 081e FE07     		.short	2046
+ 1060 0820 FE07     		.short	2046
+ 1061 0822 0000     		.short	0
+ 1062 0824 0000     		.short	0
+ 1063 0826 0000     		.short	0
+ 1064 0828 0000     		.short	0
+ 1065 082a F800     		.short	248
+ 1066 082c 8C01     		.short	396
+ 1067 082e 0603     		.short	774
+ 1068 0830 0603     		.short	774
+ 1069 0832 0003     		.short	768
+ 1070 0834 8001     		.short	384
+ 1071 0836 E000     		.short	224
+ 1072 0838 E001     		.short	480
+ 1073 083a 0003     		.short	768
+ 1074 083c 0006     		.short	1536
+ 1075 083e 0006     		.short	1536
+ 1076 0840 0606     		.short	1542
+ 1077 0842 0603     		.short	774
+ 1078 0844 8C03     		.short	908
+ 1079 0846 F801     		.short	504
+ 1080 0848 0000     		.short	0
+ 1081 084a 0000     		.short	0
+ 1082 084c 0000     		.short	0
+ 1083 084e 0000     		.short	0
+ 1084 0850 8001     		.short	384
+ 1085 0852 C001     		.short	448
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 20
+
+
+ 1086 0854 E001     		.short	480
+ 1087 0856 A001     		.short	416
+ 1088 0858 B001     		.short	432
+ 1089 085a 9801     		.short	408
+ 1090 085c 8801     		.short	392
+ 1091 085e 8C01     		.short	396
+ 1092 0860 8601     		.short	390
+ 1093 0862 8301     		.short	387
+ 1094 0864 FF07     		.short	2047
+ 1095 0866 8001     		.short	384
+ 1096 0868 8001     		.short	384
+ 1097 086a 8001     		.short	384
+ 1098 086c 8001     		.short	384
+ 1099 086e 0000     		.short	0
+ 1100 0870 0000     		.short	0
+ 1101 0872 0000     		.short	0
+ 1102 0874 0000     		.short	0
+ 1103 0876 FC03     		.short	1020
+ 1104 0878 FC03     		.short	1020
+ 1105 087a 0C00     		.short	12
+ 1106 087c 0C00     		.short	12
+ 1107 087e 0C00     		.short	12
+ 1108 0880 F400     		.short	244
+ 1109 0882 FC03     		.short	1020
+ 1110 0884 0603     		.short	774
+ 1111 0886 0006     		.short	1536
+ 1112 0888 0006     		.short	1536
+ 1113 088a 0006     		.short	1536
+ 1114 088c 0606     		.short	1542
+ 1115 088e 0603     		.short	774
+ 1116 0890 9C03     		.short	924
+ 1117 0892 F801     		.short	504
+ 1118 0894 0000     		.short	0
+ 1119 0896 0000     		.short	0
+ 1120 0898 0000     		.short	0
+ 1121 089a 0000     		.short	0
+ 1122 089c F801     		.short	504
+ 1123 089e 9C03     		.short	924
+ 1124 08a0 0C03     		.short	780
+ 1125 08a2 0E04     		.short	1038
+ 1126 08a4 0600     		.short	6
+ 1127 08a6 E600     		.short	230
+ 1128 08a8 FE01     		.short	510
+ 1129 08aa 0E03     		.short	782
+ 1130 08ac 0607     		.short	1798
+ 1131 08ae 0606     		.short	1542
+ 1132 08b0 0606     		.short	1542
+ 1133 08b2 0606     		.short	1542
+ 1134 08b4 0C03     		.short	780
+ 1135 08b6 9C03     		.short	924
+ 1136 08b8 F801     		.short	504
+ 1137 08ba 0000     		.short	0
+ 1138 08bc 0000     		.short	0
+ 1139 08be 0000     		.short	0
+ 1140 08c0 0000     		.short	0
+ 1141 08c2 FE07     		.short	2046
+ 1142 08c4 FE07     		.short	2046
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 21
+
+
+ 1143 08c6 0003     		.short	768
+ 1144 08c8 0003     		.short	768
+ 1145 08ca 0001     		.short	256
+ 1146 08cc 8001     		.short	384
+ 1147 08ce 8001     		.short	384
+ 1148 08d0 C000     		.short	192
+ 1149 08d2 C000     		.short	192
+ 1150 08d4 6000     		.short	96
+ 1151 08d6 6000     		.short	96
+ 1152 08d8 6000     		.short	96
+ 1153 08da 3000     		.short	48
+ 1154 08dc 3000     		.short	48
+ 1155 08de 1800     		.short	24
+ 1156 08e0 0000     		.short	0
+ 1157 08e2 0000     		.short	0
+ 1158 08e4 0000     		.short	0
+ 1159 08e6 0000     		.short	0
+ 1160 08e8 F801     		.short	504
+ 1161 08ea 9C03     		.short	924
+ 1162 08ec 0C03     		.short	780
+ 1163 08ee 0603     		.short	774
+ 1164 08f0 0C03     		.short	780
+ 1165 08f2 9C03     		.short	924
+ 1166 08f4 F801     		.short	504
+ 1167 08f6 F800     		.short	248
+ 1168 08f8 9C03     		.short	924
+ 1169 08fa 0603     		.short	774
+ 1170 08fc 0606     		.short	1542
+ 1171 08fe 0606     		.short	1542
+ 1172 0900 0607     		.short	1798
+ 1173 0902 8C03     		.short	908
+ 1174 0904 F801     		.short	504
+ 1175 0906 0000     		.short	0
+ 1176 0908 0000     		.short	0
+ 1177 090a 0000     		.short	0
+ 1178 090c 0000     		.short	0
+ 1179 090e F800     		.short	248
+ 1180 0910 8C01     		.short	396
+ 1181 0912 0603     		.short	774
+ 1182 0914 0603     		.short	774
+ 1183 0916 0606     		.short	1542
+ 1184 0918 0606     		.short	1542
+ 1185 091a 0606     		.short	1542
+ 1186 091c 0C07     		.short	1804
+ 1187 091e FC06     		.short	1788
+ 1188 0920 7006     		.short	1648
+ 1189 0922 0003     		.short	768
+ 1190 0924 0003     		.short	768
+ 1191 0926 0603     		.short	774
+ 1192 0928 8C01     		.short	396
+ 1193 092a F800     		.short	248
+ 1194 092c 0000     		.short	0
+ 1195 092e 0000     		.short	0
+ 1196 0930 0000     		.short	0
+ 1197 0932 0000     		.short	0
+ 1198              		.section	.rodata._ZL9OTF_10X12,"a",%progbits
+ 1199              		.align	2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 22
+
+
+ 1202              	_ZL9OTF_10X12:
+ 1203 0000 0000     		.short	0
+ 1204 0002 0000     		.short	0
+ 1205 0004 0E00     		.short	14
+ 1206 0006 1100     		.short	17
+ 1207 0008 1000     		.short	16
+ 1208 000a 1F00     		.short	31
+ 1209 000c 1100     		.short	17
+ 1210 000e 1100     		.short	17
+ 1211 0010 1F00     		.short	31
+ 1212 0012 0000     		.short	0
+ 1213 0014 0000     		.short	0
+ 1214 0016 0000     		.short	0
+ 1215 0018 0100     		.short	1
+ 1216 001a 0100     		.short	1
+ 1217 001c 0D00     		.short	13
+ 1218 001e 1300     		.short	19
+ 1219 0020 3100     		.short	49
+ 1220 0022 2100     		.short	33
+ 1221 0024 3100     		.short	49
+ 1222 0026 1100     		.short	17
+ 1223 0028 1F00     		.short	31
+ 1224 002a 0000     		.short	0
+ 1225 002c 0000     		.short	0
+ 1226 002e 0000     		.short	0
+ 1227 0030 0000     		.short	0
+ 1228 0032 0000     		.short	0
+ 1229 0034 0E00     		.short	14
+ 1230 0036 1100     		.short	17
+ 1231 0038 0100     		.short	1
+ 1232 003a 0100     		.short	1
+ 1233 003c 0100     		.short	1
+ 1234 003e 1100     		.short	17
+ 1235 0040 1E00     		.short	30
+ 1236 0042 0000     		.short	0
+ 1237 0044 0000     		.short	0
+ 1238 0046 0000     		.short	0
+ 1239 0048 1000     		.short	16
+ 1240 004a 1000     		.short	16
+ 1241 004c 1E00     		.short	30
+ 1242 004e 1100     		.short	17
+ 1243 0050 1100     		.short	17
+ 1244 0052 1100     		.short	17
+ 1245 0054 1100     		.short	17
+ 1246 0056 1100     		.short	17
+ 1247 0058 1F00     		.short	31
+ 1248 005a 0000     		.short	0
+ 1249 005c 0000     		.short	0
+ 1250 005e 0000     		.short	0
+ 1251 0060 0000     		.short	0
+ 1252 0062 0000     		.short	0
+ 1253 0064 0E00     		.short	14
+ 1254 0066 1100     		.short	17
+ 1255 0068 3100     		.short	49
+ 1256 006a 3F00     		.short	63
+ 1257 006c 0100     		.short	1
+ 1258 006e 3100     		.short	49
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 23
+
+
+ 1259 0070 1E00     		.short	30
+ 1260 0072 0000     		.short	0
+ 1261 0074 0000     		.short	0
+ 1262 0076 0000     		.short	0
+ 1263 0078 0700     		.short	7
+ 1264 007a 0100     		.short	1
+ 1265 007c 0700     		.short	7
+ 1266 007e 0100     		.short	1
+ 1267 0080 0100     		.short	1
+ 1268 0082 0100     		.short	1
+ 1269 0084 0100     		.short	1
+ 1270 0086 0100     		.short	1
+ 1271 0088 0100     		.short	1
+ 1272 008a 0000     		.short	0
+ 1273 008c 0000     		.short	0
+ 1274 008e 0000     		.short	0
+ 1275 0090 0000     		.short	0
+ 1276 0092 0000     		.short	0
+ 1277 0094 1E00     		.short	30
+ 1278 0096 1100     		.short	17
+ 1279 0098 1100     		.short	17
+ 1280 009a 1100     		.short	17
+ 1281 009c 1100     		.short	17
+ 1282 009e 1100     		.short	17
+ 1283 00a0 1F00     		.short	31
+ 1284 00a2 1000     		.short	16
+ 1285 00a4 1900     		.short	25
+ 1286 00a6 0E00     		.short	14
+ 1287 00a8 0100     		.short	1
+ 1288 00aa 0100     		.short	1
+ 1289 00ac 1D00     		.short	29
+ 1290 00ae 1300     		.short	19
+ 1291 00b0 1100     		.short	17
+ 1292 00b2 1100     		.short	17
+ 1293 00b4 1100     		.short	17
+ 1294 00b6 1100     		.short	17
+ 1295 00b8 1100     		.short	17
+ 1296 00ba 0000     		.short	0
+ 1297 00bc 0000     		.short	0
+ 1298 00be 0000     		.short	0
+ 1299 00c0 0100     		.short	1
+ 1300 00c2 0000     		.short	0
+ 1301 00c4 0100     		.short	1
+ 1302 00c6 0100     		.short	1
+ 1303 00c8 0100     		.short	1
+ 1304 00ca 0100     		.short	1
+ 1305 00cc 0100     		.short	1
+ 1306 00ce 0100     		.short	1
+ 1307 00d0 0100     		.short	1
+ 1308 00d2 0000     		.short	0
+ 1309 00d4 0000     		.short	0
+ 1310 00d6 0000     		.short	0
+ 1311 00d8 0100     		.short	1
+ 1312 00da 0000     		.short	0
+ 1313 00dc 0100     		.short	1
+ 1314 00de 0100     		.short	1
+ 1315 00e0 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 24
+
+
+ 1316 00e2 0100     		.short	1
+ 1317 00e4 0100     		.short	1
+ 1318 00e6 0100     		.short	1
+ 1319 00e8 0100     		.short	1
+ 1320 00ea 0100     		.short	1
+ 1321 00ec 0100     		.short	1
+ 1322 00ee 0000     		.short	0
+ 1323 00f0 0100     		.short	1
+ 1324 00f2 0100     		.short	1
+ 1325 00f4 1900     		.short	25
+ 1326 00f6 0D00     		.short	13
+ 1327 00f8 0500     		.short	5
+ 1328 00fa 0700     		.short	7
+ 1329 00fc 0D00     		.short	13
+ 1330 00fe 0900     		.short	9
+ 1331 0100 1100     		.short	17
+ 1332 0102 0000     		.short	0
+ 1333 0104 0000     		.short	0
+ 1334 0106 0000     		.short	0
+ 1335 0108 0100     		.short	1
+ 1336 010a 0100     		.short	1
+ 1337 010c 0100     		.short	1
+ 1338 010e 0100     		.short	1
+ 1339 0110 0100     		.short	1
+ 1340 0112 0100     		.short	1
+ 1341 0114 0100     		.short	1
+ 1342 0116 0100     		.short	1
+ 1343 0118 0100     		.short	1
+ 1344 011a 0000     		.short	0
+ 1345 011c 0000     		.short	0
+ 1346 011e 0000     		.short	0
+ 1347 0120 0000     		.short	0
+ 1348 0122 0000     		.short	0
+ 1349 0124 CD00     		.short	205
+ 1350 0126 3301     		.short	307
+ 1351 0128 1101     		.short	273
+ 1352 012a 1101     		.short	273
+ 1353 012c 1101     		.short	273
+ 1354 012e 1101     		.short	273
+ 1355 0130 1101     		.short	273
+ 1356 0132 0000     		.short	0
+ 1357 0134 0000     		.short	0
+ 1358 0136 0000     		.short	0
+ 1359 0138 0000     		.short	0
+ 1360 013a 0000     		.short	0
+ 1361 013c 1D00     		.short	29
+ 1362 013e 1300     		.short	19
+ 1363 0140 1100     		.short	17
+ 1364 0142 1100     		.short	17
+ 1365 0144 1100     		.short	17
+ 1366 0146 1100     		.short	17
+ 1367 0148 1100     		.short	17
+ 1368 014a 0000     		.short	0
+ 1369 014c 0000     		.short	0
+ 1370 014e 0000     		.short	0
+ 1371 0150 0000     		.short	0
+ 1372 0152 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 25
+
+
+ 1373 0154 0E00     		.short	14
+ 1374 0156 1100     		.short	17
+ 1375 0158 3100     		.short	49
+ 1376 015a 2100     		.short	33
+ 1377 015c 3100     		.short	49
+ 1378 015e 1100     		.short	17
+ 1379 0160 1E00     		.short	30
+ 1380 0162 0000     		.short	0
+ 1381 0164 0000     		.short	0
+ 1382 0166 0000     		.short	0
+ 1383 0168 0000     		.short	0
+ 1384 016a 0000     		.short	0
+ 1385 016c 0D00     		.short	13
+ 1386 016e 1300     		.short	19
+ 1387 0170 3100     		.short	49
+ 1388 0172 2100     		.short	33
+ 1389 0174 3100     		.short	49
+ 1390 0176 1100     		.short	17
+ 1391 0178 1F00     		.short	31
+ 1392 017a 0100     		.short	1
+ 1393 017c 0100     		.short	1
+ 1394 017e 0100     		.short	1
+ 1395 0180 0000     		.short	0
+ 1396 0182 0000     		.short	0
+ 1397 0184 1E00     		.short	30
+ 1398 0186 1100     		.short	17
+ 1399 0188 1100     		.short	17
+ 1400 018a 1100     		.short	17
+ 1401 018c 1100     		.short	17
+ 1402 018e 1100     		.short	17
+ 1403 0190 1F00     		.short	31
+ 1404 0192 1000     		.short	16
+ 1405 0194 1000     		.short	16
+ 1406 0196 1000     		.short	16
+ 1407 0198 0000     		.short	0
+ 1408 019a 0000     		.short	0
+ 1409 019c 0500     		.short	5
+ 1410 019e 0300     		.short	3
+ 1411 01a0 0100     		.short	1
+ 1412 01a2 0100     		.short	1
+ 1413 01a4 0100     		.short	1
+ 1414 01a6 0100     		.short	1
+ 1415 01a8 0100     		.short	1
+ 1416 01aa 0000     		.short	0
+ 1417 01ac 0000     		.short	0
+ 1418 01ae 0000     		.short	0
+ 1419 01b0 0000     		.short	0
+ 1420 01b2 0000     		.short	0
+ 1421 01b4 0F00     		.short	15
+ 1422 01b6 1900     		.short	25
+ 1423 01b8 0100     		.short	1
+ 1424 01ba 0F00     		.short	15
+ 1425 01bc 1800     		.short	24
+ 1426 01be 1100     		.short	17
+ 1427 01c0 0F00     		.short	15
+ 1428 01c2 0000     		.short	0
+ 1429 01c4 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 26
+
+
+ 1430 01c6 0000     		.short	0
+ 1431 01c8 0000     		.short	0
+ 1432 01ca 0100     		.short	1
+ 1433 01cc 0300     		.short	3
+ 1434 01ce 0100     		.short	1
+ 1435 01d0 0100     		.short	1
+ 1436 01d2 0100     		.short	1
+ 1437 01d4 0100     		.short	1
+ 1438 01d6 0100     		.short	1
+ 1439 01d8 0700     		.short	7
+ 1440 01da 0000     		.short	0
+ 1441 01dc 0000     		.short	0
+ 1442 01de 0000     		.short	0
+ 1443 01e0 0000     		.short	0
+ 1444 01e2 0000     		.short	0
+ 1445 01e4 1100     		.short	17
+ 1446 01e6 1100     		.short	17
+ 1447 01e8 1100     		.short	17
+ 1448 01ea 1100     		.short	17
+ 1449 01ec 1100     		.short	17
+ 1450 01ee 1100     		.short	17
+ 1451 01f0 1F00     		.short	31
+ 1452 01f2 0000     		.short	0
+ 1453 01f4 0000     		.short	0
+ 1454 01f6 0000     		.short	0
+ 1455 01f8 0000     		.short	0
+ 1456 01fa 0000     		.short	0
+ 1457 01fc 1100     		.short	17
+ 1458 01fe 1100     		.short	17
+ 1459 0200 0900     		.short	9
+ 1460 0202 0B00     		.short	11
+ 1461 0204 0A00     		.short	10
+ 1462 0206 0600     		.short	6
+ 1463 0208 0400     		.short	4
+ 1464 020a 0000     		.short	0
+ 1465 020c 0000     		.short	0
+ 1466 020e 0000     		.short	0
+ 1467 0210 0000     		.short	0
+ 1468 0212 0000     		.short	0
+ 1469 0214 8800     		.short	136
+ 1470 0216 9900     		.short	153
+ 1471 0218 DD00     		.short	221
+ 1472 021a 5500     		.short	85
+ 1473 021c 5500     		.short	85
+ 1474 021e 6600     		.short	102
+ 1475 0220 2200     		.short	34
+ 1476 0222 0000     		.short	0
+ 1477 0224 0000     		.short	0
+ 1478 0226 0000     		.short	0
+ 1479 0228 0000     		.short	0
+ 1480 022a 0000     		.short	0
+ 1481 022c 1100     		.short	17
+ 1482 022e 0B00     		.short	11
+ 1483 0230 0E00     		.short	14
+ 1484 0232 0400     		.short	4
+ 1485 0234 0E00     		.short	14
+ 1486 0236 0B00     		.short	11
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 27
+
+
+ 1487 0238 1100     		.short	17
+ 1488 023a 0000     		.short	0
+ 1489 023c 0000     		.short	0
+ 1490 023e 0000     		.short	0
+ 1491 0240 0000     		.short	0
+ 1492 0242 0000     		.short	0
+ 1493 0244 1100     		.short	17
+ 1494 0246 1100     		.short	17
+ 1495 0248 0900     		.short	9
+ 1496 024a 0B00     		.short	11
+ 1497 024c 0A00     		.short	10
+ 1498 024e 0600     		.short	6
+ 1499 0250 0400     		.short	4
+ 1500 0252 0400     		.short	4
+ 1501 0254 0200     		.short	2
+ 1502 0256 0100     		.short	1
+ 1503 0258 0000     		.short	0
+ 1504 025a 0000     		.short	0
+ 1505 025c 1F00     		.short	31
+ 1506 025e 1800     		.short	24
+ 1507 0260 0C00     		.short	12
+ 1508 0262 0600     		.short	6
+ 1509 0264 0200     		.short	2
+ 1510 0266 0100     		.short	1
+ 1511 0268 1F00     		.short	31
+ 1512 026a 0000     		.short	0
+ 1513 026c 0000     		.short	0
+ 1514 026e 0000     		.short	0
+ 1515 0270 0C00     		.short	12
+ 1516 0272 1C00     		.short	28
+ 1517 0274 1600     		.short	22
+ 1518 0276 1200     		.short	18
+ 1519 0278 2200     		.short	34
+ 1520 027a 3F00     		.short	63
+ 1521 027c 6100     		.short	97
+ 1522 027e 4100     		.short	65
+ 1523 0280 C000     		.short	192
+ 1524 0282 0000     		.short	0
+ 1525 0284 0000     		.short	0
+ 1526 0286 0000     		.short	0
+ 1527 0288 3F00     		.short	63
+ 1528 028a 2100     		.short	33
+ 1529 028c 6100     		.short	97
+ 1530 028e 3100     		.short	49
+ 1531 0290 3F00     		.short	63
+ 1532 0292 4100     		.short	65
+ 1533 0294 4100     		.short	65
+ 1534 0296 6100     		.short	97
+ 1535 0298 3F00     		.short	63
+ 1536 029a 0000     		.short	0
+ 1537 029c 0000     		.short	0
+ 1538 029e 0000     		.short	0
+ 1539 02a0 7E00     		.short	126
+ 1540 02a2 4300     		.short	67
+ 1541 02a4 C100     		.short	193
+ 1542 02a6 0100     		.short	1
+ 1543 02a8 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 28
+
+
+ 1544 02aa 0100     		.short	1
+ 1545 02ac C100     		.short	193
+ 1546 02ae 4200     		.short	66
+ 1547 02b0 3C00     		.short	60
+ 1548 02b2 0000     		.short	0
+ 1549 02b4 0000     		.short	0
+ 1550 02b6 0000     		.short	0
+ 1551 02b8 3F00     		.short	63
+ 1552 02ba 4100     		.short	65
+ 1553 02bc C100     		.short	193
+ 1554 02be C100     		.short	193
+ 1555 02c0 C100     		.short	193
+ 1556 02c2 C100     		.short	193
+ 1557 02c4 4100     		.short	65
+ 1558 02c6 6100     		.short	97
+ 1559 02c8 3F00     		.short	63
+ 1560 02ca 0000     		.short	0
+ 1561 02cc 0000     		.short	0
+ 1562 02ce 0000     		.short	0
+ 1563 02d0 7F00     		.short	127
+ 1564 02d2 0100     		.short	1
+ 1565 02d4 0100     		.short	1
+ 1566 02d6 0100     		.short	1
+ 1567 02d8 3F00     		.short	63
+ 1568 02da 0100     		.short	1
+ 1569 02dc 0100     		.short	1
+ 1570 02de 0100     		.short	1
+ 1571 02e0 7F00     		.short	127
+ 1572 02e2 0000     		.short	0
+ 1573 02e4 0000     		.short	0
+ 1574 02e6 0000     		.short	0
+ 1575 02e8 3F00     		.short	63
+ 1576 02ea 0100     		.short	1
+ 1577 02ec 0100     		.short	1
+ 1578 02ee 0100     		.short	1
+ 1579 02f0 3F00     		.short	63
+ 1580 02f2 0100     		.short	1
+ 1581 02f4 0100     		.short	1
+ 1582 02f6 0100     		.short	1
+ 1583 02f8 0100     		.short	1
+ 1584 02fa 0000     		.short	0
+ 1585 02fc 0000     		.short	0
+ 1586 02fe 0000     		.short	0
+ 1587 0300 7E00     		.short	126
+ 1588 0302 C300     		.short	195
+ 1589 0304 8100     		.short	129
+ 1590 0306 0100     		.short	1
+ 1591 0308 E100     		.short	225
+ 1592 030a 8100     		.short	129
+ 1593 030c 8100     		.short	129
+ 1594 030e C200     		.short	194
+ 1595 0310 FC00     		.short	252
+ 1596 0312 0000     		.short	0
+ 1597 0314 0000     		.short	0
+ 1598 0316 0000     		.short	0
+ 1599 0318 4100     		.short	65
+ 1600 031a 4100     		.short	65
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 29
+
+
+ 1601 031c 4100     		.short	65
+ 1602 031e 4100     		.short	65
+ 1603 0320 7F00     		.short	127
+ 1604 0322 4100     		.short	65
+ 1605 0324 4100     		.short	65
+ 1606 0326 4100     		.short	65
+ 1607 0328 4100     		.short	65
+ 1608 032a 0000     		.short	0
+ 1609 032c 0000     		.short	0
+ 1610 032e 0000     		.short	0
+ 1611 0330 0100     		.short	1
+ 1612 0332 0100     		.short	1
+ 1613 0334 0100     		.short	1
+ 1614 0336 0100     		.short	1
+ 1615 0338 0100     		.short	1
+ 1616 033a 0100     		.short	1
+ 1617 033c 0100     		.short	1
+ 1618 033e 0100     		.short	1
+ 1619 0340 0100     		.short	1
+ 1620 0342 0000     		.short	0
+ 1621 0344 0000     		.short	0
+ 1622 0346 0000     		.short	0
+ 1623 0348 0800     		.short	8
+ 1624 034a 0800     		.short	8
+ 1625 034c 0800     		.short	8
+ 1626 034e 0800     		.short	8
+ 1627 0350 0800     		.short	8
+ 1628 0352 0800     		.short	8
+ 1629 0354 0900     		.short	9
+ 1630 0356 0900     		.short	9
+ 1631 0358 0F00     		.short	15
+ 1632 035a 0000     		.short	0
+ 1633 035c 0000     		.short	0
+ 1634 035e 0000     		.short	0
+ 1635 0360 6100     		.short	97
+ 1636 0362 3100     		.short	49
+ 1637 0364 1900     		.short	25
+ 1638 0366 0D00     		.short	13
+ 1639 0368 0F00     		.short	15
+ 1640 036a 1300     		.short	19
+ 1641 036c 3100     		.short	49
+ 1642 036e 6100     		.short	97
+ 1643 0370 C100     		.short	193
+ 1644 0372 0000     		.short	0
+ 1645 0374 0000     		.short	0
+ 1646 0376 0000     		.short	0
+ 1647 0378 0100     		.short	1
+ 1648 037a 0100     		.short	1
+ 1649 037c 0100     		.short	1
+ 1650 037e 0100     		.short	1
+ 1651 0380 0100     		.short	1
+ 1652 0382 0100     		.short	1
+ 1653 0384 0100     		.short	1
+ 1654 0386 0100     		.short	1
+ 1655 0388 3F00     		.short	63
+ 1656 038a 0000     		.short	0
+ 1657 038c 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 30
+
+
+ 1658 038e 0000     		.short	0
+ 1659 0390 8301     		.short	387
+ 1660 0392 4301     		.short	323
+ 1661 0394 4501     		.short	325
+ 1662 0396 4501     		.short	325
+ 1663 0398 2501     		.short	293
+ 1664 039a 2901     		.short	297
+ 1665 039c 2901     		.short	297
+ 1666 039e 1901     		.short	281
+ 1667 03a0 1101     		.short	273
+ 1668 03a2 0000     		.short	0
+ 1669 03a4 0000     		.short	0
+ 1670 03a6 0000     		.short	0
+ 1671 03a8 4300     		.short	67
+ 1672 03aa 4700     		.short	71
+ 1673 03ac 4500     		.short	69
+ 1674 03ae 4D00     		.short	77
+ 1675 03b0 4900     		.short	73
+ 1676 03b2 5100     		.short	81
+ 1677 03b4 7100     		.short	113
+ 1678 03b6 6100     		.short	97
+ 1679 03b8 4100     		.short	65
+ 1680 03ba 0000     		.short	0
+ 1681 03bc 0000     		.short	0
+ 1682 03be 0000     		.short	0
+ 1683 03c0 7E00     		.short	126
+ 1684 03c2 C300     		.short	195
+ 1685 03c4 8100     		.short	129
+ 1686 03c6 8100     		.short	129
+ 1687 03c8 8101     		.short	385
+ 1688 03ca 8100     		.short	129
+ 1689 03cc 8100     		.short	129
+ 1690 03ce C200     		.short	194
+ 1691 03d0 3C00     		.short	60
+ 1692 03d2 0000     		.short	0
+ 1693 03d4 0000     		.short	0
+ 1694 03d6 0000     		.short	0
+ 1695 03d8 3F00     		.short	63
+ 1696 03da 4100     		.short	65
+ 1697 03dc 4100     		.short	65
+ 1698 03de 4100     		.short	65
+ 1699 03e0 3F00     		.short	63
+ 1700 03e2 0100     		.short	1
+ 1701 03e4 0100     		.short	1
+ 1702 03e6 0100     		.short	1
+ 1703 03e8 0100     		.short	1
+ 1704 03ea 0000     		.short	0
+ 1705 03ec 0000     		.short	0
+ 1706 03ee 0000     		.short	0
+ 1707 03f0 7E00     		.short	126
+ 1708 03f2 C300     		.short	195
+ 1709 03f4 8100     		.short	129
+ 1710 03f6 8100     		.short	129
+ 1711 03f8 8101     		.short	385
+ 1712 03fa 8100     		.short	129
+ 1713 03fc A100     		.short	161
+ 1714 03fe E200     		.short	226
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 31
+
+
+ 1715 0400 FC01     		.short	508
+ 1716 0402 8000     		.short	128
+ 1717 0404 0000     		.short	0
+ 1718 0406 0000     		.short	0
+ 1719 0408 7F00     		.short	127
+ 1720 040a 4100     		.short	65
+ 1721 040c 4100     		.short	65
+ 1722 040e 4100     		.short	65
+ 1723 0410 3F00     		.short	63
+ 1724 0412 2100     		.short	33
+ 1725 0414 4100     		.short	65
+ 1726 0416 4100     		.short	65
+ 1727 0418 C100     		.short	193
+ 1728 041a 0000     		.short	0
+ 1729 041c 0000     		.short	0
+ 1730 041e 0000     		.short	0
+ 1731 0420 3E00     		.short	62
+ 1732 0422 6100     		.short	97
+ 1733 0424 0100     		.short	1
+ 1734 0426 0700     		.short	7
+ 1735 0428 3C00     		.short	60
+ 1736 042a 6000     		.short	96
+ 1737 042c 4100     		.short	65
+ 1738 042e 6300     		.short	99
+ 1739 0430 3E00     		.short	62
+ 1740 0432 0000     		.short	0
+ 1741 0434 0000     		.short	0
+ 1742 0436 0000     		.short	0
+ 1743 0438 7F00     		.short	127
+ 1744 043a 0C00     		.short	12
+ 1745 043c 0C00     		.short	12
+ 1746 043e 0C00     		.short	12
+ 1747 0440 0C00     		.short	12
+ 1748 0442 0C00     		.short	12
+ 1749 0444 0C00     		.short	12
+ 1750 0446 0C00     		.short	12
+ 1751 0448 0C00     		.short	12
+ 1752 044a 0000     		.short	0
+ 1753 044c 0000     		.short	0
+ 1754 044e 0000     		.short	0
+ 1755 0450 4100     		.short	65
+ 1756 0452 4100     		.short	65
+ 1757 0454 4100     		.short	65
+ 1758 0456 4100     		.short	65
+ 1759 0458 4100     		.short	65
+ 1760 045a 4100     		.short	65
+ 1761 045c 4100     		.short	65
+ 1762 045e 6300     		.short	99
+ 1763 0460 3E00     		.short	62
+ 1764 0462 0000     		.short	0
+ 1765 0464 0000     		.short	0
+ 1766 0466 0000     		.short	0
+ 1767 0468 C100     		.short	193
+ 1768 046a 4100     		.short	65
+ 1769 046c 2100     		.short	33
+ 1770 046e 2200     		.short	34
+ 1771 0470 3200     		.short	50
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 32
+
+
+ 1772 0472 1600     		.short	22
+ 1773 0474 1400     		.short	20
+ 1774 0476 1C00     		.short	28
+ 1775 0478 0C00     		.short	12
+ 1776 047a 0000     		.short	0
+ 1777 047c 0000     		.short	0
+ 1778 047e 0000     		.short	0
+ 1779 0480 3100     		.short	49
+ 1780 0482 3102     		.short	561
+ 1781 0484 5102     		.short	593
+ 1782 0486 4902     		.short	585
+ 1783 0488 4B02     		.short	587
+ 1784 048a 4A03     		.short	842
+ 1785 048c 8A01     		.short	394
+ 1786 048e 8601     		.short	390
+ 1787 0490 8401     		.short	388
+ 1788 0492 0000     		.short	0
+ 1789 0494 0000     		.short	0
+ 1790 0496 0000     		.short	0
+ 1791 0498 6100     		.short	97
+ 1792 049a 3200     		.short	50
+ 1793 049c 1600     		.short	22
+ 1794 049e 0C00     		.short	12
+ 1795 04a0 0C00     		.short	12
+ 1796 04a2 1400     		.short	20
+ 1797 04a4 3200     		.short	50
+ 1798 04a6 6300     		.short	99
+ 1799 04a8 C100     		.short	193
+ 1800 04aa 0000     		.short	0
+ 1801 04ac 0000     		.short	0
+ 1802 04ae 0000     		.short	0
+ 1803 04b0 C100     		.short	193
+ 1804 04b2 2300     		.short	35
+ 1805 04b4 3200     		.short	50
+ 1806 04b6 1400     		.short	20
+ 1807 04b8 0C00     		.short	12
+ 1808 04ba 0800     		.short	8
+ 1809 04bc 0800     		.short	8
+ 1810 04be 0800     		.short	8
+ 1811 04c0 0800     		.short	8
+ 1812 04c2 0000     		.short	0
+ 1813 04c4 0000     		.short	0
+ 1814 04c6 0000     		.short	0
+ 1815 04c8 3F00     		.short	63
+ 1816 04ca 3000     		.short	48
+ 1817 04cc 1000     		.short	16
+ 1818 04ce 0800     		.short	8
+ 1819 04d0 0400     		.short	4
+ 1820 04d2 0600     		.short	6
+ 1821 04d4 0300     		.short	3
+ 1822 04d6 0100     		.short	1
+ 1823 04d8 7F00     		.short	127
+ 1824 04da 0000     		.short	0
+ 1825 04dc 0000     		.short	0
+ 1826 04de 0000     		.short	0
+ 1827 04e0 1E00     		.short	30
+ 1828 04e2 1100     		.short	17
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 33
+
+
+ 1829 04e4 1100     		.short	17
+ 1830 04e6 3100     		.short	49
+ 1831 04e8 3100     		.short	49
+ 1832 04ea 3100     		.short	49
+ 1833 04ec 1100     		.short	17
+ 1834 04ee 1100     		.short	17
+ 1835 04f0 0E00     		.short	14
+ 1836 04f2 0000     		.short	0
+ 1837 04f4 0000     		.short	0
+ 1838 04f6 0000     		.short	0
+ 1839 04f8 0800     		.short	8
+ 1840 04fa 0F00     		.short	15
+ 1841 04fc 0800     		.short	8
+ 1842 04fe 0800     		.short	8
+ 1843 0500 0800     		.short	8
+ 1844 0502 0800     		.short	8
+ 1845 0504 0800     		.short	8
+ 1846 0506 0800     		.short	8
+ 1847 0508 0800     		.short	8
+ 1848 050a 0000     		.short	0
+ 1849 050c 0000     		.short	0
+ 1850 050e 0000     		.short	0
+ 1851 0510 1F00     		.short	31
+ 1852 0512 1100     		.short	17
+ 1853 0514 3000     		.short	48
+ 1854 0516 1000     		.short	16
+ 1855 0518 1800     		.short	24
+ 1856 051a 0400     		.short	4
+ 1857 051c 0200     		.short	2
+ 1858 051e 0100     		.short	1
+ 1859 0520 3F00     		.short	63
+ 1860 0522 0000     		.short	0
+ 1861 0524 0000     		.short	0
+ 1862 0526 0000     		.short	0
+ 1863 0528 1F00     		.short	31
+ 1864 052a 1100     		.short	17
+ 1865 052c 1000     		.short	16
+ 1866 052e 1800     		.short	24
+ 1867 0530 1C00     		.short	28
+ 1868 0532 3000     		.short	48
+ 1869 0534 3000     		.short	48
+ 1870 0536 1100     		.short	17
+ 1871 0538 1E00     		.short	30
+ 1872 053a 0000     		.short	0
+ 1873 053c 0000     		.short	0
+ 1874 053e 0000     		.short	0
+ 1875 0540 1000     		.short	16
+ 1876 0542 1800     		.short	24
+ 1877 0544 1800     		.short	24
+ 1878 0546 1400     		.short	20
+ 1879 0548 1200     		.short	18
+ 1880 054a 1100     		.short	17
+ 1881 054c 3F00     		.short	63
+ 1882 054e 1000     		.short	16
+ 1883 0550 1000     		.short	16
+ 1884 0552 0000     		.short	0
+ 1885 0554 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 34
+
+
+ 1886 0556 0000     		.short	0
+ 1887 0558 1F00     		.short	31
+ 1888 055a 0100     		.short	1
+ 1889 055c 0100     		.short	1
+ 1890 055e 1F00     		.short	31
+ 1891 0560 1100     		.short	17
+ 1892 0562 3000     		.short	48
+ 1893 0564 3000     		.short	48
+ 1894 0566 1100     		.short	17
+ 1895 0568 1E00     		.short	30
+ 1896 056a 0000     		.short	0
+ 1897 056c 0000     		.short	0
+ 1898 056e 0000     		.short	0
+ 1899 0570 1E00     		.short	30
+ 1900 0572 3100     		.short	49
+ 1901 0574 0100     		.short	1
+ 1902 0576 1F00     		.short	31
+ 1903 0578 1100     		.short	17
+ 1904 057a 3100     		.short	49
+ 1905 057c 3100     		.short	49
+ 1906 057e 1100     		.short	17
+ 1907 0580 1E00     		.short	30
+ 1908 0582 0000     		.short	0
+ 1909 0584 0000     		.short	0
+ 1910 0586 0000     		.short	0
+ 1911 0588 3F00     		.short	63
+ 1912 058a 1000     		.short	16
+ 1913 058c 1000     		.short	16
+ 1914 058e 0800     		.short	8
+ 1915 0590 0800     		.short	8
+ 1916 0592 0C00     		.short	12
+ 1917 0594 0400     		.short	4
+ 1918 0596 0400     		.short	4
+ 1919 0598 0200     		.short	2
+ 1920 059a 0000     		.short	0
+ 1921 059c 0000     		.short	0
+ 1922 059e 0000     		.short	0
+ 1923 05a0 1F00     		.short	31
+ 1924 05a2 1100     		.short	17
+ 1925 05a4 1100     		.short	17
+ 1926 05a6 1A00     		.short	26
+ 1927 05a8 0E00     		.short	14
+ 1928 05aa 1100     		.short	17
+ 1929 05ac 3100     		.short	49
+ 1930 05ae 3100     		.short	49
+ 1931 05b0 1F00     		.short	31
+ 1932 05b2 0000     		.short	0
+ 1933 05b4 0000     		.short	0
+ 1934 05b6 0000     		.short	0
+ 1935 05b8 1F00     		.short	31
+ 1936 05ba 1100     		.short	17
+ 1937 05bc 3100     		.short	49
+ 1938 05be 3100     		.short	49
+ 1939 05c0 3B00     		.short	59
+ 1940 05c2 3600     		.short	54
+ 1941 05c4 1000     		.short	16
+ 1942 05c6 1100     		.short	17
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 35
+
+
+ 1943 05c8 0E00     		.short	14
+ 1944 05ca 0000     		.short	0
+ 1945 05cc 0000     		.short	0
+ 1946 05ce 0000     		.short	0
+ 1947              		.section	.text._Z12DrawStrConstPKctthh,"ax",%progbits
+ 1948              		.align	1
+ 1949              		.global	_Z12DrawStrConstPKctthh
+ 1950              		.syntax unified
+ 1951              		.thumb
+ 1952              		.thumb_func
+ 1953              		.fpu softvfp
+ 1955              	_Z12DrawStrConstPKctthh:
+ 1956              	.LFB0:
+ 1957              		.file 1 "../src/font.cpp"
+   1:../src/font.cpp **** #include "font.h"
+   2:../src/font.cpp **** #include <stdint.h>
+   3:../src/font.cpp **** 
+   4:../src/font.cpp **** #define SSP_DATA (*((uint32_t *)0x40088008))
+   5:../src/font.cpp **** 
+   6:../src/font.cpp **** void DrawStrConst(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color)
+   7:../src/font.cpp **** {
+ 1958              		.loc 1 7 0
+ 1959              		.cfi_startproc
+ 1960              		@ args = 4, pretend = 0, frame = 72
+ 1961              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1962              		@ link register save eliminated.
+ 1963 0000 80B4     		push	{r7}
+ 1964              		.cfi_def_cfa_offset 4
+ 1965              		.cfi_offset 7, -4
+ 1966 0002 93B0     		sub	sp, sp, #76
+ 1967              		.cfi_def_cfa_offset 80
+ 1968 0004 00AF     		add	r7, sp, #0
+ 1969              		.cfi_def_cfa_register 7
+ 1970 0006 F860     		str	r0, [r7, #12]
+ 1971 0008 0846     		mov	r0, r1
+ 1972 000a 1146     		mov	r1, r2
+ 1973 000c 1A46     		mov	r2, r3
+ 1974 000e 0346     		mov	r3, r0	@ movhi
+ 1975 0010 7B81     		strh	r3, [r7, #10]	@ movhi
+ 1976 0012 0B46     		mov	r3, r1	@ movhi
+ 1977 0014 3B81     		strh	r3, [r7, #8]	@ movhi
+ 1978 0016 1346     		mov	r3, r2
+ 1979 0018 FB71     		strb	r3, [r7, #7]
+   8:../src/font.cpp **** 	uint16_t Offset = 0;
+ 1980              		.loc 1 8 0
+ 1981 001a 0023     		movs	r3, #0
+ 1982 001c A7F84630 		strh	r3, [r7, #70]	@ movhi
+   9:../src/font.cpp **** 	uint16_t arraySize = (fontWidth == 16)? 304 : 192;
+ 1983              		.loc 1 9 0
+ 1984 0020 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1985 0022 102B     		cmp	r3, #16
+ 1986 0024 02D1     		bne	.L2
+ 1987              		.loc 1 9 0 is_stmt 0 discriminator 1
+ 1988 0026 4FF49873 		mov	r3, #304
+ 1989 002a 00E0     		b	.L3
+ 1990              	.L2:
+ 1991              		.loc 1 9 0 discriminator 2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 36
+
+
+ 1992 002c C023     		movs	r3, #192
+ 1993              	.L3:
+ 1994              		.loc 1 9 0 discriminator 4
+ 1995 002e 3B85     		strh	r3, [r7, #40]	@ movhi
+ 1996              	.LBB2:
+  10:../src/font.cpp **** 
+  11:../src/font.cpp **** 	for(int i = 0; StrToDraw[i] != '\0'; i++){
+ 1997              		.loc 1 11 0 is_stmt 1 discriminator 4
+ 1998 0030 0023     		movs	r3, #0
+ 1999 0032 3B64     		str	r3, [r7, #64]
+ 2000              	.L48:
+ 2001              		.loc 1 11 0 is_stmt 0 discriminator 1
+ 2002 0034 3B6C     		ldr	r3, [r7, #64]
+ 2003 0036 FA68     		ldr	r2, [r7, #12]
+ 2004 0038 1344     		add	r3, r3, r2
+ 2005 003a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2006 003c 002B     		cmp	r3, #0
+ 2007 003e 00F08282 		beq	.L49
+ 2008              	.LBB3:
+  12:../src/font.cpp **** 		if(i != 0){
+ 2009              		.loc 1 12 0 is_stmt 1
+ 2010 0042 3B6C     		ldr	r3, [r7, #64]
+ 2011 0044 002B     		cmp	r3, #0
+ 2012 0046 00F0EF80 		beq	.L5
+  13:../src/font.cpp **** 			switch(StrToDraw[i - 1]){
+ 2013              		.loc 1 13 0
+ 2014 004a 3B6C     		ldr	r3, [r7, #64]
+ 2015 004c 013B     		subs	r3, r3, #1
+ 2016 004e FA68     		ldr	r2, [r7, #12]
+ 2017 0050 1344     		add	r3, r3, r2
+ 2018 0052 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2019 0054 203B     		subs	r3, r3, #32
+ 2020 0056 5A2B     		cmp	r3, #90
+ 2021 0058 00F2DE80 		bhi	.L6
+ 2022 005c 01A2     		adr	r2, .L8
+ 2023 005e 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 2024 0062 00BF     		.p2align 2
+ 2025              	.L8:
+ 2026 0064 E9010000 		.word	.L7+1
+ 2027 0068 19020000 		.word	.L6+1
+ 2028 006c 19020000 		.word	.L6+1
+ 2029 0070 19020000 		.word	.L6+1
+ 2030 0074 19020000 		.word	.L6+1
+ 2031 0078 19020000 		.word	.L6+1
+ 2032 007c 19020000 		.word	.L6+1
+ 2033 0080 19020000 		.word	.L6+1
+ 2034 0084 19020000 		.word	.L6+1
+ 2035 0088 19020000 		.word	.L6+1
+ 2036 008c 19020000 		.word	.L6+1
+ 2037 0090 19020000 		.word	.L6+1
+ 2038 0094 19020000 		.word	.L6+1
+ 2039 0098 19020000 		.word	.L6+1
+ 2040 009c 19020000 		.word	.L6+1
+ 2041 00a0 19020000 		.word	.L6+1
+ 2042 00a4 01020000 		.word	.L9+1
+ 2043 00a8 E9010000 		.word	.L7+1
+ 2044 00ac 01020000 		.word	.L9+1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 37
+
+
+ 2045 00b0 01020000 		.word	.L9+1
+ 2046 00b4 01020000 		.word	.L9+1
+ 2047 00b8 01020000 		.word	.L9+1
+ 2048 00bc 01020000 		.word	.L9+1
+ 2049 00c0 01020000 		.word	.L9+1
+ 2050 00c4 01020000 		.word	.L9+1
+ 2051 00c8 01020000 		.word	.L9+1
+ 2052 00cc 19020000 		.word	.L6+1
+ 2053 00d0 19020000 		.word	.L6+1
+ 2054 00d4 19020000 		.word	.L6+1
+ 2055 00d8 19020000 		.word	.L6+1
+ 2056 00dc 19020000 		.word	.L6+1
+ 2057 00e0 19020000 		.word	.L6+1
+ 2058 00e4 19020000 		.word	.L6+1
+ 2059 00e8 19020000 		.word	.L6+1
+ 2060 00ec 19020000 		.word	.L6+1
+ 2061 00f0 19020000 		.word	.L6+1
+ 2062 00f4 19020000 		.word	.L6+1
+ 2063 00f8 19020000 		.word	.L6+1
+ 2064 00fc 19020000 		.word	.L6+1
+ 2065 0100 19020000 		.word	.L6+1
+ 2066 0104 19020000 		.word	.L6+1
+ 2067 0108 D1010000 		.word	.L10+1
+ 2068 010c 19020000 		.word	.L6+1
+ 2069 0110 19020000 		.word	.L6+1
+ 2070 0114 01020000 		.word	.L9+1
+ 2071 0118 19020000 		.word	.L6+1
+ 2072 011c 19020000 		.word	.L6+1
+ 2073 0120 19020000 		.word	.L6+1
+ 2074 0124 19020000 		.word	.L6+1
+ 2075 0128 19020000 		.word	.L6+1
+ 2076 012c 19020000 		.word	.L6+1
+ 2077 0130 19020000 		.word	.L6+1
+ 2078 0134 01020000 		.word	.L9+1
+ 2079 0138 19020000 		.word	.L6+1
+ 2080 013c 19020000 		.word	.L6+1
+ 2081 0140 19020000 		.word	.L6+1
+ 2082 0144 19020000 		.word	.L6+1
+ 2083 0148 19020000 		.word	.L6+1
+ 2084 014c 19020000 		.word	.L6+1
+ 2085 0150 19020000 		.word	.L6+1
+ 2086 0154 19020000 		.word	.L6+1
+ 2087 0158 19020000 		.word	.L6+1
+ 2088 015c 19020000 		.word	.L6+1
+ 2089 0160 19020000 		.word	.L6+1
+ 2090 0164 19020000 		.word	.L6+1
+ 2091 0168 01020000 		.word	.L9+1
+ 2092 016c 01020000 		.word	.L9+1
+ 2093 0170 01020000 		.word	.L9+1
+ 2094 0174 01020000 		.word	.L9+1
+ 2095 0178 01020000 		.word	.L9+1
+ 2096 017c E9010000 		.word	.L7+1
+ 2097 0180 01020000 		.word	.L9+1
+ 2098 0184 01020000 		.word	.L9+1
+ 2099 0188 D1010000 		.word	.L10+1
+ 2100 018c D1010000 		.word	.L10+1
+ 2101 0190 01020000 		.word	.L9+1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 38
+
+
+ 2102 0194 D1010000 		.word	.L10+1
+ 2103 0198 19020000 		.word	.L6+1
+ 2104 019c 01020000 		.word	.L9+1
+ 2105 01a0 01020000 		.word	.L9+1
+ 2106 01a4 01020000 		.word	.L9+1
+ 2107 01a8 01020000 		.word	.L9+1
+ 2108 01ac E9010000 		.word	.L7+1
+ 2109 01b0 01020000 		.word	.L9+1
+ 2110 01b4 E9010000 		.word	.L7+1
+ 2111 01b8 01020000 		.word	.L9+1
+ 2112 01bc 01020000 		.word	.L9+1
+ 2113 01c0 19020000 		.word	.L6+1
+ 2114 01c4 01020000 		.word	.L9+1
+ 2115 01c8 01020000 		.word	.L9+1
+ 2116 01cc 01020000 		.word	.L9+1
+ 2117              		.p2align 1
+ 2118              	.L10:
+  14:../src/font.cpp **** 				case 'i':
+  15:../src/font.cpp **** 				case 'j':
+  16:../src/font.cpp **** 				case 'l':
+  17:../src/font.cpp **** 				case 'I':
+  18:../src/font.cpp **** 					Offset += (fontWidth == 16)? 4 : 3;
+ 2119              		.loc 1 18 0
+ 2120 01d0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2121 01d2 102B     		cmp	r3, #16
+ 2122 01d4 01D1     		bne	.L11
+ 2123              		.loc 1 18 0 is_stmt 0 discriminator 1
+ 2124 01d6 0422     		movs	r2, #4
+ 2125 01d8 00E0     		b	.L12
+ 2126              	.L11:
+ 2127              		.loc 1 18 0 discriminator 2
+ 2128 01da 0322     		movs	r2, #3
+ 2129              	.L12:
+ 2130              		.loc 1 18 0 discriminator 4
+ 2131 01dc B7F84630 		ldrh	r3, [r7, #70]	@ movhi
+ 2132 01e0 1344     		add	r3, r3, r2
+ 2133 01e2 A7F84630 		strh	r3, [r7, #70]	@ movhi
+  19:../src/font.cpp **** 					break;
+ 2134              		.loc 1 19 0 is_stmt 1 discriminator 4
+ 2135 01e6 1FE0     		b	.L5
+ 2136              	.L7:
+  20:../src/font.cpp **** 				case 't':
+  21:../src/font.cpp **** 				case 'r':
+  22:../src/font.cpp **** 				case 'f':
+  23:../src/font.cpp **** 				case '1':
+  24:../src/font.cpp **** 				case ' ':
+  25:../src/font.cpp **** 					Offset += (fontWidth == 16)? 8 : 6;
+ 2137              		.loc 1 25 0
+ 2138 01e8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2139 01ea 102B     		cmp	r3, #16
+ 2140 01ec 01D1     		bne	.L14
+ 2141              		.loc 1 25 0 is_stmt 0 discriminator 1
+ 2142 01ee 0822     		movs	r2, #8
+ 2143 01f0 00E0     		b	.L15
+ 2144              	.L14:
+ 2145              		.loc 1 25 0 discriminator 2
+ 2146 01f2 0622     		movs	r2, #6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 39
+
+
+ 2147              	.L15:
+ 2148              		.loc 1 25 0 discriminator 4
+ 2149 01f4 B7F84630 		ldrh	r3, [r7, #70]	@ movhi
+ 2150 01f8 1344     		add	r3, r3, r2
+ 2151 01fa A7F84630 		strh	r3, [r7, #70]	@ movhi
+  26:../src/font.cpp **** 					break;
+ 2152              		.loc 1 26 0 is_stmt 1 discriminator 4
+ 2153 01fe 13E0     		b	.L5
+ 2154              	.L9:
+  27:../src/font.cpp **** 				case 'a':
+  28:../src/font.cpp **** 				case 'b':
+  29:../src/font.cpp **** 				case 'c':
+  30:../src/font.cpp **** 				case 'd':
+  31:../src/font.cpp **** 				case 'e':
+  32:../src/font.cpp **** 				case 'g':
+  33:../src/font.cpp **** 				case 'h':
+  34:../src/font.cpp **** 				case 'k':
+  35:../src/font.cpp **** 				case 'n':
+  36:../src/font.cpp **** 				case 'o':
+  37:../src/font.cpp **** 				case 'p':
+  38:../src/font.cpp **** 				case 'q':
+  39:../src/font.cpp **** 				case 's':
+  40:../src/font.cpp **** 				case 'u':
+  41:../src/font.cpp **** 				case 'v':
+  42:../src/font.cpp **** 				case 'x':
+  43:../src/font.cpp **** 				case 'y':
+  44:../src/font.cpp **** 				case 'z':
+  45:../src/font.cpp **** 				case '0':
+  46:../src/font.cpp **** 				case '2':
+  47:../src/font.cpp **** 				case '3':
+  48:../src/font.cpp **** 				case '4':
+  49:../src/font.cpp **** 				case '5':
+  50:../src/font.cpp **** 				case '6':
+  51:../src/font.cpp **** 				case '7':
+  52:../src/font.cpp **** 				case '8':
+  53:../src/font.cpp **** 				case '9':
+  54:../src/font.cpp **** 				case 'L':
+  55:../src/font.cpp **** 				case 'T':
+  56:../src/font.cpp **** 					Offset += (fontWidth == 16)? 12 : 7;
+ 2155              		.loc 1 56 0
+ 2156 0200 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2157 0202 102B     		cmp	r3, #16
+ 2158 0204 01D1     		bne	.L16
+ 2159              		.loc 1 56 0 is_stmt 0 discriminator 1
+ 2160 0206 0C22     		movs	r2, #12
+ 2161 0208 00E0     		b	.L17
+ 2162              	.L16:
+ 2163              		.loc 1 56 0 discriminator 2
+ 2164 020a 0722     		movs	r2, #7
+ 2165              	.L17:
+ 2166              		.loc 1 56 0 discriminator 4
+ 2167 020c B7F84630 		ldrh	r3, [r7, #70]	@ movhi
+ 2168 0210 1344     		add	r3, r3, r2
+ 2169 0212 A7F84630 		strh	r3, [r7, #70]	@ movhi
+  57:../src/font.cpp **** 					break;
+ 2170              		.loc 1 57 0 is_stmt 1 discriminator 4
+ 2171 0216 07E0     		b	.L5
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 40
+
+
+ 2172              	.L6:
+  58:../src/font.cpp **** 				default:
+  59:../src/font.cpp **** 					Offset += fontWidth;
+ 2173              		.loc 1 59 0
+ 2174 0218 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2175 021a 9AB2     		uxth	r2, r3
+ 2176 021c B7F84630 		ldrh	r3, [r7, #70]	@ movhi
+ 2177 0220 1344     		add	r3, r3, r2
+ 2178 0222 A7F84630 		strh	r3, [r7, #70]	@ movhi
+  60:../src/font.cpp **** 					break;
+ 2179              		.loc 1 60 0
+ 2180 0226 00BF     		nop
+ 2181              	.L5:
+ 2182              	.LBB4:
+  61:../src/font.cpp **** 			}
+  62:../src/font.cpp **** 		}
+  63:../src/font.cpp **** 		if(StrToDraw[i] >= 'a' && StrToDraw[i] <= 'z'){
+ 2183              		.loc 1 63 0
+ 2184 0228 3B6C     		ldr	r3, [r7, #64]
+ 2185 022a FA68     		ldr	r2, [r7, #12]
+ 2186 022c 1344     		add	r3, r3, r2
+ 2187 022e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2188 0230 602B     		cmp	r3, #96
+ 2189 0232 7AD9     		bls	.L18
+ 2190              		.loc 1 63 0 is_stmt 0 discriminator 1
+ 2191 0234 3B6C     		ldr	r3, [r7, #64]
+ 2192 0236 FA68     		ldr	r2, [r7, #12]
+ 2193 0238 1344     		add	r3, r3, r2
+ 2194 023a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2195 023c 7A2B     		cmp	r3, #122
+ 2196 023e 74D8     		bhi	.L18
+ 2197              	.LBB5:
+  64:../src/font.cpp **** 			const uint16_t * _font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - 'a'] : OTF_10X12[StrToDraw[
+ 2198              		.loc 1 64 0 is_stmt 1
+ 2199 0240 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2200 0242 102B     		cmp	r3, #16
+ 2201 0244 0AD1     		bne	.L19
+ 2202              		.loc 1 64 0 is_stmt 0 discriminator 1
+ 2203 0246 3B6C     		ldr	r3, [r7, #64]
+ 2204 0248 FA68     		ldr	r2, [r7, #12]
+ 2205 024a 1344     		add	r3, r3, r2
+ 2206 024c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2207 024e 613B     		subs	r3, r3, #97
+ 2208 0250 2622     		movs	r2, #38
+ 2209 0252 02FB03F3 		mul	r3, r2, r3
+ 2210 0256 B64A     		ldr	r2, .L52
+ 2211 0258 1344     		add	r3, r3, r2
+ 2212 025a 0BE0     		b	.L20
+ 2213              	.L19:
+ 2214              		.loc 1 64 0 discriminator 2
+ 2215 025c 3B6C     		ldr	r3, [r7, #64]
+ 2216 025e FA68     		ldr	r2, [r7, #12]
+ 2217 0260 1344     		add	r3, r3, r2
+ 2218 0262 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2219 0264 A3F16102 		sub	r2, r3, #97
+ 2220 0268 1346     		mov	r3, r2
+ 2221 026a 5B00     		lsls	r3, r3, #1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 41
+
+
+ 2222 026c 1344     		add	r3, r3, r2
+ 2223 026e DB00     		lsls	r3, r3, #3
+ 2224 0270 B04A     		ldr	r2, .L52+4
+ 2225 0272 1344     		add	r3, r3, r2
+ 2226              	.L20:
+ 2227              		.loc 1 64 0 discriminator 4
+ 2228 0274 7B62     		str	r3, [r7, #36]
+ 2229              	.LBB6:
+  65:../src/font.cpp **** 			for(int j = 0; j < arraySize; j++){
+ 2230              		.loc 1 65 0 is_stmt 1 discriminator 4
+ 2231 0276 0023     		movs	r3, #0
+ 2232 0278 FB63     		str	r3, [r7, #60]
+ 2233              	.L27:
+ 2234              		.loc 1 65 0 is_stmt 0 discriminator 1
+ 2235 027a 3B8D     		ldrh	r3, [r7, #40]
+ 2236 027c FA6B     		ldr	r2, [r7, #60]
+ 2237 027e 9A42     		cmp	r2, r3
+ 2238 0280 80F25481 		bge	.L50
+ 2239              	.LBB7:
+ 2240              	.LBB8:
+  66:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2241              		.loc 1 66 0 is_stmt 1
+ 2242 0284 FB6B     		ldr	r3, [r7, #60]
+ 2243 0286 002B     		cmp	r3, #0
+ 2244 0288 00DA     		bge	.L22
+ 2245 028a 0F33     		adds	r3, r3, #15
+ 2246              	.L22:
+ 2247 028c 1B11     		asrs	r3, r3, #4
+ 2248 028e 5B00     		lsls	r3, r3, #1
+ 2249 0290 7A6A     		ldr	r2, [r7, #36]
+ 2250 0292 1344     		add	r3, r3, r2
+ 2251 0294 1B88     		ldrh	r3, [r3]
+ 2252 0296 1946     		mov	r1, r3
+ 2253 0298 FB6B     		ldr	r3, [r7, #60]
+ 2254 029a 5A42     		rsbs	r2, r3, #0
+ 2255 029c 03F00F03 		and	r3, r3, #15
+ 2256 02a0 02F00F02 		and	r2, r2, #15
+ 2257 02a4 58BF     		it	pl
+ 2258 02a6 5342     		rsbpl	r3, r2, #0
+ 2259 02a8 41FA03F3 		asr	r3, r1, r3
+ 2260 02ac 03F00103 		and	r3, r3, #1
+ 2261 02b0 002B     		cmp	r3, #0
+ 2262 02b2 36D0     		beq	.L23
+ 2263              	.LBB9:
+  67:../src/font.cpp **** 					uint32_t PixelData = 0x80000000 + ((((y + (j / 16)) * 0x420) + x + (j % 16) + Offset) << 8) + 
+ 2264              		.loc 1 67 0
+ 2265 02b4 3A89     		ldrh	r2, [r7, #8]
+ 2266 02b6 FB6B     		ldr	r3, [r7, #60]
+ 2267 02b8 002B     		cmp	r3, #0
+ 2268 02ba 00DA     		bge	.L24
+ 2269 02bc 0F33     		adds	r3, r3, #15
+ 2270              	.L24:
+ 2271 02be 1B11     		asrs	r3, r3, #4
+ 2272 02c0 1A44     		add	r2, r2, r3
+ 2273 02c2 1346     		mov	r3, r2
+ 2274 02c4 5B01     		lsls	r3, r3, #5
+ 2275 02c6 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 42
+
+
+ 2276 02c8 5B01     		lsls	r3, r3, #5
+ 2277 02ca 1A46     		mov	r2, r3
+ 2278 02cc 7B89     		ldrh	r3, [r7, #10]
+ 2279 02ce 1A44     		add	r2, r2, r3
+ 2280 02d0 FB6B     		ldr	r3, [r7, #60]
+ 2281 02d2 5942     		rsbs	r1, r3, #0
+ 2282 02d4 03F00F03 		and	r3, r3, #15
+ 2283 02d8 01F00F01 		and	r1, r1, #15
+ 2284 02dc 58BF     		it	pl
+ 2285 02de 4B42     		rsbpl	r3, r1, #0
+ 2286 02e0 1A44     		add	r2, r2, r3
+ 2287 02e2 B7F84630 		ldrh	r3, [r7, #70]
+ 2288 02e6 1344     		add	r3, r3, r2
+ 2289 02e8 1B02     		lsls	r3, r3, #8
+ 2290 02ea 1A46     		mov	r2, r3
+ 2291 02ec 97F85030 		ldrb	r3, [r7, #80]	@ zero_extendqisi2
+ 2292 02f0 1344     		add	r3, r3, r2
+ 2293 02f2 03F10043 		add	r3, r3, #-2147483648
+ 2294 02f6 3B62     		str	r3, [r7, #32]
+  68:../src/font.cpp **** 					SSP_DATA = ((PixelData >> 16) & 0xFFFF);
+ 2295              		.loc 1 68 0
+ 2296 02f8 8F4A     		ldr	r2, .L52+8
+ 2297 02fa 3B6A     		ldr	r3, [r7, #32]
+ 2298 02fc 1B0C     		lsrs	r3, r3, #16
+ 2299 02fe 1360     		str	r3, [r2]
+  69:../src/font.cpp **** 					SSP_DATA = (PixelData & 0xFFFF);
+ 2300              		.loc 1 69 0
+ 2301 0300 8D4A     		ldr	r2, .L52+8
+ 2302 0302 3B6A     		ldr	r3, [r7, #32]
+ 2303 0304 9BB2     		uxth	r3, r3
+ 2304 0306 1360     		str	r3, [r2]
+ 2305              	.LBB10:
+  70:../src/font.cpp **** 					for(uint8_t i = 0; i < 9; i++);
+ 2306              		.loc 1 70 0
+ 2307 0308 0023     		movs	r3, #0
+ 2308 030a 87F83B30 		strb	r3, [r7, #59]
+ 2309              	.L26:
+ 2310              		.loc 1 70 0 is_stmt 0 discriminator 3
+ 2311 030e 97F83B30 		ldrb	r3, [r7, #59]	@ zero_extendqisi2
+ 2312 0312 082B     		cmp	r3, #8
+ 2313 0314 05D8     		bhi	.L23
+ 2314              		.loc 1 70 0 discriminator 2
+ 2315 0316 97F83B30 		ldrb	r3, [r7, #59]	@ zero_extendqisi2
+ 2316 031a 0133     		adds	r3, r3, #1
+ 2317 031c 87F83B30 		strb	r3, [r7, #59]
+ 2318 0320 F5E7     		b	.L26
+ 2319              	.L23:
+ 2320              	.LBE10:
+ 2321              	.LBE9:
+ 2322              	.LBE8:
+ 2323              	.LBE7:
+  65:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2324              		.loc 1 65 0 is_stmt 1 discriminator 2
+ 2325 0322 FB6B     		ldr	r3, [r7, #60]
+ 2326 0324 0133     		adds	r3, r3, #1
+ 2327 0326 FB63     		str	r3, [r7, #60]
+ 2328 0328 A7E7     		b	.L27
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 43
+
+
+ 2329              	.L18:
+ 2330              	.LBE6:
+ 2331              	.LBE5:
+ 2332              	.LBB11:
+ 2333              	.LBB12:
+  71:../src/font.cpp **** 				}
+  72:../src/font.cpp **** 			}
+  73:../src/font.cpp **** 		}
+  74:../src/font.cpp **** 		else if(StrToDraw[i] >= 'A' && StrToDraw[i] <= 'Z'){
+ 2334              		.loc 1 74 0
+ 2335 032a 3B6C     		ldr	r3, [r7, #64]
+ 2336 032c FA68     		ldr	r2, [r7, #12]
+ 2337 032e 1344     		add	r3, r3, r2
+ 2338 0330 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2339 0332 402B     		cmp	r3, #64
+ 2340 0334 7AD9     		bls	.L29
+ 2341              		.loc 1 74 0 is_stmt 0 discriminator 1
+ 2342 0336 3B6C     		ldr	r3, [r7, #64]
+ 2343 0338 FA68     		ldr	r2, [r7, #12]
+ 2344 033a 1344     		add	r3, r3, r2
+ 2345 033c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2346 033e 5A2B     		cmp	r3, #90
+ 2347 0340 74D8     		bhi	.L29
+ 2348              	.LBB13:
+  75:../src/font.cpp **** 			const uint16_t * _font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - 'A' + 26] : OTF_10X12[StrTo
+ 2349              		.loc 1 75 0 is_stmt 1
+ 2350 0342 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2351 0344 102B     		cmp	r3, #16
+ 2352 0346 0AD1     		bne	.L30
+ 2353              		.loc 1 75 0 is_stmt 0 discriminator 1
+ 2354 0348 3B6C     		ldr	r3, [r7, #64]
+ 2355 034a FA68     		ldr	r2, [r7, #12]
+ 2356 034c 1344     		add	r3, r3, r2
+ 2357 034e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2358 0350 273B     		subs	r3, r3, #39
+ 2359 0352 2622     		movs	r2, #38
+ 2360 0354 02FB03F3 		mul	r3, r2, r3
+ 2361 0358 754A     		ldr	r2, .L52
+ 2362 035a 1344     		add	r3, r3, r2
+ 2363 035c 0BE0     		b	.L31
+ 2364              	.L30:
+ 2365              		.loc 1 75 0 discriminator 2
+ 2366 035e 3B6C     		ldr	r3, [r7, #64]
+ 2367 0360 FA68     		ldr	r2, [r7, #12]
+ 2368 0362 1344     		add	r3, r3, r2
+ 2369 0364 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2370 0366 A3F12702 		sub	r2, r3, #39
+ 2371 036a 1346     		mov	r3, r2
+ 2372 036c 5B00     		lsls	r3, r3, #1
+ 2373 036e 1344     		add	r3, r3, r2
+ 2374 0370 DB00     		lsls	r3, r3, #3
+ 2375 0372 704A     		ldr	r2, .L52+4
+ 2376 0374 1344     		add	r3, r3, r2
+ 2377              	.L31:
+ 2378              		.loc 1 75 0 discriminator 4
+ 2379 0376 FB61     		str	r3, [r7, #28]
+ 2380              	.LBB14:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 44
+
+
+  76:../src/font.cpp **** 			for(int j = 0; j < arraySize; j++){
+ 2381              		.loc 1 76 0 is_stmt 1 discriminator 4
+ 2382 0378 0023     		movs	r3, #0
+ 2383 037a 7B63     		str	r3, [r7, #52]
+ 2384              	.L38:
+ 2385              		.loc 1 76 0 is_stmt 0 discriminator 1
+ 2386 037c 3B8D     		ldrh	r3, [r7, #40]
+ 2387 037e 7A6B     		ldr	r2, [r7, #52]
+ 2388 0380 9A42     		cmp	r2, r3
+ 2389 0382 80F2DB80 		bge	.L51
+ 2390              	.LBB15:
+ 2391              	.LBB16:
+  77:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2392              		.loc 1 77 0 is_stmt 1
+ 2393 0386 7B6B     		ldr	r3, [r7, #52]
+ 2394 0388 002B     		cmp	r3, #0
+ 2395 038a 00DA     		bge	.L33
+ 2396 038c 0F33     		adds	r3, r3, #15
+ 2397              	.L33:
+ 2398 038e 1B11     		asrs	r3, r3, #4
+ 2399 0390 5B00     		lsls	r3, r3, #1
+ 2400 0392 FA69     		ldr	r2, [r7, #28]
+ 2401 0394 1344     		add	r3, r3, r2
+ 2402 0396 1B88     		ldrh	r3, [r3]
+ 2403 0398 1946     		mov	r1, r3
+ 2404 039a 7B6B     		ldr	r3, [r7, #52]
+ 2405 039c 5A42     		rsbs	r2, r3, #0
+ 2406 039e 03F00F03 		and	r3, r3, #15
+ 2407 03a2 02F00F02 		and	r2, r2, #15
+ 2408 03a6 58BF     		it	pl
+ 2409 03a8 5342     		rsbpl	r3, r2, #0
+ 2410 03aa 41FA03F3 		asr	r3, r1, r3
+ 2411 03ae 03F00103 		and	r3, r3, #1
+ 2412 03b2 002B     		cmp	r3, #0
+ 2413 03b4 36D0     		beq	.L34
+ 2414              	.LBB17:
+  78:../src/font.cpp **** 					uint32_t PixelData = 0x80000000 + ((((y + (j / 16)) * 0x420) + x + (j % 16) + Offset) << 8) + 
+ 2415              		.loc 1 78 0
+ 2416 03b6 3A89     		ldrh	r2, [r7, #8]
+ 2417 03b8 7B6B     		ldr	r3, [r7, #52]
+ 2418 03ba 002B     		cmp	r3, #0
+ 2419 03bc 00DA     		bge	.L35
+ 2420 03be 0F33     		adds	r3, r3, #15
+ 2421              	.L35:
+ 2422 03c0 1B11     		asrs	r3, r3, #4
+ 2423 03c2 1A44     		add	r2, r2, r3
+ 2424 03c4 1346     		mov	r3, r2
+ 2425 03c6 5B01     		lsls	r3, r3, #5
+ 2426 03c8 1344     		add	r3, r3, r2
+ 2427 03ca 5B01     		lsls	r3, r3, #5
+ 2428 03cc 1A46     		mov	r2, r3
+ 2429 03ce 7B89     		ldrh	r3, [r7, #10]
+ 2430 03d0 1A44     		add	r2, r2, r3
+ 2431 03d2 7B6B     		ldr	r3, [r7, #52]
+ 2432 03d4 5942     		rsbs	r1, r3, #0
+ 2433 03d6 03F00F03 		and	r3, r3, #15
+ 2434 03da 01F00F01 		and	r1, r1, #15
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 45
+
+
+ 2435 03de 58BF     		it	pl
+ 2436 03e0 4B42     		rsbpl	r3, r1, #0
+ 2437 03e2 1A44     		add	r2, r2, r3
+ 2438 03e4 B7F84630 		ldrh	r3, [r7, #70]
+ 2439 03e8 1344     		add	r3, r3, r2
+ 2440 03ea 1B02     		lsls	r3, r3, #8
+ 2441 03ec 1A46     		mov	r2, r3
+ 2442 03ee 97F85030 		ldrb	r3, [r7, #80]	@ zero_extendqisi2
+ 2443 03f2 1344     		add	r3, r3, r2
+ 2444 03f4 03F10043 		add	r3, r3, #-2147483648
+ 2445 03f8 BB61     		str	r3, [r7, #24]
+  79:../src/font.cpp **** 					SSP_DATA = ((PixelData >> 16) & 0xFFFF);
+ 2446              		.loc 1 79 0
+ 2447 03fa 4F4A     		ldr	r2, .L52+8
+ 2448 03fc BB69     		ldr	r3, [r7, #24]
+ 2449 03fe 1B0C     		lsrs	r3, r3, #16
+ 2450 0400 1360     		str	r3, [r2]
+  80:../src/font.cpp **** 					SSP_DATA = (PixelData & 0xFFFF);
+ 2451              		.loc 1 80 0
+ 2452 0402 4D4A     		ldr	r2, .L52+8
+ 2453 0404 BB69     		ldr	r3, [r7, #24]
+ 2454 0406 9BB2     		uxth	r3, r3
+ 2455 0408 1360     		str	r3, [r2]
+ 2456              	.LBB18:
+  81:../src/font.cpp **** 					for(uint8_t i = 0; i < 9; i++);
+ 2457              		.loc 1 81 0
+ 2458 040a 0023     		movs	r3, #0
+ 2459 040c 87F83330 		strb	r3, [r7, #51]
+ 2460              	.L37:
+ 2461              		.loc 1 81 0 is_stmt 0 discriminator 3
+ 2462 0410 97F83330 		ldrb	r3, [r7, #51]	@ zero_extendqisi2
+ 2463 0414 082B     		cmp	r3, #8
+ 2464 0416 05D8     		bhi	.L34
+ 2465              		.loc 1 81 0 discriminator 2
+ 2466 0418 97F83330 		ldrb	r3, [r7, #51]	@ zero_extendqisi2
+ 2467 041c 0133     		adds	r3, r3, #1
+ 2468 041e 87F83330 		strb	r3, [r7, #51]
+ 2469 0422 F5E7     		b	.L37
+ 2470              	.L34:
+ 2471              	.LBE18:
+ 2472              	.LBE17:
+ 2473              	.LBE16:
+ 2474              	.LBE15:
+  76:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2475              		.loc 1 76 0 is_stmt 1 discriminator 2
+ 2476 0424 7B6B     		ldr	r3, [r7, #52]
+ 2477 0426 0133     		adds	r3, r3, #1
+ 2478 0428 7B63     		str	r3, [r7, #52]
+ 2479 042a A7E7     		b	.L38
+ 2480              	.L29:
+ 2481              	.LBE14:
+ 2482              	.LBE13:
+ 2483              	.LBB19:
+ 2484              	.LBB20:
+  82:../src/font.cpp **** 				}
+  83:../src/font.cpp **** 			}
+  84:../src/font.cpp **** 		}
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 46
+
+
+  85:../src/font.cpp **** 		else if(StrToDraw[i] >= '0' && StrToDraw[i] <= '9'){
+ 2485              		.loc 1 85 0
+ 2486 042c 3B6C     		ldr	r3, [r7, #64]
+ 2487 042e FA68     		ldr	r2, [r7, #12]
+ 2488 0430 1344     		add	r3, r3, r2
+ 2489 0432 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2490 0434 2F2B     		cmp	r3, #47
+ 2491 0436 40F28280 		bls	.L28
+ 2492              		.loc 1 85 0 is_stmt 0 discriminator 1
+ 2493 043a 3B6C     		ldr	r3, [r7, #64]
+ 2494 043c FA68     		ldr	r2, [r7, #12]
+ 2495 043e 1344     		add	r3, r3, r2
+ 2496 0440 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2497 0442 392B     		cmp	r3, #57
+ 2498 0444 7BD8     		bhi	.L28
+ 2499              	.LBB21:
+  86:../src/font.cpp **** 			const uint16_t * _font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - '0' + 52] : OTF_10X12[StrTo
+ 2500              		.loc 1 86 0 is_stmt 1
+ 2501 0446 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2502 0448 102B     		cmp	r3, #16
+ 2503 044a 0AD1     		bne	.L39
+ 2504              		.loc 1 86 0 is_stmt 0 discriminator 1
+ 2505 044c 3B6C     		ldr	r3, [r7, #64]
+ 2506 044e FA68     		ldr	r2, [r7, #12]
+ 2507 0450 1344     		add	r3, r3, r2
+ 2508 0452 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2509 0454 0433     		adds	r3, r3, #4
+ 2510 0456 2622     		movs	r2, #38
+ 2511 0458 02FB03F3 		mul	r3, r2, r3
+ 2512 045c 344A     		ldr	r2, .L52
+ 2513 045e 1344     		add	r3, r3, r2
+ 2514 0460 0AE0     		b	.L40
+ 2515              	.L39:
+ 2516              		.loc 1 86 0 discriminator 2
+ 2517 0462 3B6C     		ldr	r3, [r7, #64]
+ 2518 0464 FA68     		ldr	r2, [r7, #12]
+ 2519 0466 1344     		add	r3, r3, r2
+ 2520 0468 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2521 046a 1A1D     		adds	r2, r3, #4
+ 2522 046c 1346     		mov	r3, r2
+ 2523 046e 5B00     		lsls	r3, r3, #1
+ 2524 0470 1344     		add	r3, r3, r2
+ 2525 0472 DB00     		lsls	r3, r3, #3
+ 2526 0474 2F4A     		ldr	r2, .L52+4
+ 2527 0476 1344     		add	r3, r3, r2
+ 2528              	.L40:
+ 2529              		.loc 1 86 0 discriminator 4
+ 2530 0478 7B61     		str	r3, [r7, #20]
+ 2531              	.LBB22:
+  87:../src/font.cpp **** 			for(int j = 0; j < arraySize; j++){
+ 2532              		.loc 1 87 0 is_stmt 1 discriminator 4
+ 2533 047a 0023     		movs	r3, #0
+ 2534 047c FB62     		str	r3, [r7, #44]
+ 2535              	.L47:
+ 2536              		.loc 1 87 0 is_stmt 0 discriminator 1
+ 2537 047e 3B8D     		ldrh	r3, [r7, #40]
+ 2538 0480 FA6A     		ldr	r2, [r7, #44]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 47
+
+
+ 2539 0482 9A42     		cmp	r2, r3
+ 2540 0484 5BDA     		bge	.L28
+ 2541              	.LBB23:
+ 2542              	.LBB24:
+  88:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2543              		.loc 1 88 0 is_stmt 1
+ 2544 0486 FB6A     		ldr	r3, [r7, #44]
+ 2545 0488 002B     		cmp	r3, #0
+ 2546 048a 00DA     		bge	.L42
+ 2547 048c 0F33     		adds	r3, r3, #15
+ 2548              	.L42:
+ 2549 048e 1B11     		asrs	r3, r3, #4
+ 2550 0490 5B00     		lsls	r3, r3, #1
+ 2551 0492 7A69     		ldr	r2, [r7, #20]
+ 2552 0494 1344     		add	r3, r3, r2
+ 2553 0496 1B88     		ldrh	r3, [r3]
+ 2554 0498 1946     		mov	r1, r3
+ 2555 049a FB6A     		ldr	r3, [r7, #44]
+ 2556 049c 5A42     		rsbs	r2, r3, #0
+ 2557 049e 03F00F03 		and	r3, r3, #15
+ 2558 04a2 02F00F02 		and	r2, r2, #15
+ 2559 04a6 58BF     		it	pl
+ 2560 04a8 5342     		rsbpl	r3, r2, #0
+ 2561 04aa 41FA03F3 		asr	r3, r1, r3
+ 2562 04ae 03F00103 		and	r3, r3, #1
+ 2563 04b2 002B     		cmp	r3, #0
+ 2564 04b4 36D0     		beq	.L43
+ 2565              	.LBB25:
+  89:../src/font.cpp **** 					uint32_t PixelData = 0x80000000 + ((((y + (j / 16)) * 0x420) + x + (j % 16) + Offset) << 8) + 
+ 2566              		.loc 1 89 0
+ 2567 04b6 3A89     		ldrh	r2, [r7, #8]
+ 2568 04b8 FB6A     		ldr	r3, [r7, #44]
+ 2569 04ba 002B     		cmp	r3, #0
+ 2570 04bc 00DA     		bge	.L44
+ 2571 04be 0F33     		adds	r3, r3, #15
+ 2572              	.L44:
+ 2573 04c0 1B11     		asrs	r3, r3, #4
+ 2574 04c2 1A44     		add	r2, r2, r3
+ 2575 04c4 1346     		mov	r3, r2
+ 2576 04c6 5B01     		lsls	r3, r3, #5
+ 2577 04c8 1344     		add	r3, r3, r2
+ 2578 04ca 5B01     		lsls	r3, r3, #5
+ 2579 04cc 1A46     		mov	r2, r3
+ 2580 04ce 7B89     		ldrh	r3, [r7, #10]
+ 2581 04d0 1A44     		add	r2, r2, r3
+ 2582 04d2 FB6A     		ldr	r3, [r7, #44]
+ 2583 04d4 5942     		rsbs	r1, r3, #0
+ 2584 04d6 03F00F03 		and	r3, r3, #15
+ 2585 04da 01F00F01 		and	r1, r1, #15
+ 2586 04de 58BF     		it	pl
+ 2587 04e0 4B42     		rsbpl	r3, r1, #0
+ 2588 04e2 1A44     		add	r2, r2, r3
+ 2589 04e4 B7F84630 		ldrh	r3, [r7, #70]
+ 2590 04e8 1344     		add	r3, r3, r2
+ 2591 04ea 1B02     		lsls	r3, r3, #8
+ 2592 04ec 1A46     		mov	r2, r3
+ 2593 04ee 97F85030 		ldrb	r3, [r7, #80]	@ zero_extendqisi2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 48
+
+
+ 2594 04f2 1344     		add	r3, r3, r2
+ 2595 04f4 03F10043 		add	r3, r3, #-2147483648
+ 2596 04f8 3B61     		str	r3, [r7, #16]
+  90:../src/font.cpp **** 					SSP_DATA = ((PixelData >> 16) & 0xFFFF);
+ 2597              		.loc 1 90 0
+ 2598 04fa 0F4A     		ldr	r2, .L52+8
+ 2599 04fc 3B69     		ldr	r3, [r7, #16]
+ 2600 04fe 1B0C     		lsrs	r3, r3, #16
+ 2601 0500 1360     		str	r3, [r2]
+  91:../src/font.cpp **** 					SSP_DATA = (PixelData & 0xFFFF);
+ 2602              		.loc 1 91 0
+ 2603 0502 0D4A     		ldr	r2, .L52+8
+ 2604 0504 3B69     		ldr	r3, [r7, #16]
+ 2605 0506 9BB2     		uxth	r3, r3
+ 2606 0508 1360     		str	r3, [r2]
+ 2607              	.LBB26:
+  92:../src/font.cpp **** 					for(uint8_t i = 0; i < 9; i++);
+ 2608              		.loc 1 92 0
+ 2609 050a 0023     		movs	r3, #0
+ 2610 050c 87F82B30 		strb	r3, [r7, #43]
+ 2611              	.L46:
+ 2612              		.loc 1 92 0 is_stmt 0 discriminator 3
+ 2613 0510 97F82B30 		ldrb	r3, [r7, #43]	@ zero_extendqisi2
+ 2614 0514 082B     		cmp	r3, #8
+ 2615 0516 05D8     		bhi	.L43
+ 2616              		.loc 1 92 0 discriminator 2
+ 2617 0518 97F82B30 		ldrb	r3, [r7, #43]	@ zero_extendqisi2
+ 2618 051c 0133     		adds	r3, r3, #1
+ 2619 051e 87F82B30 		strb	r3, [r7, #43]
+ 2620 0522 F5E7     		b	.L46
+ 2621              	.L43:
+ 2622              	.LBE26:
+ 2623              	.LBE25:
+ 2624              	.LBE24:
+ 2625              	.LBE23:
+  87:../src/font.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2626              		.loc 1 87 0 is_stmt 1 discriminator 2
+ 2627 0524 FB6A     		ldr	r3, [r7, #44]
+ 2628 0526 0133     		adds	r3, r3, #1
+ 2629 0528 FB62     		str	r3, [r7, #44]
+ 2630 052a A8E7     		b	.L47
+ 2631              	.L50:
+ 2632              	.LBE22:
+ 2633              	.LBE21:
+ 2634              	.LBE20:
+ 2635              	.LBE19:
+ 2636              	.LBE12:
+ 2637              	.LBE11:
+  72:../src/font.cpp **** 		}
+ 2638              		.loc 1 72 0
+ 2639 052c 00BF     		nop
+ 2640 052e 06E0     		b	.L28
+ 2641              	.L53:
+ 2642              		.align	2
+ 2643              	.L52:
+ 2644 0530 00000000 		.word	_ZL9OTF_16X19
+ 2645 0534 00000000 		.word	_ZL9OTF_10X12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 49
+
+
+ 2646 0538 08800840 		.word	1074298888
+ 2647              	.L51:
+ 2648              	.LBB28:
+ 2649              	.LBB27:
+  83:../src/font.cpp **** 		}
+ 2650              		.loc 1 83 0
+ 2651 053c 00BF     		nop
+ 2652              	.L28:
+ 2653              	.LBE27:
+ 2654              	.LBE28:
+ 2655              	.LBE4:
+ 2656              	.LBE3:
+  11:../src/font.cpp **** 		if(i != 0){
+ 2657              		.loc 1 11 0 discriminator 2
+ 2658 053e 3B6C     		ldr	r3, [r7, #64]
+ 2659 0540 0133     		adds	r3, r3, #1
+ 2660 0542 3B64     		str	r3, [r7, #64]
+ 2661 0544 76E5     		b	.L48
+ 2662              	.L49:
+ 2663              	.LBE2:
+  93:../src/font.cpp **** 				}
+  94:../src/font.cpp **** 			}
+  95:../src/font.cpp **** 		}
+  96:../src/font.cpp **** 	}
+  97:../src/font.cpp **** }
+ 2664              		.loc 1 97 0
+ 2665 0546 00BF     		nop
+ 2666 0548 4C37     		adds	r7, r7, #76
+ 2667              		.cfi_def_cfa_offset 4
+ 2668 054a BD46     		mov	sp, r7
+ 2669              		.cfi_def_cfa_register 13
+ 2670              		@ sp needed
+ 2671 054c 80BC     		pop	{r7}
+ 2672              		.cfi_restore 7
+ 2673              		.cfi_def_cfa_offset 0
+ 2674 054e 7047     		bx	lr
+ 2675              		.cfi_endproc
+ 2676              	.LFE0:
+ 2678              		.text
+ 2679              	.Letext0:
+ 2680              		.file 2 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 2681              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 2682              		.file 4 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/font.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s 			page 50
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 font.cpp
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:16     .rodata._ZL9OTF_16X19:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:19     .rodata._ZL9OTF_16X19:00000000 _ZL9OTF_16X19
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:1199   .rodata._ZL9OTF_10X12:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:1202   .rodata._ZL9OTF_10X12:00000000 _ZL9OTF_10X12
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:1948   .text._Z12DrawStrConstPKctthh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:1955   .text._Z12DrawStrConstPKctthh:00000000 _Z12DrawStrConstPKctthh
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:2026   .text._Z12DrawStrConstPKctthh:00000064 $d
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:2117   .text._Z12DrawStrConstPKctthh:000001d0 $t
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:2644   .text._Z12DrawStrConstPKctthh:00000530 $d
+C:\Users\xavie\AppData\Local\Temp\cc1NjyIX.s:2651   .text._Z12DrawStrConstPKctthh:0000053c $t
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+
+NO UNDEFINED SYMBOLS

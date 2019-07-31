@@ -3,7 +3,7 @@
 #include "map.h"
 #include "m_obj.h"
 #include "entities.h"
-#include <stdint.h>
+#include <cstdint>
 
 #define PLAYER_Y_GRID_OFFSET	3
 #define TILE_WIDTH				40
@@ -12,21 +12,21 @@
 tile_type_e newWorldTiles[340] =
 {
 	V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V,
-	V,G1,G1,G1,G1,G1,G1,G1,G1,G1,G1,G5,G5,W9,W9,W9,W9,W9,W9, V, // row 0
-	V,G1,G1,G1,G9,G1,G2,G1,G1,G1,G5,G5,W9,W1,W8,W9,W2,W9,W9, V, // row 1
-	V,G1,G1,G1,G6,G1,G7,G1,G1,G1,G5,G5,W3,W9,W1,W9,W10,W9,W9,V, // row 2
-	V,G1,G9,G1,G11,G1,G1,G1,G1,G1,G5,G5,W9,W9,W11,W9,W4,W9,W9,V,// row 3
-	V,G1,G1,G1,G1,G8,G1,G1,G1,G1,G5,G5,W9,W9,W9,W5,W9,W9,W9, V, // row 4
-	V,G1,G1,G1,G3,G1,G1,G4,G1,G5,G5,G5,W9,W9,W9,W9,W9,W9,W9, V, // row 5
-	V,G1,G1,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,W9,W9,W9,G5,G5,G5, V, // row 6
-	V,G1,G1,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,G5,G5,G5,G5,G5,G5, V, // row 7
-	V,G1,G1,G1,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,G5,G5,G5,S9,S9, V, // row 8
-	V,G1,G1,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,G5,S9,S9,S9,S2,S2, V, // row 9
-	V,G1,G1,G1,G1,G1,G9,G1,G1,G5,G5,G5,G5,S9,S9,S8,S9,S10,S9,V, // row 10
-	V,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,S9,S9,S11,S9,S9,S1,S9,S9,V, // row 11
-	V,G1,G1,G1,G1,G1,G1,G1,G5,G5,G5,S9,S4,S9,S6,S6,S9,S9,S9, V, // row 12
-	V,G1,G1,G1,G1,G1,G1,G5,G5,G5,S9,S9,S9,S9,S5,S5,S9,S9,S9, V, // row 13
-	V,G1,G1,G9,G1,G1,G1,G5,G5,G5,S9,S9,S9,S9,S5,S9,S9,S9,S9, V, // row 14
+	V,G9,G2,G2,G1,G4,G3,G3,G3,G4,G3,G5,G5,W1,W1,W3,W2,W10,W9, V, // row 0
+	V,G1,G1,G1,G4,G3,G3,G3,G4,G1,G5,G5,W1,W1,W8,W4,W9,W9,W9, V, // row 1
+	V,G1,G1,G1,G1,G4,G3,G2,G1,G1,G5,G5,W3,W9,W9,W9,W9,W9,W4,V, // row 2
+	V,G1,G9,G1,G1,G1,G1,G1,G1,G9,G5,G5,W9,W9,W11,W9,W9,W9,W3,V,// row 3
+	V,G3,G1,G1,G9,G1,G1,G9,G1,G1,G5,G5,W9,W3,W2,W5,W9,W9,W9, V, // row 4
+	V,G3,G4,G1,G1,G2,G8,G1,G1,G5,G5,G5,W4,W9,W9,W9,W3,W9,W9, V, // row 5
+	V,G7,G7,G2,G1,G9,G1,G1,G9,G1,G5,G5,G5,W9,W8,W4,G5,G5,G5, V, // row 6
+	V,G6,G6,G7,G2,G1,G9,G1,G1,G1,G5,G5,G5,G5,G5,G5,G5,G5,G5, V, // row 7
+	V,G6,G6,G7,G7,G1,G1,G1,G9,G7,G7,G5,G5,G5,G5,G5,G5,S9,S9, V, // row 8
+	V,G6,G7,G7,G1,G1,G11,G1,G2,G7,G5,G5,G5,G5,S9,S9,S9,S2,S2, V, // row 9
+	V,G7,G2,G1,G1,G1,G9,G1,G1,G5,G5,G5,G5,S9,S9,S8,S9,S10,S9,V, // row 10
+	V,G7,G1,G1,G9,G3,G1,G1,G5,G5,G5,S9,S9,S11,S9,S9,S1,S9,S9,V, // row 11
+	V,G1,G9,G1,G3,G3,G4,G1,G5,G5,G5,S9,S4,S9,S6,S6,S9,S9,S9, V, // row 12
+	V,G1,G1,G1,G4,G3,G1,G5,G5,G5,S9,S9,S9,S9,S5,S5,S9,S9,S9, V, // row 13
+	V,G9,G1,G9,G1,G1,G1,G5,G5,G5,S9,S9,S9,S9,S5,S9,S9,S9,S9, V, // row 14
 	V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V
 };
 
@@ -35,19 +35,19 @@ uint8_t newWorldAssets[340] =
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 0
 	0, 0, B_CASTLE1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 1
-	0, 0, 0, 0, 0, 0, 0, 0, SAWMILL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 2
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 2
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 3
-	0, 0, GOLD_MINE, 0, 0, 0, 0, 0, 0, 0, BRIDGE, BRIDGE, 0, 0, 0, 0, 0, 0, 0, 0, // row 4
+	0, 0, FACTORY1, 0, 0, 0, 0, 0, 0, 0, BRIDGE, BRIDGE, 0, 0, 0, 0, 0, W_CASTLE1, 0, 0, // row 4
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 5
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 6
-	0, 0, 0, 0, 0, 0, FACTORY1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 7
-	0, 0, IRON_MINE, 0, 0, FARM, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 8
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 7
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 8
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 9
-	0, 0, 0, 0, 0, W_CASTLE1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 10
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 10
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 11
 	0, 0, 0, 0, 0, 0, 0, 0, BRIDGE, BRIDGE, BRIDGE, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 12
 	0, 0, TOWN_HALL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 13
-	0, 0, 0, 0, 0, QUARRY, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 14
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // row 14
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 };
 
@@ -329,12 +329,12 @@ void Tile::AddAsset(tile_asset_e asset)
 	this->isObstacle = true;
 }
 
-void Tile::SetNewMapObject()
+void Tile::SetNewMapObject(uint8_t level)
 {
 	delete object;
 
 	if(asset->type >= SAWMILL && asset->type <= GOLD_MINE)
-		object = new ResourceMine(asset->type);
+		object = new ResourceMine(this, asset->type, level);
 }
 /******************************************************************************/
 Tile * WorldManager::worldArray[GRID_WIDTH][GRID_HEIGHT];

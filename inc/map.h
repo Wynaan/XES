@@ -52,7 +52,7 @@ public:
 	bool hasAsset = false;
 	bool isObstacle = false;
 	bool isWater = false;
-	IMapObject * object;
+	IInteract * object;
 	Tile * neighbor[6] = {nullptr};
 	/* returns tile type */
 	tile_type_e getType() const;
@@ -72,8 +72,8 @@ public:
 	bool CheckTileOverlap(rectangle_t hitboxRect);
 	/* Modifies properties of the tile, adds it to the render list */
 	void AddAsset(tile_asset_e asset);
-
-	void SetNewMapObject();
+	/* Delete the interactable object and create a new one */
+	void SetNewMapObject(uint8_t level = 1);
 };
 /***********************************************************************************/
 class WorldManager{

@@ -9,7 +9,7 @@
 #include "interfaces.h"
 #include "engine.h"
 
-class Player : public IRender, public IUpdateable{
+class Player : public IRender, public IUpdate{
 private:
 	bool isMoving = false;				// already-in-movement flag
 	bool showSelector = false;			// render the selector flag
@@ -66,7 +66,7 @@ public:
 	/* Initialize controller corresponding to the player's controller ID */
 	void InitController();
 	/* */
-	IUpdateable* getMenuUpdateHandle();
+	IUpdate* getMenuUpdateHandle();
 	/* Updates all the different process for the player functions */
 	void Tick();
 

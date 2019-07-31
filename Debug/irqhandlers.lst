@@ -1,0 +1,1343 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"irqhandlers.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.bss._ZL2P0,"aw",%nobits
+  16              		.align	2
+  19              	_ZL2P0:
+  20 0000 00000000 		.space	12
+  20      00000000 
+  20      00000000 
+  21              		.section	.bss._ZL2P1,"aw",%nobits
+  22              		.align	2
+  25              	_ZL2P1:
+  26 0000 00000000 		.space	12
+  26      00000000 
+  26      00000000 
+  27              		.section	.bss._ZL2P2,"aw",%nobits
+  28              		.align	2
+  31              	_ZL2P2:
+  32 0000 00000000 		.space	12
+  32      00000000 
+  32      00000000 
+  33              		.section	.bss._ZL2P3,"aw",%nobits
+  34              		.align	2
+  37              	_ZL2P3:
+  38 0000 00000000 		.space	12
+  38      00000000 
+  38      00000000 
+  39              		.section	.bss._ZL2P4,"aw",%nobits
+  40              		.align	2
+  43              	_ZL2P4:
+  44 0000 00000000 		.space	12
+  44      00000000 
+  44      00000000 
+  45              		.section	.bss._ZL4TMR0,"aw",%nobits
+  46              		.align	2
+  49              	_ZL4TMR0:
+  50 0000 00000000 		.space	12
+  50      00000000 
+  50      00000000 
+  51              		.section	.bss._ZL4TMR1,"aw",%nobits
+  52              		.align	2
+  55              	_ZL4TMR1:
+  56 0000 00000000 		.space	12
+  56      00000000 
+  56      00000000 
+  57              		.section	.bss._ZL4TMR2,"aw",%nobits
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 2
+
+
+  58              		.align	2
+  61              	_ZL4TMR2:
+  62 0000 00000000 		.space	12
+  62      00000000 
+  62      00000000 
+  63              		.section	.bss._ZL4TMR3,"aw",%nobits
+  64              		.align	2
+  67              	_ZL4TMR3:
+  68 0000 00000000 		.space	12
+  68      00000000 
+  68      00000000 
+  69              		.section	.bss._ZL5UART0,"aw",%nobits
+  70              		.align	2
+  73              	_ZL5UART0:
+  74 0000 00000000 		.space	8
+  74      00000000 
+  75              		.section	.bss._ZL8Keyboard,"aw",%nobits
+  76              		.align	2
+  79              	_ZL8Keyboard:
+  80 0000 00000000 		.space	8
+  80      00000000 
+  81              		.section	.bss._ZL7Console,"aw",%nobits
+  82              		.align	2
+  85              	_ZL7Console:
+  86 0000 00000000 		.space	8
+  86      00000000 
+  87              		.section	.rodata._ZStL19piecewise_construct,"a",%progbits
+  88              		.align	2
+  91              	_ZStL19piecewise_construct:
+  92 0000 00       		.space	1
+  93              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  94              		.align	1
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  98              		.fpu softvfp
+ 100              	_ZL20__gthread_key_deletei:
+ 101              	.LFB918:
+ 102              		.file 1 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+   1:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Copyright (C) 1997-2017 Free Software Foundation, Inc.
+   4:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   5:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   7:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** version.
+  11:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  12:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** for more details.
+  16:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  17:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 3
+
+
+  19:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  21:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  26:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  29:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  31:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  36:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  41:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  43:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  45:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  48:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  50:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  52:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  54:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  56:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  57:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  58:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  60:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  62:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  64:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  65:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  66:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  68:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  72:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return NULL;
+  74:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  75:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 4
+
+
+  76:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  78:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  80:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  82:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  83:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  84:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  86:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  88:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  90:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  91:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void
+  93:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  95:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return;
+  96:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  97:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  98:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 100:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 102:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+ 106:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 107:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 108:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 112:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 115:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 116:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 118:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 120:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 122:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 123:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 124:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void *
+ 126:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 128:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 130:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 131:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 5
+
+
+ 133:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 135:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 137:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 138:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 139:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 140:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 142:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 144:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 145:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 146:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 147:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 149:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 151:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 153:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 154:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 155:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 157:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 159:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 161:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 162:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 163:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 165:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 167:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 168:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 169:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 170:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 172:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 174:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 176:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 177:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 178:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 179:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 181:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 183:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 184:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 185:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 186:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 188:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 6
+
+
+ 190:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 191:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 192:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 193:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 194:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 196:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 198:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 199:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 200:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 201:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ 202:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 203:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 205:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 206:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 207:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 208:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 210:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 211:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 213:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 214:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 215:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 216:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 217:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 219:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 220:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 221:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 222:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 225:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 226:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 227:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 228:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 103              		.loc 1 230 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 8
+ 106              		@ frame_needed = 1, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+ 108 0000 80B4     		push	{r7}
+ 109              		.cfi_def_cfa_offset 4
+ 110              		.cfi_offset 7, -4
+ 111 0002 83B0     		sub	sp, sp, #12
+ 112              		.cfi_def_cfa_offset 16
+ 113 0004 00AF     		add	r7, sp, #0
+ 114              		.cfi_def_cfa_register 7
+ 115 0006 7860     		str	r0, [r7, #4]
+ 231:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 116              		.loc 1 231 0
+ 117 0008 0023     		movs	r3, #0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 7
+
+
+ 232:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 118              		.loc 1 232 0
+ 119 000a 1846     		mov	r0, r3
+ 120 000c 0C37     		adds	r7, r7, #12
+ 121              		.cfi_def_cfa_offset 4
+ 122 000e BD46     		mov	sp, r7
+ 123              		.cfi_def_cfa_register 13
+ 124              		@ sp needed
+ 125 0010 80BC     		pop	{r7}
+ 126              		.cfi_restore 7
+ 127              		.cfi_def_cfa_offset 0
+ 128 0012 7047     		bx	lr
+ 129              		.cfi_endproc
+ 130              	.LFE918:
+ 132              		.section	.text.I2C0_IRQHandler,"ax",%progbits
+ 133              		.align	1
+ 134              		.global	I2C0_IRQHandler
+ 135              		.syntax unified
+ 136              		.thumb
+ 137              		.thumb_func
+ 138              		.fpu softvfp
+ 140              	I2C0_IRQHandler:
+ 141              	.LFB1529:
+ 142              		.file 2 "../src/irqhandlers.cpp"
+   1:../src/irqhandlers.cpp **** #include "lpc_xav.h"
+   2:../src/irqhandlers.cpp **** #include "savemanager.h"
+   3:../src/irqhandlers.cpp **** 
+   4:../src/irqhandlers.cpp **** extern _I2C I2C_Bus;
+   5:../src/irqhandlers.cpp **** 
+   6:../src/irqhandlers.cpp **** 
+   7:../src/irqhandlers.cpp **** extern "C" void I2C0_IRQHandler(void)
+   8:../src/irqhandlers.cpp **** {
+ 143              		.loc 2 8 0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 8
+ 146              		@ frame_needed = 1, uses_anonymous_args = 0
+ 147 0000 80B5     		push	{r7, lr}
+ 148              		.cfi_def_cfa_offset 8
+ 149              		.cfi_offset 7, -8
+ 150              		.cfi_offset 14, -4
+ 151 0002 82B0     		sub	sp, sp, #8
+ 152              		.cfi_def_cfa_offset 16
+ 153 0004 00AF     		add	r7, sp, #0
+ 154              		.cfi_def_cfa_register 7
+   9:../src/irqhandlers.cpp **** 	uint8_t Status = I2C_Bus.get_Status();
+ 155              		.loc 2 9 0
+ 156 0006 3348     		ldr	r0, .L23
+ 157 0008 FFF7FEFF 		bl	_ZN4_I2C10get_StatusEv
+ 158 000c 0346     		mov	r3, r0
+ 159 000e FB71     		strb	r3, [r7, #7]
+  10:../src/irqhandlers.cpp **** 
+  11:../src/irqhandlers.cpp **** 	switch(Status){
+ 160              		.loc 2 11 0
+ 161 0010 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 162 0012 302B     		cmp	r3, #48
+ 163 0014 36D0     		beq	.L5
+ 164 0016 302B     		cmp	r3, #48
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 8
+
+
+ 165 0018 0BDC     		bgt	.L6
+ 166 001a 182B     		cmp	r3, #24
+ 167 001c 1AD0     		beq	.L7
+ 168 001e 182B     		cmp	r3, #24
+ 169 0020 02DC     		bgt	.L8
+ 170 0022 082B     		cmp	r3, #8
+ 171 0024 12D0     		beq	.L9
+  12:../src/irqhandlers.cpp **** 	case 0x08: // STA transmitted
+  13:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Address(); // SLA+W/R will be transmitted
+  14:../src/irqhandlers.cpp **** 		break;
+  15:../src/irqhandlers.cpp **** 	case 0x18: // SLA+W transmitted, ACK received
+  16:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Next_Byte(); // Begin sending data
+  17:../src/irqhandlers.cpp **** 		break;
+  18:../src/irqhandlers.cpp **** 	case 0x28: // Byte in I2DAT transmitted, ACK received
+  19:../src/irqhandlers.cpp **** 		if(I2C_Bus.M_Counter_tx == I2C_Bus.Msg_Length){
+  20:../src/irqhandlers.cpp **** 			I2C_Bus.Send_Stop(); // Send stop if last byte
+  21:../src/irqhandlers.cpp **** 		}
+  22:../src/irqhandlers.cpp **** 		else{
+  23:../src/irqhandlers.cpp **** 			I2C_Bus.Send_Next_Byte(); // Send next data
+  24:../src/irqhandlers.cpp **** 		}
+  25:../src/irqhandlers.cpp **** 		break;
+  26:../src/irqhandlers.cpp **** 	case 0x20: // NOT ACK received
+  27:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Stop();
+  28:../src/irqhandlers.cpp **** 		break;
+  29:../src/irqhandlers.cpp **** 	case 0x30: // NOT ACK received
+  30:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Stop();
+  31:../src/irqhandlers.cpp **** 		break;
+  32:../src/irqhandlers.cpp **** 	case 0x40: // SLA+R transmitted, ACK received
+  33:../src/irqhandlers.cpp **** 		I2C_Bus.Clear_Interrupt(); // Send next data
+  34:../src/irqhandlers.cpp **** 		break;
+  35:../src/irqhandlers.cpp **** 	case 0x48: // NOT ACK received
+  36:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Stop();
+  37:../src/irqhandlers.cpp **** 		break;
+  38:../src/irqhandlers.cpp **** 	case 0x50: // Data received, ACK received
+  39:../src/irqhandlers.cpp **** 		if(I2C_Bus.M_Counter_rx == I2C_Bus.Read_Length){
+  40:../src/irqhandlers.cpp **** 			I2C_Bus.Send_Stop(); // Send stop if last byte
+  41:../src/irqhandlers.cpp **** 		}
+  42:../src/irqhandlers.cpp **** 		else{
+  43:../src/irqhandlers.cpp **** 			I2C_Bus.Read_Next_Byte(); // Send next data
+  44:../src/irqhandlers.cpp **** 		}
+  45:../src/irqhandlers.cpp **** 		break;
+  46:../src/irqhandlers.cpp **** 	case 0x58: // Data received, NOT ACK received
+  47:../src/irqhandlers.cpp **** 		I2C_Bus.Read_Next_Byte();
+  48:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Stop();
+  49:../src/irqhandlers.cpp **** 		break;
+  50:../src/irqhandlers.cpp **** 	case 0xF8:
+  51:../src/irqhandlers.cpp **** 		break;
+  52:../src/irqhandlers.cpp **** 	}
+  53:../src/irqhandlers.cpp **** }
+ 172              		.loc 2 53 0
+ 173 0026 50E0     		b	.L22
+ 174              	.L8:
+  11:../src/irqhandlers.cpp **** 	case 0x08: // STA transmitted
+ 175              		.loc 2 11 0
+ 176 0028 202B     		cmp	r3, #32
+ 177 002a 27D0     		beq	.L10
+ 178 002c 282B     		cmp	r3, #40
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 9
+
+
+ 179 002e 15D0     		beq	.L11
+ 180              		.loc 2 53 0
+ 181 0030 4BE0     		b	.L22
+ 182              	.L6:
+  11:../src/irqhandlers.cpp **** 	case 0x08: // STA transmitted
+ 183              		.loc 2 11 0
+ 184 0032 502B     		cmp	r3, #80
+ 185 0034 32D0     		beq	.L12
+ 186 0036 502B     		cmp	r3, #80
+ 187 0038 04DC     		bgt	.L13
+ 188 003a 402B     		cmp	r3, #64
+ 189 003c 26D0     		beq	.L14
+ 190 003e 482B     		cmp	r3, #72
+ 191 0040 28D0     		beq	.L15
+ 192              		.loc 2 53 0
+ 193 0042 42E0     		b	.L22
+ 194              	.L13:
+  11:../src/irqhandlers.cpp **** 	case 0x08: // STA transmitted
+ 195              		.loc 2 11 0
+ 196 0044 582B     		cmp	r3, #88
+ 197 0046 39D0     		beq	.L16
+ 198 0048 F82B     		cmp	r3, #248
+  51:../src/irqhandlers.cpp **** 	}
+ 199              		.loc 2 51 0
+ 200 004a 3EE0     		b	.L4
+ 201              	.L9:
+  13:../src/irqhandlers.cpp **** 		break;
+ 202              		.loc 2 13 0
+ 203 004c 2148     		ldr	r0, .L23
+ 204 004e FFF7FEFF 		bl	_ZN4_I2C12Send_AddressEv
+  14:../src/irqhandlers.cpp **** 	case 0x18: // SLA+W transmitted, ACK received
+ 205              		.loc 2 14 0
+ 206 0052 3AE0     		b	.L4
+ 207              	.L7:
+  16:../src/irqhandlers.cpp **** 		break;
+ 208              		.loc 2 16 0
+ 209 0054 1F48     		ldr	r0, .L23
+ 210 0056 FFF7FEFF 		bl	_ZN4_I2C14Send_Next_ByteEv
+  17:../src/irqhandlers.cpp **** 	case 0x28: // Byte in I2DAT transmitted, ACK received
+ 211              		.loc 2 17 0
+ 212 005a 36E0     		b	.L4
+ 213              	.L11:
+  19:../src/irqhandlers.cpp **** 			I2C_Bus.Send_Stop(); // Send stop if last byte
+ 214              		.loc 2 19 0
+ 215 005c 1D4B     		ldr	r3, .L23
+ 216 005e 93F80724 		ldrb	r2, [r3, #1031]	@ zero_extendqisi2
+ 217 0062 1C4B     		ldr	r3, .L23
+ 218 0064 93F80934 		ldrb	r3, [r3, #1033]	@ zero_extendqisi2
+ 219 0068 9A42     		cmp	r2, r3
+ 220 006a 03D1     		bne	.L18
+  20:../src/irqhandlers.cpp **** 		}
+ 221              		.loc 2 20 0
+ 222 006c 1948     		ldr	r0, .L23
+ 223 006e FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  25:../src/irqhandlers.cpp **** 	case 0x20: // NOT ACK received
+ 224              		.loc 2 25 0
+ 225 0072 2AE0     		b	.L4
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 10
+
+
+ 226              	.L18:
+  23:../src/irqhandlers.cpp **** 		}
+ 227              		.loc 2 23 0
+ 228 0074 1748     		ldr	r0, .L23
+ 229 0076 FFF7FEFF 		bl	_ZN4_I2C14Send_Next_ByteEv
+  25:../src/irqhandlers.cpp **** 	case 0x20: // NOT ACK received
+ 230              		.loc 2 25 0
+ 231 007a 26E0     		b	.L4
+ 232              	.L10:
+  27:../src/irqhandlers.cpp **** 		break;
+ 233              		.loc 2 27 0
+ 234 007c 1548     		ldr	r0, .L23
+ 235 007e FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  28:../src/irqhandlers.cpp **** 	case 0x30: // NOT ACK received
+ 236              		.loc 2 28 0
+ 237 0082 22E0     		b	.L4
+ 238              	.L5:
+  30:../src/irqhandlers.cpp **** 		break;
+ 239              		.loc 2 30 0
+ 240 0084 1348     		ldr	r0, .L23
+ 241 0086 FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  31:../src/irqhandlers.cpp **** 	case 0x40: // SLA+R transmitted, ACK received
+ 242              		.loc 2 31 0
+ 243 008a 1EE0     		b	.L4
+ 244              	.L14:
+  33:../src/irqhandlers.cpp **** 		break;
+ 245              		.loc 2 33 0
+ 246 008c 1148     		ldr	r0, .L23
+ 247 008e FFF7FEFF 		bl	_ZN4_I2C15Clear_InterruptEv
+  34:../src/irqhandlers.cpp **** 	case 0x48: // NOT ACK received
+ 248              		.loc 2 34 0
+ 249 0092 1AE0     		b	.L4
+ 250              	.L15:
+  36:../src/irqhandlers.cpp **** 		break;
+ 251              		.loc 2 36 0
+ 252 0094 0F48     		ldr	r0, .L23
+ 253 0096 FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  37:../src/irqhandlers.cpp **** 	case 0x50: // Data received, ACK received
+ 254              		.loc 2 37 0
+ 255 009a 16E0     		b	.L4
+ 256              	.L12:
+  39:../src/irqhandlers.cpp **** 			I2C_Bus.Send_Stop(); // Send stop if last byte
+ 257              		.loc 2 39 0
+ 258 009c 0D4B     		ldr	r3, .L23
+ 259 009e 93F80824 		ldrb	r2, [r3, #1032]	@ zero_extendqisi2
+ 260 00a2 0C4B     		ldr	r3, .L23
+ 261 00a4 93F80A34 		ldrb	r3, [r3, #1034]	@ zero_extendqisi2
+ 262 00a8 9A42     		cmp	r2, r3
+ 263 00aa 03D1     		bne	.L20
+  40:../src/irqhandlers.cpp **** 		}
+ 264              		.loc 2 40 0
+ 265 00ac 0948     		ldr	r0, .L23
+ 266 00ae FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  45:../src/irqhandlers.cpp **** 	case 0x58: // Data received, NOT ACK received
+ 267              		.loc 2 45 0
+ 268 00b2 0AE0     		b	.L4
+ 269              	.L20:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 11
+
+
+  43:../src/irqhandlers.cpp **** 		}
+ 270              		.loc 2 43 0
+ 271 00b4 0748     		ldr	r0, .L23
+ 272 00b6 FFF7FEFF 		bl	_ZN4_I2C14Read_Next_ByteEv
+  45:../src/irqhandlers.cpp **** 	case 0x58: // Data received, NOT ACK received
+ 273              		.loc 2 45 0
+ 274 00ba 06E0     		b	.L4
+ 275              	.L16:
+  47:../src/irqhandlers.cpp **** 		I2C_Bus.Send_Stop();
+ 276              		.loc 2 47 0
+ 277 00bc 0548     		ldr	r0, .L23
+ 278 00be FFF7FEFF 		bl	_ZN4_I2C14Read_Next_ByteEv
+  48:../src/irqhandlers.cpp **** 		break;
+ 279              		.loc 2 48 0
+ 280 00c2 0448     		ldr	r0, .L23
+ 281 00c4 FFF7FEFF 		bl	_ZN4_I2C9Send_StopEv
+  49:../src/irqhandlers.cpp **** 	case 0xF8:
+ 282              		.loc 2 49 0
+ 283 00c8 00BF     		nop
+ 284              	.L4:
+ 285              	.L22:
+ 286              		.loc 2 53 0
+ 287 00ca 00BF     		nop
+ 288 00cc 0837     		adds	r7, r7, #8
+ 289              		.cfi_def_cfa_offset 8
+ 290 00ce BD46     		mov	sp, r7
+ 291              		.cfi_def_cfa_register 13
+ 292              		@ sp needed
+ 293 00d0 80BD     		pop	{r7, pc}
+ 294              	.L24:
+ 295 00d2 00BF     		.align	2
+ 296              	.L23:
+ 297 00d4 00000000 		.word	I2C_Bus
+ 298              		.cfi_endproc
+ 299              	.LFE1529:
+ 301              		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 302              		.align	1
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.fpu softvfp
+ 308              	_Z41__static_initialization_and_destruction_0ii:
+ 309              	.LFB2038:
+ 310              		.loc 2 53 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 8
+ 313              		@ frame_needed = 1, uses_anonymous_args = 0
+ 314 0000 80B5     		push	{r7, lr}
+ 315              		.cfi_def_cfa_offset 8
+ 316              		.cfi_offset 7, -8
+ 317              		.cfi_offset 14, -4
+ 318 0002 84B0     		sub	sp, sp, #16
+ 319              		.cfi_def_cfa_offset 24
+ 320 0004 02AF     		add	r7, sp, #8
+ 321              		.cfi_def_cfa 7, 16
+ 322 0006 7860     		str	r0, [r7, #4]
+ 323 0008 3960     		str	r1, [r7]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 12
+
+
+ 324              		.loc 2 53 0
+ 325 000a 7B68     		ldr	r3, [r7, #4]
+ 326 000c 012B     		cmp	r3, #1
+ 327 000e 5BD1     		bne	.L27
+ 328              		.loc 2 53 0 is_stmt 0 discriminator 1
+ 329 0010 3B68     		ldr	r3, [r7]
+ 330 0012 4FF6FF72 		movw	r2, #65535
+ 331 0016 9342     		cmp	r3, r2
+ 332 0018 56D1     		bne	.L27
+ 333              		.file 3 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/lpc_xav.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "chip.h"
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "board.h"
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "cr_section_macros.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #ifndef LPC_XAV_H_
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define LPC_XAV_H_
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCONP	 *((uint32_t *)0x400FC0C4)
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL0 *((uint32_t *)0x400FC1A8)
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL1 *((uint32_t *)0x400FC1AC)
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_400KHZ	120
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_100KHZ 	480
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_50KHZ 	960
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_24MHZ	4
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_100KHZ  240
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SYS_FREQ ((uint32_t)96000000)
+  19:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  20:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {GPIO, Fct0x1, Fct0x2, Fct0x3}; 				// GPIO pin function
+  21:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {IN, OUT};										// GPIO direction
+  22:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Pullup, Repeater, Float, Pulldown, Default};	// GPIO input mode
+  23:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Normal, Open_Drain}; 							// GPIO output mode
+  24:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Level_Sensitive, Edge_Sensitive};				// EXT int mode
+  25:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {UND2, Rising_Edge, Falling_Edge, Both_Edges};	// Timer capture setting
+  26:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {CLK4, CLK0, CLK2, CLK8};						// Timer clock rate (number stands for divisor)
+  27:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Nothing, Clear, Set, Toggle};					// External match setting
+  28:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {MR0 = 0x1, MR1 = 0x2, MR2 = 0x4, MR3 = 0x8, CR0 = 0x10, CR1 = 0x20};// Timer interrupt flag b
+  29:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Disabled, Odd, Even = 3};						// UART Parity control
+  30:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Single_Edge, Double_Edge};					// Motor PWM mode
+  31:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Manual, Auto};								// AD Converter mode for starting conversions
+  32:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Master = 0x40, Slave = 0x44};					// I2C Mode
+  33:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {RORIM, RTIM, RXIM, TXIM};						// SSP Interrupt sources
+  34:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  35:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO;
+  36:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  37:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void EnableIRQ(uint8_t Int_bit); // Enables periph's NVIC interrupt
+  38:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void GPIO_Enable_Int(uint8_t PortNo, uint8_t PinNo, uint8_t Edge_Select);
+  39:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void Enable_EXT_Int(uint8_t ExtIntNo, uint8_t ExtMode);
+  40:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  41:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Port{ // Port object to provide pointers for the Lpc_IO class
+  42:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	friend LPC_IO;
+  43:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _PINCB; 	// Address of the first PINSEL register for desired port
+  44:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _FIO; 	// Address of the first FIO register
+  45:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _OD;		// Address of the open drain mode register
+  46:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetFct(uint8_t PinNo, uint8_t Fct);
+  47:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetDir(uint8_t PinNo, uint8_t Dir);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 13
+
+
+  48:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetMode(uint8_t PinNo, uint8_t Mode);
+  49:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetOpenDrain(uint8_t PinNo, uint8_t Mode );
+  50:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  51:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  52:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port(uint32_t* Pinsel_Add, // Constructor for LPC Port handles
+  53:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* FastIO_Add,
+  54:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* OpenDrain_Add);
+  55:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+  56:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  57:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO{ // Pin object to initialize all the register required for a pin functioning
+  58:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port& _Port;
+  59:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pin;
+  60:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Function;
+  61:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Direction;
+  62:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Mode;
+  63:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t OD_Mode;
+  64:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  65:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  66:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Out(bool State);
+  67:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set();
+  68:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear();
+  69:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  70:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO();
+  71:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO(	Port& PtrPort, // Constructor for IO pin handles.
+  72:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t PinNo,
+  73:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Fct,
+  74:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Dir = OUT,
+  75:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Md = Float,
+  76:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t OD = Normal);
+  77:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  78:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(bool OutputState) // Allows to use Object = boolean value; to set pin output
+  79:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  80:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		this->Out(OutputState);
+  81:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  82:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator==(bool BooleanValue)
+  83:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  84:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  85:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  86:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  87:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  88:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  89:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  90:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  91:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator!=(bool BooleanValue)
+  92:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  93:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  94:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  95:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  96:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  97:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  98:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  99:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 100:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 101:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 102:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Bus{ // Bus object can be declared to group Lpc_IO handles together and use it as one 8-bit r
+ 103:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO * Bits[8];
+ 104:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Value;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 14
+
+
+ 105:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 106:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 107:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Change_Value(uint8_t bus_value);
+ 108:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 109:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Bus(LPC_IO* LSB=nullptr, LPC_IO* B1=nullptr,
+ 110:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B2=nullptr, LPC_IO* B3=nullptr,
+ 111:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B4=nullptr, LPC_IO* B5=nullptr,
+ 112:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B6=nullptr, LPC_IO* MSB=nullptr);
+ 113:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 114:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(uint8_t bus_value)
+ 115:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 116:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(bus_value);
+ 117:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 118:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator+=(uint8_t increment_value)
+ 119:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 120:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(Value + increment_value);
+ 121:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 122:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 123:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 124:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Timer{ // Timer object to group together all of a timer's functions and registers
+ 125:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 126:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 127:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 128:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 129:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 130:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 131:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Edge_Sel[2];
+ 132:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Clk_Speed); // Uses the IRQ bit to determine which PCLKSEL to set
+ 133:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Counter(uint8_t Channel, uint8_t Edge_Mode);
+ 134:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Capture(uint8_t Channel, uint8_t Edge_Mode);
+ 135:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch(uint8_t Channel);
+ 136:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Match(uint8_t Channel, uint32_t Match_Value);
+ 137:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Ext_Match(uint8_t Channel, uint8_t Match_Setting);
+ 138:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Mat_Int(uint8_t Channel);
+ 139:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Cap_Int(uint8_t Channel);
+ 140:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset(); // Resets the TC
+ 141:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_IR();
+ 142:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Int(uint8_t FlagBit);
+ 143:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t get_CR(uint8_t Channel);
+ 144:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 145:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Timer(	uint32_t * PtrTimer, // Constructor function for timers
+ 146:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t P_bit,
+ 147:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t C_bit,
+ 148:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Int_bit);
+ 149:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 150:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 151:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class UART{
+ 152:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 153:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 154:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 155:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 156:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 157:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 158:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint32_t Baudrate);
+ 159:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Transmission(uint8_t Bit_Length, uint8_t Parity);
+ 160:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_RX_Int();
+ 161:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PutByte(char Byte);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 15
+
+
+ 162:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintStrConst(const char *StrToSend);
+ 163:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintDec(uint16_t NbrDec);
+ 164:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintFloat(uint16_t Scaled_Int);
+ 165:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void ClearScreen();
+ 166:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Int_Flag_Set();
+ 167:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_RBR();
+ 168:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 169:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	UART(uint32_t * PtrUART, uint8_t P_bit, uint8_t C_bit, uint8_t Int_bit);
+ 170:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 171:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 172:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class PWM{
+ 173:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 174:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 175:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 176:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	float Duty;
+ 177:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Set_Freq(uint32_t Freq); // Setup MR0 value that controls frequency of all single-e PW
+ 178:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch();
+ 179:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Duty(float DutyPercentage);
+ 180:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Increment_Duty();
+ 181:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Decrement_Duty();
+ 182:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Enable(); // Always use at the end of initialization, starts TC for all PWMs
+ 183:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 184:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	PWM(uint8_t Ch, uint8_t Edge_Sel);
+ 185:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 186:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 187:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class ADC{
+ 188:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 189:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 190:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 191:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Start_Burst_Conversion(uint8_t Sel_Val);
+ 192:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Stop_Burst_Conversion();
+ 193:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Start_Conversion();
+ 194:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Stop_Conversion();
+ 195:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int();
+ 196:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t get_12bit_Result();
+ 197:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 198:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	ADC(uint8_t Ch, uint32_t Target_Freq);
+ 199:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 200:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 201:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class DAC{
+ 202:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 203:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 204:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Output(uint16_t Val_10bit);
+ 205:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Out_Percent(uint8_t Percentage);
+ 206:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 207:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 208:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class _I2C{
+ 209:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 210:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 211:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 212:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 213:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t tx_buf[512];
+ 214:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t rx_buf[512];
+ 215:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Busy;
+ 216:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_tx;
+ 217:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_rx;
+ 218:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 16
+
+
+ 219:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Read_Length;
+ 220:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 221:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Bus_Mode, uint32_t I2C_Speed);
+ 222:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_Status();
+ 223:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence(uint8_t Slave_Address, uint16_t readLength = 0);
+ 224:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 225:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 226:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 227:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint8_t ByteToSend);
+ 228:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 229:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Read_Next_Byte();
+ 230:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Address();
+ 231:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Stop();
+ 232:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_nACK();
+ 233:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 234:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Interrupt();
+ 235:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 236:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	_I2C(uint32_t * PtrI2C, uint8_t C_bit, uint8_t Int_bit);
+ 237:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 238:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 239:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class SSP{
+ 240:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 241:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 242:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 243:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t Buffer[128];
+ 244:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 245:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t MIS = *(_Periph + 7);
+ 246:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter;
+ 247:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 248:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 249:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t ClkPrescaler, uint8_t DataSizeSelect, uint8_t CPOL, uint8_t CPHA);
+ 250:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence();
+ 251:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 252:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 253:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 254:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint16_t ByteToSend);
+ 255:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 256:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 257:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void End_Transfer();
+ 258:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int(uint8_t IntSelect);
+ 259:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Disable_Int(uint8_t IntSelect);
+ 260:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 261:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	SSP(uint32_t * PtrSSP, uint8_t C_bit, uint8_t Int_bit);
+ 262:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 263:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 264:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** // Mandatory objects declaration (Peripherals)
+ 265:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P0((uint32_t *)0x4002C000, (uint32_t *)0x2009C000, (uint32_t *)0x4002C068);
+ 334              		.loc 3 265 0 is_stmt 1
+ 335 001a 2D4B     		ldr	r3, .L28
+ 336 001c 2D4A     		ldr	r2, .L28+4
+ 337 001e 2E49     		ldr	r1, .L28+8
+ 338 0020 2E48     		ldr	r0, .L28+12
+ 339 0022 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 266:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P1((uint32_t *)0x4002C008, (uint32_t *)0x2009C020, (uint32_t *)0x4002C06C);
+ 340              		.loc 3 266 0
+ 341 0026 2E4B     		ldr	r3, .L28+16
+ 342 0028 2E4A     		ldr	r2, .L28+20
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 17
+
+
+ 343 002a 2F49     		ldr	r1, .L28+24
+ 344 002c 2F48     		ldr	r0, .L28+28
+ 345 002e FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 267:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P2((uint32_t *)0x4002C010, (uint32_t *)0x2009C040, (uint32_t *)0x4002C070);
+ 346              		.loc 3 267 0
+ 347 0032 2F4B     		ldr	r3, .L28+32
+ 348 0034 2F4A     		ldr	r2, .L28+36
+ 349 0036 3049     		ldr	r1, .L28+40
+ 350 0038 3048     		ldr	r0, .L28+44
+ 351 003a FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 268:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P3((uint32_t *)0x4002C018, (uint32_t *)0x2009C060, (uint32_t *)0x4002C074);
+ 352              		.loc 3 268 0
+ 353 003e 304B     		ldr	r3, .L28+48
+ 354 0040 304A     		ldr	r2, .L28+52
+ 355 0042 3149     		ldr	r1, .L28+56
+ 356 0044 3148     		ldr	r0, .L28+60
+ 357 0046 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 269:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P4((uint32_t *)0x4002C020, (uint32_t *)0x2009C080, (uint32_t *)0x4002C078);
+ 358              		.loc 3 269 0
+ 359 004a 314B     		ldr	r3, .L28+64
+ 360 004c 314A     		ldr	r2, .L28+68
+ 361 004e 3249     		ldr	r1, .L28+72
+ 362 0050 3248     		ldr	r0, .L28+76
+ 363 0052 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 270:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 271:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR0((uint32_t *)0x40004000, 1, 2, 1);
+ 364              		.loc 3 271 0
+ 365 0056 0123     		movs	r3, #1
+ 366 0058 0093     		str	r3, [sp]
+ 367 005a 0223     		movs	r3, #2
+ 368 005c 0122     		movs	r2, #1
+ 369 005e 4FF04021 		mov	r1, #1073758208
+ 370 0062 2F48     		ldr	r0, .L28+80
+ 371 0064 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 272:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR1((uint32_t *)0x40008000, 2, 4, 2);
+ 372              		.loc 3 272 0
+ 373 0068 0223     		movs	r3, #2
+ 374 006a 0093     		str	r3, [sp]
+ 375 006c 0423     		movs	r3, #4
+ 376 006e 0222     		movs	r2, #2
+ 377 0070 2C49     		ldr	r1, .L28+84
+ 378 0072 2D48     		ldr	r0, .L28+88
+ 379 0074 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 273:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR2((uint32_t *)0x40090000, 22, 12, 3);
+ 380              		.loc 3 273 0
+ 381 0078 0323     		movs	r3, #3
+ 382 007a 0093     		str	r3, [sp]
+ 383 007c 0C23     		movs	r3, #12
+ 384 007e 1622     		movs	r2, #22
+ 385 0080 2A49     		ldr	r1, .L28+92
+ 386 0082 2B48     		ldr	r0, .L28+96
+ 387 0084 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 274:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR3((uint32_t *)0x40094000, 23, 14, 4);
+ 388              		.loc 3 274 0
+ 389 0088 0423     		movs	r3, #4
+ 390 008a 0093     		str	r3, [sp]
+ 391 008c 0E23     		movs	r3, #14
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 18
+
+
+ 392 008e 1722     		movs	r2, #23
+ 393 0090 2849     		ldr	r1, .L28+100
+ 394 0092 2948     		ldr	r0, .L28+104
+ 395 0094 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 275:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 276:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART UART0((uint32_t *)0x4000C000, 3, 6, 5);
+ 396              		.loc 3 276 0
+ 397 0098 0523     		movs	r3, #5
+ 398 009a 0093     		str	r3, [sp]
+ 399 009c 0623     		movs	r3, #6
+ 400 009e 0322     		movs	r2, #3
+ 401 00a0 2649     		ldr	r1, .L28+108
+ 402 00a2 2748     		ldr	r0, .L28+112
+ 403 00a4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 277:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Keyboard((uint32_t *)0x40098000, 24, 16, 7);
+ 404              		.loc 3 277 0
+ 405 00a8 0723     		movs	r3, #7
+ 406 00aa 0093     		str	r3, [sp]
+ 407 00ac 1023     		movs	r3, #16
+ 408 00ae 1822     		movs	r2, #24
+ 409 00b0 2449     		ldr	r1, .L28+116
+ 410 00b2 2548     		ldr	r0, .L28+120
+ 411 00b4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 278:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Console((uint32_t *)0x4009C000, 25, 18, 8);
+ 412              		.loc 3 278 0
+ 413 00b8 0823     		movs	r3, #8
+ 414 00ba 0093     		str	r3, [sp]
+ 415 00bc 1223     		movs	r3, #18
+ 416 00be 1922     		movs	r2, #25
+ 417 00c0 2249     		ldr	r1, .L28+124
+ 418 00c2 2348     		ldr	r0, .L28+128
+ 419 00c4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 420              	.L27:
+ 421              		.loc 2 53 0
+ 422 00c8 00BF     		nop
+ 423 00ca 0837     		adds	r7, r7, #8
+ 424              		.cfi_def_cfa_offset 8
+ 425 00cc BD46     		mov	sp, r7
+ 426              		.cfi_def_cfa_register 13
+ 427              		@ sp needed
+ 428 00ce 80BD     		pop	{r7, pc}
+ 429              	.L29:
+ 430              		.align	2
+ 431              	.L28:
+ 432 00d0 68C00240 		.word	1073922152
+ 433 00d4 00C00920 		.word	537509888
+ 434 00d8 00C00240 		.word	1073922048
+ 435 00dc 00000000 		.word	_ZL2P0
+ 436 00e0 6CC00240 		.word	1073922156
+ 437 00e4 20C00920 		.word	537509920
+ 438 00e8 08C00240 		.word	1073922056
+ 439 00ec 00000000 		.word	_ZL2P1
+ 440 00f0 70C00240 		.word	1073922160
+ 441 00f4 40C00920 		.word	537509952
+ 442 00f8 10C00240 		.word	1073922064
+ 443 00fc 00000000 		.word	_ZL2P2
+ 444 0100 74C00240 		.word	1073922164
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 19
+
+
+ 445 0104 60C00920 		.word	537509984
+ 446 0108 18C00240 		.word	1073922072
+ 447 010c 00000000 		.word	_ZL2P3
+ 448 0110 78C00240 		.word	1073922168
+ 449 0114 80C00920 		.word	537510016
+ 450 0118 20C00240 		.word	1073922080
+ 451 011c 00000000 		.word	_ZL2P4
+ 452 0120 00000000 		.word	_ZL4TMR0
+ 453 0124 00800040 		.word	1073774592
+ 454 0128 00000000 		.word	_ZL4TMR1
+ 455 012c 00000940 		.word	1074331648
+ 456 0130 00000000 		.word	_ZL4TMR2
+ 457 0134 00400940 		.word	1074348032
+ 458 0138 00000000 		.word	_ZL4TMR3
+ 459 013c 00C00040 		.word	1073790976
+ 460 0140 00000000 		.word	_ZL5UART0
+ 461 0144 00800940 		.word	1074364416
+ 462 0148 00000000 		.word	_ZL8Keyboard
+ 463 014c 00C00940 		.word	1074380800
+ 464 0150 00000000 		.word	_ZL7Console
+ 465              		.cfi_endproc
+ 466              	.LFE2038:
+ 468              		.section	.text._GLOBAL__sub_I_I2C0_IRQHandler,"ax",%progbits
+ 469              		.align	1
+ 470              		.syntax unified
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.fpu softvfp
+ 475              	_GLOBAL__sub_I_I2C0_IRQHandler:
+ 476              	.LFB2043:
+ 477              		.loc 2 53 0
+ 478              		.cfi_startproc
+ 479              		@ args = 0, pretend = 0, frame = 0
+ 480              		@ frame_needed = 1, uses_anonymous_args = 0
+ 481 0000 80B5     		push	{r7, lr}
+ 482              		.cfi_def_cfa_offset 8
+ 483              		.cfi_offset 7, -8
+ 484              		.cfi_offset 14, -4
+ 485 0002 00AF     		add	r7, sp, #0
+ 486              		.cfi_def_cfa_register 7
+ 487              		.loc 2 53 0
+ 488 0004 4FF6FF71 		movw	r1, #65535
+ 489 0008 0120     		movs	r0, #1
+ 490 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 491 000e 80BD     		pop	{r7, pc}
+ 492              		.cfi_endproc
+ 493              	.LFE2043:
+ 495              		.section	.init_array,"aw",%init_array
+ 496              		.align	2
+ 497 0000 00000000 		.word	_GLOBAL__sub_I_I2C0_IRQHandler(target1)
+ 498              		.text
+ 499              	.Letext0:
+ 500              		.file 4 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 501              		.file 5 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 502              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdint.h"
+ 503              		.file 7 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 504              		.file 8 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 20
+
+
+ 505              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\s
+ 506              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 507              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 508              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 509              		.file 13 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 510              		.file 14 "<built-in>"
+ 511              		.file 15 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdio.h"
+ 512              		.file 16 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\type_
+ 513              		.file 17 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-n
+ 514              		.file 18 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 515              		.file 19 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\debug
+ 516              		.file 20 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cwcha
+ 517              		.file 21 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 518              		.file 22 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 519              		.file 23 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\new"
+ 520              		.file 24 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cloca
+ 521              		.file 25 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cctyp
+ 522              		.file 26 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 523              		.file 27 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdl
+ 524              		.file 28 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 525              		.file 29 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 526              		.file 30 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 527              		.file 31 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 528              		.file 32 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 529              		.file 33 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\wchar.h"
+ 530              		.file 34 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\locale.h"
+ 531              		.file 35 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\ctype.h"
+ 532              		.file 36 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 533              		.file 37 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\errno.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 irqhandlers.cpp
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:16     .bss._ZL2P0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:19     .bss._ZL2P0:00000000 _ZL2P0
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:22     .bss._ZL2P1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:25     .bss._ZL2P1:00000000 _ZL2P1
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:28     .bss._ZL2P2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:31     .bss._ZL2P2:00000000 _ZL2P2
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:34     .bss._ZL2P3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:37     .bss._ZL2P3:00000000 _ZL2P3
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:40     .bss._ZL2P4:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:43     .bss._ZL2P4:00000000 _ZL2P4
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:46     .bss._ZL4TMR0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:49     .bss._ZL4TMR0:00000000 _ZL4TMR0
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:52     .bss._ZL4TMR1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:55     .bss._ZL4TMR1:00000000 _ZL4TMR1
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:58     .bss._ZL4TMR2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:61     .bss._ZL4TMR2:00000000 _ZL4TMR2
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:64     .bss._ZL4TMR3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:67     .bss._ZL4TMR3:00000000 _ZL4TMR3
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:70     .bss._ZL5UART0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:73     .bss._ZL5UART0:00000000 _ZL5UART0
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:76     .bss._ZL8Keyboard:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:79     .bss._ZL8Keyboard:00000000 _ZL8Keyboard
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:82     .bss._ZL7Console:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:85     .bss._ZL7Console:00000000 _ZL7Console
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:88     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:91     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:94     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:100    .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:133    .text.I2C0_IRQHandler:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:140    .text.I2C0_IRQHandler:00000000 I2C0_IRQHandler
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:297    .text.I2C0_IRQHandler:000000d4 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:302    .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:308    .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:432    .text._Z41__static_initialization_and_destruction_0ii:000000d0 $d
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:469    .text._GLOBAL__sub_I_I2C0_IRQHandler:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:475    .text._GLOBAL__sub_I_I2C0_IRQHandler:00000000 _GLOBAL__sub_I_I2C0_IRQHandler
+C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s:496    .init_array:00000000 $d
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.c4e7eaf7330236ae510314a23d74e6ca
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 22
+
+
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.139632325ccc020d697d2fcf83ee170f
+                           .group:00000000 wm4.board.h.33.b3d60928436b978782af3158a25a7b77
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.187.422da5f95ac1285e95faf42258f23242
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stddef.h.39.101367dade8a53b166775e1434b00616
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.f9d7979a479d57685780efa849031ac4
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.lpc_xav.h.6.5aa75daa274402c8e369cf781056e607
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.cpp_type_traits.h.33.9f2bfd8c4471a9a299f6da3ec24c745c
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccaSloLg.s 			page 23
+
+
+                           .group:00000000 wm4.concept_check.h.31.f19605d278e56917c68a56d378be308c
+                           .group:00000000 wm4.type_traits.30.32b820b957e206cbc57b9805350afbca
+                           .group:00000000 wm4.move.h.159.368bac456bc1dfb8448d51bb65764956
+                           .group:00000000 wm4.assertions.h.30.f3970bbdad8b12088edf616ddeecdc90
+                           .group:00000000 wm4.stl_iterator.h.409.7a84ee40267bb1222b7cd9a74055edfb
+                           .group:00000000 wm4.debug.h.30.70fe957e8e7c7ceba3caf19b0959f126
+                           .group:00000000 wm4.stl_algobase.h.491.ec4060988bfff82dc579decdb75c72d6
+                           .group:00000000 wm4.wchar.h.2.f837619576d797e948eb58c44fac4678
+                           .group:00000000 wm4.stddef.h.161.9f48187563b2a85291a91832aa425498
+                           .group:00000000 wm4.wchar.h.85.2dade3bd756ac8674ed46ca1e448082a
+                           .group:00000000 wm4.cwchar.48.c4e882638bf84f6da89479dda6fe8e17
+                           .group:00000000 wm4.cxxabi_init_exception.h.42.029852b0f286014c9c193b74ad22df55
+                           .group:00000000 wm4.allocator.h.52.0ceafb36dc1b82dbfa6b05003082e3f5
+                           .group:00000000 wm4.locale.h.8.27d0fe4c0abbb6f8893a1fa7c1799fd9
+                           .group:00000000 wm4.stddef.h.161.38688f2eb958a8ed58fdb61ffe554c94
+                           .group:00000000 wm4.locale.h.16.90d16f662e7119f5b192650a45179c6c
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.cf64fe4c5e8c0ac0f52f1143312d4909
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.stl_function.h.57.6639ab8e57d2230b4b27118173a32750
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.edc94d4398c0534988962be77dc3c2e1
+                           .group:00000000 wm4.atomic_word.h.30.9e0ac69fd462d5e650933e05133b4afa
+                           .group:00000000 wm4.alloc_traits.h.31.c41c7c4789404962122a4e991dfa3abf
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.cstdio.45.1ffaea3e7c26dce1e03f5847a7439edb
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.1ecd7b1049497a0ab61da0f6cbd4b0c6
+                           .group:00000000 wm4.functional_hash.h.31.d995554db01f631b375a95ecfc605ca0
+                           .group:00000000 wm4.map.h.9.a59b4e1233d5777952b9a6cfa331d012
+                           .group:00000000 wm4.stl_deque.h.57.55fe6ac7ebde76ce17bda7fba9be08c0
+
+UNDEFINED SYMBOLS
+_ZN4_I2C10get_StatusEv
+_ZN4_I2C12Send_AddressEv
+_ZN4_I2C14Send_Next_ByteEv
+_ZN4_I2C9Send_StopEv
+_ZN4_I2C15Clear_InterruptEv
+_ZN4_I2C14Read_Next_ByteEv
+I2C_Bus
+_ZN4PortC1EPmS0_S0_
+_ZN5TimerC1EPmhhh
+_ZN4UARTC1EPmhhh

@@ -1,0 +1,1014 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"map_objects.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZStL19piecewise_construct,"a",%progbits
+  16              		.align	2
+  19              	_ZStL19piecewise_construct:
+  20 0000 00       		.space	1
+  21              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  22              		.align	1
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	_ZL20__gthread_key_deletei:
+  29              	.LFB599:
+  30              		.file 1 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+   1:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Copyright (C) 1997-2017 Free Software Foundation, Inc.
+   4:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   5:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   7:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** version.
+  11:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  12:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** for more details.
+  16:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  17:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  21:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  26:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  29:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 2
+
+
+  31:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  36:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  41:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  43:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  45:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  48:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  50:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  52:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  54:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  56:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  57:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  58:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  60:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  62:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  64:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  65:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  66:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  68:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  72:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return NULL;
+  74:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  75:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  76:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  78:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  80:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  82:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  83:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  84:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  86:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 3
+
+
+  88:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  90:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  91:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void
+  93:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  95:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return;
+  96:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  97:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  98:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 100:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 102:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+ 106:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 107:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 108:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 112:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 115:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 116:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 118:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 120:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 122:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 123:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 124:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void *
+ 126:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 128:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 130:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 131:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 133:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 135:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 137:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 138:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 139:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 140:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 142:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 144:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 4
+
+
+ 145:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 146:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 147:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 149:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 151:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 153:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 154:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 155:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 157:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 159:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 161:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 162:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 163:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 165:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 167:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 168:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 169:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 170:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 172:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 174:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 176:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 177:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 178:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 179:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 181:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 183:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 184:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 185:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 186:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 188:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 191:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 192:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 193:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 194:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 196:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 198:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 199:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 200:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 201:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 5
+
+
+ 202:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 203:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 205:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 206:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 207:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 208:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 210:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 211:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 213:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 214:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 215:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 216:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 217:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 219:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 220:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 221:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 222:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 225:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 226:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 227:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 228:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  31              		.loc 1 230 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  43 0006 7860     		str	r0, [r7, #4]
+ 231:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+  44              		.loc 1 231 0
+  45 0008 0023     		movs	r3, #0
+ 232:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  46              		.loc 1 232 0
+  47 000a 1846     		mov	r0, r3
+  48 000c 0C37     		adds	r7, r7, #12
+  49              		.cfi_def_cfa_offset 4
+  50 000e BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0010 80BC     		pop	{r7}
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 0012 7047     		bx	lr
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 6
+
+
+  57              		.cfi_endproc
+  58              	.LFE599:
+  60              		.section	.text._ZN7IRenderD2Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+  61              		.align	1
+  62              		.weak	_ZN7IRenderD2Ev
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  66              		.fpu softvfp
+  68              	_ZN7IRenderD2Ev:
+  69              	.LFB957:
+  70              		.file 2 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/interfaces.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #ifndef INTERFACES_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #define INTERFACES_H_
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #include "xav_data.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** /* IRender is the interface that all classes that intend to draw something on the screen
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * must inherit. Each subclass must implement the Draw() method. This function must be
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * implement in such a way that the Renderer::AddToFrame method can push a pointer to the
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * object as well as the copy of the drawBox of this object, declared here, to two vectors.
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * The Renderer::Update method will iterate through these vectors to render the next frame.
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * Alternatively, IRender child classes can also be added to a special "callback" vector
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * using the Renderer::AddToCallback method, which will render two frames after the function
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * is called.                                                                             */
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** class IRender{
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	rectangle_t drawBox;
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual void Draw(rectangle_t drawBox) = 0;
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual ~IRender() {}
+  71              		.loc 2 17 0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 8
+  74              		@ frame_needed = 1, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0000 80B4     		push	{r7}
+  77              		.cfi_def_cfa_offset 4
+  78              		.cfi_offset 7, -4
+  79 0002 83B0     		sub	sp, sp, #12
+  80              		.cfi_def_cfa_offset 16
+  81 0004 00AF     		add	r7, sp, #0
+  82              		.cfi_def_cfa_register 7
+  83 0006 7860     		str	r0, [r7, #4]
+  84              	.LBB2:
+  85              		.loc 2 17 0
+  86 0008 044A     		ldr	r2, .L5
+  87 000a 7B68     		ldr	r3, [r7, #4]
+  88 000c 1A60     		str	r2, [r3]
+  89              	.LBE2:
+  90 000e 7B68     		ldr	r3, [r7, #4]
+  91 0010 1846     		mov	r0, r3
+  92 0012 0C37     		adds	r7, r7, #12
+  93              		.cfi_def_cfa_offset 4
+  94 0014 BD46     		mov	sp, r7
+  95              		.cfi_def_cfa_register 13
+  96              		@ sp needed
+  97 0016 80BC     		pop	{r7}
+  98              		.cfi_restore 7
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 7
+
+
+  99              		.cfi_def_cfa_offset 0
+ 100 0018 7047     		bx	lr
+ 101              	.L6:
+ 102 001a 00BF     		.align	2
+ 103              	.L5:
+ 104 001c 08000000 		.word	_ZTV7IRender+8
+ 105              		.cfi_endproc
+ 106              	.LFE957:
+ 108              		.weak	_ZN7IRenderD1Ev
+ 109              		.thumb_set _ZN7IRenderD1Ev,_ZN7IRenderD2Ev
+ 110              		.section	.text._ZN7IRenderD0Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+ 111              		.align	1
+ 112              		.weak	_ZN7IRenderD0Ev
+ 113              		.syntax unified
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.fpu softvfp
+ 118              	_ZN7IRenderD0Ev:
+ 119              	.LFB959:
+ 120              		.loc 2 17 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 1, uses_anonymous_args = 0
+ 124 0000 80B5     		push	{r7, lr}
+ 125              		.cfi_def_cfa_offset 8
+ 126              		.cfi_offset 7, -8
+ 127              		.cfi_offset 14, -4
+ 128 0002 82B0     		sub	sp, sp, #8
+ 129              		.cfi_def_cfa_offset 16
+ 130 0004 00AF     		add	r7, sp, #0
+ 131              		.cfi_def_cfa_register 7
+ 132 0006 7860     		str	r0, [r7, #4]
+ 133              		.loc 2 17 0
+ 134 0008 7868     		ldr	r0, [r7, #4]
+ 135 000a FFF7FEFF 		bl	_ZN7IRenderD1Ev
+ 136 000e 1421     		movs	r1, #20
+ 137 0010 7868     		ldr	r0, [r7, #4]
+ 138 0012 FFF7FEFF 		bl	_ZdlPvj
+ 139 0016 7B68     		ldr	r3, [r7, #4]
+ 140 0018 1846     		mov	r0, r3
+ 141 001a 0837     		adds	r7, r7, #8
+ 142              		.cfi_def_cfa_offset 8
+ 143 001c BD46     		mov	sp, r7
+ 144              		.cfi_def_cfa_register 13
+ 145              		@ sp needed
+ 146 001e 80BD     		pop	{r7, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE959:
+ 150              		.section	.text._ZN7Default14OnUserInteractEv,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	_ZN7Default14OnUserInteractEv
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.fpu softvfp
+ 158              	_ZN7Default14OnUserInteractEv:
+ 159              	.LFB1618:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 8
+
+
+ 160              		.file 3 "../src/map_objects.cpp"
+   1:../src/map_objects.cpp **** #include "map_objects.h"
+   2:../src/map_objects.cpp **** #include "gui.h"
+   3:../src/map_objects.cpp **** #include "ps2controller.h"
+   4:../src/map_objects.cpp **** #include "board.h"
+   5:../src/map_objects.cpp **** 
+   6:../src/map_objects.cpp **** void Default::OnUserInteract()
+   7:../src/map_objects.cpp **** {
+ 161              		.loc 3 7 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166 0000 80B4     		push	{r7}
+ 167              		.cfi_def_cfa_offset 4
+ 168              		.cfi_offset 7, -4
+ 169 0002 83B0     		sub	sp, sp, #12
+ 170              		.cfi_def_cfa_offset 16
+ 171 0004 00AF     		add	r7, sp, #0
+ 172              		.cfi_def_cfa_register 7
+ 173 0006 7860     		str	r0, [r7, #4]
+   8:../src/map_objects.cpp **** 
+   9:../src/map_objects.cpp **** }
+ 174              		.loc 3 9 0
+ 175 0008 00BF     		nop
+ 176 000a 0C37     		adds	r7, r7, #12
+ 177              		.cfi_def_cfa_offset 4
+ 178 000c BD46     		mov	sp, r7
+ 179              		.cfi_def_cfa_register 13
+ 180              		@ sp needed
+ 181 000e 80BC     		pop	{r7}
+ 182              		.cfi_restore 7
+ 183              		.cfi_def_cfa_offset 0
+ 184 0010 7047     		bx	lr
+ 185              		.cfi_endproc
+ 186              	.LFE1618:
+ 188              		.section	.text._ZN4City14OnUserInteractEv,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	_ZN4City14OnUserInteractEv
+ 191              		.syntax unified
+ 192              		.thumb
+ 193              		.thumb_func
+ 194              		.fpu softvfp
+ 196              	_ZN4City14OnUserInteractEv:
+ 197              	.LFB1619:
+  10:../src/map_objects.cpp **** 
+  11:../src/map_objects.cpp **** void City::OnUserInteract()
+  12:../src/map_objects.cpp **** {
+ 198              		.loc 3 12 0
+ 199              		.cfi_startproc
+ 200              		@ args = 0, pretend = 0, frame = 8
+ 201              		@ frame_needed = 1, uses_anonymous_args = 0
+ 202              		@ link register save eliminated.
+ 203 0000 80B4     		push	{r7}
+ 204              		.cfi_def_cfa_offset 4
+ 205              		.cfi_offset 7, -4
+ 206 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 9
+
+
+ 207              		.cfi_def_cfa_offset 16
+ 208 0004 00AF     		add	r7, sp, #0
+ 209              		.cfi_def_cfa_register 7
+ 210 0006 7860     		str	r0, [r7, #4]
+  13:../src/map_objects.cpp **** 
+  14:../src/map_objects.cpp **** }
+ 211              		.loc 3 14 0
+ 212 0008 00BF     		nop
+ 213 000a 0C37     		adds	r7, r7, #12
+ 214              		.cfi_def_cfa_offset 4
+ 215 000c BD46     		mov	sp, r7
+ 216              		.cfi_def_cfa_register 13
+ 217              		@ sp needed
+ 218 000e 80BC     		pop	{r7}
+ 219              		.cfi_restore 7
+ 220              		.cfi_def_cfa_offset 0
+ 221 0010 7047     		bx	lr
+ 222              		.cfi_endproc
+ 223              	.LFE1619:
+ 225              		.section	.text._ZN12ResourceMine14OnUserInteractEv,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	_ZN12ResourceMine14OnUserInteractEv
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.fpu softvfp
+ 233              	_ZN12ResourceMine14OnUserInteractEv:
+ 234              	.LFB1620:
+  15:../src/map_objects.cpp **** 
+  16:../src/map_objects.cpp **** void ResourceMine::OnUserInteract()
+  17:../src/map_objects.cpp **** {
+ 235              		.loc 3 17 0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 136
+ 238              		@ frame_needed = 1, uses_anonymous_args = 0
+ 239 0000 80B5     		push	{r7, lr}
+ 240              		.cfi_def_cfa_offset 8
+ 241              		.cfi_offset 7, -8
+ 242              		.cfi_offset 14, -4
+ 243 0002 A2B0     		sub	sp, sp, #136
+ 244              		.cfi_def_cfa_offset 144
+ 245 0004 00AF     		add	r7, sp, #0
+ 246              		.cfi_def_cfa_register 7
+ 247 0006 7860     		str	r0, [r7, #4]
+  18:../src/map_objects.cpp **** 	bool exit = false;
+ 248              		.loc 3 18 0
+ 249 0008 0023     		movs	r3, #0
+ 250 000a 87F88730 		strb	r3, [r7, #135]
+  19:../src/map_objects.cpp **** 	ps2_inputs_t userInput;
+  20:../src/map_objects.cpp **** 	ps2_inputs_t keyState;
+  21:../src/map_objects.cpp **** 	ResourceMineMenu GUI;
+ 251              		.loc 3 21 0
+ 252 000e 07F10C03 		add	r3, r7, #12
+ 253 0012 1846     		mov	r0, r3
+ 254 0014 FFF7FEFF 		bl	_ZN16ResourceMineMenuC1Ev
+  22:../src/map_objects.cpp **** 
+  23:../src/map_objects.cpp **** 	GUI.selection = 0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 10
+
+
+ 255              		.loc 3 23 0
+ 256 0018 0023     		movs	r3, #0
+ 257 001a 87F82630 		strb	r3, [r7, #38]
+  24:../src/map_objects.cpp **** 
+  25:../src/map_objects.cpp **** 	GUI.displayedVal = data;
+ 258              		.loc 3 25 0
+ 259 001e 7B68     		ldr	r3, [r7, #4]
+ 260 0020 07F12800 		add	r0, r7, #40
+ 261 0024 0433     		adds	r3, r3, #4
+ 262 0026 4C22     		movs	r2, #76
+ 263 0028 1946     		mov	r1, r3
+ 264 002a FFF7FEFF 		bl	memcpy
+ 265              	.L16:
+  26:../src/map_objects.cpp **** 
+  27:../src/map_objects.cpp **** 	while(!exit){
+ 266              		.loc 3 27 0
+ 267 002e 97F88730 		ldrb	r3, [r7, #135]	@ zero_extendqisi2
+ 268 0032 002B     		cmp	r3, #0
+ 269 0034 35D1     		bne	.L12
+  28:../src/map_objects.cpp **** 		if(LPC_TIMER0->TC >= 1600000){
+ 270              		.loc 3 28 0
+ 271 0036 4FF04023 		mov	r3, #1073758208
+ 272 003a 9B68     		ldr	r3, [r3, #8]
+ 273 003c 1D4A     		ldr	r2, .L17
+ 274 003e 9342     		cmp	r3, r2
+ 275 0040 8CBF     		ite	hi
+ 276 0042 0123     		movhi	r3, #1
+ 277 0044 0023     		movls	r3, #0
+ 278 0046 DBB2     		uxtb	r3, r3
+ 279 0048 002B     		cmp	r3, #0
+ 280 004a 09D0     		beq	.L13
+  29:../src/map_objects.cpp **** 			LPC_TIMER0->TC = 0;
+ 281              		.loc 3 29 0
+ 282 004c 4FF04023 		mov	r3, #1073758208
+ 283 0050 0022     		movs	r2, #0
+ 284 0052 9A60     		str	r2, [r3, #8]
+  30:../src/map_objects.cpp **** 			PollController(0, &userInput);
+ 285              		.loc 3 30 0
+ 286 0054 07F17C03 		add	r3, r7, #124
+ 287 0058 1946     		mov	r1, r3
+ 288 005a 0020     		movs	r0, #0
+ 289 005c FFF7FEFF 		bl	_Z14PollControllerbP12ps2_inputs_t
+ 290              	.L13:
+  31:../src/map_objects.cpp **** 		}
+  32:../src/map_objects.cpp **** 
+  33:../src/map_objects.cpp **** 		if(userInput.Button.X && keyState.Button.X == RELEASED){
+ 291              		.loc 3 33 0
+ 292 0060 97F87C30 		ldrb	r3, [r7, #124]	@ zero_extendqisi2
+ 293 0064 03F00203 		and	r3, r3, #2
+ 294 0068 DBB2     		uxtb	r3, r3
+ 295 006a 002B     		cmp	r3, #0
+ 296 006c 0DD0     		beq	.L14
+ 297              		.loc 3 33 0 is_stmt 0 discriminator 1
+ 298 006e 97F87430 		ldrb	r3, [r7, #116]	@ zero_extendqisi2
+ 299 0072 03F00203 		and	r3, r3, #2
+ 300 0076 DBB2     		uxtb	r3, r3
+ 301 0078 002B     		cmp	r3, #0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 11
+
+
+ 302 007a 06D1     		bne	.L14
+  34:../src/map_objects.cpp **** 			keyState.Button.X = PRESSED;
+ 303              		.loc 3 34 0 is_stmt 1
+ 304 007c 97F87430 		ldrb	r3, [r7, #116]
+ 305 0080 43F00203 		orr	r3, r3, #2
+ 306 0084 87F87430 		strb	r3, [r7, #116]
+ 307 0088 05E0     		b	.L15
+ 308              	.L14:
+  35:../src/map_objects.cpp **** 		}
+  36:../src/map_objects.cpp **** 		else
+  37:../src/map_objects.cpp **** 			keyState.Button.X = RELEASED;
+ 309              		.loc 3 37 0
+ 310 008a 97F87430 		ldrb	r3, [r7, #116]
+ 311 008e 6FF34103 		bfc	r3, #1, #1
+ 312 0092 87F87430 		strb	r3, [r7, #116]
+ 313              	.L15:
+  38:../src/map_objects.cpp **** 
+  39:../src/map_objects.cpp **** 		GUI.ProcessGraphics();
+ 314              		.loc 3 39 0
+ 315 0096 07F10C03 		add	r3, r7, #12
+ 316 009a 1846     		mov	r0, r3
+ 317 009c FFF7FEFF 		bl	_ZN16ResourceMineMenu15ProcessGraphicsEv
+  27:../src/map_objects.cpp **** 		if(LPC_TIMER0->TC >= 1600000){
+ 318              		.loc 3 27 0
+ 319 00a0 C5E7     		b	.L16
+ 320              	.L12:
+  21:../src/map_objects.cpp **** 
+ 321              		.loc 3 21 0
+ 322 00a2 07F10C03 		add	r3, r7, #12
+ 323 00a6 1846     		mov	r0, r3
+ 324 00a8 FFF7FEFF 		bl	_ZN16ResourceMineMenuD1Ev
+  40:../src/map_objects.cpp **** 	}
+  41:../src/map_objects.cpp **** }
+ 325              		.loc 3 41 0
+ 326 00ac 00BF     		nop
+ 327 00ae 8837     		adds	r7, r7, #136
+ 328              		.cfi_def_cfa_offset 8
+ 329 00b0 BD46     		mov	sp, r7
+ 330              		.cfi_def_cfa_register 13
+ 331              		@ sp needed
+ 332 00b2 80BD     		pop	{r7, pc}
+ 333              	.L18:
+ 334              		.align	2
+ 335              	.L17:
+ 336 00b4 FF691800 		.word	1599999
+ 337              		.cfi_endproc
+ 338              	.LFE1620:
+ 340              		.global	_ZTV12ResourceMine
+ 341              		.section	.rodata._ZTV12ResourceMine,"a",%progbits
+ 342              		.align	2
+ 345              	_ZTV12ResourceMine:
+ 346 0000 00000000 		.word	0
+ 347 0004 00000000 		.word	0
+ 348 0008 00000000 		.word	_ZN12ResourceMine14OnUserInteractEv
+ 349              		.global	_ZTV4City
+ 350              		.section	.rodata._ZTV4City,"a",%progbits
+ 351              		.align	2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 12
+
+
+ 354              	_ZTV4City:
+ 355 0000 00000000 		.word	0
+ 356 0004 00000000 		.word	0
+ 357 0008 00000000 		.word	_ZN4City14OnUserInteractEv
+ 358              		.global	_ZTV7Default
+ 359              		.section	.rodata._ZTV7Default,"a",%progbits
+ 360              		.align	2
+ 363              	_ZTV7Default:
+ 364 0000 00000000 		.word	0
+ 365 0004 00000000 		.word	0
+ 366 0008 00000000 		.word	_ZN7Default14OnUserInteractEv
+ 367              		.weak	_ZTV7IRender
+ 368              		.section	.rodata._ZTV7IRender,"aG",%progbits,_ZTV7IRender,comdat
+ 369              		.align	2
+ 372              	_ZTV7IRender:
+ 373 0000 00000000 		.word	0
+ 374 0004 00000000 		.word	0
+ 375 0008 00000000 		.word	__cxa_pure_virtual
+ 376 000c 00000000 		.word	0
+ 377 0010 00000000 		.word	0
+ 378              		.section	.text._ZN16ResourceMineMenuD2Ev,"axG",%progbits,_ZN16ResourceMineMenuD5Ev,comdat
+ 379              		.align	1
+ 380              		.weak	_ZN16ResourceMineMenuD2Ev
+ 381              		.syntax unified
+ 382              		.thumb
+ 383              		.thumb_func
+ 384              		.fpu softvfp
+ 386              	_ZN16ResourceMineMenuD2Ev:
+ 387              	.LFB2079:
+ 388              		.file 4 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/gui.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** #ifndef GUI_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** #define GUI_H_
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** #include <stdint.h>
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** #include "xav_data.h"
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** #include "renderer.h"
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** class Tile;
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** class UserInterface{
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** protected:
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	uint8_t sWidth, sHeight;	// size of the background table, in 20px wide section
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	coords_pair_t pos;			// position of the origin
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** public:
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	uint8_t selection = 0;
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** };
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** class ResourceGUI : public UserInterface, IRender{
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** private:
+  19:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	resources_t totalAmount, gain, newGainValues;
+  20:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	bool gainHasChanged = false;
+  21:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 
+  22:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	void Draw(rectangle_t drawBox);
+  23:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** public:
+  24:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	/* Draws the graphic box with it's icons */
+  25:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	void Load();
+  26:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	/* Update displayed values */
+  27:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	void Update();
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 13
+
+
+  28:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	/* Change the amount of resources gained every 5 seconds */
+  29:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	void ChangeGain(resources_t newValues);
+  30:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	/* Set the initial values to be displayed on game startup */
+  31:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	void SetInitialValues(resources_t total, resources_t gain);
+  32:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	/* Initialize new resource bar */
+  33:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 	ResourceGUI(uint8_t x, uint8_t y);
+  34:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** };
+  35:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** 
+  36:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\gui.h **** class ResourceMineMenu : public UserInterface, IRender{
+ 389              		.loc 4 36 0
+ 390              		.cfi_startproc
+ 391              		@ args = 0, pretend = 0, frame = 8
+ 392              		@ frame_needed = 1, uses_anonymous_args = 0
+ 393 0000 80B5     		push	{r7, lr}
+ 394              		.cfi_def_cfa_offset 8
+ 395              		.cfi_offset 7, -8
+ 396              		.cfi_offset 14, -4
+ 397 0002 82B0     		sub	sp, sp, #8
+ 398              		.cfi_def_cfa_offset 16
+ 399 0004 00AF     		add	r7, sp, #0
+ 400              		.cfi_def_cfa_register 7
+ 401 0006 7860     		str	r0, [r7, #4]
+ 402              	.LBB3:
+ 403              		.loc 4 36 0
+ 404 0008 054A     		ldr	r2, .L21
+ 405 000a 7B68     		ldr	r3, [r7, #4]
+ 406 000c 1A60     		str	r2, [r3]
+ 407 000e 7B68     		ldr	r3, [r7, #4]
+ 408 0010 1846     		mov	r0, r3
+ 409 0012 FFF7FEFF 		bl	_ZN7IRenderD2Ev
+ 410              	.LBE3:
+ 411 0016 7B68     		ldr	r3, [r7, #4]
+ 412 0018 1846     		mov	r0, r3
+ 413 001a 0837     		adds	r7, r7, #8
+ 414              		.cfi_def_cfa_offset 8
+ 415 001c BD46     		mov	sp, r7
+ 416              		.cfi_def_cfa_register 13
+ 417              		@ sp needed
+ 418 001e 80BD     		pop	{r7, pc}
+ 419              	.L22:
+ 420              		.align	2
+ 421              	.L21:
+ 422 0020 08000000 		.word	_ZTV16ResourceMineMenu+8
+ 423              		.cfi_endproc
+ 424              	.LFE2079:
+ 426              		.weak	_ZN16ResourceMineMenuD1Ev
+ 427              		.thumb_set _ZN16ResourceMineMenuD1Ev,_ZN16ResourceMineMenuD2Ev
+ 428              		.section	.text._ZN16ResourceMineMenuD0Ev,"axG",%progbits,_ZN16ResourceMineMenuD5Ev,comdat
+ 429              		.align	1
+ 430              		.weak	_ZN16ResourceMineMenuD0Ev
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ 434              		.fpu softvfp
+ 436              	_ZN16ResourceMineMenuD0Ev:
+ 437              	.LFB2081:
+ 438              		.loc 4 36 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 14
+
+
+ 439              		.cfi_startproc
+ 440              		@ args = 0, pretend = 0, frame = 8
+ 441              		@ frame_needed = 1, uses_anonymous_args = 0
+ 442 0000 80B5     		push	{r7, lr}
+ 443              		.cfi_def_cfa_offset 8
+ 444              		.cfi_offset 7, -8
+ 445              		.cfi_offset 14, -4
+ 446 0002 82B0     		sub	sp, sp, #8
+ 447              		.cfi_def_cfa_offset 16
+ 448 0004 00AF     		add	r7, sp, #0
+ 449              		.cfi_def_cfa_register 7
+ 450 0006 7860     		str	r0, [r7, #4]
+ 451              		.loc 4 36 0
+ 452 0008 7868     		ldr	r0, [r7, #4]
+ 453 000a FFF7FEFF 		bl	_ZN16ResourceMineMenuD1Ev
+ 454 000e 6821     		movs	r1, #104
+ 455 0010 7868     		ldr	r0, [r7, #4]
+ 456 0012 FFF7FEFF 		bl	_ZdlPvj
+ 457 0016 7B68     		ldr	r3, [r7, #4]
+ 458 0018 1846     		mov	r0, r3
+ 459 001a 0837     		adds	r7, r7, #8
+ 460              		.cfi_def_cfa_offset 8
+ 461 001c BD46     		mov	sp, r7
+ 462              		.cfi_def_cfa_register 13
+ 463              		@ sp needed
+ 464 001e 80BD     		pop	{r7, pc}
+ 465              		.cfi_endproc
+ 466              	.LFE2081:
+ 468              		.text
+ 469              	.Letext0:
+ 470              		.file 5 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 471              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 472              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdint.h"
+ 473              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\type_t
+ 474              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+ 475              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 476              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\debug
+ 477              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cwcha
+ 478              		.file 13 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 479              		.file 14 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 480              		.file 15 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\new"
+ 481              		.file 16 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cloca
+ 482              		.file 17 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cctyp
+ 483              		.file 18 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 484              		.file 19 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdl
+ 485              		.file 20 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 486              		.file 21 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 487              		.file 22 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 488              		.file 23 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 489              		.file 24 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 490              		.file 25 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 491              		.file 26 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 492              		.file 27 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 493              		.file 28 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 494              		.file 29 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 495              		.file 30 "<built-in>"
+ 496              		.file 31 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\wchar.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 15
+
+
+ 497              		.file 32 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\locale.h"
+ 498              		.file 33 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\ctype.h"
+ 499              		.file 34 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 500              		.file 35 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdio.h"
+ 501              		.file 36 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\errno.h"
+ 502              		.file 37 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/xav_data.h"
+ 503              		.file 38 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/ps2controller.h"
+ 504              		.file 39 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 505              		.file 40 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ 506              		.file 41 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/timer_17xx_40xx.h"
+ 507              		.file 42 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/map_objects.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 map_objects.cpp
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:16     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:19     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:22     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:28     .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:61     .text._ZN7IRenderD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD2Ev
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:104    .text._ZN7IRenderD2Ev:0000001c $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:372    .rodata._ZTV7IRender:00000000 _ZTV7IRender
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD1Ev
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:111    .text._ZN7IRenderD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:118    .text._ZN7IRenderD0Ev:00000000 _ZN7IRenderD0Ev
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:151    .text._ZN7Default14OnUserInteractEv:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:158    .text._ZN7Default14OnUserInteractEv:00000000 _ZN7Default14OnUserInteractEv
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:189    .text._ZN4City14OnUserInteractEv:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:196    .text._ZN4City14OnUserInteractEv:00000000 _ZN4City14OnUserInteractEv
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:226    .text._ZN12ResourceMine14OnUserInteractEv:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:233    .text._ZN12ResourceMine14OnUserInteractEv:00000000 _ZN12ResourceMine14OnUserInteractEv
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:386    .text._ZN16ResourceMineMenuD2Ev:00000000 _ZN16ResourceMineMenuD1Ev
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:336    .text._ZN12ResourceMine14OnUserInteractEv:000000b4 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:345    .rodata._ZTV12ResourceMine:00000000 _ZTV12ResourceMine
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:342    .rodata._ZTV12ResourceMine:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:354    .rodata._ZTV4City:00000000 _ZTV4City
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:351    .rodata._ZTV4City:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:363    .rodata._ZTV7Default:00000000 _ZTV7Default
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:360    .rodata._ZTV7Default:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:369    .rodata._ZTV7IRender:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:379    .text._ZN16ResourceMineMenuD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:386    .text._ZN16ResourceMineMenuD2Ev:00000000 _ZN16ResourceMineMenuD2Ev
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:422    .text._ZN16ResourceMineMenuD2Ev:00000020 $d
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:429    .text._ZN16ResourceMineMenuD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s:436    .text._ZN16ResourceMineMenuD0Ev:00000000 _ZN16ResourceMineMenuD0Ev
+                           .group:00000000 _ZN7IRenderD5Ev
+                           .group:00000000 _ZN16ResourceMineMenuD5Ev
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.cpp_type_traits.h.33.9f2bfd8c4471a9a299f6da3ec24c745c
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+                           .group:00000000 wm4.concept_check.h.31.f19605d278e56917c68a56d378be308c
+                           .group:00000000 wm4.type_traits.30.32b820b957e206cbc57b9805350afbca
+                           .group:00000000 wm4.move.h.159.368bac456bc1dfb8448d51bb65764956
+                           .group:00000000 wm4.assertions.h.30.f3970bbdad8b12088edf616ddeecdc90
+                           .group:00000000 wm4.stl_iterator.h.409.7a84ee40267bb1222b7cd9a74055edfb
+                           .group:00000000 wm4.debug.h.30.70fe957e8e7c7ceba3caf19b0959f126
+                           .group:00000000 wm4.stl_algobase.h.491.ec4060988bfff82dc579decdb75c72d6
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 17
+
+
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stddef.h.39.096871ec3ca5abfedfa76e8d05f4a8d6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.wchar.h.8.acdef4366e64def8c588421024712d23
+                           .group:00000000 wm4.stddef.h.161.9f48187563b2a85291a91832aa425498
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.wchar.h.29.d3f42b20d847eb1aee8a8518919e39fd
+                           .group:00000000 wm4.wchar.h.76.90478bd2c784f576b769c4535c98839d
+                           .group:00000000 wm4.cwchar.48.c4e882638bf84f6da89479dda6fe8e17
+                           .group:00000000 wm4.cxxabi_init_exception.h.42.029852b0f286014c9c193b74ad22df55
+                           .group:00000000 wm4.allocator.h.52.0ceafb36dc1b82dbfa6b05003082e3f5
+                           .group:00000000 wm4.stddef.h.161.38688f2eb958a8ed58fdb61ffe554c94
+                           .group:00000000 wm4.locale.h.16.90d16f662e7119f5b192650a45179c6c
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.cf64fe4c5e8c0ac0f52f1143312d4909
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.stl_function.h.57.6639ab8e57d2230b4b27118173a32750
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.edc94d4398c0534988962be77dc3c2e1
+                           .group:00000000 wm4.atomic_word.h.30.9e0ac69fd462d5e650933e05133b4afa
+                           .group:00000000 wm4.alloc_traits.h.31.c41c7c4789404962122a4e991dfa3abf
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.4494b0884bb80e2bd270999c8eda1e12
+                           .group:00000000 wm4.cstdio.45.1ffaea3e7c26dce1e03f5847a7439edb
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.1ecd7b1049497a0ab61da0f6cbd4b0c6
+                           .group:00000000 wm4.functional_hash.h.31.d995554db01f631b375a95ecfc605ca0
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.bbe1d37589d0065a120c4df50b697244
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cclTCAUq.s 			page 18
+
+
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.14ce7f11bede78d39ff33867e6b612e7
+                           .group:00000000 wm4.board.h.58.43e2a020e238f3a03713d0d4b05aa2db
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+
+UNDEFINED SYMBOLS
+_ZdlPvj
+_ZN16ResourceMineMenuC1Ev
+memcpy
+_Z14PollControllerbP12ps2_inputs_t
+_ZN16ResourceMineMenu15ProcessGraphicsEv
+__cxa_pure_virtual
+_ZTV16ResourceMineMenu

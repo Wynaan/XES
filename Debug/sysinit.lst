@@ -1,0 +1,249 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"sysinit.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.SystemInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	SystemInit
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	SystemInit:
+  24              	.LFB316:
+  25              		.file 1 "../src/sysinit.c"
+   1:../src/sysinit.c **** /*
+   2:../src/sysinit.c ****  * @brief Common SystemInit function for LPC17xx/40xx chips
+   3:../src/sysinit.c ****  *
+   4:../src/sysinit.c ****  * @note
+   5:../src/sysinit.c ****  * Copyright(C) NXP Semiconductors, 2013-14
+   6:../src/sysinit.c ****  * All rights reserved.
+   7:../src/sysinit.c ****  *
+   8:../src/sysinit.c ****  * @par
+   9:../src/sysinit.c ****  * Software that is described herein is for illustrative purposes only
+  10:../src/sysinit.c ****  * which provides customers with programming information regarding the
+  11:../src/sysinit.c ****  * LPC products.  This software is supplied "AS IS" without any warranties of
+  12:../src/sysinit.c ****  * any kind, and NXP Semiconductors and its licensor disclaim any and
+  13:../src/sysinit.c ****  * all warranties, express or implied, including all implied warranties of
+  14:../src/sysinit.c ****  * merchantability, fitness for a particular purpose and non-infringement of
+  15:../src/sysinit.c ****  * intellectual property rights.  NXP Semiconductors assumes no responsibility
+  16:../src/sysinit.c ****  * or liability for the use of the software, conveys no license or rights under any
+  17:../src/sysinit.c ****  * patent, copyright, mask work right, or any other intellectual property rights in
+  18:../src/sysinit.c ****  * or to any products. NXP Semiconductors reserves the right to make changes
+  19:../src/sysinit.c ****  * in the software without notification. NXP Semiconductors also makes no
+  20:../src/sysinit.c ****  * representation or warranty that such application will be suitable for the
+  21:../src/sysinit.c ****  * specified use without further testing or modification.
+  22:../src/sysinit.c ****  *
+  23:../src/sysinit.c ****  * @par
+  24:../src/sysinit.c ****  * Permission to use, copy, modify, and distribute this software and its
+  25:../src/sysinit.c ****  * documentation is hereby granted, under NXP Semiconductors' and its
+  26:../src/sysinit.c ****  * licensor's relevant copyrights in the software, without fee, provided that it
+  27:../src/sysinit.c ****  * is used in conjunction with NXP Semiconductors microcontrollers.  This
+  28:../src/sysinit.c ****  * copyright, permission, and disclaimer notice must appear in all copies of
+  29:../src/sysinit.c ****  * this code.
+  30:../src/sysinit.c ****  */
+  31:../src/sysinit.c **** 
+  32:../src/sysinit.c ****  #if defined(NO_BOARD_LIB)
+  33:../src/sysinit.c ****  #include "chip.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s 			page 2
+
+
+  34:../src/sysinit.c ****  #else
+  35:../src/sysinit.c ****  #include "board.h"
+  36:../src/sysinit.c ****  #endif
+  37:../src/sysinit.c **** 
+  38:../src/sysinit.c **** /*****************************************************************************
+  39:../src/sysinit.c ****  * Private types/enumerations/variables
+  40:../src/sysinit.c ****  ****************************************************************************/
+  41:../src/sysinit.c **** 
+  42:../src/sysinit.c **** /*****************************************************************************
+  43:../src/sysinit.c ****  * Public types/enumerations/variables
+  44:../src/sysinit.c ****  ****************************************************************************/
+  45:../src/sysinit.c **** 
+  46:../src/sysinit.c **** #if defined(NO_BOARD_LIB)
+  47:../src/sysinit.c **** const uint32_t OscRateIn = 12000000;
+  48:../src/sysinit.c **** const uint32_t RTCOscRateIn = 32768;
+  49:../src/sysinit.c **** #endif
+  50:../src/sysinit.c **** 
+  51:../src/sysinit.c **** /*****************************************************************************
+  52:../src/sysinit.c ****  * Private functions
+  53:../src/sysinit.c ****  ****************************************************************************/
+  54:../src/sysinit.c **** 
+  55:../src/sysinit.c **** /*****************************************************************************
+  56:../src/sysinit.c ****  * Public functions
+  57:../src/sysinit.c ****  ****************************************************************************/
+  58:../src/sysinit.c **** 
+  59:../src/sysinit.c **** /* Set up and initialize hardware prior to call to main */
+  60:../src/sysinit.c **** void SystemInit(void)
+  61:../src/sysinit.c **** {
+  26              		.loc 1 61 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 8
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30 0000 80B5     		push	{r7, lr}
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 7, -8
+  33              		.cfi_offset 14, -4
+  34 0002 82B0     		sub	sp, sp, #8
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  62:../src/sysinit.c **** 	unsigned int *pSCB_VTOR = (unsigned int *) 0xE000ED08;
+  38              		.loc 1 62 0
+  39 0006 054B     		ldr	r3, .L2
+  40 0008 7B60     		str	r3, [r7, #4]
+  63:../src/sysinit.c **** 
+  64:../src/sysinit.c **** #if defined(__IAR_SYSTEMS_ICC__)
+  65:../src/sysinit.c **** 	extern void *__vector_table;
+  66:../src/sysinit.c **** 
+  67:../src/sysinit.c **** 	*pSCB_VTOR = (unsigned int) &__vector_table;
+  68:../src/sysinit.c **** #elif defined(__CODE_RED)
+  69:../src/sysinit.c **** 	extern void *g_pfnVectors;
+  70:../src/sysinit.c **** 
+  71:../src/sysinit.c **** 	*pSCB_VTOR = (unsigned int) &g_pfnVectors;
+  41              		.loc 1 71 0
+  42 000a 054A     		ldr	r2, .L2+4
+  43 000c 7B68     		ldr	r3, [r7, #4]
+  44 000e 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s 			page 3
+
+
+  72:../src/sysinit.c **** #elif defined(__ARMCC_VERSION)
+  73:../src/sysinit.c **** 	extern void *__Vectors;
+  74:../src/sysinit.c **** 
+  75:../src/sysinit.c **** 	*pSCB_VTOR = (unsigned int) &__Vectors;
+  76:../src/sysinit.c **** #endif
+  77:../src/sysinit.c **** 
+  78:../src/sysinit.c **** #if defined(__FPU_PRESENT) && __FPU_PRESENT == 1
+  79:../src/sysinit.c **** 	fpuInit();
+  80:../src/sysinit.c **** #endif
+  81:../src/sysinit.c **** 
+  82:../src/sysinit.c **** #if defined(NO_BOARD_LIB)
+  83:../src/sysinit.c **** 	/* Chip specific SystemInit */
+  84:../src/sysinit.c **** 	Chip_SystemInit();
+  85:../src/sysinit.c **** #else
+  86:../src/sysinit.c **** 	/* Setup system clocking and muxing */
+  87:../src/sysinit.c **** 	Board_SystemInit();
+  45              		.loc 1 87 0
+  46 0010 FFF7FEFF 		bl	Board_SystemInit
+  88:../src/sysinit.c **** #endif
+  89:../src/sysinit.c **** }
+  47              		.loc 1 89 0
+  48 0014 00BF     		nop
+  49 0016 0837     		adds	r7, r7, #8
+  50              		.cfi_def_cfa_offset 8
+  51 0018 BD46     		mov	sp, r7
+  52              		.cfi_def_cfa_register 13
+  53              		@ sp needed
+  54 001a 80BD     		pop	{r7, pc}
+  55              	.L3:
+  56              		.align	2
+  57              	.L2:
+  58 001c 08ED00E0 		.word	-536810232
+  59 0020 00000000 		.word	g_pfnVectors
+  60              		.cfi_endproc
+  61              	.LFE316:
+  63              		.text
+  64              	.Letext0:
+  65              		.file 2 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+  66              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+  67              		.file 4 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+  68              		.file 5 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+  69              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+  70              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+  71              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\s
+  72              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 sysinit.c
+C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s:16     .text.SystemInit:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s:23     .text.SystemInit:00000000 SystemInit
+C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s:58     .text.SystemInit:0000001c $d
+                           .group:00000000 wm4.0.2232410d16925ab7a7675f033ae860b0
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.stdbool.h.29.07dce69c3b78884144b7f7bd19483461
+                           .group:00000000 wm4.lpc_types.h.63.c4e7eaf7330236ae510314a23d74e6ca
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.31f0c1fcc7ffbc7504759a5b5082f330
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.139632325ccc020d697d2fcf83ee170f
+                           .group:00000000 wm4.board.h.58.43e2a020e238f3a03713d0d4b05aa2db
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.9f8fcfa20193763fcf364fb91705c94b
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.187.2ff233552538c6ff9b8575ca8ea52cb3
+                           .group:00000000 wm4.cdefs.h.47.d5f52c0838d768c139d665d47892271a
+                           .group:00000000 wm4.stddef.h.39.ec95e8feac892e292b69dc7ae75b0d64
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.5349cb105733e8777bfb0cf53c4e3f34
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccd88E2b.s 			page 5
+
+
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.932d0c162786b883f622b8d05c120c78
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+
+UNDEFINED SYMBOLS
+Board_SystemInit
+g_pfnVectors

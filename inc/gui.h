@@ -26,7 +26,7 @@ public:
 class Button : public TiledImage, public IRender{
 	const uint8_t * pImage[3];
 public:
-	typedef enum{GREEN, RED}btn_color_e;
+	typedef enum{GREEN, RED, LIGHT_RED, BLUE}btn_color_e;
 
 	void Draw(rectangle_t drawBox);
 	Button(btn_color_e color, coords_pair_t position, uint8_t sectionWidth);
@@ -39,16 +39,19 @@ protected:
 	uint8_t state;
 	Background * bg = nullptr;
 	std::deque<IRender*> items;
+	uint8_t iterCounter;
+	bool busy;
 public:
 	uint8_t selection = 0;
 
-	void AddElement(IRender* item);
+	bool isReady();
 	bool ProcessGraphics(bool exit);
+	void AddElement(IRender* item);
 	UserInterface(int16_t x, int16_t y, uint8_t sectionWidth, uint8_t sectionHeight);
 	~UserInterface(){ delete bg;}
 };
 
-class InfoDisplay : public IRender, public IUpdateable{
+class InfoDisplay : public IRender, public IUpdate{
 private:
 	Background * bg = nullptr;
 	coords_pair_t pos;
@@ -89,7 +92,19 @@ public:
 };
 
 class StartScreen{
+	typedef enum{MAIN, LOAD}menu_type_e;
+	const uint8_t highlightColor = 0x32;
+	const uint8_t arrowColor = 0xD8;
+	const char textMenuOptions[4][10] = {{"New Game"},
+								{"Load Game"},
+								{"Tutorial"},
+								{"Credits"}};
+	menu_type_e inView = MAIN;
 	uint8_t selection = 0;
+	char slotName[4][9] = {0};
+	rectangle_t TextBox;
+	uint8_t textColor;
+	void DrawText(menu_type_e menuSelect, bool visible);
 public:
 	uint8_t MainMenu();
 };

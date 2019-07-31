@@ -15,6 +15,10 @@ uint8_t dListIndex = 0;
 
 void ClearScreen()
 {
+	// Power-on stabilization delay
+	for(uint32_t i = 0; i < 50000; i++);
+
+	// SRAM clear
 	for(uint8_t i = 0; i < 2; i++){
 		uint32_t Pixel_Address = 0x800000;
 		MemorySwap();
@@ -35,7 +39,8 @@ void MemorySwap()
 	Mem_Select = !Mem_Select;
 	CS = Mem_Select;
 	while(VSYNC != 1);
-	while(VSYNC != 0);
+	uint32_t time = LPC_TIMER0->TC + 9600;
+	while(LPC_TIMER0->TC < time);
 }
 
 void Renderer::AddToFrame(IRender * object)
@@ -57,16 +62,19 @@ void Renderer::AddToCallback(IRender * object)
 
 void Renderer::Update()
 {
+	/* Toggle CS pin and wait for VSync to go high */
+	MemorySwap();
+
 	/* Draw objects added to callback list two updates ago */
-	for(auto&& i : CallbackList[(cListIndex + 2) % 4])
+	for(auto& i : CallbackList[(cListIndex + 2) % 4])
 		i.first->Draw(i.second);
 	/* Draw objects in the double render list */
-	for(auto&& i : DoubleRenderList[dListIndex % 3])
+	for(auto& i : DoubleRenderList[dListIndex % 3])
 		i.first->Draw(i.second);
-	for(auto&& i : DoubleRenderList[(dListIndex + 1) % 3])
+	for(auto& i : DoubleRenderList[(dListIndex + 1) % 3])
 		i.first->Draw(i.second);
 	/* Draw objects in the render queue */
-	for(auto&& i : RenderList)
+	for(auto& i : RenderList)
 		i.first->Draw(i.second);
 
 	/* Cleanup queues */
@@ -79,9 +87,6 @@ void Renderer::Update()
 	cListIndex %= 4;
 	dListIndex++;
 	dListIndex %= 3;
-
-	/* Toggle CS pin and wait for VSync to go high */
-	MemorySwap();
 }
 
 void Renderer::Init()

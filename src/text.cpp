@@ -86,6 +86,9 @@ void DrawStrConst(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWid
 				case '+':
 					_font = OTF_10X12[64];
 					break;
+				case '-':
+					_font = OTF_10X12[65];
+					break;
 				default:
 					valid = false;
 					break;
@@ -107,7 +110,32 @@ void DrawStrConst(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWid
 
 void Text::Draw(rectangle_t drawBox)
 {
-	DrawStrConst(str, x, y, fontWidth, color);
+	if(type == TEXT)
+		DrawStrConst(str, x, y, fontWidth, color);
+	else{
+		char temp[10];
+		itoa(nb, temp, 10);
+		DrawStrConst(temp, x, y, fontWidth, color);
+	}
 }
 
+Text::Text(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color) :
+	str(StrToDraw),
+	x(x),
+	y(y),
+	fontWidth(fontWidth),
+	color(color)
+{
+	type = TEXT;
+}
+
+Text::Text(const uint32_t NbToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color) :
+	nb(NbToDraw),
+	x(x),
+	y(y),
+	fontWidth(fontWidth),
+	color(color)
+{
+	type = DIGITS;
+}
 

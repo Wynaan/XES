@@ -18,23 +18,21 @@ public:
 	virtual ~IRender() {}
 };
 
-/* IMapObjects is the interface that all classes that are intended for the user to actively
+/* IInteract is the interface that all classes that are intended for the user to actively
  * interact with, on the map, must inherit from. Each subclass must implement the OnUserInteract()
  * method. The Tile class can then create itself a new derived class object by using a pointer
  * to this base class and then perform the desired interaction. OnUserInteract will be called
  * by the Player entity using the input intended to perform an action. */
-class IMapObject{
+class IInteract{
 protected:
 	ps2_inputs_t userInput;
 	ps2_buttons_t keyState;
-	bool interactionRunning = false;
 public:
 	virtual void OnUserInteract() = 0;
-
-	virtual ~IMapObject() {}
+	virtual ~IInteract() {}
 };
 
-/* IUpdateable is the interface that all classes defining mechanics and interactions that
+/* IUpdate is the interface that all classes defining mechanics and interactions that
  * must be updated on a frame by frame basis must inherit from. Each subclass must implement
  * the Tick() method. Afterward, entities and objects can add themselves, or other components,
  * to the update queue by calling the TickEngine::PushStack() method. The TickEngine wrapper
@@ -42,7 +40,7 @@ public:
  * level, allowing for simple overriding of any component's behavior that must not occur
  * simultaneously. When a component is done with it's behavior, TickEngine::PopStack must be
  * called with the priority level to pop. */
-class IUpdateable{
+class IUpdate{
 public:
 	virtual void Tick() = 0;
 };

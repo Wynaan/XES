@@ -129,3 +129,22 @@ void Draw_Plus(uint16_t xtop, uint16_t ytop, uint8_t size, uint8_t color)
 	Draw_Line(xtop + (size >> 1), ytop, xtop + (size >> 1), ytop + size, color);
 }
 
+void Draw_Rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t color)
+{
+	Draw_Horizontal_Line(x, y, x + width - 1, color);
+	Draw_Horizontal_Line(x, y + height - 1, x + width - 1, color);
+	Draw_Line(x, y, x, y + height - 1, color);
+	Draw_Line(x + width - 1, y, x + width - 1, y + height - 1, color);
+}
+
+void Rectangle::Draw(rectangle_t drawBox){
+	Draw_Rectangle(x, y, width, height, color);
+}
+
+Rectangle::Rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t color) :
+	x(x),
+	y(y),
+	width(width),
+	height(height),
+	color(color)
+{}

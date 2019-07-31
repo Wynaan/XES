@@ -1,0 +1,275 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lli.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN10LinkedList9push_backEP4Node,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN10LinkedList9push_backEP4Node
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	_ZN10LinkedList9push_backEP4Node:
+  24              	.LFB13:
+  25              		.file 1 "../src/lli.cpp"
+   1:../src/lli.cpp **** #include "lli.h"
+   2:../src/lli.cpp **** 
+   3:../src/lli.cpp **** void LinkedList::push_back(Node * next)
+   4:../src/lli.cpp **** {
+  26              		.loc 1 4 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 8
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  31 0000 80B4     		push	{r7}
+  32              		.cfi_def_cfa_offset 4
+  33              		.cfi_offset 7, -4
+  34 0002 83B0     		sub	sp, sp, #12
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  38 0006 7860     		str	r0, [r7, #4]
+  39 0008 3960     		str	r1, [r7]
+   5:../src/lli.cpp **** 	/* Assign next pointer of previously last item; */
+   6:../src/lli.cpp **** 	tail->next = next;
+  40              		.loc 1 6 0
+  41 000a 7B68     		ldr	r3, [r7, #4]
+  42 000c 5B68     		ldr	r3, [r3, #4]
+  43 000e 3A68     		ldr	r2, [r7]
+  44 0010 1A60     		str	r2, [r3]
+   7:../src/lli.cpp **** 	/* Move the tail pointer forward */
+   8:../src/lli.cpp **** 	tail = next;
+  45              		.loc 1 8 0
+  46 0012 7B68     		ldr	r3, [r7, #4]
+  47 0014 3A68     		ldr	r2, [r7]
+  48 0016 5A60     		str	r2, [r3, #4]
+   9:../src/lli.cpp **** }
+  49              		.loc 1 9 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s 			page 2
+
+
+  50 0018 00BF     		nop
+  51 001a 0C37     		adds	r7, r7, #12
+  52              		.cfi_def_cfa_offset 4
+  53 001c BD46     		mov	sp, r7
+  54              		.cfi_def_cfa_register 13
+  55              		@ sp needed
+  56 001e 80BC     		pop	{r7}
+  57              		.cfi_restore 7
+  58              		.cfi_def_cfa_offset 0
+  59 0020 7047     		bx	lr
+  60              		.cfi_endproc
+  61              	.LFE13:
+  63              		.section	.text._ZN10LinkedList5clearEv,"ax",%progbits
+  64              		.align	1
+  65              		.global	_ZN10LinkedList5clearEv
+  66              		.syntax unified
+  67              		.thumb
+  68              		.thumb_func
+  69              		.fpu softvfp
+  71              	_ZN10LinkedList5clearEv:
+  72              	.LFB14:
+  10:../src/lli.cpp **** 
+  11:../src/lli.cpp **** void LinkedList::clear()
+  12:../src/lli.cpp **** {
+  73              		.loc 1 12 0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 16
+  76              		@ frame_needed = 1, uses_anonymous_args = 0
+  77 0000 80B5     		push	{r7, lr}
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 7, -8
+  80              		.cfi_offset 14, -4
+  81 0002 84B0     		sub	sp, sp, #16
+  82              		.cfi_def_cfa_offset 24
+  83 0004 00AF     		add	r7, sp, #0
+  84              		.cfi_def_cfa_register 7
+  85 0006 7860     		str	r0, [r7, #4]
+  13:../src/lli.cpp **** 	Node * current = head;
+  86              		.loc 1 13 0
+  87 0008 7B68     		ldr	r3, [r7, #4]
+  88 000a 1B68     		ldr	r3, [r3]
+  89 000c FB60     		str	r3, [r7, #12]
+  14:../src/lli.cpp **** 	Node * next = nullptr;
+  90              		.loc 1 14 0
+  91 000e 0023     		movs	r3, #0
+  92 0010 BB60     		str	r3, [r7, #8]
+  93              	.L6:
+  15:../src/lli.cpp **** 
+  16:../src/lli.cpp **** 	while(1){
+  17:../src/lli.cpp **** 		if(current->next)
+  94              		.loc 1 17 0
+  95 0012 FB68     		ldr	r3, [r7, #12]
+  96 0014 1B68     		ldr	r3, [r3]
+  97 0016 002B     		cmp	r3, #0
+  98 0018 02D0     		beq	.L3
+  18:../src/lli.cpp **** 			next = current->next;
+  99              		.loc 1 18 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s 			page 3
+
+
+ 100 001a FB68     		ldr	r3, [r7, #12]
+ 101 001c 1B68     		ldr	r3, [r3]
+ 102 001e BB60     		str	r3, [r7, #8]
+ 103              	.L3:
+  19:../src/lli.cpp **** 		if(current)
+ 104              		.loc 1 19 0
+ 105 0020 FB68     		ldr	r3, [r7, #12]
+ 106 0022 002B     		cmp	r3, #0
+ 107 0024 03D0     		beq	.L4
+  20:../src/lli.cpp **** 			delete current;
+ 108              		.loc 1 20 0
+ 109 0026 0821     		movs	r1, #8
+ 110 0028 F868     		ldr	r0, [r7, #12]
+ 111 002a FFF7FEFF 		bl	_ZdlPvj
+ 112              	.L4:
+  21:../src/lli.cpp **** 		if(next) current = next;
+ 113              		.loc 1 21 0
+ 114 002e BB68     		ldr	r3, [r7, #8]
+ 115 0030 002B     		cmp	r3, #0
+ 116 0032 EED0     		beq	.L6
+ 117              		.loc 1 21 0 is_stmt 0 discriminator 1
+ 118 0034 BB68     		ldr	r3, [r7, #8]
+ 119 0036 FB60     		str	r3, [r7, #12]
+  17:../src/lli.cpp **** 			next = current->next;
+ 120              		.loc 1 17 0 is_stmt 1 discriminator 1
+ 121 0038 EBE7     		b	.L6
+ 122              		.cfi_endproc
+ 123              	.LFE14:
+ 125              		.section	.text._ZN10LinkedList5eraseEv,"ax",%progbits
+ 126              		.align	1
+ 127              		.global	_ZN10LinkedList5eraseEv
+ 128              		.syntax unified
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.fpu softvfp
+ 133              	_ZN10LinkedList5eraseEv:
+ 134              	.LFB15:
+  22:../src/lli.cpp **** 	}
+  23:../src/lli.cpp **** 
+  24:../src/lli.cpp **** 	tail = head;
+  25:../src/lli.cpp **** }
+  26:../src/lli.cpp **** 
+  27:../src/lli.cpp **** void LinkedList::erase()
+  28:../src/lli.cpp **** {
+ 135              		.loc 1 28 0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 16
+ 138              		@ frame_needed = 1, uses_anonymous_args = 0
+ 139 0000 80B5     		push	{r7, lr}
+ 140              		.cfi_def_cfa_offset 8
+ 141              		.cfi_offset 7, -8
+ 142              		.cfi_offset 14, -4
+ 143 0002 84B0     		sub	sp, sp, #16
+ 144              		.cfi_def_cfa_offset 24
+ 145 0004 00AF     		add	r7, sp, #0
+ 146              		.cfi_def_cfa_register 7
+ 147 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s 			page 4
+
+
+  29:../src/lli.cpp **** 	Node * current = head;
+ 148              		.loc 1 29 0
+ 149 0008 7B68     		ldr	r3, [r7, #4]
+ 150 000a 1B68     		ldr	r3, [r3]
+ 151 000c FB60     		str	r3, [r7, #12]
+ 152              	.L8:
+ 153              	.LBB2:
+  30:../src/lli.cpp **** 
+  31:../src/lli.cpp **** 	while(1){
+  32:../src/lli.cpp **** 		Node * next = current->next;
+ 154              		.loc 1 32 0 discriminator 1
+ 155 000e FB68     		ldr	r3, [r7, #12]
+ 156 0010 1B68     		ldr	r3, [r3]
+ 157 0012 BB60     		str	r3, [r7, #8]
+  33:../src/lli.cpp **** 		delete current->data;
+ 158              		.loc 1 33 0 discriminator 1
+ 159 0014 FB68     		ldr	r3, [r7, #12]
+ 160 0016 5B68     		ldr	r3, [r3, #4]
+ 161 0018 1846     		mov	r0, r3
+ 162 001a FFF7FEFF 		bl	_ZdlPv
+  34:../src/lli.cpp **** 		delete current;
+ 163              		.loc 1 34 0 discriminator 1
+ 164 001e 0821     		movs	r1, #8
+ 165 0020 F868     		ldr	r0, [r7, #12]
+ 166 0022 FFF7FEFF 		bl	_ZdlPvj
+  35:../src/lli.cpp **** 		current = next;
+ 167              		.loc 1 35 0 discriminator 1
+ 168 0026 BB68     		ldr	r3, [r7, #8]
+ 169 0028 FB60     		str	r3, [r7, #12]
+ 170              	.LBE2:
+  36:../src/lli.cpp **** 	}
+ 171              		.loc 1 36 0 discriminator 1
+ 172 002a F0E7     		b	.L8
+ 173              		.cfi_endproc
+ 174              	.LFE15:
+ 176              		.text
+ 177              	.Letext0:
+ 178              		.file 2 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\\
+ 179              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdli
+ 180              		.file 4 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+ 181              		.file 5 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\s
+ 182              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 183              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 184              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 185              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 186              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\stdli
+ 187              		.file 11 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/lli.h"
+ 188              		.file 12 "<built-in>"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lli.cpp
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:16     .text._ZN10LinkedList9push_backEP4Node:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:23     .text._ZN10LinkedList9push_backEP4Node:00000000 _ZN10LinkedList9push_backEP4Node
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:64     .text._ZN10LinkedList5clearEv:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:71     .text._ZN10LinkedList5clearEv:00000000 _ZN10LinkedList5clearEv
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:126    .text._ZN10LinkedList5eraseEv:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccDSqGkl.s:133    .text._ZN10LinkedList5eraseEv:00000000 _ZN10LinkedList5eraseEv
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.newlib.h.21.64e14ed41172bf448383d50cbb14725e
+                           .group:00000000 wm4.features.h.22.5cdadbb3efe495d1c9e38350b8c376c7
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.187.e3ca1cb00044c044f8b956a6107cebb6
+                           .group:00000000 wm4.stddef.h.39.a0b4bc3c8c1c07da04a816c0a1519e1d
+                           .group:00000000 wm4._default_types.h.6.959254cf5f09734ea7516c89e8bb21bd
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+
+UNDEFINED SYMBOLS
+_ZdlPvj
+_ZdlPv

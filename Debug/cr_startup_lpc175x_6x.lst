@@ -1,0 +1,1102 @@
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"cr_startup_lpc175x_6x.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	g_pfnVectors
+  16              		.section	.isr_vector,"a",%progbits
+  17              		.align	2
+  20              	g_pfnVectors:
+  21 0000 00000000 		.word	_vStackTop
+  22 0004 00000000 		.word	ResetISR
+  23 0008 00000000 		.word	NMI_Handler
+  24 000c 00000000 		.word	HardFault_Handler
+  25 0010 00000000 		.word	MemManage_Handler
+  26 0014 00000000 		.word	BusFault_Handler
+  27 0018 00000000 		.word	UsageFault_Handler
+  28 001c 00000000 		.word	__valid_user_code_checksum
+  29 0020 00000000 		.word	0
+  30 0024 00000000 		.word	0
+  31 0028 00000000 		.word	0
+  32 002c 00000000 		.word	SVC_Handler
+  33 0030 00000000 		.word	DebugMon_Handler
+  34 0034 00000000 		.word	0
+  35 0038 00000000 		.word	PendSV_Handler
+  36 003c 00000000 		.word	SysTick_Handler
+  37 0040 00000000 		.word	WDT_IRQHandler
+  38 0044 00000000 		.word	TIMER0_IRQHandler
+  39 0048 00000000 		.word	TIMER1_IRQHandler
+  40 004c 00000000 		.word	TIMER2_IRQHandler
+  41 0050 00000000 		.word	TIMER3_IRQHandler
+  42 0054 00000000 		.word	UART0_IRQHandler
+  43 0058 00000000 		.word	UART1_IRQHandler
+  44 005c 00000000 		.word	UART2_IRQHandler
+  45 0060 00000000 		.word	UART3_IRQHandler
+  46 0064 00000000 		.word	PWM1_IRQHandler
+  47 0068 00000000 		.word	I2C0_IRQHandler
+  48 006c 00000000 		.word	I2C1_IRQHandler
+  49 0070 00000000 		.word	I2C2_IRQHandler
+  50 0074 00000000 		.word	SPI_IRQHandler
+  51 0078 00000000 		.word	SSP0_IRQHandler
+  52 007c 00000000 		.word	SSP1_IRQHandler
+  53 0080 00000000 		.word	PLL0_IRQHandler
+  54 0084 00000000 		.word	RTC_IRQHandler
+  55 0088 00000000 		.word	EINT0_IRQHandler
+  56 008c 00000000 		.word	EINT1_IRQHandler
+  57 0090 00000000 		.word	EINT2_IRQHandler
+  58 0094 00000000 		.word	EINT3_IRQHandler
+  59 0098 00000000 		.word	ADC_IRQHandler
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 2
+
+
+  60 009c 00000000 		.word	BOD_IRQHandler
+  61 00a0 00000000 		.word	USB_IRQHandler
+  62 00a4 00000000 		.word	CAN_IRQHandler
+  63 00a8 00000000 		.word	DMA_IRQHandler
+  64 00ac 00000000 		.word	I2S_IRQHandler
+  65 00b0 00000000 		.word	ETH_IRQHandler
+  66 00b4 00000000 		.word	RIT_IRQHandler
+  67 00b8 00000000 		.word	MCPWM_IRQHandler
+  68 00bc 00000000 		.word	QEI_IRQHandler
+  69 00c0 00000000 		.word	PLL1_IRQHandler
+  70 00c4 00000000 		.word	USBActivity_IRQHandler
+  71 00c8 00000000 		.word	CANActivity_IRQHandler
+  72              		.section	.after_vectors,"ax",%progbits
+  73              		.align	1
+  74              		.global	_Z9data_initjjj
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  78              		.fpu softvfp
+  80              	_Z9data_initjjj:
+  81              	.LFB0:
+  82              		.file 1 "../src/cr_startup_lpc175x_6x.cpp"
+   1:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+   2:../src/cr_startup_lpc175x_6x.cpp **** // LPC175x_6x Microcontroller Startup code for use with LPCXpresso IDE
+   3:../src/cr_startup_lpc175x_6x.cpp **** //
+   4:../src/cr_startup_lpc175x_6x.cpp **** // Version : 150706
+   5:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+   6:../src/cr_startup_lpc175x_6x.cpp **** //
+   7:../src/cr_startup_lpc175x_6x.cpp **** // Copyright(C) NXP Semiconductors, 2014-2015
+   8:../src/cr_startup_lpc175x_6x.cpp **** // All rights reserved.
+   9:../src/cr_startup_lpc175x_6x.cpp **** //
+  10:../src/cr_startup_lpc175x_6x.cpp **** // Software that is described herein is for illustrative purposes only
+  11:../src/cr_startup_lpc175x_6x.cpp **** // which provides customers with programming information regarding the
+  12:../src/cr_startup_lpc175x_6x.cpp **** // LPC products.  This software is supplied "AS IS" without any warranties of
+  13:../src/cr_startup_lpc175x_6x.cpp **** // any kind, and NXP Semiconductors and its licensor disclaim any and
+  14:../src/cr_startup_lpc175x_6x.cpp **** // all warranties, express or implied, including all implied warranties of
+  15:../src/cr_startup_lpc175x_6x.cpp **** // merchantability, fitness for a particular purpose and non-infringement of
+  16:../src/cr_startup_lpc175x_6x.cpp **** // intellectual property rights.  NXP Semiconductors assumes no responsibility
+  17:../src/cr_startup_lpc175x_6x.cpp **** // or liability for the use of the software, conveys no license or rights under any
+  18:../src/cr_startup_lpc175x_6x.cpp **** // patent, copyright, mask work right, or any other intellectual property rights in
+  19:../src/cr_startup_lpc175x_6x.cpp **** // or to any products. NXP Semiconductors reserves the right to make changes
+  20:../src/cr_startup_lpc175x_6x.cpp **** // in the software without notification. NXP Semiconductors also makes no
+  21:../src/cr_startup_lpc175x_6x.cpp **** // representation or warranty that such application will be suitable for the
+  22:../src/cr_startup_lpc175x_6x.cpp **** // specified use without further testing or modification.
+  23:../src/cr_startup_lpc175x_6x.cpp **** //
+  24:../src/cr_startup_lpc175x_6x.cpp **** // Permission to use, copy, modify, and distribute this software and its
+  25:../src/cr_startup_lpc175x_6x.cpp **** // documentation is hereby granted, under NXP Semiconductors' and its
+  26:../src/cr_startup_lpc175x_6x.cpp **** // licensor's relevant copyrights in the software, without fee, provided that it
+  27:../src/cr_startup_lpc175x_6x.cpp **** // is used in conjunction with NXP Semiconductors microcontrollers.  This
+  28:../src/cr_startup_lpc175x_6x.cpp **** // copyright, permission, and disclaimer notice must appear in all copies of
+  29:../src/cr_startup_lpc175x_6x.cpp **** // this code.
+  30:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  31:../src/cr_startup_lpc175x_6x.cpp **** 
+  32:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__cplusplus)
+  33:../src/cr_startup_lpc175x_6x.cpp **** #ifdef __REDLIB__
+  34:../src/cr_startup_lpc175x_6x.cpp **** #error Redlib does not support C++
+  35:../src/cr_startup_lpc175x_6x.cpp **** #else
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 3
+
+
+  36:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  37:../src/cr_startup_lpc175x_6x.cpp **** //
+  38:../src/cr_startup_lpc175x_6x.cpp **** // The entry point for the C++ library startup
+  39:../src/cr_startup_lpc175x_6x.cpp **** //
+  40:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  41:../src/cr_startup_lpc175x_6x.cpp **** extern "C" {
+  42:../src/cr_startup_lpc175x_6x.cpp ****     extern void __libc_init_array(void);
+  43:../src/cr_startup_lpc175x_6x.cpp **** }
+  44:../src/cr_startup_lpc175x_6x.cpp **** #endif
+  45:../src/cr_startup_lpc175x_6x.cpp **** #endif
+  46:../src/cr_startup_lpc175x_6x.cpp **** 
+  47:../src/cr_startup_lpc175x_6x.cpp **** #define WEAK __attribute__ ((weak))
+  48:../src/cr_startup_lpc175x_6x.cpp **** #define ALIAS(f) __attribute__ ((weak, alias (#f)))
+  49:../src/cr_startup_lpc175x_6x.cpp **** 
+  50:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  51:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__cplusplus)
+  52:../src/cr_startup_lpc175x_6x.cpp **** extern "C" {
+  53:../src/cr_startup_lpc175x_6x.cpp **** #endif
+  54:../src/cr_startup_lpc175x_6x.cpp **** 
+  55:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  56:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__USE_CMSIS) || defined (__USE_LPCOPEN)
+  57:../src/cr_startup_lpc175x_6x.cpp **** // Declaration of external SystemInit function
+  58:../src/cr_startup_lpc175x_6x.cpp **** extern void SystemInit(void);
+  59:../src/cr_startup_lpc175x_6x.cpp **** #endif
+  60:../src/cr_startup_lpc175x_6x.cpp **** 
+  61:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  62:../src/cr_startup_lpc175x_6x.cpp **** //
+  63:../src/cr_startup_lpc175x_6x.cpp **** // Forward declaration of the default handlers. These are aliased.
+  64:../src/cr_startup_lpc175x_6x.cpp **** // When the application defines a handler (with the same name), this will
+  65:../src/cr_startup_lpc175x_6x.cpp **** // automatically take precedence over these weak definitions
+  66:../src/cr_startup_lpc175x_6x.cpp **** //
+  67:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  68:../src/cr_startup_lpc175x_6x.cpp ****      void ResetISR(void);
+  69:../src/cr_startup_lpc175x_6x.cpp **** WEAK void NMI_Handler(void);
+  70:../src/cr_startup_lpc175x_6x.cpp **** WEAK void HardFault_Handler(void);
+  71:../src/cr_startup_lpc175x_6x.cpp **** WEAK void MemManage_Handler(void);
+  72:../src/cr_startup_lpc175x_6x.cpp **** WEAK void BusFault_Handler(void);
+  73:../src/cr_startup_lpc175x_6x.cpp **** WEAK void UsageFault_Handler(void);
+  74:../src/cr_startup_lpc175x_6x.cpp **** WEAK void SVC_Handler(void);
+  75:../src/cr_startup_lpc175x_6x.cpp **** WEAK void DebugMon_Handler(void);
+  76:../src/cr_startup_lpc175x_6x.cpp **** WEAK void PendSV_Handler(void);
+  77:../src/cr_startup_lpc175x_6x.cpp **** WEAK void SysTick_Handler(void);
+  78:../src/cr_startup_lpc175x_6x.cpp **** WEAK void IntDefaultHandler(void);
+  79:../src/cr_startup_lpc175x_6x.cpp **** 
+  80:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  81:../src/cr_startup_lpc175x_6x.cpp **** //
+  82:../src/cr_startup_lpc175x_6x.cpp **** // Forward declaration of the specific IRQ handlers. These are aliased
+  83:../src/cr_startup_lpc175x_6x.cpp **** // to the IntDefaultHandler, which is a 'forever' loop. When the application
+  84:../src/cr_startup_lpc175x_6x.cpp **** // defines a handler (with the same name), this will automatically take
+  85:../src/cr_startup_lpc175x_6x.cpp **** // precedence over these weak definitions
+  86:../src/cr_startup_lpc175x_6x.cpp **** //
+  87:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+  88:../src/cr_startup_lpc175x_6x.cpp **** void WDT_IRQHandler(void) ALIAS(IntDefaultHandler);
+  89:../src/cr_startup_lpc175x_6x.cpp **** void TIMER0_IRQHandler(void) ALIAS(IntDefaultHandler);
+  90:../src/cr_startup_lpc175x_6x.cpp **** void TIMER1_IRQHandler(void) ALIAS(IntDefaultHandler);
+  91:../src/cr_startup_lpc175x_6x.cpp **** void TIMER2_IRQHandler(void) ALIAS(IntDefaultHandler);
+  92:../src/cr_startup_lpc175x_6x.cpp **** void TIMER3_IRQHandler(void) ALIAS(IntDefaultHandler);
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 4
+
+
+  93:../src/cr_startup_lpc175x_6x.cpp **** void UART0_IRQHandler(void) ALIAS(IntDefaultHandler);
+  94:../src/cr_startup_lpc175x_6x.cpp **** void UART1_IRQHandler(void) ALIAS(IntDefaultHandler);
+  95:../src/cr_startup_lpc175x_6x.cpp **** void UART2_IRQHandler(void) ALIAS(IntDefaultHandler);
+  96:../src/cr_startup_lpc175x_6x.cpp **** void UART3_IRQHandler(void) ALIAS(IntDefaultHandler);
+  97:../src/cr_startup_lpc175x_6x.cpp **** void PWM1_IRQHandler(void) ALIAS(IntDefaultHandler);
+  98:../src/cr_startup_lpc175x_6x.cpp **** void I2C0_IRQHandler(void) ALIAS(IntDefaultHandler);
+  99:../src/cr_startup_lpc175x_6x.cpp **** void I2C1_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 100:../src/cr_startup_lpc175x_6x.cpp **** void I2C2_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 101:../src/cr_startup_lpc175x_6x.cpp **** void SPI_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 102:../src/cr_startup_lpc175x_6x.cpp **** void SSP0_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 103:../src/cr_startup_lpc175x_6x.cpp **** void SSP1_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 104:../src/cr_startup_lpc175x_6x.cpp **** void PLL0_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 105:../src/cr_startup_lpc175x_6x.cpp **** void RTC_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 106:../src/cr_startup_lpc175x_6x.cpp **** void EINT0_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 107:../src/cr_startup_lpc175x_6x.cpp **** void EINT1_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 108:../src/cr_startup_lpc175x_6x.cpp **** void EINT2_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 109:../src/cr_startup_lpc175x_6x.cpp **** void EINT3_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 110:../src/cr_startup_lpc175x_6x.cpp **** void ADC_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 111:../src/cr_startup_lpc175x_6x.cpp **** void BOD_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 112:../src/cr_startup_lpc175x_6x.cpp **** void USB_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 113:../src/cr_startup_lpc175x_6x.cpp **** void CAN_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 114:../src/cr_startup_lpc175x_6x.cpp **** void DMA_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 115:../src/cr_startup_lpc175x_6x.cpp **** void I2S_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 116:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__USE_LPCOPEN)
+ 117:../src/cr_startup_lpc175x_6x.cpp **** void ETH_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 118:../src/cr_startup_lpc175x_6x.cpp **** #else
+ 119:../src/cr_startup_lpc175x_6x.cpp **** void ENET_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 120:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 121:../src/cr_startup_lpc175x_6x.cpp **** void RIT_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 122:../src/cr_startup_lpc175x_6x.cpp **** void MCPWM_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 123:../src/cr_startup_lpc175x_6x.cpp **** void QEI_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 124:../src/cr_startup_lpc175x_6x.cpp **** void PLL1_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 125:../src/cr_startup_lpc175x_6x.cpp **** void USBActivity_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 126:../src/cr_startup_lpc175x_6x.cpp **** void CANActivity_IRQHandler(void) ALIAS(IntDefaultHandler);
+ 127:../src/cr_startup_lpc175x_6x.cpp **** 
+ 128:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 129:../src/cr_startup_lpc175x_6x.cpp **** //
+ 130:../src/cr_startup_lpc175x_6x.cpp **** // The entry point for the application.
+ 131:../src/cr_startup_lpc175x_6x.cpp **** // __main() is the entry point for Redlib based applications
+ 132:../src/cr_startup_lpc175x_6x.cpp **** // main() is the entry point for Newlib based applications
+ 133:../src/cr_startup_lpc175x_6x.cpp **** //
+ 134:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 135:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__REDLIB__)
+ 136:../src/cr_startup_lpc175x_6x.cpp **** extern void __main(void);
+ 137:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 138:../src/cr_startup_lpc175x_6x.cpp **** extern int main(void);
+ 139:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 140:../src/cr_startup_lpc175x_6x.cpp **** //
+ 141:../src/cr_startup_lpc175x_6x.cpp **** // External declaration for the pointer to the stack top from the Linker Script
+ 142:../src/cr_startup_lpc175x_6x.cpp **** //
+ 143:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 144:../src/cr_startup_lpc175x_6x.cpp **** extern void _vStackTop(void);
+ 145:../src/cr_startup_lpc175x_6x.cpp **** 
+ 146:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 147:../src/cr_startup_lpc175x_6x.cpp **** //
+ 148:../src/cr_startup_lpc175x_6x.cpp **** // External declaration for LPC MCU vector table checksum from  Linker Script
+ 149:../src/cr_startup_lpc175x_6x.cpp **** //
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 5
+
+
+ 150:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 151:../src/cr_startup_lpc175x_6x.cpp **** WEAK extern void __valid_user_code_checksum();
+ 152:../src/cr_startup_lpc175x_6x.cpp **** 
+ 153:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 154:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__cplusplus)
+ 155:../src/cr_startup_lpc175x_6x.cpp **** } // extern "C"
+ 156:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 157:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 158:../src/cr_startup_lpc175x_6x.cpp **** //
+ 159:../src/cr_startup_lpc175x_6x.cpp **** // The vector table.
+ 160:../src/cr_startup_lpc175x_6x.cpp **** // This relies on the linker script to place at correct location in memory.
+ 161:../src/cr_startup_lpc175x_6x.cpp **** //
+ 162:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 163:../src/cr_startup_lpc175x_6x.cpp **** extern void (* const g_pfnVectors[])(void);
+ 164:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((used,section(".isr_vector")))
+ 165:../src/cr_startup_lpc175x_6x.cpp **** void (* const g_pfnVectors[])(void) = {
+ 166:../src/cr_startup_lpc175x_6x.cpp ****     // Core Level - CM3
+ 167:../src/cr_startup_lpc175x_6x.cpp ****     &_vStackTop, // The initial stack pointer
+ 168:../src/cr_startup_lpc175x_6x.cpp ****     ResetISR,                               // The reset handler
+ 169:../src/cr_startup_lpc175x_6x.cpp ****     NMI_Handler,                            // The NMI handler
+ 170:../src/cr_startup_lpc175x_6x.cpp ****     HardFault_Handler,                      // The hard fault handler
+ 171:../src/cr_startup_lpc175x_6x.cpp ****     MemManage_Handler,                      // The MPU fault handler
+ 172:../src/cr_startup_lpc175x_6x.cpp ****     BusFault_Handler,                       // The bus fault handler
+ 173:../src/cr_startup_lpc175x_6x.cpp ****     UsageFault_Handler,                     // The usage fault handler
+ 174:../src/cr_startup_lpc175x_6x.cpp ****     __valid_user_code_checksum,             // LPC MCU Checksum
+ 175:../src/cr_startup_lpc175x_6x.cpp ****     0,                                      // Reserved
+ 176:../src/cr_startup_lpc175x_6x.cpp ****     0,                                      // Reserved
+ 177:../src/cr_startup_lpc175x_6x.cpp ****     0,                                      // Reserved
+ 178:../src/cr_startup_lpc175x_6x.cpp ****     SVC_Handler,                            // SVCall handler
+ 179:../src/cr_startup_lpc175x_6x.cpp ****     DebugMon_Handler,                       // Debug monitor handler
+ 180:../src/cr_startup_lpc175x_6x.cpp ****     0,                                      // Reserved
+ 181:../src/cr_startup_lpc175x_6x.cpp ****     PendSV_Handler,                         // The PendSV handler
+ 182:../src/cr_startup_lpc175x_6x.cpp ****     SysTick_Handler,                        // The SysTick handler
+ 183:../src/cr_startup_lpc175x_6x.cpp **** 
+ 184:../src/cr_startup_lpc175x_6x.cpp ****     // Chip Level - LPC17
+ 185:../src/cr_startup_lpc175x_6x.cpp ****     WDT_IRQHandler,                         // 16, 0x40 - WDT
+ 186:../src/cr_startup_lpc175x_6x.cpp ****     TIMER0_IRQHandler,                      // 17, 0x44 - TIMER0
+ 187:../src/cr_startup_lpc175x_6x.cpp ****     TIMER1_IRQHandler,                      // 18, 0x48 - TIMER1
+ 188:../src/cr_startup_lpc175x_6x.cpp ****     TIMER2_IRQHandler,                      // 19, 0x4c - TIMER2
+ 189:../src/cr_startup_lpc175x_6x.cpp ****     TIMER3_IRQHandler,                      // 20, 0x50 - TIMER3
+ 190:../src/cr_startup_lpc175x_6x.cpp ****     UART0_IRQHandler,                       // 21, 0x54 - UART0
+ 191:../src/cr_startup_lpc175x_6x.cpp ****     UART1_IRQHandler,                       // 22, 0x58 - UART1
+ 192:../src/cr_startup_lpc175x_6x.cpp ****     UART2_IRQHandler,                       // 23, 0x5c - UART2
+ 193:../src/cr_startup_lpc175x_6x.cpp ****     UART3_IRQHandler,                       // 24, 0x60 - UART3
+ 194:../src/cr_startup_lpc175x_6x.cpp ****     PWM1_IRQHandler,                        // 25, 0x64 - PWM1
+ 195:../src/cr_startup_lpc175x_6x.cpp ****     I2C0_IRQHandler,                        // 26, 0x68 - I2C0
+ 196:../src/cr_startup_lpc175x_6x.cpp ****     I2C1_IRQHandler,                        // 27, 0x6c - I2C1
+ 197:../src/cr_startup_lpc175x_6x.cpp ****     I2C2_IRQHandler,                        // 28, 0x70 - I2C2
+ 198:../src/cr_startup_lpc175x_6x.cpp ****     SPI_IRQHandler,                         // 29, 0x74 - SPI
+ 199:../src/cr_startup_lpc175x_6x.cpp ****     SSP0_IRQHandler,                        // 30, 0x78 - SSP0
+ 200:../src/cr_startup_lpc175x_6x.cpp ****     SSP1_IRQHandler,                        // 31, 0x7c - SSP1
+ 201:../src/cr_startup_lpc175x_6x.cpp ****     PLL0_IRQHandler,                        // 32, 0x80 - PLL0 (Main PLL)
+ 202:../src/cr_startup_lpc175x_6x.cpp ****     RTC_IRQHandler,                         // 33, 0x84 - RTC
+ 203:../src/cr_startup_lpc175x_6x.cpp ****     EINT0_IRQHandler,                       // 34, 0x88 - EINT0
+ 204:../src/cr_startup_lpc175x_6x.cpp ****     EINT1_IRQHandler,                       // 35, 0x8c - EINT1
+ 205:../src/cr_startup_lpc175x_6x.cpp ****     EINT2_IRQHandler,                       // 36, 0x90 - EINT2
+ 206:../src/cr_startup_lpc175x_6x.cpp ****     EINT3_IRQHandler,                       // 37, 0x94 - EINT3
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 6
+
+
+ 207:../src/cr_startup_lpc175x_6x.cpp ****     ADC_IRQHandler,                         // 38, 0x98 - ADC
+ 208:../src/cr_startup_lpc175x_6x.cpp ****     BOD_IRQHandler,                         // 39, 0x9c - BOD
+ 209:../src/cr_startup_lpc175x_6x.cpp ****     USB_IRQHandler,                         // 40, 0xA0 - USB
+ 210:../src/cr_startup_lpc175x_6x.cpp ****     CAN_IRQHandler,                         // 41, 0xa4 - CAN
+ 211:../src/cr_startup_lpc175x_6x.cpp ****     DMA_IRQHandler,                         // 42, 0xa8 - GP DMA
+ 212:../src/cr_startup_lpc175x_6x.cpp ****     I2S_IRQHandler,                         // 43, 0xac - I2S
+ 213:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__USE_LPCOPEN)
+ 214:../src/cr_startup_lpc175x_6x.cpp ****     ETH_IRQHandler,                         // 44, 0xb0 - Ethernet
+ 215:../src/cr_startup_lpc175x_6x.cpp **** #else
+ 216:../src/cr_startup_lpc175x_6x.cpp ****     ENET_IRQHandler,                        // 44, 0xb0 - Ethernet
+ 217:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 218:../src/cr_startup_lpc175x_6x.cpp ****     RIT_IRQHandler,                         // 45, 0xb4 - RITINT
+ 219:../src/cr_startup_lpc175x_6x.cpp ****     MCPWM_IRQHandler,                       // 46, 0xb8 - Motor Control PWM
+ 220:../src/cr_startup_lpc175x_6x.cpp ****     QEI_IRQHandler,                         // 47, 0xbc - Quadrature Encoder
+ 221:../src/cr_startup_lpc175x_6x.cpp ****     PLL1_IRQHandler,                        // 48, 0xc0 - PLL1 (USB PLL)
+ 222:../src/cr_startup_lpc175x_6x.cpp ****     USBActivity_IRQHandler,                 // 49, 0xc4 - USB Activity interrupt to wakeup
+ 223:../src/cr_startup_lpc175x_6x.cpp ****     CANActivity_IRQHandler,                 // 50, 0xc8 - CAN Activity interrupt to wakeup
+ 224:../src/cr_startup_lpc175x_6x.cpp **** };
+ 225:../src/cr_startup_lpc175x_6x.cpp **** 
+ 226:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 227:../src/cr_startup_lpc175x_6x.cpp **** // Functions to carry out the initialization of RW and BSS data sections. These
+ 228:../src/cr_startup_lpc175x_6x.cpp **** // are written as separate functions rather than being inlined within the
+ 229:../src/cr_startup_lpc175x_6x.cpp **** // ResetISR() function in order to cope with MCUs with multiple banks of
+ 230:../src/cr_startup_lpc175x_6x.cpp **** // memory.
+ 231:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 232:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 233:../src/cr_startup_lpc175x_6x.cpp **** void data_init(unsigned int romstart, unsigned int start, unsigned int len) {
+  83              		.loc 1 233 0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 32
+  86              		@ frame_needed = 1, uses_anonymous_args = 0
+  87              		@ link register save eliminated.
+  88 0000 80B4     		push	{r7}
+  89              		.cfi_def_cfa_offset 4
+  90              		.cfi_offset 7, -4
+  91 0002 89B0     		sub	sp, sp, #36
+  92              		.cfi_def_cfa_offset 40
+  93 0004 00AF     		add	r7, sp, #0
+  94              		.cfi_def_cfa_register 7
+  95 0006 F860     		str	r0, [r7, #12]
+  96 0008 B960     		str	r1, [r7, #8]
+  97 000a 7A60     		str	r2, [r7, #4]
+ 234:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int *pulDest = (unsigned int*) start;
+  98              		.loc 1 234 0
+  99 000c BB68     		ldr	r3, [r7, #8]
+ 100 000e FB61     		str	r3, [r7, #28]
+ 235:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int *pulSrc = (unsigned int*) romstart;
+ 101              		.loc 1 235 0
+ 102 0010 FB68     		ldr	r3, [r7, #12]
+ 103 0012 BB61     		str	r3, [r7, #24]
+ 236:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int loop;
+ 237:../src/cr_startup_lpc175x_6x.cpp ****     for (loop = 0; loop < len; loop = loop + 4)
+ 104              		.loc 1 237 0
+ 105 0014 0023     		movs	r3, #0
+ 106 0016 7B61     		str	r3, [r7, #20]
+ 107              	.L3:
+ 108              		.loc 1 237 0 is_stmt 0 discriminator 3
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 7
+
+
+ 109 0018 7A69     		ldr	r2, [r7, #20]
+ 110 001a 7B68     		ldr	r3, [r7, #4]
+ 111 001c 9A42     		cmp	r2, r3
+ 112 001e 0BD2     		bcs	.L4
+ 238:../src/cr_startup_lpc175x_6x.cpp ****         *pulDest++ = *pulSrc++;
+ 113              		.loc 1 238 0 is_stmt 1 discriminator 2
+ 114 0020 BA69     		ldr	r2, [r7, #24]
+ 115 0022 131D     		adds	r3, r2, #4
+ 116 0024 BB61     		str	r3, [r7, #24]
+ 117 0026 FB69     		ldr	r3, [r7, #28]
+ 118 0028 191D     		adds	r1, r3, #4
+ 119 002a F961     		str	r1, [r7, #28]
+ 120 002c 1268     		ldr	r2, [r2]
+ 121 002e 1A60     		str	r2, [r3]
+ 237:../src/cr_startup_lpc175x_6x.cpp ****         *pulDest++ = *pulSrc++;
+ 122              		.loc 1 237 0 discriminator 2
+ 123 0030 7B69     		ldr	r3, [r7, #20]
+ 124 0032 0433     		adds	r3, r3, #4
+ 125 0034 7B61     		str	r3, [r7, #20]
+ 126 0036 EFE7     		b	.L3
+ 127              	.L4:
+ 239:../src/cr_startup_lpc175x_6x.cpp **** }
+ 128              		.loc 1 239 0
+ 129 0038 00BF     		nop
+ 130 003a 2437     		adds	r7, r7, #36
+ 131              		.cfi_def_cfa_offset 4
+ 132 003c BD46     		mov	sp, r7
+ 133              		.cfi_def_cfa_register 13
+ 134              		@ sp needed
+ 135 003e 80BC     		pop	{r7}
+ 136              		.cfi_restore 7
+ 137              		.cfi_def_cfa_offset 0
+ 138 0040 7047     		bx	lr
+ 139              		.cfi_endproc
+ 140              	.LFE0:
+ 142              		.align	1
+ 143              		.global	_Z8bss_initjj
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 147              		.fpu softvfp
+ 149              	_Z8bss_initjj:
+ 150              	.LFB1:
+ 240:../src/cr_startup_lpc175x_6x.cpp **** 
+ 241:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 242:../src/cr_startup_lpc175x_6x.cpp **** void bss_init(unsigned int start, unsigned int len) {
+ 151              		.loc 1 242 0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 16
+ 154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156 0042 80B4     		push	{r7}
+ 157              		.cfi_def_cfa_offset 4
+ 158              		.cfi_offset 7, -4
+ 159 0044 85B0     		sub	sp, sp, #20
+ 160              		.cfi_def_cfa_offset 24
+ 161 0046 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 8
+
+
+ 162              		.cfi_def_cfa_register 7
+ 163 0048 7860     		str	r0, [r7, #4]
+ 164 004a 3960     		str	r1, [r7]
+ 243:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int *pulDest = (unsigned int*) start;
+ 165              		.loc 1 243 0
+ 166 004c 7B68     		ldr	r3, [r7, #4]
+ 167 004e FB60     		str	r3, [r7, #12]
+ 244:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int loop;
+ 245:../src/cr_startup_lpc175x_6x.cpp ****     for (loop = 0; loop < len; loop = loop + 4)
+ 168              		.loc 1 245 0
+ 169 0050 0023     		movs	r3, #0
+ 170 0052 BB60     		str	r3, [r7, #8]
+ 171              	.L7:
+ 172              		.loc 1 245 0 is_stmt 0 discriminator 3
+ 173 0054 BA68     		ldr	r2, [r7, #8]
+ 174 0056 3B68     		ldr	r3, [r7]
+ 175 0058 9A42     		cmp	r2, r3
+ 176 005a 08D2     		bcs	.L8
+ 246:../src/cr_startup_lpc175x_6x.cpp ****         *pulDest++ = 0;
+ 177              		.loc 1 246 0 is_stmt 1 discriminator 2
+ 178 005c FB68     		ldr	r3, [r7, #12]
+ 179 005e 1A1D     		adds	r2, r3, #4
+ 180 0060 FA60     		str	r2, [r7, #12]
+ 181 0062 0022     		movs	r2, #0
+ 182 0064 1A60     		str	r2, [r3]
+ 245:../src/cr_startup_lpc175x_6x.cpp ****         *pulDest++ = 0;
+ 183              		.loc 1 245 0 discriminator 2
+ 184 0066 BB68     		ldr	r3, [r7, #8]
+ 185 0068 0433     		adds	r3, r3, #4
+ 186 006a BB60     		str	r3, [r7, #8]
+ 187 006c F2E7     		b	.L7
+ 188              	.L8:
+ 247:../src/cr_startup_lpc175x_6x.cpp **** }
+ 189              		.loc 1 247 0
+ 190 006e 00BF     		nop
+ 191 0070 1437     		adds	r7, r7, #20
+ 192              		.cfi_def_cfa_offset 4
+ 193 0072 BD46     		mov	sp, r7
+ 194              		.cfi_def_cfa_register 13
+ 195              		@ sp needed
+ 196 0074 80BC     		pop	{r7}
+ 197              		.cfi_restore 7
+ 198              		.cfi_def_cfa_offset 0
+ 199 0076 7047     		bx	lr
+ 200              		.cfi_endproc
+ 201              	.LFE1:
+ 203              		.align	1
+ 204              		.global	ResetISR
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.fpu softvfp
+ 210              	ResetISR:
+ 211              	.LFB2:
+ 248:../src/cr_startup_lpc175x_6x.cpp **** 
+ 249:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 250:../src/cr_startup_lpc175x_6x.cpp **** // The following symbols are constructs generated by the linker, indicating
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 9
+
+
+ 251:../src/cr_startup_lpc175x_6x.cpp **** // the location of various points in the "Global Section Table". This table is
+ 252:../src/cr_startup_lpc175x_6x.cpp **** // created by the linker via the Code Red managed linker script mechanism. It
+ 253:../src/cr_startup_lpc175x_6x.cpp **** // contains the load address, execution address and length of each RW data
+ 254:../src/cr_startup_lpc175x_6x.cpp **** // section and the execution and length of each BSS (zero initialized) section.
+ 255:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 256:../src/cr_startup_lpc175x_6x.cpp **** extern unsigned int __data_section_table;
+ 257:../src/cr_startup_lpc175x_6x.cpp **** extern unsigned int __data_section_table_end;
+ 258:../src/cr_startup_lpc175x_6x.cpp **** extern unsigned int __bss_section_table;
+ 259:../src/cr_startup_lpc175x_6x.cpp **** extern unsigned int __bss_section_table_end;
+ 260:../src/cr_startup_lpc175x_6x.cpp **** 
+ 261:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 262:../src/cr_startup_lpc175x_6x.cpp **** // Reset entry point for your code.
+ 263:../src/cr_startup_lpc175x_6x.cpp **** // Sets up a simple runtime environment and initializes the C/C++
+ 264:../src/cr_startup_lpc175x_6x.cpp **** // library.
+ 265:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 266:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 267:../src/cr_startup_lpc175x_6x.cpp **** void
+ 268:../src/cr_startup_lpc175x_6x.cpp **** ResetISR(void) {
+ 212              		.loc 1 268 0
+ 213              		.cfi_startproc
+ 214              		@ args = 0, pretend = 0, frame = 16
+ 215              		@ frame_needed = 1, uses_anonymous_args = 0
+ 216 0078 80B5     		push	{r7, lr}
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 7, -8
+ 219              		.cfi_offset 14, -4
+ 220 007a 84B0     		sub	sp, sp, #16
+ 221              		.cfi_def_cfa_offset 24
+ 222 007c 00AF     		add	r7, sp, #0
+ 223              		.cfi_def_cfa_register 7
+ 269:../src/cr_startup_lpc175x_6x.cpp **** 
+ 270:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 271:../src/cr_startup_lpc175x_6x.cpp ****     // Copy the data sections from flash to SRAM.
+ 272:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 273:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int LoadAddr, ExeAddr, SectionLen;
+ 274:../src/cr_startup_lpc175x_6x.cpp ****     unsigned int *SectionTableAddr;
+ 275:../src/cr_startup_lpc175x_6x.cpp **** 
+ 276:../src/cr_startup_lpc175x_6x.cpp ****     // Load base address of Global Section Table
+ 277:../src/cr_startup_lpc175x_6x.cpp ****     SectionTableAddr = &__data_section_table;
+ 224              		.loc 1 277 0
+ 225 007e 1A4B     		ldr	r3, .L14
+ 226 0080 FB60     		str	r3, [r7, #12]
+ 227              	.L11:
+ 278:../src/cr_startup_lpc175x_6x.cpp **** 
+ 279:../src/cr_startup_lpc175x_6x.cpp ****     // Copy the data sections from flash to SRAM.
+ 280:../src/cr_startup_lpc175x_6x.cpp ****     while (SectionTableAddr < &__data_section_table_end) {
+ 228              		.loc 1 280 0
+ 229 0082 FB68     		ldr	r3, [r7, #12]
+ 230 0084 194A     		ldr	r2, .L14+4
+ 231 0086 9342     		cmp	r3, r2
+ 232 0088 14D2     		bcs	.L10
+ 281:../src/cr_startup_lpc175x_6x.cpp ****         LoadAddr = *SectionTableAddr++;
+ 233              		.loc 1 281 0
+ 234 008a FB68     		ldr	r3, [r7, #12]
+ 235 008c 1A1D     		adds	r2, r3, #4
+ 236 008e FA60     		str	r2, [r7, #12]
+ 237 0090 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 10
+
+
+ 238 0092 BB60     		str	r3, [r7, #8]
+ 282:../src/cr_startup_lpc175x_6x.cpp ****         ExeAddr = *SectionTableAddr++;
+ 239              		.loc 1 282 0
+ 240 0094 FB68     		ldr	r3, [r7, #12]
+ 241 0096 1A1D     		adds	r2, r3, #4
+ 242 0098 FA60     		str	r2, [r7, #12]
+ 243 009a 1B68     		ldr	r3, [r3]
+ 244 009c 7B60     		str	r3, [r7, #4]
+ 283:../src/cr_startup_lpc175x_6x.cpp ****         SectionLen = *SectionTableAddr++;
+ 245              		.loc 1 283 0
+ 246 009e FB68     		ldr	r3, [r7, #12]
+ 247 00a0 1A1D     		adds	r2, r3, #4
+ 248 00a2 FA60     		str	r2, [r7, #12]
+ 249 00a4 1B68     		ldr	r3, [r3]
+ 250 00a6 3B60     		str	r3, [r7]
+ 284:../src/cr_startup_lpc175x_6x.cpp ****         data_init(LoadAddr, ExeAddr, SectionLen);
+ 251              		.loc 1 284 0
+ 252 00a8 3A68     		ldr	r2, [r7]
+ 253 00aa 7968     		ldr	r1, [r7, #4]
+ 254 00ac B868     		ldr	r0, [r7, #8]
+ 255 00ae FFF7FEFF 		bl	_Z9data_initjjj
+ 280:../src/cr_startup_lpc175x_6x.cpp ****         LoadAddr = *SectionTableAddr++;
+ 256              		.loc 1 280 0
+ 257 00b2 E6E7     		b	.L11
+ 258              	.L10:
+ 285:../src/cr_startup_lpc175x_6x.cpp ****     }
+ 286:../src/cr_startup_lpc175x_6x.cpp ****     // At this point, SectionTableAddr = &__bss_section_table;
+ 287:../src/cr_startup_lpc175x_6x.cpp ****     // Zero fill the bss segment
+ 288:../src/cr_startup_lpc175x_6x.cpp ****     while (SectionTableAddr < &__bss_section_table_end) {
+ 259              		.loc 1 288 0
+ 260 00b4 FB68     		ldr	r3, [r7, #12]
+ 261 00b6 0E4A     		ldr	r2, .L14+8
+ 262 00b8 9342     		cmp	r3, r2
+ 263 00ba 0ED2     		bcs	.L12
+ 289:../src/cr_startup_lpc175x_6x.cpp ****         ExeAddr = *SectionTableAddr++;
+ 264              		.loc 1 289 0
+ 265 00bc FB68     		ldr	r3, [r7, #12]
+ 266 00be 1A1D     		adds	r2, r3, #4
+ 267 00c0 FA60     		str	r2, [r7, #12]
+ 268 00c2 1B68     		ldr	r3, [r3]
+ 269 00c4 7B60     		str	r3, [r7, #4]
+ 290:../src/cr_startup_lpc175x_6x.cpp ****         SectionLen = *SectionTableAddr++;
+ 270              		.loc 1 290 0
+ 271 00c6 FB68     		ldr	r3, [r7, #12]
+ 272 00c8 1A1D     		adds	r2, r3, #4
+ 273 00ca FA60     		str	r2, [r7, #12]
+ 274 00cc 1B68     		ldr	r3, [r3]
+ 275 00ce 3B60     		str	r3, [r7]
+ 291:../src/cr_startup_lpc175x_6x.cpp ****         bss_init(ExeAddr, SectionLen);
+ 276              		.loc 1 291 0
+ 277 00d0 3968     		ldr	r1, [r7]
+ 278 00d2 7868     		ldr	r0, [r7, #4]
+ 279 00d4 FFF7FEFF 		bl	_Z8bss_initjj
+ 288:../src/cr_startup_lpc175x_6x.cpp ****         ExeAddr = *SectionTableAddr++;
+ 280              		.loc 1 288 0
+ 281 00d8 ECE7     		b	.L10
+ 282              	.L12:
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 11
+
+
+ 292:../src/cr_startup_lpc175x_6x.cpp ****     }
+ 293:../src/cr_startup_lpc175x_6x.cpp **** 
+ 294:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__USE_CMSIS) || defined (__USE_LPCOPEN)
+ 295:../src/cr_startup_lpc175x_6x.cpp ****     SystemInit();
+ 283              		.loc 1 295 0
+ 284 00da FFF7FEFF 		bl	SystemInit
+ 296:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 297:../src/cr_startup_lpc175x_6x.cpp **** 
+ 298:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__cplusplus)
+ 299:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 300:../src/cr_startup_lpc175x_6x.cpp ****     // Call C++ library initialisation
+ 301:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 302:../src/cr_startup_lpc175x_6x.cpp ****     __libc_init_array();
+ 285              		.loc 1 302 0
+ 286 00de FFF7FEFF 		bl	__libc_init_array
+ 303:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 304:../src/cr_startup_lpc175x_6x.cpp **** 
+ 305:../src/cr_startup_lpc175x_6x.cpp **** #if defined (__REDLIB__)
+ 306:../src/cr_startup_lpc175x_6x.cpp ****     // Call the Redlib library, which in turn calls main()
+ 307:../src/cr_startup_lpc175x_6x.cpp ****     __main() ;
+ 308:../src/cr_startup_lpc175x_6x.cpp **** #else
+ 309:../src/cr_startup_lpc175x_6x.cpp ****     main();
+ 287              		.loc 1 309 0
+ 288 00e2 FFF7FEFF 		bl	main
+ 289              	.L13:
+ 310:../src/cr_startup_lpc175x_6x.cpp **** #endif
+ 311:../src/cr_startup_lpc175x_6x.cpp **** 
+ 312:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 313:../src/cr_startup_lpc175x_6x.cpp ****     // main() shouldn't return, but if it does, we'll just enter an infinite loop
+ 314:../src/cr_startup_lpc175x_6x.cpp ****     //
+ 315:../src/cr_startup_lpc175x_6x.cpp ****     while (1) {
+ 290              		.loc 1 315 0 discriminator 1
+ 291 00e6 FEE7     		b	.L13
+ 292              	.L15:
+ 293              		.align	2
+ 294              	.L14:
+ 295 00e8 00000000 		.word	__data_section_table
+ 296 00ec 00000000 		.word	__data_section_table_end
+ 297 00f0 00000000 		.word	__bss_section_table_end
+ 298              		.cfi_endproc
+ 299              	.LFE2:
+ 301              		.align	1
+ 302              		.weak	NMI_Handler
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.fpu softvfp
+ 308              	NMI_Handler:
+ 309              	.LFB3:
+ 316:../src/cr_startup_lpc175x_6x.cpp ****         ;
+ 317:../src/cr_startup_lpc175x_6x.cpp ****     }
+ 318:../src/cr_startup_lpc175x_6x.cpp **** }
+ 319:../src/cr_startup_lpc175x_6x.cpp **** 
+ 320:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 321:../src/cr_startup_lpc175x_6x.cpp **** // Default exception handlers. Override the ones here by defining your own
+ 322:../src/cr_startup_lpc175x_6x.cpp **** // handler routines in your application code.
+ 323:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 12
+
+
+ 324:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 325:../src/cr_startup_lpc175x_6x.cpp **** void NMI_Handler(void)
+ 326:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 310              		.loc 1 326 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 1, uses_anonymous_args = 0
+ 314              		@ link register save eliminated.
+ 315 00f4 80B4     		push	{r7}
+ 316              		.cfi_def_cfa_offset 4
+ 317              		.cfi_offset 7, -4
+ 318 00f6 00AF     		add	r7, sp, #0
+ 319              		.cfi_def_cfa_register 7
+ 320              	.L17:
+ 321              		.loc 1 326 0 discriminator 1
+ 322 00f8 FEE7     		b	.L17
+ 323              		.cfi_endproc
+ 324              	.LFE3:
+ 326              		.align	1
+ 327              		.weak	HardFault_Handler
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.fpu softvfp
+ 333              	HardFault_Handler:
+ 334              	.LFB4:
+ 327:../src/cr_startup_lpc175x_6x.cpp **** }
+ 328:../src/cr_startup_lpc175x_6x.cpp **** 
+ 329:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 330:../src/cr_startup_lpc175x_6x.cpp **** void HardFault_Handler(void)
+ 331:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 335              		.loc 1 331 0
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 1, uses_anonymous_args = 0
+ 339              		@ link register save eliminated.
+ 340 00fa 80B4     		push	{r7}
+ 341              		.cfi_def_cfa_offset 4
+ 342              		.cfi_offset 7, -4
+ 343 00fc 00AF     		add	r7, sp, #0
+ 344              		.cfi_def_cfa_register 7
+ 345              	.L19:
+ 346              		.loc 1 331 0 discriminator 1
+ 347 00fe FEE7     		b	.L19
+ 348              		.cfi_endproc
+ 349              	.LFE4:
+ 351              		.align	1
+ 352              		.weak	MemManage_Handler
+ 353              		.syntax unified
+ 354              		.thumb
+ 355              		.thumb_func
+ 356              		.fpu softvfp
+ 358              	MemManage_Handler:
+ 359              	.LFB5:
+ 332:../src/cr_startup_lpc175x_6x.cpp **** }
+ 333:../src/cr_startup_lpc175x_6x.cpp **** 
+ 334:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 13
+
+
+ 335:../src/cr_startup_lpc175x_6x.cpp **** void MemManage_Handler(void)
+ 336:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 360              		.loc 1 336 0
+ 361              		.cfi_startproc
+ 362              		@ args = 0, pretend = 0, frame = 0
+ 363              		@ frame_needed = 1, uses_anonymous_args = 0
+ 364              		@ link register save eliminated.
+ 365 0100 80B4     		push	{r7}
+ 366              		.cfi_def_cfa_offset 4
+ 367              		.cfi_offset 7, -4
+ 368 0102 00AF     		add	r7, sp, #0
+ 369              		.cfi_def_cfa_register 7
+ 370              	.L21:
+ 371              		.loc 1 336 0 discriminator 1
+ 372 0104 FEE7     		b	.L21
+ 373              		.cfi_endproc
+ 374              	.LFE5:
+ 376              		.align	1
+ 377              		.weak	BusFault_Handler
+ 378              		.syntax unified
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.fpu softvfp
+ 383              	BusFault_Handler:
+ 384              	.LFB6:
+ 337:../src/cr_startup_lpc175x_6x.cpp **** }
+ 338:../src/cr_startup_lpc175x_6x.cpp **** 
+ 339:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 340:../src/cr_startup_lpc175x_6x.cpp **** void BusFault_Handler(void)
+ 341:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 385              		.loc 1 341 0
+ 386              		.cfi_startproc
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 1, uses_anonymous_args = 0
+ 389              		@ link register save eliminated.
+ 390 0106 80B4     		push	{r7}
+ 391              		.cfi_def_cfa_offset 4
+ 392              		.cfi_offset 7, -4
+ 393 0108 00AF     		add	r7, sp, #0
+ 394              		.cfi_def_cfa_register 7
+ 395              	.L23:
+ 396              		.loc 1 341 0 discriminator 1
+ 397 010a FEE7     		b	.L23
+ 398              		.cfi_endproc
+ 399              	.LFE6:
+ 401              		.align	1
+ 402              		.weak	UsageFault_Handler
+ 403              		.syntax unified
+ 404              		.thumb
+ 405              		.thumb_func
+ 406              		.fpu softvfp
+ 408              	UsageFault_Handler:
+ 409              	.LFB7:
+ 342:../src/cr_startup_lpc175x_6x.cpp **** }
+ 343:../src/cr_startup_lpc175x_6x.cpp **** 
+ 344:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 345:../src/cr_startup_lpc175x_6x.cpp **** void UsageFault_Handler(void)
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 14
+
+
+ 346:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 410              		.loc 1 346 0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 0
+ 413              		@ frame_needed = 1, uses_anonymous_args = 0
+ 414              		@ link register save eliminated.
+ 415 010c 80B4     		push	{r7}
+ 416              		.cfi_def_cfa_offset 4
+ 417              		.cfi_offset 7, -4
+ 418 010e 00AF     		add	r7, sp, #0
+ 419              		.cfi_def_cfa_register 7
+ 420              	.L25:
+ 421              		.loc 1 346 0 discriminator 1
+ 422 0110 FEE7     		b	.L25
+ 423              		.cfi_endproc
+ 424              	.LFE7:
+ 426              		.align	1
+ 427              		.weak	SVC_Handler
+ 428              		.syntax unified
+ 429              		.thumb
+ 430              		.thumb_func
+ 431              		.fpu softvfp
+ 433              	SVC_Handler:
+ 434              	.LFB8:
+ 347:../src/cr_startup_lpc175x_6x.cpp **** }
+ 348:../src/cr_startup_lpc175x_6x.cpp **** 
+ 349:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 350:../src/cr_startup_lpc175x_6x.cpp **** void SVC_Handler(void)
+ 351:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 435              		.loc 1 351 0
+ 436              		.cfi_startproc
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 1, uses_anonymous_args = 0
+ 439              		@ link register save eliminated.
+ 440 0112 80B4     		push	{r7}
+ 441              		.cfi_def_cfa_offset 4
+ 442              		.cfi_offset 7, -4
+ 443 0114 00AF     		add	r7, sp, #0
+ 444              		.cfi_def_cfa_register 7
+ 445              	.L27:
+ 446              		.loc 1 351 0 discriminator 1
+ 447 0116 FEE7     		b	.L27
+ 448              		.cfi_endproc
+ 449              	.LFE8:
+ 451              		.align	1
+ 452              		.weak	DebugMon_Handler
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 456              		.fpu softvfp
+ 458              	DebugMon_Handler:
+ 459              	.LFB9:
+ 352:../src/cr_startup_lpc175x_6x.cpp **** }
+ 353:../src/cr_startup_lpc175x_6x.cpp **** 
+ 354:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 355:../src/cr_startup_lpc175x_6x.cpp **** void DebugMon_Handler(void)
+ 356:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 15
+
+
+ 460              		.loc 1 356 0
+ 461              		.cfi_startproc
+ 462              		@ args = 0, pretend = 0, frame = 0
+ 463              		@ frame_needed = 1, uses_anonymous_args = 0
+ 464              		@ link register save eliminated.
+ 465 0118 80B4     		push	{r7}
+ 466              		.cfi_def_cfa_offset 4
+ 467              		.cfi_offset 7, -4
+ 468 011a 00AF     		add	r7, sp, #0
+ 469              		.cfi_def_cfa_register 7
+ 470              	.L29:
+ 471              		.loc 1 356 0 discriminator 1
+ 472 011c FEE7     		b	.L29
+ 473              		.cfi_endproc
+ 474              	.LFE9:
+ 476              		.align	1
+ 477              		.weak	PendSV_Handler
+ 478              		.syntax unified
+ 479              		.thumb
+ 480              		.thumb_func
+ 481              		.fpu softvfp
+ 483              	PendSV_Handler:
+ 484              	.LFB10:
+ 357:../src/cr_startup_lpc175x_6x.cpp **** }
+ 358:../src/cr_startup_lpc175x_6x.cpp **** 
+ 359:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 360:../src/cr_startup_lpc175x_6x.cpp **** void PendSV_Handler(void)
+ 361:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 485              		.loc 1 361 0
+ 486              		.cfi_startproc
+ 487              		@ args = 0, pretend = 0, frame = 0
+ 488              		@ frame_needed = 1, uses_anonymous_args = 0
+ 489              		@ link register save eliminated.
+ 490 011e 80B4     		push	{r7}
+ 491              		.cfi_def_cfa_offset 4
+ 492              		.cfi_offset 7, -4
+ 493 0120 00AF     		add	r7, sp, #0
+ 494              		.cfi_def_cfa_register 7
+ 495              	.L31:
+ 496              		.loc 1 361 0 discriminator 1
+ 497 0122 FEE7     		b	.L31
+ 498              		.cfi_endproc
+ 499              	.LFE10:
+ 501              		.align	1
+ 502              		.weak	SysTick_Handler
+ 503              		.syntax unified
+ 504              		.thumb
+ 505              		.thumb_func
+ 506              		.fpu softvfp
+ 508              	SysTick_Handler:
+ 509              	.LFB11:
+ 362:../src/cr_startup_lpc175x_6x.cpp **** }
+ 363:../src/cr_startup_lpc175x_6x.cpp **** 
+ 364:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 365:../src/cr_startup_lpc175x_6x.cpp **** void SysTick_Handler(void)
+ 366:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 510              		.loc 1 366 0
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 16
+
+
+ 511              		.cfi_startproc
+ 512              		@ args = 0, pretend = 0, frame = 0
+ 513              		@ frame_needed = 1, uses_anonymous_args = 0
+ 514              		@ link register save eliminated.
+ 515 0124 80B4     		push	{r7}
+ 516              		.cfi_def_cfa_offset 4
+ 517              		.cfi_offset 7, -4
+ 518 0126 00AF     		add	r7, sp, #0
+ 519              		.cfi_def_cfa_register 7
+ 520              	.L33:
+ 521              		.loc 1 366 0 discriminator 1
+ 522 0128 FEE7     		b	.L33
+ 523              		.cfi_endproc
+ 524              	.LFE11:
+ 526              		.align	1
+ 527              		.weak	IntDefaultHandler
+ 528              		.syntax unified
+ 529              		.thumb
+ 530              		.thumb_func
+ 531              		.fpu softvfp
+ 533              	IntDefaultHandler:
+ 534              	.LFB12:
+ 367:../src/cr_startup_lpc175x_6x.cpp **** }
+ 368:../src/cr_startup_lpc175x_6x.cpp **** 
+ 369:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 370:../src/cr_startup_lpc175x_6x.cpp **** //
+ 371:../src/cr_startup_lpc175x_6x.cpp **** // Processor ends up here if an unexpected interrupt occurs or a specific
+ 372:../src/cr_startup_lpc175x_6x.cpp **** // handler is not present in the application code.
+ 373:../src/cr_startup_lpc175x_6x.cpp **** //
+ 374:../src/cr_startup_lpc175x_6x.cpp **** //*****************************************************************************
+ 375:../src/cr_startup_lpc175x_6x.cpp **** __attribute__ ((section(".after_vectors")))
+ 376:../src/cr_startup_lpc175x_6x.cpp **** void IntDefaultHandler(void)
+ 377:../src/cr_startup_lpc175x_6x.cpp **** { while(1) {}
+ 535              		.loc 1 377 0
+ 536              		.cfi_startproc
+ 537              		@ args = 0, pretend = 0, frame = 0
+ 538              		@ frame_needed = 1, uses_anonymous_args = 0
+ 539              		@ link register save eliminated.
+ 540 012a 80B4     		push	{r7}
+ 541              		.cfi_def_cfa_offset 4
+ 542              		.cfi_offset 7, -4
+ 543 012c 00AF     		add	r7, sp, #0
+ 544              		.cfi_def_cfa_register 7
+ 545              	.L35:
+ 546              		.loc 1 377 0 discriminator 1
+ 547 012e FEE7     		b	.L35
+ 548              		.cfi_endproc
+ 549              	.LFE12:
+ 551              		.weak	CANActivity_IRQHandler
+ 552              		.thumb_set CANActivity_IRQHandler,IntDefaultHandler
+ 553              		.weak	USBActivity_IRQHandler
+ 554              		.thumb_set USBActivity_IRQHandler,IntDefaultHandler
+ 555              		.weak	PLL1_IRQHandler
+ 556              		.thumb_set PLL1_IRQHandler,IntDefaultHandler
+ 557              		.weak	QEI_IRQHandler
+ 558              		.thumb_set QEI_IRQHandler,IntDefaultHandler
+ 559              		.weak	MCPWM_IRQHandler
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 17
+
+
+ 560              		.thumb_set MCPWM_IRQHandler,IntDefaultHandler
+ 561              		.weak	RIT_IRQHandler
+ 562              		.thumb_set RIT_IRQHandler,IntDefaultHandler
+ 563              		.weak	ETH_IRQHandler
+ 564              		.thumb_set ETH_IRQHandler,IntDefaultHandler
+ 565              		.weak	I2S_IRQHandler
+ 566              		.thumb_set I2S_IRQHandler,IntDefaultHandler
+ 567              		.weak	DMA_IRQHandler
+ 568              		.thumb_set DMA_IRQHandler,IntDefaultHandler
+ 569              		.weak	CAN_IRQHandler
+ 570              		.thumb_set CAN_IRQHandler,IntDefaultHandler
+ 571              		.weak	USB_IRQHandler
+ 572              		.thumb_set USB_IRQHandler,IntDefaultHandler
+ 573              		.weak	BOD_IRQHandler
+ 574              		.thumb_set BOD_IRQHandler,IntDefaultHandler
+ 575              		.weak	ADC_IRQHandler
+ 576              		.thumb_set ADC_IRQHandler,IntDefaultHandler
+ 577              		.weak	EINT3_IRQHandler
+ 578              		.thumb_set EINT3_IRQHandler,IntDefaultHandler
+ 579              		.weak	EINT2_IRQHandler
+ 580              		.thumb_set EINT2_IRQHandler,IntDefaultHandler
+ 581              		.weak	EINT1_IRQHandler
+ 582              		.thumb_set EINT1_IRQHandler,IntDefaultHandler
+ 583              		.weak	EINT0_IRQHandler
+ 584              		.thumb_set EINT0_IRQHandler,IntDefaultHandler
+ 585              		.weak	RTC_IRQHandler
+ 586              		.thumb_set RTC_IRQHandler,IntDefaultHandler
+ 587              		.weak	PLL0_IRQHandler
+ 588              		.thumb_set PLL0_IRQHandler,IntDefaultHandler
+ 589              		.weak	SSP1_IRQHandler
+ 590              		.thumb_set SSP1_IRQHandler,IntDefaultHandler
+ 591              		.weak	SSP0_IRQHandler
+ 592              		.thumb_set SSP0_IRQHandler,IntDefaultHandler
+ 593              		.weak	SPI_IRQHandler
+ 594              		.thumb_set SPI_IRQHandler,IntDefaultHandler
+ 595              		.weak	I2C2_IRQHandler
+ 596              		.thumb_set I2C2_IRQHandler,IntDefaultHandler
+ 597              		.weak	I2C1_IRQHandler
+ 598              		.thumb_set I2C1_IRQHandler,IntDefaultHandler
+ 599              		.weak	I2C0_IRQHandler
+ 600              		.thumb_set I2C0_IRQHandler,IntDefaultHandler
+ 601              		.weak	PWM1_IRQHandler
+ 602              		.thumb_set PWM1_IRQHandler,IntDefaultHandler
+ 603              		.weak	UART3_IRQHandler
+ 604              		.thumb_set UART3_IRQHandler,IntDefaultHandler
+ 605              		.weak	UART2_IRQHandler
+ 606              		.thumb_set UART2_IRQHandler,IntDefaultHandler
+ 607              		.weak	UART1_IRQHandler
+ 608              		.thumb_set UART1_IRQHandler,IntDefaultHandler
+ 609              		.weak	UART0_IRQHandler
+ 610              		.thumb_set UART0_IRQHandler,IntDefaultHandler
+ 611              		.weak	TIMER3_IRQHandler
+ 612              		.thumb_set TIMER3_IRQHandler,IntDefaultHandler
+ 613              		.weak	TIMER2_IRQHandler
+ 614              		.thumb_set TIMER2_IRQHandler,IntDefaultHandler
+ 615              		.weak	TIMER1_IRQHandler
+ 616              		.thumb_set TIMER1_IRQHandler,IntDefaultHandler
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 18
+
+
+ 617              		.weak	TIMER0_IRQHandler
+ 618              		.thumb_set TIMER0_IRQHandler,IntDefaultHandler
+ 619              		.weak	WDT_IRQHandler
+ 620              		.thumb_set WDT_IRQHandler,IntDefaultHandler
+ 621              		.weak	__valid_user_code_checksum
+ 622              		.text
+ 623              	.Letext0:
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cr_startup_lpc175x_6x.cpp
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:20     .isr_vector:00000000 g_pfnVectors
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:17     .isr_vector:00000000 $d
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:210    .after_vectors:00000078 ResetISR
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:308    .after_vectors:000000f4 NMI_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:333    .after_vectors:000000fa HardFault_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:358    .after_vectors:00000100 MemManage_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:383    .after_vectors:00000106 BusFault_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:408    .after_vectors:0000010c UsageFault_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:433    .after_vectors:00000112 SVC_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:458    .after_vectors:00000118 DebugMon_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:483    .after_vectors:0000011e PendSV_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:508    .after_vectors:00000124 SysTick_Handler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a WDT_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a TIMER0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a TIMER1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a TIMER2_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a TIMER3_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a UART0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a UART1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a UART2_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a UART3_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a PWM1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a I2C0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a I2C1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a I2C2_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a SPI_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a SSP0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a SSP1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a PLL0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a RTC_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a EINT0_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a EINT1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a EINT2_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a EINT3_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a ADC_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a BOD_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a USB_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a CAN_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a DMA_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a I2S_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a ETH_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a RIT_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a MCPWM_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a QEI_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a PLL1_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a USBActivity_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a CANActivity_IRQHandler
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:73     .after_vectors:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:80     .after_vectors:00000000 _Z9data_initjjj
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:149    .after_vectors:00000042 _Z8bss_initjj
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:295    .after_vectors:000000e8 $d
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:301    .after_vectors:000000f4 $t
+C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s:533    .after_vectors:0000012a IntDefaultHandler
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccfFcgpr.s 			page 20
+
+
+UNDEFINED SYMBOLS
+_vStackTop
+__valid_user_code_checksum
+SystemInit
+__libc_init_array
+main
+__data_section_table
+__data_section_table_end
+__bss_section_table_end

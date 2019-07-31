@@ -485,21 +485,25 @@ uint8_t _I2C::get_Status()
 	return *(_Periph + 1); // I2STAT
 }
 
-void _I2C::New_Sequence(uint8_t Slave_Address)
+void _I2C::New_Sequence(uint8_t Slave_Address, uint16_t readLength)
 {
-	for(uint8_t i = 0; i < 100; i++){ // Reset Buffer, length and master counter
-		Buffer[i] = 0;
+	for(uint16_t i = 0; i < 512; i++){ // Reset Buffer, length and master counter
+		tx_buf[i] = 0;
+		rx_buf[i] = 0;
 	}
-	Msg_Length = 0;
-	M_Counter = 0;
 
-	Buffer[Msg_Length++] = Slave_Address;
+	Read_Length = readLength;
+	Msg_Length = 0;
+	M_Counter_tx = 0;
+	M_Counter_rx = 0;
+
+	tx_buf[Msg_Length++] = Slave_Address;
 }
 
 void _I2C::Add_String(const char * StrToSend)
 {
 	while(*StrToSend != '\0'){
-		Buffer[Msg_Length++] = *StrToSend++;
+		tx_buf[Msg_Length++] = *StrToSend++;
 	}
 }
 
@@ -509,13 +513,13 @@ void _I2C::Add_BCD_Integer(uint32_t Decimal_uint, uint8_t NbDigits)
 
 	switch(NbDigits){
 	case 4:
-		Buffer[Msg_Length++] = (LCD_BCD.mil + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.mil + 48);
 	case 3:
-		Buffer[Msg_Length++] = (LCD_BCD.cen + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.cen + 48);
 	case 2:
-		Buffer[Msg_Length++] = (LCD_BCD.diz + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.diz + 48);
 	case 1:
-		Buffer[Msg_Length++] = (LCD_BCD.uni + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.uni + 48);
 		break;
 	}
 
@@ -527,38 +531,45 @@ void _I2C::Add_BCD_Float(uint32_t Decimal_uint, uint8_t NbDigits, uint8_t DP_Pos
 
 	switch(NbDigits){
 	case 4:
-		Buffer[Msg_Length++] = (LCD_BCD.mil + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.mil + 48);
 		if(DP_Position == 1)
-			Buffer[Msg_Length++] = '.';
+			tx_buf[Msg_Length++] = '.';
 	case 3:
-		Buffer[Msg_Length++] = (LCD_BCD.cen + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.cen + 48);
 		if(DP_Position == 2)
-			Buffer[Msg_Length++] = '.';
+			tx_buf[Msg_Length++] = '.';
 	case 2:
-		Buffer[Msg_Length++] = (LCD_BCD.diz + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.diz + 48);
 		if(DP_Position == 3)
-			Buffer[Msg_Length++] = '.';
+			tx_buf[Msg_Length++] = '.';
 	case 1:
-		Buffer[Msg_Length++] = (LCD_BCD.uni + 48);
+		tx_buf[Msg_Length++] = (LCD_BCD.uni + 48);
 		break;
 	}
 }
 
 void _I2C::Add_Byte(uint8_t ByteToSend)
 {
-	Buffer[Msg_Length++] = ByteToSend;
+	tx_buf[Msg_Length++] = ByteToSend;
+}
+
+void _I2C::Read_Next_Byte()
+{
+	rx_buf[M_Counter_rx++] = *(_Periph + 2);// Get I2DAT byte
+
+	*(_Periph + 6) = 0x08; // Clear SI in I2CONCLR
 }
 
 void _I2C::Send_Next_Byte()
 {
-	*(_Periph + 2) = Buffer[M_Counter++]; // Put next byte in I2DAT
+	*(_Periph + 2) = tx_buf[M_Counter_tx++]; // Put next byte in I2DAT
 
 	*(_Periph + 6) = 0x08; // Clear SI in I2CONCLR
 }
 
 void _I2C::Send_Address()
 {
-	*(_Periph + 2) = Buffer[M_Counter++]; // Put LCD address in I2DAT
+	*(_Periph + 2) = tx_buf[M_Counter_tx++]; // Put address in I2DAT
 
 	*(_Periph + 6) = 0x28; // Clear STA and SI in I2CONCLR
 }
@@ -572,11 +583,16 @@ void _I2C::Send_Stop()
 	Busy = false;
 }
 
+void _I2C::Send_nACK()
+{
+	*(_Periph + 6) = 0x0C; // Clear SI and AA in I2CONCLR
+}
+
 void _I2C::Send_Sequence()
 {
 	Busy = true;
 
-	*_Periph |= 0x60; // Set STA and I2EN in I2CONSET
+	*_Periph |= 0x64; // Set STA,I2EN and AA in I2CONSET
 }
 
 void _I2C::Clear_Interrupt()

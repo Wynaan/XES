@@ -13,7 +13,7 @@ enum class Stack{L1, L2, L3, L4, L5};
  * the previous element won't be updated until the new element is popped off the stack. */
 class TickEngine{
 public:
-	static void PushStack(IUpdateable * element, Stack stackLevel);
+	static void PushStack(IUpdate * element, Stack stackLevel);
 	static void PopStack(Stack stackLevel);
 	static void Tick();
 };

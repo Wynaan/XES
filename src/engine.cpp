@@ -4,10 +4,10 @@
 #include "interfaces.h"
 #include <list>
 
-std::list<IUpdateable*> PriorityQueue[5];
+std::list<IUpdate*> PriorityQueue[5];
 Stack stackDepth = Stack::L1;
 
-void TickEngine::PushStack(IUpdateable * element, Stack stackLevel)
+void TickEngine::PushStack(IUpdate * element, Stack stackLevel)
 {
 	if(stackLevel > stackDepth)
 		stackDepth = stackLevel;

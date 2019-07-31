@@ -3,8 +3,8 @@
 #include <stdint.h>
 #include "board.h"
 
-extern LPC_IO ControllerSelect;
-extern LPC_IO ControllerACK;
+extern LPC_IO Controller1Select;
+extern LPC_IO Controller2Select;
 
 /* All command bytes are reversed to account for LSB-first */
 uint8_t enterConfig[5] = {0x80, 0xC2, 0x00, 0x80, 0x00};
@@ -25,7 +25,7 @@ bool InitPS2Controller(bool controllerId)
 	uint8_t bufferPoll[10];
 
 	if(!(LPC_SSP1->SR & 0x10)){
-		ControllerSelect = 0;
+		Controller1Select = 0;
 
 		/* Empty SSP1 receive buffer */
 		while(LPC_SSP1->SR & 0x04){
@@ -48,9 +48,9 @@ bool InitPS2Controller(bool controllerId)
 		}
 
 		/* Toggle attention line */
-		ControllerSelect = 1;
+		Controller1Select = 1;
 		for(int i = 0; i < 200; i++);
-		ControllerSelect = 0;
+		Controller1Select = 0;
 
 		/* Enter configuration mode */
 		for(uint8_t i = 0; i < 5; i++){
@@ -67,9 +67,9 @@ bool InitPS2Controller(bool controllerId)
 		}
 
 		/* Toggle attention line */
-		ControllerSelect = 1;
+		Controller1Select = 1;
 		for(int i = 0; i < 200; i++);
-		ControllerSelect = 0;
+		Controller1Select = 0;
 
 		/* Enable analog mode if not already enabled*/
 		if((bufferPoll[1] & 0x0F) == 0x2){
@@ -87,9 +87,9 @@ bool InitPS2Controller(bool controllerId)
 			}
 
 			/* Toggle attention line */
-			ControllerSelect = 1;
+			Controller1Select = 1;
 			for(int i = 0; i < 200; i++);
-			ControllerSelect = 0;
+			Controller1Select = 0;
 		}
 
 		/* Enable rumble motors */
@@ -107,9 +107,9 @@ bool InitPS2Controller(bool controllerId)
 		}
 
 		/* Toggle attention line */
-		ControllerSelect = 1;
+		Controller1Select = 1;
 		for(int i = 0; i < 200; i++);
-		ControllerSelect = 0;
+		Controller1Select = 0;
 
 		/* Exit configuration mode */
 		for(uint8_t i = 0; i < 9; i++){
@@ -125,7 +125,7 @@ bool InitPS2Controller(bool controllerId)
 				LPC_SSP1->DR;
 		}
 
-		ControllerSelect = 1;
+		Controller1Select = 1;
 
 		return true;
 	}
@@ -146,7 +146,7 @@ bool PollController(bool controllerId, ps2_inputs_t * result)
 		}
 
 		/* Drive attention line low */
-		ControllerSelect = 0;
+		Controller1Select = 0;
 
 		/* Send initial header byte, always 0x01 */
 		LPC_SSP1->DR = 0x80;
@@ -228,7 +228,7 @@ bool PollController(bool controllerId, ps2_inputs_t * result)
 		result->JoystickLeftY = reverseBits((uint8_t)LPC_SSP1->DR);
 
 		/* Drive attention line high to signal end of polling */
-		ControllerSelect = 1;
+		Controller1Select = 1;
 
 		return true;
 	}

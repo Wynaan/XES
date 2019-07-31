@@ -143,21 +143,18 @@ struct resources_t{
 };
 
 typedef struct{
-	char menuName[12];
-	uint8_t level;
-	resources_t costToNextLevel;
-	resources_t currentProduction;
-	resources_t	nextLevelProduction;
-}resource_mine_info_t;
+uint8_t level;
+tile_asset_e type;
+coords_pair_t coords;
+}save_build_t;
 
 typedef struct{
-	std::string gameName;
-	tile_type_e mainWorldTiles[340];
-	uint8_t mainWorldAssets[340];
-	coords_pair_t p1TilePosition;
-	coords_pair_t p2TilePosition;
-
-}save_game_data_t;
+char saveName[8];
+resources_t Resources;
+resources_t Prod;
+uint8_t nbOfBuilds = 0;
+save_build_t mapBuilds[16];
+}save_cell_t;
 
 
 #endif /* XAV_DATA_H_ */

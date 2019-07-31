@@ -1,0 +1,2254 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ps2controller.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN6LPC_IOaSEb,"axG",%progbits,_ZN6LPC_IOaSEb,comdat
+  16              		.align	1
+  17              		.weak	_ZN6LPC_IOaSEb
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	_ZN6LPC_IOaSEb:
+  24              	.LFB314:
+  25              		.file 1 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/lpc_xav.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "chip.h"
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "board.h"
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "cr_section_macros.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #ifndef LPC_XAV_H_
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define LPC_XAV_H_
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCONP	 *((uint32_t *)0x400FC0C4)
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL0 *((uint32_t *)0x400FC1A8)
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL1 *((uint32_t *)0x400FC1AC)
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_400KHZ	120
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_100KHZ 	480
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_50KHZ 	960
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_24MHZ	4
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_100KHZ  240
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SYS_FREQ ((uint32_t)96000000)
+  19:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  20:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {GPIO, Fct0x1, Fct0x2, Fct0x3}; 				// GPIO pin function
+  21:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {IN, OUT};										// GPIO direction
+  22:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Pullup, Repeater, Float, Pulldown, Default};	// GPIO input mode
+  23:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Normal, Open_Drain}; 							// GPIO output mode
+  24:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Level_Sensitive, Edge_Sensitive};				// EXT int mode
+  25:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {UND2, Rising_Edge, Falling_Edge, Both_Edges};	// Timer capture setting
+  26:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {CLK4, CLK0, CLK2, CLK8};						// Timer clock rate (number stands for divisor)
+  27:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Nothing, Clear, Set, Toggle};					// External match setting
+  28:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {MR0 = 0x1, MR1 = 0x2, MR2 = 0x4, MR3 = 0x8, CR0 = 0x10, CR1 = 0x20};// Timer interrupt flag b
+  29:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Disabled, Odd, Even = 3};						// UART Parity control
+  30:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Single_Edge, Double_Edge};					// Motor PWM mode
+  31:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Manual, Auto};								// AD Converter mode for starting conversions
+  32:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Master = 0x40, Slave = 0x44};					// I2C Mode
+  33:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {RORIM, RTIM, RXIM, TXIM};						// SSP Interrupt sources
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 2
+
+
+  34:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  35:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO;
+  36:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  37:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void EnableIRQ(uint8_t Int_bit); // Enables periph's NVIC interrupt
+  38:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void GPIO_Enable_Int(uint8_t PortNo, uint8_t PinNo, uint8_t Edge_Select);
+  39:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void Enable_EXT_Int(uint8_t ExtIntNo, uint8_t ExtMode);
+  40:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  41:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Port{ // Port object to provide pointers for the Lpc_IO class
+  42:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	friend LPC_IO;
+  43:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _PINCB; 	// Address of the first PINSEL register for desired port
+  44:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _FIO; 	// Address of the first FIO register
+  45:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _OD;		// Address of the open drain mode register
+  46:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetFct(uint8_t PinNo, uint8_t Fct);
+  47:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetDir(uint8_t PinNo, uint8_t Dir);
+  48:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetMode(uint8_t PinNo, uint8_t Mode);
+  49:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetOpenDrain(uint8_t PinNo, uint8_t Mode );
+  50:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  51:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  52:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port(uint32_t* Pinsel_Add, // Constructor for LPC Port handles
+  53:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* FastIO_Add,
+  54:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* OpenDrain_Add);
+  55:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+  56:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  57:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO{ // Pin object to initialize all the register required for a pin functioning
+  58:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port& _Port;
+  59:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pin;
+  60:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Function;
+  61:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Direction;
+  62:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Mode;
+  63:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t OD_Mode;
+  64:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  65:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  66:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Out(bool State);
+  67:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set();
+  68:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear();
+  69:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  70:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO();
+  71:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO(	Port& PtrPort, // Constructor for IO pin handles.
+  72:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t PinNo,
+  73:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Fct,
+  74:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Dir = OUT,
+  75:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Md = Float,
+  76:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t OD = Normal);
+  77:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  78:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(bool OutputState) // Allows to use Object = boolean value; to set pin output
+  26              		.loc 1 78 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 8
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30 0000 80B5     		push	{r7, lr}
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 7, -8
+  33              		.cfi_offset 14, -4
+  34 0002 82B0     		sub	sp, sp, #8
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 3
+
+
+  38 0006 7860     		str	r0, [r7, #4]
+  39 0008 0B46     		mov	r3, r1
+  40 000a FB70     		strb	r3, [r7, #3]
+  79:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  80:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		this->Out(OutputState);
+  41              		.loc 1 80 0
+  42 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+  43 000e 1946     		mov	r1, r3
+  44 0010 7868     		ldr	r0, [r7, #4]
+  45 0012 FFF7FEFF 		bl	_ZN6LPC_IO3OutEb
+  81:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  46              		.loc 1 81 0
+  47 0016 00BF     		nop
+  48 0018 0837     		adds	r7, r7, #8
+  49              		.cfi_def_cfa_offset 8
+  50 001a BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 001c 80BD     		pop	{r7, pc}
+  54              		.cfi_endproc
+  55              	.LFE314:
+  57              		.section	.bss._ZL2P0,"aw",%nobits
+  58              		.align	2
+  61              	_ZL2P0:
+  62 0000 00000000 		.space	12
+  62      00000000 
+  62      00000000 
+  63              		.section	.bss._ZL2P1,"aw",%nobits
+  64              		.align	2
+  67              	_ZL2P1:
+  68 0000 00000000 		.space	12
+  68      00000000 
+  68      00000000 
+  69              		.section	.bss._ZL2P2,"aw",%nobits
+  70              		.align	2
+  73              	_ZL2P2:
+  74 0000 00000000 		.space	12
+  74      00000000 
+  74      00000000 
+  75              		.section	.bss._ZL2P3,"aw",%nobits
+  76              		.align	2
+  79              	_ZL2P3:
+  80 0000 00000000 		.space	12
+  80      00000000 
+  80      00000000 
+  81              		.section	.bss._ZL2P4,"aw",%nobits
+  82              		.align	2
+  85              	_ZL2P4:
+  86 0000 00000000 		.space	12
+  86      00000000 
+  86      00000000 
+  87              		.section	.bss._ZL4TMR0,"aw",%nobits
+  88              		.align	2
+  91              	_ZL4TMR0:
+  92 0000 00000000 		.space	12
+  92      00000000 
+  92      00000000 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 4
+
+
+  93              		.section	.bss._ZL4TMR1,"aw",%nobits
+  94              		.align	2
+  97              	_ZL4TMR1:
+  98 0000 00000000 		.space	12
+  98      00000000 
+  98      00000000 
+  99              		.section	.bss._ZL4TMR2,"aw",%nobits
+ 100              		.align	2
+ 103              	_ZL4TMR2:
+ 104 0000 00000000 		.space	12
+ 104      00000000 
+ 104      00000000 
+ 105              		.section	.bss._ZL4TMR3,"aw",%nobits
+ 106              		.align	2
+ 109              	_ZL4TMR3:
+ 110 0000 00000000 		.space	12
+ 110      00000000 
+ 110      00000000 
+ 111              		.section	.bss._ZL5UART0,"aw",%nobits
+ 112              		.align	2
+ 115              	_ZL5UART0:
+ 116 0000 00000000 		.space	8
+ 116      00000000 
+ 117              		.section	.bss._ZL8Keyboard,"aw",%nobits
+ 118              		.align	2
+ 121              	_ZL8Keyboard:
+ 122 0000 00000000 		.space	8
+ 122      00000000 
+ 123              		.section	.bss._ZL7Console,"aw",%nobits
+ 124              		.align	2
+ 127              	_ZL7Console:
+ 128 0000 00000000 		.space	8
+ 128      00000000 
+ 129              		.global	enterConfig
+ 130              		.section	.data.enterConfig,"aw",%progbits
+ 131              		.align	2
+ 134              	enterConfig:
+ 135 0000 80       		.byte	-128
+ 136 0001 C2       		.byte	-62
+ 137 0002 00       		.byte	0
+ 138 0003 80       		.byte	-128
+ 139 0004 00       		.byte	0
+ 140              		.global	setAnalogMode
+ 141              		.section	.data.setAnalogMode,"aw",%progbits
+ 142              		.align	2
+ 145              	setAnalogMode:
+ 146 0000 80       		.byte	-128
+ 147 0001 22       		.byte	34
+ 148 0002 00       		.byte	0
+ 149 0003 80       		.byte	-128
+ 150 0004 C0       		.byte	-64
+ 151 0005 00       		.byte	0
+ 152 0006 00       		.byte	0
+ 153 0007 00       		.byte	0
+ 154 0008 00       		.byte	0
+ 155              		.global	enableRumble
+ 156              		.section	.data.enableRumble,"aw",%progbits
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 5
+
+
+ 157              		.align	2
+ 160              	enableRumble:
+ 161 0000 80       		.byte	-128
+ 162 0001 B2       		.byte	-78
+ 163 0002 00       		.byte	0
+ 164 0003 00       		.byte	0
+ 165 0004 80       		.byte	-128
+ 166 0005 FF       		.byte	-1
+ 167 0006 FF       		.byte	-1
+ 168 0007 FF       		.byte	-1
+ 169 0008 FF       		.byte	-1
+ 170              		.global	exitConfig
+ 171              		.section	.data.exitConfig,"aw",%progbits
+ 172              		.align	2
+ 175              	exitConfig:
+ 176 0000 80       		.byte	-128
+ 177 0001 C2       		.byte	-62
+ 178 0002 00       		.byte	0
+ 179 0003 00       		.byte	0
+ 180 0004 5A       		.byte	90
+ 181 0005 5A       		.byte	90
+ 182 0006 5A       		.byte	90
+ 183 0007 5A       		.byte	90
+ 184 0008 5A       		.byte	90
+ 185              		.global	poll
+ 186              		.section	.data.poll,"aw",%progbits
+ 187              		.align	2
+ 190              	poll:
+ 191 0000 80       		.byte	-128
+ 192 0001 42       		.byte	66
+ 193 0002 00       		.byte	0
+ 194 0003 00       		.byte	0
+ 195 0004 00       		.byte	0
+ 196              		.section	.text._Z11reverseBitsh,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	_Z11reverseBitsh
+ 199              		.syntax unified
+ 200              		.thumb
+ 201              		.thumb_func
+ 202              		.fpu softvfp
+ 204              	_Z11reverseBitsh:
+ 205              	.LFB319:
+ 206              		.file 2 "../src/ps2controller.cpp"
+   1:../src/ps2controller.cpp **** #include "ps2controller.h"
+   2:../src/ps2controller.cpp **** #include "lpc_xav.h"
+   3:../src/ps2controller.cpp **** #include <stdint.h>
+   4:../src/ps2controller.cpp **** #include "board.h"
+   5:../src/ps2controller.cpp **** 
+   6:../src/ps2controller.cpp **** extern LPC_IO Controller1Select;
+   7:../src/ps2controller.cpp **** extern LPC_IO Controller2Select;
+   8:../src/ps2controller.cpp **** 
+   9:../src/ps2controller.cpp **** /* All command bytes are reversed to account for LSB-first */
+  10:../src/ps2controller.cpp **** uint8_t enterConfig[5] = {0x80, 0xC2, 0x00, 0x80, 0x00};
+  11:../src/ps2controller.cpp **** uint8_t setAnalogMode[9] = {0x80, 0x22, 0x00, 0x80, 0xC0, 0x00, 0x00, 0x00, 0x00};
+  12:../src/ps2controller.cpp **** uint8_t enableRumble[9] = {0x80, 0xB2, 0x00, 0x00, 0x80, 0xFF, 0xFF, 0xFF, 0xFF};
+  13:../src/ps2controller.cpp **** uint8_t exitConfig[9] = {0x80, 0xC2, 0x00, 0x00, 0x5A, 0x5A, 0x5A, 0x5A, 0x5A};
+  14:../src/ps2controller.cpp **** uint8_t poll[5] = {0x80, 0x42, 0x00, 0x00, 0x00};
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 6
+
+
+  15:../src/ps2controller.cpp **** 
+  16:../src/ps2controller.cpp **** uint8_t reverseBits(uint8_t b) {
+ 207              		.loc 2 16 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 8
+ 210              		@ frame_needed = 1, uses_anonymous_args = 0
+ 211              		@ link register save eliminated.
+ 212 0000 80B4     		push	{r7}
+ 213              		.cfi_def_cfa_offset 4
+ 214              		.cfi_offset 7, -4
+ 215 0002 83B0     		sub	sp, sp, #12
+ 216              		.cfi_def_cfa_offset 16
+ 217 0004 00AF     		add	r7, sp, #0
+ 218              		.cfi_def_cfa_register 7
+ 219 0006 0346     		mov	r3, r0
+ 220 0008 FB71     		strb	r3, [r7, #7]
+  17:../src/ps2controller.cpp ****    b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
+ 221              		.loc 2 17 0
+ 222 000a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 223 000c 1B09     		lsrs	r3, r3, #4
+ 224 000e DBB2     		uxtb	r3, r3
+ 225 0010 5AB2     		sxtb	r2, r3
+ 226 0012 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 227 0014 1B01     		lsls	r3, r3, #4
+ 228 0016 5BB2     		sxtb	r3, r3
+ 229 0018 1343     		orrs	r3, r3, r2
+ 230 001a 5BB2     		sxtb	r3, r3
+ 231 001c FB71     		strb	r3, [r7, #7]
+  18:../src/ps2controller.cpp ****    b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
+ 232              		.loc 2 18 0
+ 233 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 234 0020 9B10     		asrs	r3, r3, #2
+ 235 0022 5BB2     		sxtb	r3, r3
+ 236 0024 03F03303 		and	r3, r3, #51
+ 237 0028 5AB2     		sxtb	r2, r3
+ 238 002a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 239 002c 9B00     		lsls	r3, r3, #2
+ 240 002e 5BB2     		sxtb	r3, r3
+ 241 0030 23F03303 		bic	r3, r3, #51
+ 242 0034 5BB2     		sxtb	r3, r3
+ 243 0036 1343     		orrs	r3, r3, r2
+ 244 0038 5BB2     		sxtb	r3, r3
+ 245 003a FB71     		strb	r3, [r7, #7]
+  19:../src/ps2controller.cpp ****    b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+ 246              		.loc 2 19 0
+ 247 003c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 248 003e 5B10     		asrs	r3, r3, #1
+ 249 0040 5BB2     		sxtb	r3, r3
+ 250 0042 03F05503 		and	r3, r3, #85
+ 251 0046 5AB2     		sxtb	r2, r3
+ 252 0048 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 253 004a 5B00     		lsls	r3, r3, #1
+ 254 004c 5BB2     		sxtb	r3, r3
+ 255 004e 23F05503 		bic	r3, r3, #85
+ 256 0052 5BB2     		sxtb	r3, r3
+ 257 0054 1343     		orrs	r3, r3, r2
+ 258 0056 5BB2     		sxtb	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 7
+
+
+ 259 0058 FB71     		strb	r3, [r7, #7]
+  20:../src/ps2controller.cpp ****    return b;
+ 260              		.loc 2 20 0
+ 261 005a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  21:../src/ps2controller.cpp **** }
+ 262              		.loc 2 21 0
+ 263 005c 1846     		mov	r0, r3
+ 264 005e 0C37     		adds	r7, r7, #12
+ 265              		.cfi_def_cfa_offset 4
+ 266 0060 BD46     		mov	sp, r7
+ 267              		.cfi_def_cfa_register 13
+ 268              		@ sp needed
+ 269 0062 80BC     		pop	{r7}
+ 270              		.cfi_restore 7
+ 271              		.cfi_def_cfa_offset 0
+ 272 0064 7047     		bx	lr
+ 273              		.cfi_endproc
+ 274              	.LFE319:
+ 276              		.section	.text._Z17InitPS2Controllerb,"ax",%progbits
+ 277              		.align	1
+ 278              		.global	_Z17InitPS2Controllerb
+ 279              		.syntax unified
+ 280              		.thumb
+ 281              		.thumb_func
+ 282              		.fpu softvfp
+ 284              	_Z17InitPS2Controllerb:
+ 285              	.LFB320:
+  22:../src/ps2controller.cpp **** 
+  23:../src/ps2controller.cpp **** bool InitPS2Controller(bool controllerId)
+  24:../src/ps2controller.cpp **** {
+ 286              		.loc 2 24 0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 80
+ 289              		@ frame_needed = 1, uses_anonymous_args = 0
+ 290 0000 80B5     		push	{r7, lr}
+ 291              		.cfi_def_cfa_offset 8
+ 292              		.cfi_offset 7, -8
+ 293              		.cfi_offset 14, -4
+ 294 0002 94B0     		sub	sp, sp, #80
+ 295              		.cfi_def_cfa_offset 88
+ 296 0004 00AF     		add	r7, sp, #0
+ 297              		.cfi_def_cfa_register 7
+ 298 0006 0346     		mov	r3, r0
+ 299 0008 FB71     		strb	r3, [r7, #7]
+ 300              	.LBB2:
+  25:../src/ps2controller.cpp **** 	uint8_t bufferPoll[10];
+  26:../src/ps2controller.cpp **** 
+  27:../src/ps2controller.cpp **** 	if(!(LPC_SSP1->SR & 0x10)){
+ 301              		.loc 2 27 0
+ 302 000a A24B     		ldr	r3, .L55
+ 303 000c DB68     		ldr	r3, [r3, #12]
+ 304 000e 03F01003 		and	r3, r3, #16
+ 305 0012 002B     		cmp	r3, #0
+ 306 0014 0CBF     		ite	eq
+ 307 0016 0123     		moveq	r3, #1
+ 308 0018 0023     		movne	r3, #0
+ 309 001a DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 8
+
+
+ 310 001c 002B     		cmp	r3, #0
+ 311 001e 00F07F81 		beq	.L5
+ 312              	.LBB3:
+  28:../src/ps2controller.cpp **** 		Controller1Select = 0;
+ 313              		.loc 2 28 0
+ 314 0022 0021     		movs	r1, #0
+ 315 0024 9C48     		ldr	r0, .L55+4
+ 316 0026 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 317              	.L7:
+  29:../src/ps2controller.cpp **** 
+  30:../src/ps2controller.cpp **** 		/* Empty SSP1 receive buffer */
+  31:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x04){
+ 318              		.loc 2 31 0
+ 319 002a 9A4B     		ldr	r3, .L55
+ 320 002c DB68     		ldr	r3, [r3, #12]
+ 321 002e 03F00403 		and	r3, r3, #4
+ 322 0032 002B     		cmp	r3, #0
+ 323 0034 14BF     		ite	ne
+ 324 0036 0123     		movne	r3, #1
+ 325 0038 0023     		moveq	r3, #0
+ 326 003a DBB2     		uxtb	r3, r3
+ 327 003c 002B     		cmp	r3, #0
+ 328 003e 02D0     		beq	.L6
+  32:../src/ps2controller.cpp **** 			LPC_SSP1->DR;
+ 329              		.loc 2 32 0
+ 330 0040 944B     		ldr	r3, .L55
+ 331 0042 9B68     		ldr	r3, [r3, #8]
+  31:../src/ps2controller.cpp **** 			LPC_SSP1->DR;
+ 332              		.loc 2 31 0
+ 333 0044 F1E7     		b	.L7
+ 334              	.L6:
+ 335              	.LBB4:
+  33:../src/ps2controller.cpp **** 		}
+  34:../src/ps2controller.cpp **** 
+  35:../src/ps2controller.cpp **** 		/* Do a dummy polling */
+  36:../src/ps2controller.cpp **** 		for(uint8_t i = 0; i < 5; i++){
+ 336              		.loc 2 36 0
+ 337 0046 0023     		movs	r3, #0
+ 338 0048 87F84F30 		strb	r3, [r7, #79]
+ 339              	.L13:
+ 340              		.loc 2 36 0 is_stmt 0 discriminator 1
+ 341 004c 97F84F30 		ldrb	r3, [r7, #79]	@ zero_extendqisi2
+ 342 0050 042B     		cmp	r3, #4
+ 343 0052 20D8     		bhi	.L8
+ 344              	.LBB5:
+  37:../src/ps2controller.cpp **** 			/* Send each command byte */
+  38:../src/ps2controller.cpp **** 			LPC_SSP1->DR = poll[i];
+ 345              		.loc 2 38 0 is_stmt 1
+ 346 0054 97F84F30 		ldrb	r3, [r7, #79]	@ zero_extendqisi2
+ 347 0058 904A     		ldr	r2, .L55+8
+ 348 005a D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 349 005c 8D4B     		ldr	r3, .L55
+ 350 005e 9A60     		str	r2, [r3, #8]
+ 351              	.L10:
+  39:../src/ps2controller.cpp **** 			while(LPC_SSP1->SR & 0x10);
+ 352              		.loc 2 39 0
+ 353 0060 8C4B     		ldr	r3, .L55
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 9
+
+
+ 354 0062 DB68     		ldr	r3, [r3, #12]
+ 355 0064 03F01003 		and	r3, r3, #16
+ 356 0068 002B     		cmp	r3, #0
+ 357 006a 14BF     		ite	ne
+ 358 006c 0123     		movne	r3, #1
+ 359 006e 0023     		moveq	r3, #0
+ 360 0070 DBB2     		uxtb	r3, r3
+ 361 0072 002B     		cmp	r3, #0
+ 362 0074 00D0     		beq	.L9
+ 363 0076 F3E7     		b	.L10
+ 364              	.L9:
+ 365              	.LBB6:
+  40:../src/ps2controller.cpp **** 
+  41:../src/ps2controller.cpp **** 			/* Wait for controller acknowledge */
+  42:../src/ps2controller.cpp **** 			for(int i = 0; i < 100; i++);
+ 366              		.loc 2 42 0
+ 367 0078 0023     		movs	r3, #0
+ 368 007a BB64     		str	r3, [r7, #72]
+ 369              	.L12:
+ 370              		.loc 2 42 0 is_stmt 0 discriminator 3
+ 371 007c BB6C     		ldr	r3, [r7, #72]
+ 372 007e 632B     		cmp	r3, #99
+ 373 0080 03DC     		bgt	.L11
+ 374              		.loc 2 42 0 discriminator 2
+ 375 0082 BB6C     		ldr	r3, [r7, #72]
+ 376 0084 0133     		adds	r3, r3, #1
+ 377 0086 BB64     		str	r3, [r7, #72]
+ 378 0088 F8E7     		b	.L12
+ 379              	.L11:
+ 380              	.LBE6:
+ 381              	.LBE5:
+  36:../src/ps2controller.cpp **** 			/* Send each command byte */
+ 382              		.loc 2 36 0 is_stmt 1 discriminator 2
+ 383 008a 97F84F30 		ldrb	r3, [r7, #79]	@ zero_extendqisi2
+ 384 008e 0133     		adds	r3, r3, #1
+ 385 0090 87F84F30 		strb	r3, [r7, #79]
+ 386 0094 DAE7     		b	.L13
+ 387              	.L8:
+ 388              	.LBE4:
+ 389              	.LBB7:
+  43:../src/ps2controller.cpp **** 		}
+  44:../src/ps2controller.cpp **** 
+  45:../src/ps2controller.cpp **** 		/* Get response from controller */
+  46:../src/ps2controller.cpp **** 		for(int i = 0;LPC_SSP1->SR & 0x04; i++){
+ 390              		.loc 2 46 0
+ 391 0096 0023     		movs	r3, #0
+ 392 0098 7B64     		str	r3, [r7, #68]
+ 393              	.L15:
+ 394              		.loc 2 46 0 is_stmt 0 discriminator 3
+ 395 009a 7E4B     		ldr	r3, .L55
+ 396 009c DB68     		ldr	r3, [r3, #12]
+ 397 009e 03F00403 		and	r3, r3, #4
+ 398 00a2 002B     		cmp	r3, #0
+ 399 00a4 14BF     		ite	ne
+ 400 00a6 0123     		movne	r3, #1
+ 401 00a8 0023     		moveq	r3, #0
+ 402 00aa DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 10
+
+
+ 403 00ac 002B     		cmp	r3, #0
+ 404 00ae 0CD0     		beq	.L14
+  47:../src/ps2controller.cpp **** 			bufferPoll[i] = LPC_SSP1->DR;
+ 405              		.loc 2 47 0 is_stmt 1 discriminator 2
+ 406 00b0 784B     		ldr	r3, .L55
+ 407 00b2 9B68     		ldr	r3, [r3, #8]
+ 408 00b4 D9B2     		uxtb	r1, r3
+ 409 00b6 07F10802 		add	r2, r7, #8
+ 410 00ba 7B6C     		ldr	r3, [r7, #68]
+ 411 00bc 1344     		add	r3, r3, r2
+ 412 00be 0A46     		mov	r2, r1
+ 413 00c0 1A70     		strb	r2, [r3]
+  46:../src/ps2controller.cpp **** 			bufferPoll[i] = LPC_SSP1->DR;
+ 414              		.loc 2 46 0 discriminator 2
+ 415 00c2 7B6C     		ldr	r3, [r7, #68]
+ 416 00c4 0133     		adds	r3, r3, #1
+ 417 00c6 7B64     		str	r3, [r7, #68]
+ 418 00c8 E7E7     		b	.L15
+ 419              	.L14:
+ 420              	.LBE7:
+  48:../src/ps2controller.cpp **** 		}
+  49:../src/ps2controller.cpp **** 
+  50:../src/ps2controller.cpp **** 		/* Toggle attention line */
+  51:../src/ps2controller.cpp **** 		Controller1Select = 1;
+ 421              		.loc 2 51 0
+ 422 00ca 0121     		movs	r1, #1
+ 423 00cc 7248     		ldr	r0, .L55+4
+ 424 00ce FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 425              	.LBB8:
+  52:../src/ps2controller.cpp **** 		for(int i = 0; i < 200; i++);
+ 426              		.loc 2 52 0
+ 427 00d2 0023     		movs	r3, #0
+ 428 00d4 3B64     		str	r3, [r7, #64]
+ 429              	.L17:
+ 430              		.loc 2 52 0 is_stmt 0 discriminator 3
+ 431 00d6 3B6C     		ldr	r3, [r7, #64]
+ 432 00d8 C72B     		cmp	r3, #199
+ 433 00da 03DC     		bgt	.L16
+ 434              		.loc 2 52 0 discriminator 2
+ 435 00dc 3B6C     		ldr	r3, [r7, #64]
+ 436 00de 0133     		adds	r3, r3, #1
+ 437 00e0 3B64     		str	r3, [r7, #64]
+ 438 00e2 F8E7     		b	.L17
+ 439              	.L16:
+ 440              	.LBE8:
+  53:../src/ps2controller.cpp **** 		Controller1Select = 0;
+ 441              		.loc 2 53 0 is_stmt 1
+ 442 00e4 0021     		movs	r1, #0
+ 443 00e6 6C48     		ldr	r0, .L55+4
+ 444 00e8 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 445              	.LBB9:
+  54:../src/ps2controller.cpp **** 
+  55:../src/ps2controller.cpp **** 		/* Enter configuration mode */
+  56:../src/ps2controller.cpp **** 		for(uint8_t i = 0; i < 5; i++){
+ 446              		.loc 2 56 0
+ 447 00ec 0023     		movs	r3, #0
+ 448 00ee 87F83F30 		strb	r3, [r7, #63]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 11
+
+
+ 449              	.L24:
+ 450              		.loc 2 56 0 is_stmt 0 discriminator 1
+ 451 00f2 97F83F30 		ldrb	r3, [r7, #63]	@ zero_extendqisi2
+ 452 00f6 042B     		cmp	r3, #4
+ 453 00f8 2DD8     		bhi	.L18
+ 454              	.LBB10:
+  57:../src/ps2controller.cpp **** 			/* Send each command byte */
+  58:../src/ps2controller.cpp **** 			LPC_SSP1->DR = enterConfig[i];
+ 455              		.loc 2 58 0 is_stmt 1
+ 456 00fa 97F83F30 		ldrb	r3, [r7, #63]	@ zero_extendqisi2
+ 457 00fe 684A     		ldr	r2, .L55+12
+ 458 0100 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 459 0102 644B     		ldr	r3, .L55
+ 460 0104 9A60     		str	r2, [r3, #8]
+ 461              	.L20:
+  59:../src/ps2controller.cpp **** 			while(LPC_SSP1->SR & 0x10);
+ 462              		.loc 2 59 0
+ 463 0106 634B     		ldr	r3, .L55
+ 464 0108 DB68     		ldr	r3, [r3, #12]
+ 465 010a 03F01003 		and	r3, r3, #16
+ 466 010e 002B     		cmp	r3, #0
+ 467 0110 14BF     		ite	ne
+ 468 0112 0123     		movne	r3, #1
+ 469 0114 0023     		moveq	r3, #0
+ 470 0116 DBB2     		uxtb	r3, r3
+ 471 0118 002B     		cmp	r3, #0
+ 472 011a 00D0     		beq	.L19
+ 473 011c F3E7     		b	.L20
+ 474              	.L19:
+ 475              	.LBB11:
+  60:../src/ps2controller.cpp **** 
+  61:../src/ps2controller.cpp **** 			/* Wait for controller acknowledge */
+  62:../src/ps2controller.cpp **** 			for(int i = 0; i < 100; i++);
+ 476              		.loc 2 62 0
+ 477 011e 0023     		movs	r3, #0
+ 478 0120 BB63     		str	r3, [r7, #56]
+ 479              	.L22:
+ 480              		.loc 2 62 0 is_stmt 0 discriminator 3
+ 481 0122 BB6B     		ldr	r3, [r7, #56]
+ 482 0124 632B     		cmp	r3, #99
+ 483 0126 03DC     		bgt	.L21
+ 484              		.loc 2 62 0 discriminator 2
+ 485 0128 BB6B     		ldr	r3, [r7, #56]
+ 486 012a 0133     		adds	r3, r3, #1
+ 487 012c BB63     		str	r3, [r7, #56]
+ 488 012e F8E7     		b	.L22
+ 489              	.L21:
+ 490              	.LBE11:
+  63:../src/ps2controller.cpp **** 
+  64:../src/ps2controller.cpp **** 			/* Ignore response from controller */
+  65:../src/ps2controller.cpp **** 			if(LPC_SSP1->SR & 0x04)
+ 491              		.loc 2 65 0 is_stmt 1
+ 492 0130 584B     		ldr	r3, .L55
+ 493 0132 DB68     		ldr	r3, [r3, #12]
+ 494 0134 03F00403 		and	r3, r3, #4
+ 495 0138 002B     		cmp	r3, #0
+ 496 013a 14BF     		ite	ne
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 12
+
+
+ 497 013c 0123     		movne	r3, #1
+ 498 013e 0023     		moveq	r3, #0
+ 499 0140 DBB2     		uxtb	r3, r3
+ 500 0142 002B     		cmp	r3, #0
+ 501 0144 01D0     		beq	.L23
+  66:../src/ps2controller.cpp **** 				LPC_SSP1->DR;
+ 502              		.loc 2 66 0
+ 503 0146 534B     		ldr	r3, .L55
+ 504 0148 9B68     		ldr	r3, [r3, #8]
+ 505              	.L23:
+ 506              	.LBE10:
+  56:../src/ps2controller.cpp **** 			/* Send each command byte */
+ 507              		.loc 2 56 0 discriminator 2
+ 508 014a 97F83F30 		ldrb	r3, [r7, #63]	@ zero_extendqisi2
+ 509 014e 0133     		adds	r3, r3, #1
+ 510 0150 87F83F30 		strb	r3, [r7, #63]
+ 511 0154 CDE7     		b	.L24
+ 512              	.L18:
+ 513              	.LBE9:
+  67:../src/ps2controller.cpp **** 		}
+  68:../src/ps2controller.cpp **** 
+  69:../src/ps2controller.cpp **** 		/* Toggle attention line */
+  70:../src/ps2controller.cpp **** 		Controller1Select = 1;
+ 514              		.loc 2 70 0
+ 515 0156 0121     		movs	r1, #1
+ 516 0158 4F48     		ldr	r0, .L55+4
+ 517 015a FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 518              	.LBB12:
+  71:../src/ps2controller.cpp **** 		for(int i = 0; i < 200; i++);
+ 519              		.loc 2 71 0
+ 520 015e 0023     		movs	r3, #0
+ 521 0160 7B63     		str	r3, [r7, #52]
+ 522              	.L26:
+ 523              		.loc 2 71 0 is_stmt 0 discriminator 3
+ 524 0162 7B6B     		ldr	r3, [r7, #52]
+ 525 0164 C72B     		cmp	r3, #199
+ 526 0166 03DC     		bgt	.L25
+ 527              		.loc 2 71 0 discriminator 2
+ 528 0168 7B6B     		ldr	r3, [r7, #52]
+ 529 016a 0133     		adds	r3, r3, #1
+ 530 016c 7B63     		str	r3, [r7, #52]
+ 531 016e F8E7     		b	.L26
+ 532              	.L25:
+ 533              	.LBE12:
+  72:../src/ps2controller.cpp **** 		Controller1Select = 0;
+ 534              		.loc 2 72 0 is_stmt 1
+ 535 0170 0021     		movs	r1, #0
+ 536 0172 4948     		ldr	r0, .L55+4
+ 537 0174 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 538              	.LBB13:
+  73:../src/ps2controller.cpp **** 
+  74:../src/ps2controller.cpp **** 		/* Enable analog mode if not already enabled*/
+  75:../src/ps2controller.cpp **** 		if((bufferPoll[1] & 0x0F) == 0x2){
+ 539              		.loc 2 75 0
+ 540 0178 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 541 017a 03F00F03 		and	r3, r3, #15
+ 542 017e 022B     		cmp	r3, #2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 13
+
+
+ 543 0180 45D1     		bne	.L27
+ 544              	.LBB14:
+ 545              	.LBB15:
+  76:../src/ps2controller.cpp **** 			for(uint8_t i = 0; i < 9; i++){
+ 546              		.loc 2 76 0
+ 547 0182 0023     		movs	r3, #0
+ 548 0184 87F83330 		strb	r3, [r7, #51]
+ 549              	.L34:
+ 550              		.loc 2 76 0 is_stmt 0 discriminator 1
+ 551 0188 97F83330 		ldrb	r3, [r7, #51]	@ zero_extendqisi2
+ 552 018c 082B     		cmp	r3, #8
+ 553 018e 2DD8     		bhi	.L28
+ 554              	.LBB16:
+  77:../src/ps2controller.cpp **** 				/* Send each command byte */
+  78:../src/ps2controller.cpp **** 				LPC_SSP1->DR = setAnalogMode[i];
+ 555              		.loc 2 78 0 is_stmt 1
+ 556 0190 97F83330 		ldrb	r3, [r7, #51]	@ zero_extendqisi2
+ 557 0194 434A     		ldr	r2, .L55+16
+ 558 0196 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 559 0198 3E4B     		ldr	r3, .L55
+ 560 019a 9A60     		str	r2, [r3, #8]
+ 561              	.L30:
+  79:../src/ps2controller.cpp **** 				while(LPC_SSP1->SR & 0x10);
+ 562              		.loc 2 79 0
+ 563 019c 3D4B     		ldr	r3, .L55
+ 564 019e DB68     		ldr	r3, [r3, #12]
+ 565 01a0 03F01003 		and	r3, r3, #16
+ 566 01a4 002B     		cmp	r3, #0
+ 567 01a6 14BF     		ite	ne
+ 568 01a8 0123     		movne	r3, #1
+ 569 01aa 0023     		moveq	r3, #0
+ 570 01ac DBB2     		uxtb	r3, r3
+ 571 01ae 002B     		cmp	r3, #0
+ 572 01b0 00D0     		beq	.L29
+ 573 01b2 F3E7     		b	.L30
+ 574              	.L29:
+ 575              	.LBB17:
+  80:../src/ps2controller.cpp **** 
+  81:../src/ps2controller.cpp **** 				/* Wait for controller acknowledge */
+  82:../src/ps2controller.cpp **** 				for(int i = 0; i < 100; i++);
+ 576              		.loc 2 82 0
+ 577 01b4 0023     		movs	r3, #0
+ 578 01b6 FB62     		str	r3, [r7, #44]
+ 579              	.L32:
+ 580              		.loc 2 82 0 is_stmt 0 discriminator 3
+ 581 01b8 FB6A     		ldr	r3, [r7, #44]
+ 582 01ba 632B     		cmp	r3, #99
+ 583 01bc 03DC     		bgt	.L31
+ 584              		.loc 2 82 0 discriminator 2
+ 585 01be FB6A     		ldr	r3, [r7, #44]
+ 586 01c0 0133     		adds	r3, r3, #1
+ 587 01c2 FB62     		str	r3, [r7, #44]
+ 588 01c4 F8E7     		b	.L32
+ 589              	.L31:
+ 590              	.LBE17:
+  83:../src/ps2controller.cpp **** 
+  84:../src/ps2controller.cpp **** 				/* Ignore response from controller */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 14
+
+
+  85:../src/ps2controller.cpp **** 				if(LPC_SSP1->SR & 0x04)
+ 591              		.loc 2 85 0 is_stmt 1
+ 592 01c6 334B     		ldr	r3, .L55
+ 593 01c8 DB68     		ldr	r3, [r3, #12]
+ 594 01ca 03F00403 		and	r3, r3, #4
+ 595 01ce 002B     		cmp	r3, #0
+ 596 01d0 14BF     		ite	ne
+ 597 01d2 0123     		movne	r3, #1
+ 598 01d4 0023     		moveq	r3, #0
+ 599 01d6 DBB2     		uxtb	r3, r3
+ 600 01d8 002B     		cmp	r3, #0
+ 601 01da 01D0     		beq	.L33
+  86:../src/ps2controller.cpp **** 					LPC_SSP1->DR;
+ 602              		.loc 2 86 0
+ 603 01dc 2D4B     		ldr	r3, .L55
+ 604 01de 9B68     		ldr	r3, [r3, #8]
+ 605              	.L33:
+ 606              	.LBE16:
+  76:../src/ps2controller.cpp **** 				/* Send each command byte */
+ 607              		.loc 2 76 0 discriminator 2
+ 608 01e0 97F83330 		ldrb	r3, [r7, #51]	@ zero_extendqisi2
+ 609 01e4 0133     		adds	r3, r3, #1
+ 610 01e6 87F83330 		strb	r3, [r7, #51]
+ 611 01ea CDE7     		b	.L34
+ 612              	.L28:
+ 613              	.LBE15:
+  87:../src/ps2controller.cpp **** 			}
+  88:../src/ps2controller.cpp **** 
+  89:../src/ps2controller.cpp **** 			/* Toggle attention line */
+  90:../src/ps2controller.cpp **** 			Controller1Select = 1;
+ 614              		.loc 2 90 0
+ 615 01ec 0121     		movs	r1, #1
+ 616 01ee 2A48     		ldr	r0, .L55+4
+ 617 01f0 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 618              	.LBB18:
+  91:../src/ps2controller.cpp **** 			for(int i = 0; i < 200; i++);
+ 619              		.loc 2 91 0
+ 620 01f4 0023     		movs	r3, #0
+ 621 01f6 BB62     		str	r3, [r7, #40]
+ 622              	.L36:
+ 623              		.loc 2 91 0 is_stmt 0 discriminator 3
+ 624 01f8 BB6A     		ldr	r3, [r7, #40]
+ 625 01fa C72B     		cmp	r3, #199
+ 626 01fc 03DC     		bgt	.L35
+ 627              		.loc 2 91 0 discriminator 2
+ 628 01fe BB6A     		ldr	r3, [r7, #40]
+ 629 0200 0133     		adds	r3, r3, #1
+ 630 0202 BB62     		str	r3, [r7, #40]
+ 631 0204 F8E7     		b	.L36
+ 632              	.L35:
+ 633              	.LBE18:
+  92:../src/ps2controller.cpp **** 			Controller1Select = 0;
+ 634              		.loc 2 92 0 is_stmt 1
+ 635 0206 0021     		movs	r1, #0
+ 636 0208 2348     		ldr	r0, .L55+4
+ 637 020a FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 638              	.L27:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 15
+
+
+ 639              	.LBE14:
+ 640              	.LBE13:
+ 641              	.LBB19:
+  93:../src/ps2controller.cpp **** 		}
+  94:../src/ps2controller.cpp **** 
+  95:../src/ps2controller.cpp **** 		/* Enable rumble motors */
+  96:../src/ps2controller.cpp **** 		for(uint8_t i = 0; i < 9; i++){
+ 642              		.loc 2 96 0
+ 643 020e 0023     		movs	r3, #0
+ 644 0210 87F82730 		strb	r3, [r7, #39]
+ 645              	.L43:
+ 646              		.loc 2 96 0 is_stmt 0 discriminator 1
+ 647 0214 97F82730 		ldrb	r3, [r7, #39]	@ zero_extendqisi2
+ 648 0218 082B     		cmp	r3, #8
+ 649 021a 2DD8     		bhi	.L37
+ 650              	.LBB20:
+  97:../src/ps2controller.cpp **** 			/* Send each command byte */
+  98:../src/ps2controller.cpp **** 			LPC_SSP1->DR = enableRumble[i];
+ 651              		.loc 2 98 0 is_stmt 1
+ 652 021c 97F82730 		ldrb	r3, [r7, #39]	@ zero_extendqisi2
+ 653 0220 214A     		ldr	r2, .L55+20
+ 654 0222 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 655 0224 1B4B     		ldr	r3, .L55
+ 656 0226 9A60     		str	r2, [r3, #8]
+ 657              	.L39:
+  99:../src/ps2controller.cpp **** 			while(LPC_SSP1->SR & 0x10);
+ 658              		.loc 2 99 0
+ 659 0228 1A4B     		ldr	r3, .L55
+ 660 022a DB68     		ldr	r3, [r3, #12]
+ 661 022c 03F01003 		and	r3, r3, #16
+ 662 0230 002B     		cmp	r3, #0
+ 663 0232 14BF     		ite	ne
+ 664 0234 0123     		movne	r3, #1
+ 665 0236 0023     		moveq	r3, #0
+ 666 0238 DBB2     		uxtb	r3, r3
+ 667 023a 002B     		cmp	r3, #0
+ 668 023c 00D0     		beq	.L38
+ 669 023e F3E7     		b	.L39
+ 670              	.L38:
+ 671              	.LBB21:
+ 100:../src/ps2controller.cpp **** 
+ 101:../src/ps2controller.cpp **** 			/* Wait for controller acknowledge */
+ 102:../src/ps2controller.cpp **** 			for(int i = 0; i < 100; i++);
+ 672              		.loc 2 102 0
+ 673 0240 0023     		movs	r3, #0
+ 674 0242 3B62     		str	r3, [r7, #32]
+ 675              	.L41:
+ 676              		.loc 2 102 0 is_stmt 0 discriminator 3
+ 677 0244 3B6A     		ldr	r3, [r7, #32]
+ 678 0246 632B     		cmp	r3, #99
+ 679 0248 03DC     		bgt	.L40
+ 680              		.loc 2 102 0 discriminator 2
+ 681 024a 3B6A     		ldr	r3, [r7, #32]
+ 682 024c 0133     		adds	r3, r3, #1
+ 683 024e 3B62     		str	r3, [r7, #32]
+ 684 0250 F8E7     		b	.L41
+ 685              	.L40:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 16
+
+
+ 686              	.LBE21:
+ 103:../src/ps2controller.cpp **** 
+ 104:../src/ps2controller.cpp **** 			/* Ignore response from controller */
+ 105:../src/ps2controller.cpp **** 			if(LPC_SSP1->SR & 0x04)
+ 687              		.loc 2 105 0 is_stmt 1
+ 688 0252 104B     		ldr	r3, .L55
+ 689 0254 DB68     		ldr	r3, [r3, #12]
+ 690 0256 03F00403 		and	r3, r3, #4
+ 691 025a 002B     		cmp	r3, #0
+ 692 025c 14BF     		ite	ne
+ 693 025e 0123     		movne	r3, #1
+ 694 0260 0023     		moveq	r3, #0
+ 695 0262 DBB2     		uxtb	r3, r3
+ 696 0264 002B     		cmp	r3, #0
+ 697 0266 01D0     		beq	.L42
+ 106:../src/ps2controller.cpp **** 				LPC_SSP1->DR;
+ 698              		.loc 2 106 0
+ 699 0268 0A4B     		ldr	r3, .L55
+ 700 026a 9B68     		ldr	r3, [r3, #8]
+ 701              	.L42:
+ 702              	.LBE20:
+  96:../src/ps2controller.cpp **** 			/* Send each command byte */
+ 703              		.loc 2 96 0 discriminator 2
+ 704 026c 97F82730 		ldrb	r3, [r7, #39]	@ zero_extendqisi2
+ 705 0270 0133     		adds	r3, r3, #1
+ 706 0272 87F82730 		strb	r3, [r7, #39]
+ 707 0276 CDE7     		b	.L43
+ 708              	.L37:
+ 709              	.LBE19:
+ 107:../src/ps2controller.cpp **** 		}
+ 108:../src/ps2controller.cpp **** 
+ 109:../src/ps2controller.cpp **** 		/* Toggle attention line */
+ 110:../src/ps2controller.cpp **** 		Controller1Select = 1;
+ 710              		.loc 2 110 0
+ 711 0278 0121     		movs	r1, #1
+ 712 027a 0748     		ldr	r0, .L55+4
+ 713 027c FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 714              	.LBB22:
+ 111:../src/ps2controller.cpp **** 		for(int i = 0; i < 200; i++);
+ 715              		.loc 2 111 0
+ 716 0280 0023     		movs	r3, #0
+ 717 0282 FB61     		str	r3, [r7, #28]
+ 718              	.L45:
+ 719              		.loc 2 111 0 is_stmt 0 discriminator 3
+ 720 0284 FB69     		ldr	r3, [r7, #28]
+ 721 0286 C72B     		cmp	r3, #199
+ 722 0288 10DC     		bgt	.L44
+ 723              		.loc 2 111 0 discriminator 2
+ 724 028a FB69     		ldr	r3, [r7, #28]
+ 725 028c 0133     		adds	r3, r3, #1
+ 726 028e FB61     		str	r3, [r7, #28]
+ 727 0290 F8E7     		b	.L45
+ 728              	.L56:
+ 729 0292 00BF     		.align	2
+ 730              	.L55:
+ 731 0294 00000340 		.word	1073938432
+ 732 0298 00000000 		.word	Controller1Select
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 17
+
+
+ 733 029c 00000000 		.word	poll
+ 734 02a0 00000000 		.word	enterConfig
+ 735 02a4 00000000 		.word	setAnalogMode
+ 736 02a8 00000000 		.word	enableRumble
+ 737              	.L44:
+ 738              	.LBE22:
+ 112:../src/ps2controller.cpp **** 		Controller1Select = 0;
+ 739              		.loc 2 112 0 is_stmt 1
+ 740 02ac 0021     		movs	r1, #0
+ 741 02ae 1F48     		ldr	r0, .L57
+ 742 02b0 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 743              	.LBB23:
+ 113:../src/ps2controller.cpp **** 
+ 114:../src/ps2controller.cpp **** 		/* Exit configuration mode */
+ 115:../src/ps2controller.cpp **** 		for(uint8_t i = 0; i < 9; i++){
+ 744              		.loc 2 115 0
+ 745 02b4 0023     		movs	r3, #0
+ 746 02b6 FB76     		strb	r3, [r7, #27]
+ 747              	.L52:
+ 748              		.loc 2 115 0 is_stmt 0 discriminator 1
+ 749 02b8 FB7E     		ldrb	r3, [r7, #27]	@ zero_extendqisi2
+ 750 02ba 082B     		cmp	r3, #8
+ 751 02bc 2AD8     		bhi	.L46
+ 752              	.LBB24:
+ 116:../src/ps2controller.cpp **** 			/* Send each command byte */
+ 117:../src/ps2controller.cpp **** 			LPC_SSP1->DR = exitConfig[i];
+ 753              		.loc 2 117 0 is_stmt 1
+ 754 02be FB7E     		ldrb	r3, [r7, #27]	@ zero_extendqisi2
+ 755 02c0 1B4A     		ldr	r2, .L57+4
+ 756 02c2 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 757 02c4 1B4B     		ldr	r3, .L57+8
+ 758 02c6 9A60     		str	r2, [r3, #8]
+ 759              	.L48:
+ 118:../src/ps2controller.cpp **** 			while(LPC_SSP1->SR & 0x10);
+ 760              		.loc 2 118 0
+ 761 02c8 1A4B     		ldr	r3, .L57+8
+ 762 02ca DB68     		ldr	r3, [r3, #12]
+ 763 02cc 03F01003 		and	r3, r3, #16
+ 764 02d0 002B     		cmp	r3, #0
+ 765 02d2 14BF     		ite	ne
+ 766 02d4 0123     		movne	r3, #1
+ 767 02d6 0023     		moveq	r3, #0
+ 768 02d8 DBB2     		uxtb	r3, r3
+ 769 02da 002B     		cmp	r3, #0
+ 770 02dc 00D0     		beq	.L47
+ 771 02de F3E7     		b	.L48
+ 772              	.L47:
+ 773              	.LBB25:
+ 119:../src/ps2controller.cpp **** 
+ 120:../src/ps2controller.cpp **** 			/* Wait for controller acknowledge */
+ 121:../src/ps2controller.cpp **** 			for(int i = 0; i < 100; i++);
+ 774              		.loc 2 121 0
+ 775 02e0 0023     		movs	r3, #0
+ 776 02e2 7B61     		str	r3, [r7, #20]
+ 777              	.L50:
+ 778              		.loc 2 121 0 is_stmt 0 discriminator 3
+ 779 02e4 7B69     		ldr	r3, [r7, #20]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 18
+
+
+ 780 02e6 632B     		cmp	r3, #99
+ 781 02e8 03DC     		bgt	.L49
+ 782              		.loc 2 121 0 discriminator 2
+ 783 02ea 7B69     		ldr	r3, [r7, #20]
+ 784 02ec 0133     		adds	r3, r3, #1
+ 785 02ee 7B61     		str	r3, [r7, #20]
+ 786 02f0 F8E7     		b	.L50
+ 787              	.L49:
+ 788              	.LBE25:
+ 122:../src/ps2controller.cpp **** 
+ 123:../src/ps2controller.cpp **** 			/* Ignore response from controller */
+ 124:../src/ps2controller.cpp **** 			if(LPC_SSP1->SR & 0x04)
+ 789              		.loc 2 124 0 is_stmt 1
+ 790 02f2 104B     		ldr	r3, .L57+8
+ 791 02f4 DB68     		ldr	r3, [r3, #12]
+ 792 02f6 03F00403 		and	r3, r3, #4
+ 793 02fa 002B     		cmp	r3, #0
+ 794 02fc 14BF     		ite	ne
+ 795 02fe 0123     		movne	r3, #1
+ 796 0300 0023     		moveq	r3, #0
+ 797 0302 DBB2     		uxtb	r3, r3
+ 798 0304 002B     		cmp	r3, #0
+ 799 0306 01D0     		beq	.L51
+ 125:../src/ps2controller.cpp **** 				LPC_SSP1->DR;
+ 800              		.loc 2 125 0
+ 801 0308 0A4B     		ldr	r3, .L57+8
+ 802 030a 9B68     		ldr	r3, [r3, #8]
+ 803              	.L51:
+ 804              	.LBE24:
+ 115:../src/ps2controller.cpp **** 			/* Send each command byte */
+ 805              		.loc 2 115 0 discriminator 2
+ 806 030c FB7E     		ldrb	r3, [r7, #27]	@ zero_extendqisi2
+ 807 030e 0133     		adds	r3, r3, #1
+ 808 0310 FB76     		strb	r3, [r7, #27]
+ 809 0312 D1E7     		b	.L52
+ 810              	.L46:
+ 811              	.LBE23:
+ 126:../src/ps2controller.cpp **** 		}
+ 127:../src/ps2controller.cpp **** 
+ 128:../src/ps2controller.cpp **** 		Controller1Select = 1;
+ 812              		.loc 2 128 0
+ 813 0314 0121     		movs	r1, #1
+ 814 0316 0548     		ldr	r0, .L57
+ 815 0318 FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 129:../src/ps2controller.cpp **** 
+ 130:../src/ps2controller.cpp **** 		return true;
+ 816              		.loc 2 130 0
+ 817 031c 0123     		movs	r3, #1
+ 818 031e 00E0     		b	.L54
+ 819              	.L5:
+ 820              	.LBE3:
+ 131:../src/ps2controller.cpp **** 	}
+ 132:../src/ps2controller.cpp **** 	else
+ 133:../src/ps2controller.cpp **** 		return false;
+ 821              		.loc 2 133 0
+ 822 0320 0023     		movs	r3, #0
+ 823              	.L54:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 19
+
+
+ 824              	.LBE2:
+ 134:../src/ps2controller.cpp **** }
+ 825              		.loc 2 134 0 discriminator 1
+ 826 0322 1846     		mov	r0, r3
+ 827 0324 5037     		adds	r7, r7, #80
+ 828              		.cfi_def_cfa_offset 8
+ 829 0326 BD46     		mov	sp, r7
+ 830              		.cfi_def_cfa_register 13
+ 831              		@ sp needed
+ 832 0328 80BD     		pop	{r7, pc}
+ 833              	.L58:
+ 834 032a 00BF     		.align	2
+ 835              	.L57:
+ 836 032c 00000000 		.word	Controller1Select
+ 837 0330 00000000 		.word	exitConfig
+ 838 0334 00000340 		.word	1073938432
+ 839              		.cfi_endproc
+ 840              	.LFE320:
+ 842              		.section	.text._Z14PollControllerbP12ps2_inputs_t,"ax",%progbits
+ 843              		.align	1
+ 844              		.global	_Z14PollControllerbP12ps2_inputs_t
+ 845              		.syntax unified
+ 846              		.thumb
+ 847              		.thumb_func
+ 848              		.fpu softvfp
+ 850              	_Z14PollControllerbP12ps2_inputs_t:
+ 851              	.LFB321:
+ 135:../src/ps2controller.cpp **** 
+ 136:../src/ps2controller.cpp **** bool PollController(bool controllerId, ps2_inputs_t * result)
+ 137:../src/ps2controller.cpp **** {
+ 852              		.loc 2 137 0
+ 853              		.cfi_startproc
+ 854              		@ args = 0, pretend = 0, frame = 40
+ 855              		@ frame_needed = 1, uses_anonymous_args = 0
+ 856 0000 80B5     		push	{r7, lr}
+ 857              		.cfi_def_cfa_offset 8
+ 858              		.cfi_offset 7, -8
+ 859              		.cfi_offset 14, -4
+ 860 0002 8AB0     		sub	sp, sp, #40
+ 861              		.cfi_def_cfa_offset 48
+ 862 0004 00AF     		add	r7, sp, #0
+ 863              		.cfi_def_cfa_register 7
+ 864 0006 0346     		mov	r3, r0
+ 865 0008 3960     		str	r1, [r7]
+ 866 000a FB71     		strb	r3, [r7, #7]
+ 867              	.LBB26:
+ 138:../src/ps2controller.cpp **** 	/* Commands bit order must be reversed */
+ 139:../src/ps2controller.cpp **** 	if(!(LPC_SSP1->SR & 0x10)){
+ 868              		.loc 2 139 0
+ 869 000c 794B     		ldr	r3, .L98
+ 870 000e DB68     		ldr	r3, [r3, #12]
+ 871 0010 03F01003 		and	r3, r3, #16
+ 872 0014 002B     		cmp	r3, #0
+ 873 0016 0CBF     		ite	eq
+ 874 0018 0123     		moveq	r3, #1
+ 875 001a 0023     		movne	r3, #0
+ 876 001c DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 20
+
+
+ 877 001e 002B     		cmp	r3, #0
+ 878 0020 00F03181 		beq	.L60
+ 879              	.LBB27:
+ 140:../src/ps2controller.cpp **** 		/* Clear all values in structure pointer */
+ 141:../src/ps2controller.cpp **** 		result->Button.digitalState = 0xFFFF;
+ 880              		.loc 2 141 0
+ 881 0024 3B68     		ldr	r3, [r7]
+ 882 0026 4FF6FF72 		movw	r2, #65535
+ 883 002a 1A80     		strh	r2, [r3]	@ movhi
+ 884              	.L62:
+ 142:../src/ps2controller.cpp **** 
+ 143:../src/ps2controller.cpp **** 		/* Empty SSP1 receive buffer */
+ 144:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x04){
+ 885              		.loc 2 144 0
+ 886 002c 714B     		ldr	r3, .L98
+ 887 002e DB68     		ldr	r3, [r3, #12]
+ 888 0030 03F00403 		and	r3, r3, #4
+ 889 0034 002B     		cmp	r3, #0
+ 890 0036 14BF     		ite	ne
+ 891 0038 0123     		movne	r3, #1
+ 892 003a 0023     		moveq	r3, #0
+ 893 003c DBB2     		uxtb	r3, r3
+ 894 003e 002B     		cmp	r3, #0
+ 895 0040 02D0     		beq	.L61
+ 145:../src/ps2controller.cpp **** 			LPC_SSP1->DR;
+ 896              		.loc 2 145 0
+ 897 0042 6C4B     		ldr	r3, .L98
+ 898 0044 9B68     		ldr	r3, [r3, #8]
+ 144:../src/ps2controller.cpp **** 			LPC_SSP1->DR;
+ 899              		.loc 2 144 0
+ 900 0046 F1E7     		b	.L62
+ 901              	.L61:
+ 146:../src/ps2controller.cpp **** 		}
+ 147:../src/ps2controller.cpp **** 
+ 148:../src/ps2controller.cpp **** 		/* Drive attention line low */
+ 149:../src/ps2controller.cpp **** 		Controller1Select = 0;
+ 902              		.loc 2 149 0
+ 903 0048 0021     		movs	r1, #0
+ 904 004a 6B48     		ldr	r0, .L98+4
+ 905 004c FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 150:../src/ps2controller.cpp **** 
+ 151:../src/ps2controller.cpp **** 		/* Send initial header byte, always 0x01 */
+ 152:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x80;
+ 906              		.loc 2 152 0
+ 907 0050 684B     		ldr	r3, .L98
+ 908 0052 8022     		movs	r2, #128
+ 909 0054 9A60     		str	r2, [r3, #8]
+ 910              	.L64:
+ 153:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 911              		.loc 2 153 0
+ 912 0056 674B     		ldr	r3, .L98
+ 913 0058 DB68     		ldr	r3, [r3, #12]
+ 914 005a 03F01003 		and	r3, r3, #16
+ 915 005e 002B     		cmp	r3, #0
+ 916 0060 14BF     		ite	ne
+ 917 0062 0123     		movne	r3, #1
+ 918 0064 0023     		moveq	r3, #0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 21
+
+
+ 919 0066 DBB2     		uxtb	r3, r3
+ 920 0068 002B     		cmp	r3, #0
+ 921 006a 00D0     		beq	.L63
+ 922 006c F3E7     		b	.L64
+ 923              	.L63:
+ 924              	.LBB28:
+ 154:../src/ps2controller.cpp **** 
+ 155:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 156:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 925              		.loc 2 156 0
+ 926 006e 0023     		movs	r3, #0
+ 927 0070 7B62     		str	r3, [r7, #36]
+ 928              	.L66:
+ 929              		.loc 2 156 0 is_stmt 0 discriminator 3
+ 930 0072 7B6A     		ldr	r3, [r7, #36]
+ 931 0074 632B     		cmp	r3, #99
+ 932 0076 03DC     		bgt	.L65
+ 933              		.loc 2 156 0 discriminator 2
+ 934 0078 7B6A     		ldr	r3, [r7, #36]
+ 935 007a 0133     		adds	r3, r3, #1
+ 936 007c 7B62     		str	r3, [r7, #36]
+ 937 007e F8E7     		b	.L66
+ 938              	.L65:
+ 939              	.LBE28:
+ 157:../src/ps2controller.cpp **** 
+ 158:../src/ps2controller.cpp **** 		/* Ignore header replies from controller */
+ 159:../src/ps2controller.cpp **** 		LPC_SSP1->DR;
+ 940              		.loc 2 159 0 is_stmt 1
+ 941 0080 5C4B     		ldr	r3, .L98
+ 942 0082 9B68     		ldr	r3, [r3, #8]
+ 160:../src/ps2controller.cpp **** 
+ 161:../src/ps2controller.cpp **** 		/* Send main polling command */
+ 162:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x42;
+ 943              		.loc 2 162 0
+ 944 0084 5B4B     		ldr	r3, .L98
+ 945 0086 4222     		movs	r2, #66
+ 946 0088 9A60     		str	r2, [r3, #8]
+ 947              	.L68:
+ 163:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 948              		.loc 2 163 0
+ 949 008a 5A4B     		ldr	r3, .L98
+ 950 008c DB68     		ldr	r3, [r3, #12]
+ 951 008e 03F01003 		and	r3, r3, #16
+ 952 0092 002B     		cmp	r3, #0
+ 953 0094 14BF     		ite	ne
+ 954 0096 0123     		movne	r3, #1
+ 955 0098 0023     		moveq	r3, #0
+ 956 009a DBB2     		uxtb	r3, r3
+ 957 009c 002B     		cmp	r3, #0
+ 958 009e 00D0     		beq	.L67
+ 959 00a0 F3E7     		b	.L68
+ 960              	.L67:
+ 961              	.LBB29:
+ 164:../src/ps2controller.cpp **** 
+ 165:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 166:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 962              		.loc 2 166 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 22
+
+
+ 963 00a2 0023     		movs	r3, #0
+ 964 00a4 3B62     		str	r3, [r7, #32]
+ 965              	.L70:
+ 966              		.loc 2 166 0 is_stmt 0 discriminator 3
+ 967 00a6 3B6A     		ldr	r3, [r7, #32]
+ 968 00a8 632B     		cmp	r3, #99
+ 969 00aa 03DC     		bgt	.L69
+ 970              		.loc 2 166 0 discriminator 2
+ 971 00ac 3B6A     		ldr	r3, [r7, #32]
+ 972 00ae 0133     		adds	r3, r3, #1
+ 973 00b0 3B62     		str	r3, [r7, #32]
+ 974 00b2 F8E7     		b	.L70
+ 975              	.L69:
+ 976              	.LBE29:
+ 167:../src/ps2controller.cpp **** 
+ 168:../src/ps2controller.cpp **** 		/* Send third header byte, always 0x00 */
+ 169:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 977              		.loc 2 169 0 is_stmt 1
+ 978 00b4 4F4B     		ldr	r3, .L98
+ 979 00b6 0022     		movs	r2, #0
+ 980 00b8 9A60     		str	r2, [r3, #8]
+ 981              	.L72:
+ 170:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 982              		.loc 2 170 0
+ 983 00ba 4E4B     		ldr	r3, .L98
+ 984 00bc DB68     		ldr	r3, [r3, #12]
+ 985 00be 03F01003 		and	r3, r3, #16
+ 986 00c2 002B     		cmp	r3, #0
+ 987 00c4 14BF     		ite	ne
+ 988 00c6 0123     		movne	r3, #1
+ 989 00c8 0023     		moveq	r3, #0
+ 990 00ca DBB2     		uxtb	r3, r3
+ 991 00cc 002B     		cmp	r3, #0
+ 992 00ce 00D0     		beq	.L71
+ 993 00d0 F3E7     		b	.L72
+ 994              	.L71:
+ 995              	.LBB30:
+ 171:../src/ps2controller.cpp **** 
+ 172:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 173:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 996              		.loc 2 173 0
+ 997 00d2 0023     		movs	r3, #0
+ 998 00d4 FB61     		str	r3, [r7, #28]
+ 999              	.L74:
+ 1000              		.loc 2 173 0 is_stmt 0 discriminator 3
+ 1001 00d6 FB69     		ldr	r3, [r7, #28]
+ 1002 00d8 632B     		cmp	r3, #99
+ 1003 00da 03DC     		bgt	.L73
+ 1004              		.loc 2 173 0 discriminator 2
+ 1005 00dc FB69     		ldr	r3, [r7, #28]
+ 1006 00de 0133     		adds	r3, r3, #1
+ 1007 00e0 FB61     		str	r3, [r7, #28]
+ 1008 00e2 F8E7     		b	.L74
+ 1009              	.L73:
+ 1010              	.LBE30:
+ 174:../src/ps2controller.cpp **** 
+ 175:../src/ps2controller.cpp **** 		/* Send 1st command byte */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 23
+
+
+ 176:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00; // TODO: change for activating rumble
+ 1011              		.loc 2 176 0 is_stmt 1
+ 1012 00e4 434B     		ldr	r3, .L98
+ 1013 00e6 0022     		movs	r2, #0
+ 1014 00e8 9A60     		str	r2, [r3, #8]
+ 1015              	.L76:
+ 177:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 1016              		.loc 2 177 0
+ 1017 00ea 424B     		ldr	r3, .L98
+ 1018 00ec DB68     		ldr	r3, [r3, #12]
+ 1019 00ee 03F01003 		and	r3, r3, #16
+ 1020 00f2 002B     		cmp	r3, #0
+ 1021 00f4 14BF     		ite	ne
+ 1022 00f6 0123     		movne	r3, #1
+ 1023 00f8 0023     		moveq	r3, #0
+ 1024 00fa DBB2     		uxtb	r3, r3
+ 1025 00fc 002B     		cmp	r3, #0
+ 1026 00fe 00D0     		beq	.L75
+ 1027 0100 F3E7     		b	.L76
+ 1028              	.L75:
+ 1029              	.LBB31:
+ 178:../src/ps2controller.cpp **** 
+ 179:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 180:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 1030              		.loc 2 180 0
+ 1031 0102 0023     		movs	r3, #0
+ 1032 0104 BB61     		str	r3, [r7, #24]
+ 1033              	.L78:
+ 1034              		.loc 2 180 0 is_stmt 0 discriminator 3
+ 1035 0106 BB69     		ldr	r3, [r7, #24]
+ 1036 0108 632B     		cmp	r3, #99
+ 1037 010a 03DC     		bgt	.L77
+ 1038              		.loc 2 180 0 discriminator 2
+ 1039 010c BB69     		ldr	r3, [r7, #24]
+ 1040 010e 0133     		adds	r3, r3, #1
+ 1041 0110 BB61     		str	r3, [r7, #24]
+ 1042 0112 F8E7     		b	.L78
+ 1043              	.L77:
+ 1044              	.LBE31:
+ 181:../src/ps2controller.cpp **** 
+ 182:../src/ps2controller.cpp **** 		/* Send 2nd command byte */
+ 183:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 1045              		.loc 2 183 0 is_stmt 1
+ 1046 0114 374B     		ldr	r3, .L98
+ 1047 0116 0022     		movs	r2, #0
+ 1048 0118 9A60     		str	r2, [r3, #8]
+ 1049              	.L80:
+ 184:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 1050              		.loc 2 184 0
+ 1051 011a 364B     		ldr	r3, .L98
+ 1052 011c DB68     		ldr	r3, [r3, #12]
+ 1053 011e 03F01003 		and	r3, r3, #16
+ 1054 0122 002B     		cmp	r3, #0
+ 1055 0124 14BF     		ite	ne
+ 1056 0126 0123     		movne	r3, #1
+ 1057 0128 0023     		moveq	r3, #0
+ 1058 012a DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 24
+
+
+ 1059 012c 002B     		cmp	r3, #0
+ 1060 012e 00D0     		beq	.L79
+ 1061 0130 F3E7     		b	.L80
+ 1062              	.L79:
+ 1063              	.LBB32:
+ 185:../src/ps2controller.cpp **** 
+ 186:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 187:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 1064              		.loc 2 187 0
+ 1065 0132 0023     		movs	r3, #0
+ 1066 0134 7B61     		str	r3, [r7, #20]
+ 1067              	.L82:
+ 1068              		.loc 2 187 0 is_stmt 0 discriminator 3
+ 1069 0136 7B69     		ldr	r3, [r7, #20]
+ 1070 0138 632B     		cmp	r3, #99
+ 1071 013a 03DC     		bgt	.L81
+ 1072              		.loc 2 187 0 discriminator 2
+ 1073 013c 7B69     		ldr	r3, [r7, #20]
+ 1074 013e 0133     		adds	r3, r3, #1
+ 1075 0140 7B61     		str	r3, [r7, #20]
+ 1076 0142 F8E7     		b	.L82
+ 1077              	.L81:
+ 1078              	.LBE32:
+ 188:../src/ps2controller.cpp **** 
+ 189:../src/ps2controller.cpp **** 		/* Send 3rd command byte */
+ 190:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 1079              		.loc 2 190 0 is_stmt 1
+ 1080 0144 2B4B     		ldr	r3, .L98
+ 1081 0146 0022     		movs	r2, #0
+ 1082 0148 9A60     		str	r2, [r3, #8]
+ 1083              	.L84:
+ 191:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 1084              		.loc 2 191 0
+ 1085 014a 2A4B     		ldr	r3, .L98
+ 1086 014c DB68     		ldr	r3, [r3, #12]
+ 1087 014e 03F01003 		and	r3, r3, #16
+ 1088 0152 002B     		cmp	r3, #0
+ 1089 0154 14BF     		ite	ne
+ 1090 0156 0123     		movne	r3, #1
+ 1091 0158 0023     		moveq	r3, #0
+ 1092 015a DBB2     		uxtb	r3, r3
+ 1093 015c 002B     		cmp	r3, #0
+ 1094 015e 00D0     		beq	.L83
+ 1095 0160 F3E7     		b	.L84
+ 1096              	.L83:
+ 1097              	.LBB33:
+ 192:../src/ps2controller.cpp **** 
+ 193:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 194:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 1098              		.loc 2 194 0
+ 1099 0162 0023     		movs	r3, #0
+ 1100 0164 3B61     		str	r3, [r7, #16]
+ 1101              	.L86:
+ 1102              		.loc 2 194 0 is_stmt 0 discriminator 3
+ 1103 0166 3B69     		ldr	r3, [r7, #16]
+ 1104 0168 632B     		cmp	r3, #99
+ 1105 016a 03DC     		bgt	.L85
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 25
+
+
+ 1106              		.loc 2 194 0 discriminator 2
+ 1107 016c 3B69     		ldr	r3, [r7, #16]
+ 1108 016e 0133     		adds	r3, r3, #1
+ 1109 0170 3B61     		str	r3, [r7, #16]
+ 1110 0172 F8E7     		b	.L86
+ 1111              	.L85:
+ 1112              	.LBE33:
+ 195:../src/ps2controller.cpp **** 
+ 196:../src/ps2controller.cpp **** 		/* Send 4th command byte */
+ 197:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 1113              		.loc 2 197 0 is_stmt 1
+ 1114 0174 1F4B     		ldr	r3, .L98
+ 1115 0176 0022     		movs	r2, #0
+ 1116 0178 9A60     		str	r2, [r3, #8]
+ 1117              	.L88:
+ 198:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 1118              		.loc 2 198 0
+ 1119 017a 1E4B     		ldr	r3, .L98
+ 1120 017c DB68     		ldr	r3, [r3, #12]
+ 1121 017e 03F01003 		and	r3, r3, #16
+ 1122 0182 002B     		cmp	r3, #0
+ 1123 0184 14BF     		ite	ne
+ 1124 0186 0123     		movne	r3, #1
+ 1125 0188 0023     		moveq	r3, #0
+ 1126 018a DBB2     		uxtb	r3, r3
+ 1127 018c 002B     		cmp	r3, #0
+ 1128 018e 00D0     		beq	.L87
+ 1129 0190 F3E7     		b	.L88
+ 1130              	.L87:
+ 1131              	.LBB34:
+ 199:../src/ps2controller.cpp **** 
+ 200:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 201:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 1132              		.loc 2 201 0
+ 1133 0192 0023     		movs	r3, #0
+ 1134 0194 FB60     		str	r3, [r7, #12]
+ 1135              	.L90:
+ 1136              		.loc 2 201 0 is_stmt 0 discriminator 3
+ 1137 0196 FB68     		ldr	r3, [r7, #12]
+ 1138 0198 632B     		cmp	r3, #99
+ 1139 019a 03DC     		bgt	.L89
+ 1140              		.loc 2 201 0 discriminator 2
+ 1141 019c FB68     		ldr	r3, [r7, #12]
+ 1142 019e 0133     		adds	r3, r3, #1
+ 1143 01a0 FB60     		str	r3, [r7, #12]
+ 1144 01a2 F8E7     		b	.L90
+ 1145              	.L89:
+ 1146              	.LBE34:
+ 202:../src/ps2controller.cpp **** 
+ 203:../src/ps2controller.cpp **** 		/* Send 5th command byte */
+ 204:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 1147              		.loc 2 204 0 is_stmt 1
+ 1148 01a4 134B     		ldr	r3, .L98
+ 1149 01a6 0022     		movs	r2, #0
+ 1150 01a8 9A60     		str	r2, [r3, #8]
+ 1151              	.L92:
+ 205:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 26
+
+
+ 1152              		.loc 2 205 0
+ 1153 01aa 124B     		ldr	r3, .L98
+ 1154 01ac DB68     		ldr	r3, [r3, #12]
+ 1155 01ae 03F01003 		and	r3, r3, #16
+ 1156 01b2 002B     		cmp	r3, #0
+ 1157 01b4 14BF     		ite	ne
+ 1158 01b6 0123     		movne	r3, #1
+ 1159 01b8 0023     		moveq	r3, #0
+ 1160 01ba DBB2     		uxtb	r3, r3
+ 1161 01bc 002B     		cmp	r3, #0
+ 1162 01be 00D0     		beq	.L91
+ 1163 01c0 F3E7     		b	.L92
+ 1164              	.L91:
+ 1165              	.LBB35:
+ 206:../src/ps2controller.cpp **** 
+ 207:../src/ps2controller.cpp **** 		/* Wait for controller acknowledge */
+ 208:../src/ps2controller.cpp **** 		for(int i = 0; i < 100; i++);
+ 1166              		.loc 2 208 0
+ 1167 01c2 0023     		movs	r3, #0
+ 1168 01c4 BB60     		str	r3, [r7, #8]
+ 1169              	.L94:
+ 1170              		.loc 2 208 0 is_stmt 0 discriminator 3
+ 1171 01c6 BB68     		ldr	r3, [r7, #8]
+ 1172 01c8 632B     		cmp	r3, #99
+ 1173 01ca 03DC     		bgt	.L93
+ 1174              		.loc 2 208 0 discriminator 2
+ 1175 01cc BB68     		ldr	r3, [r7, #8]
+ 1176 01ce 0133     		adds	r3, r3, #1
+ 1177 01d0 BB60     		str	r3, [r7, #8]
+ 1178 01d2 F8E7     		b	.L94
+ 1179              	.L93:
+ 1180              	.LBE35:
+ 209:../src/ps2controller.cpp **** 
+ 210:../src/ps2controller.cpp **** 		/* Send 6th command byte */
+ 211:../src/ps2controller.cpp **** 		LPC_SSP1->DR = 0x00;
+ 1181              		.loc 2 211 0 is_stmt 1
+ 1182 01d4 074B     		ldr	r3, .L98
+ 1183 01d6 0022     		movs	r2, #0
+ 1184 01d8 9A60     		str	r2, [r3, #8]
+ 1185              	.L96:
+ 212:../src/ps2controller.cpp **** 		while(LPC_SSP1->SR & 0x10);
+ 1186              		.loc 2 212 0
+ 1187 01da 064B     		ldr	r3, .L98
+ 1188 01dc DB68     		ldr	r3, [r3, #12]
+ 1189 01de 03F01003 		and	r3, r3, #16
+ 1190 01e2 002B     		cmp	r3, #0
+ 1191 01e4 14BF     		ite	ne
+ 1192 01e6 0123     		movne	r3, #1
+ 1193 01e8 0023     		moveq	r3, #0
+ 1194 01ea DBB2     		uxtb	r3, r3
+ 1195 01ec 002B     		cmp	r3, #0
+ 1196 01ee 05D0     		beq	.L95
+ 1197 01f0 F3E7     		b	.L96
+ 1198              	.L99:
+ 1199 01f2 00BF     		.align	2
+ 1200              	.L98:
+ 1201 01f4 00000340 		.word	1073938432
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 27
+
+
+ 1202 01f8 00000000 		.word	Controller1Select
+ 1203              	.L95:
+ 213:../src/ps2controller.cpp **** 
+ 214:../src/ps2controller.cpp **** 		/* Ignore header replies from controller */
+ 215:../src/ps2controller.cpp **** 		LPC_SSP1->DR;
+ 1204              		.loc 2 215 0
+ 1205 01fc 244B     		ldr	r3, .L100
+ 1206 01fe 9B68     		ldr	r3, [r3, #8]
+ 216:../src/ps2controller.cpp **** 		LPC_SSP1->DR;
+ 1207              		.loc 2 216 0
+ 1208 0200 234B     		ldr	r3, .L100
+ 1209 0202 9B68     		ldr	r3, [r3, #8]
+ 217:../src/ps2controller.cpp **** 		/* Get first 8 digital buttons status */
+ 218:../src/ps2controller.cpp **** 		result->Button.digitalState ^= LPC_SSP1->DR << 8;
+ 1210              		.loc 2 218 0
+ 1211 0204 224B     		ldr	r3, .L100
+ 1212 0206 9B68     		ldr	r3, [r3, #8]
+ 1213 0208 1902     		lsls	r1, r3, #8
+ 1214 020a 3B68     		ldr	r3, [r7]
+ 1215 020c 1A88     		ldrh	r2, [r3]
+ 1216 020e 8BB2     		uxth	r3, r1
+ 1217 0210 5340     		eors	r3, r3, r2
+ 1218 0212 9AB2     		uxth	r2, r3
+ 1219 0214 3B68     		ldr	r3, [r7]
+ 1220 0216 1A80     		strh	r2, [r3]	@ movhi
+ 219:../src/ps2controller.cpp **** 		/* Get last 8 digital buttons status */
+ 220:../src/ps2controller.cpp **** 		result->Button.digitalState ^= LPC_SSP1->DR;
+ 1221              		.loc 2 220 0
+ 1222 0218 1D4B     		ldr	r3, .L100
+ 1223 021a 9968     		ldr	r1, [r3, #8]
+ 1224 021c 3B68     		ldr	r3, [r7]
+ 1225 021e 1A88     		ldrh	r2, [r3]
+ 1226 0220 8BB2     		uxth	r3, r1
+ 1227 0222 5340     		eors	r3, r3, r2
+ 1228 0224 9AB2     		uxth	r2, r3
+ 1229 0226 3B68     		ldr	r3, [r7]
+ 1230 0228 1A80     		strh	r2, [r3]	@ movhi
+ 221:../src/ps2controller.cpp **** 		/* Get right joystick X axis value*/
+ 222:../src/ps2controller.cpp **** 		result->JoystickRightX = reverseBits((uint8_t)LPC_SSP1->DR);
+ 1231              		.loc 2 222 0
+ 1232 022a 194B     		ldr	r3, .L100
+ 1233 022c 9B68     		ldr	r3, [r3, #8]
+ 1234 022e DBB2     		uxtb	r3, r3
+ 1235 0230 1846     		mov	r0, r3
+ 1236 0232 FFF7FEFF 		bl	_Z11reverseBitsh
+ 1237 0236 0346     		mov	r3, r0
+ 1238 0238 1A46     		mov	r2, r3
+ 1239 023a 3B68     		ldr	r3, [r7]
+ 1240 023c 1A71     		strb	r2, [r3, #4]
+ 223:../src/ps2controller.cpp **** 		/* Get right joystick Y axis value*/
+ 224:../src/ps2controller.cpp **** 		result->JoystickRightY = reverseBits((uint8_t)LPC_SSP1->DR);
+ 1241              		.loc 2 224 0
+ 1242 023e 144B     		ldr	r3, .L100
+ 1243 0240 9B68     		ldr	r3, [r3, #8]
+ 1244 0242 DBB2     		uxtb	r3, r3
+ 1245 0244 1846     		mov	r0, r3
+ 1246 0246 FFF7FEFF 		bl	_Z11reverseBitsh
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 28
+
+
+ 1247 024a 0346     		mov	r3, r0
+ 1248 024c 1A46     		mov	r2, r3
+ 1249 024e 3B68     		ldr	r3, [r7]
+ 1250 0250 5A71     		strb	r2, [r3, #5]
+ 225:../src/ps2controller.cpp **** 		/* Get left joystick X axis value*/
+ 226:../src/ps2controller.cpp **** 		result->JoystickLeftX = reverseBits((uint8_t)LPC_SSP1->DR);
+ 1251              		.loc 2 226 0
+ 1252 0252 0F4B     		ldr	r3, .L100
+ 1253 0254 9B68     		ldr	r3, [r3, #8]
+ 1254 0256 DBB2     		uxtb	r3, r3
+ 1255 0258 1846     		mov	r0, r3
+ 1256 025a FFF7FEFF 		bl	_Z11reverseBitsh
+ 1257 025e 0346     		mov	r3, r0
+ 1258 0260 1A46     		mov	r2, r3
+ 1259 0262 3B68     		ldr	r3, [r7]
+ 1260 0264 9A71     		strb	r2, [r3, #6]
+ 227:../src/ps2controller.cpp **** 		/* Get left joystick Y axis value*/
+ 228:../src/ps2controller.cpp **** 		result->JoystickLeftY = reverseBits((uint8_t)LPC_SSP1->DR);
+ 1261              		.loc 2 228 0
+ 1262 0266 0A4B     		ldr	r3, .L100
+ 1263 0268 9B68     		ldr	r3, [r3, #8]
+ 1264 026a DBB2     		uxtb	r3, r3
+ 1265 026c 1846     		mov	r0, r3
+ 1266 026e FFF7FEFF 		bl	_Z11reverseBitsh
+ 1267 0272 0346     		mov	r3, r0
+ 1268 0274 1A46     		mov	r2, r3
+ 1269 0276 3B68     		ldr	r3, [r7]
+ 1270 0278 DA71     		strb	r2, [r3, #7]
+ 229:../src/ps2controller.cpp **** 
+ 230:../src/ps2controller.cpp **** 		/* Drive attention line high to signal end of polling */
+ 231:../src/ps2controller.cpp **** 		Controller1Select = 1;
+ 1271              		.loc 2 231 0
+ 1272 027a 0121     		movs	r1, #1
+ 1273 027c 0548     		ldr	r0, .L100+4
+ 1274 027e FFF7FEFF 		bl	_ZN6LPC_IOaSEb
+ 232:../src/ps2controller.cpp **** 
+ 233:../src/ps2controller.cpp **** 		return true;
+ 1275              		.loc 2 233 0
+ 1276 0282 0123     		movs	r3, #1
+ 1277 0284 00E0     		b	.L97
+ 1278              	.L60:
+ 1279              	.LBE27:
+ 234:../src/ps2controller.cpp **** 	}
+ 235:../src/ps2controller.cpp **** 	else
+ 236:../src/ps2controller.cpp **** 		return false;
+ 1280              		.loc 2 236 0
+ 1281 0286 0023     		movs	r3, #0
+ 1282              	.L97:
+ 1283              	.LBE26:
+ 237:../src/ps2controller.cpp **** }
+ 1284              		.loc 2 237 0
+ 1285 0288 1846     		mov	r0, r3
+ 1286 028a 2837     		adds	r7, r7, #40
+ 1287              		.cfi_def_cfa_offset 8
+ 1288 028c BD46     		mov	sp, r7
+ 1289              		.cfi_def_cfa_register 13
+ 1290              		@ sp needed
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 29
+
+
+ 1291 028e 80BD     		pop	{r7, pc}
+ 1292              	.L101:
+ 1293              		.align	2
+ 1294              	.L100:
+ 1295 0290 00000340 		.word	1073938432
+ 1296 0294 00000000 		.word	Controller1Select
+ 1297              		.cfi_endproc
+ 1298              	.LFE321:
+ 1300              		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 1301              		.align	1
+ 1302              		.syntax unified
+ 1303              		.thumb
+ 1304              		.thumb_func
+ 1305              		.fpu softvfp
+ 1307              	_Z41__static_initialization_and_destruction_0ii:
+ 1308              	.LFB322:
+ 1309              		.loc 2 237 0
+ 1310              		.cfi_startproc
+ 1311              		@ args = 0, pretend = 0, frame = 8
+ 1312              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1313 0000 80B5     		push	{r7, lr}
+ 1314              		.cfi_def_cfa_offset 8
+ 1315              		.cfi_offset 7, -8
+ 1316              		.cfi_offset 14, -4
+ 1317 0002 84B0     		sub	sp, sp, #16
+ 1318              		.cfi_def_cfa_offset 24
+ 1319 0004 02AF     		add	r7, sp, #8
+ 1320              		.cfi_def_cfa 7, 16
+ 1321 0006 7860     		str	r0, [r7, #4]
+ 1322 0008 3960     		str	r1, [r7]
+ 1323              		.loc 2 237 0
+ 1324 000a 7B68     		ldr	r3, [r7, #4]
+ 1325 000c 012B     		cmp	r3, #1
+ 1326 000e 5BD1     		bne	.L104
+ 1327              		.loc 2 237 0 is_stmt 0 discriminator 1
+ 1328 0010 3B68     		ldr	r3, [r7]
+ 1329 0012 4FF6FF72 		movw	r2, #65535
+ 1330 0016 9342     		cmp	r3, r2
+ 1331 0018 56D1     		bne	.L104
+  82:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator==(bool BooleanValue)
+  83:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  84:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  85:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  86:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  87:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  88:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  89:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  90:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  91:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator!=(bool BooleanValue)
+  92:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  93:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  94:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  95:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  96:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  97:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  98:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  99:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 30
+
+
+ 100:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 101:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 102:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Bus{ // Bus object can be declared to group Lpc_IO handles together and use it as one 8-bit r
+ 103:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO * Bits[8];
+ 104:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Value;
+ 105:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 106:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 107:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Change_Value(uint8_t bus_value);
+ 108:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 109:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Bus(LPC_IO* LSB=nullptr, LPC_IO* B1=nullptr,
+ 110:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B2=nullptr, LPC_IO* B3=nullptr,
+ 111:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B4=nullptr, LPC_IO* B5=nullptr,
+ 112:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B6=nullptr, LPC_IO* MSB=nullptr);
+ 113:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 114:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(uint8_t bus_value)
+ 115:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 116:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(bus_value);
+ 117:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 118:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator+=(uint8_t increment_value)
+ 119:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 120:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(Value + increment_value);
+ 121:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 122:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 123:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 124:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Timer{ // Timer object to group together all of a timer's functions and registers
+ 125:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 126:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 127:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 128:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 129:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 130:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 131:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Edge_Sel[2];
+ 132:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Clk_Speed); // Uses the IRQ bit to determine which PCLKSEL to set
+ 133:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Counter(uint8_t Channel, uint8_t Edge_Mode);
+ 134:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Capture(uint8_t Channel, uint8_t Edge_Mode);
+ 135:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch(uint8_t Channel);
+ 136:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Match(uint8_t Channel, uint32_t Match_Value);
+ 137:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Ext_Match(uint8_t Channel, uint8_t Match_Setting);
+ 138:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Mat_Int(uint8_t Channel);
+ 139:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Cap_Int(uint8_t Channel);
+ 140:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset(); // Resets the TC
+ 141:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_IR();
+ 142:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Int(uint8_t FlagBit);
+ 143:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t get_CR(uint8_t Channel);
+ 144:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 145:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Timer(	uint32_t * PtrTimer, // Constructor function for timers
+ 146:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t P_bit,
+ 147:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t C_bit,
+ 148:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Int_bit);
+ 149:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 150:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 151:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class UART{
+ 152:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 153:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 154:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 155:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 156:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 31
+
+
+ 157:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 158:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint32_t Baudrate);
+ 159:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Transmission(uint8_t Bit_Length, uint8_t Parity);
+ 160:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_RX_Int();
+ 161:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PutByte(char Byte);
+ 162:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintStrConst(const char *StrToSend);
+ 163:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintDec(uint16_t NbrDec);
+ 164:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintFloat(uint16_t Scaled_Int);
+ 165:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void ClearScreen();
+ 166:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Int_Flag_Set();
+ 167:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_RBR();
+ 168:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 169:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	UART(uint32_t * PtrUART, uint8_t P_bit, uint8_t C_bit, uint8_t Int_bit);
+ 170:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 171:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 172:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class PWM{
+ 173:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 174:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 175:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 176:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	float Duty;
+ 177:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Set_Freq(uint32_t Freq); // Setup MR0 value that controls frequency of all single-e PW
+ 178:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch();
+ 179:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Duty(float DutyPercentage);
+ 180:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Increment_Duty();
+ 181:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Decrement_Duty();
+ 182:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Enable(); // Always use at the end of initialization, starts TC for all PWMs
+ 183:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 184:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	PWM(uint8_t Ch, uint8_t Edge_Sel);
+ 185:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 186:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 187:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class ADC{
+ 188:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 189:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 190:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 191:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Start_Burst_Conversion(uint8_t Sel_Val);
+ 192:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Stop_Burst_Conversion();
+ 193:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Start_Conversion();
+ 194:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Stop_Conversion();
+ 195:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int();
+ 196:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t get_12bit_Result();
+ 197:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 198:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	ADC(uint8_t Ch, uint32_t Target_Freq);
+ 199:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 200:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 201:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class DAC{
+ 202:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 203:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 204:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Output(uint16_t Val_10bit);
+ 205:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Out_Percent(uint8_t Percentage);
+ 206:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 207:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 208:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class _I2C{
+ 209:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 210:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 211:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 212:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 213:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t tx_buf[512];
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 32
+
+
+ 214:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t rx_buf[512];
+ 215:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Busy;
+ 216:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_tx;
+ 217:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_rx;
+ 218:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 219:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Read_Length;
+ 220:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 221:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Bus_Mode, uint32_t I2C_Speed);
+ 222:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_Status();
+ 223:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence(uint8_t Slave_Address, uint16_t readLength = 0);
+ 224:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 225:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 226:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 227:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint8_t ByteToSend);
+ 228:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 229:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Read_Next_Byte();
+ 230:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Address();
+ 231:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Stop();
+ 232:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_nACK();
+ 233:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 234:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Interrupt();
+ 235:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 236:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	_I2C(uint32_t * PtrI2C, uint8_t C_bit, uint8_t Int_bit);
+ 237:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 238:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 239:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class SSP{
+ 240:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 241:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 242:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 243:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t Buffer[128];
+ 244:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 245:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t MIS = *(_Periph + 7);
+ 246:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter;
+ 247:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 248:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 249:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t ClkPrescaler, uint8_t DataSizeSelect, uint8_t CPOL, uint8_t CPHA);
+ 250:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence();
+ 251:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 252:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 253:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 254:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint16_t ByteToSend);
+ 255:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 256:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 257:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void End_Transfer();
+ 258:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int(uint8_t IntSelect);
+ 259:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Disable_Int(uint8_t IntSelect);
+ 260:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 261:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	SSP(uint32_t * PtrSSP, uint8_t C_bit, uint8_t Int_bit);
+ 262:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 263:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 264:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** // Mandatory objects declaration (Peripherals)
+ 265:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P0((uint32_t *)0x4002C000, (uint32_t *)0x2009C000, (uint32_t *)0x4002C068);
+ 1332              		.loc 1 265 0 is_stmt 1
+ 1333 001a 2D4B     		ldr	r3, .L105
+ 1334 001c 2D4A     		ldr	r2, .L105+4
+ 1335 001e 2E49     		ldr	r1, .L105+8
+ 1336 0020 2E48     		ldr	r0, .L105+12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 33
+
+
+ 1337 0022 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 266:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P1((uint32_t *)0x4002C008, (uint32_t *)0x2009C020, (uint32_t *)0x4002C06C);
+ 1338              		.loc 1 266 0
+ 1339 0026 2E4B     		ldr	r3, .L105+16
+ 1340 0028 2E4A     		ldr	r2, .L105+20
+ 1341 002a 2F49     		ldr	r1, .L105+24
+ 1342 002c 2F48     		ldr	r0, .L105+28
+ 1343 002e FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 267:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P2((uint32_t *)0x4002C010, (uint32_t *)0x2009C040, (uint32_t *)0x4002C070);
+ 1344              		.loc 1 267 0
+ 1345 0032 2F4B     		ldr	r3, .L105+32
+ 1346 0034 2F4A     		ldr	r2, .L105+36
+ 1347 0036 3049     		ldr	r1, .L105+40
+ 1348 0038 3048     		ldr	r0, .L105+44
+ 1349 003a FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 268:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P3((uint32_t *)0x4002C018, (uint32_t *)0x2009C060, (uint32_t *)0x4002C074);
+ 1350              		.loc 1 268 0
+ 1351 003e 304B     		ldr	r3, .L105+48
+ 1352 0040 304A     		ldr	r2, .L105+52
+ 1353 0042 3149     		ldr	r1, .L105+56
+ 1354 0044 3148     		ldr	r0, .L105+60
+ 1355 0046 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 269:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P4((uint32_t *)0x4002C020, (uint32_t *)0x2009C080, (uint32_t *)0x4002C078);
+ 1356              		.loc 1 269 0
+ 1357 004a 314B     		ldr	r3, .L105+64
+ 1358 004c 314A     		ldr	r2, .L105+68
+ 1359 004e 3249     		ldr	r1, .L105+72
+ 1360 0050 3248     		ldr	r0, .L105+76
+ 1361 0052 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 270:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 271:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR0((uint32_t *)0x40004000, 1, 2, 1);
+ 1362              		.loc 1 271 0
+ 1363 0056 0123     		movs	r3, #1
+ 1364 0058 0093     		str	r3, [sp]
+ 1365 005a 0223     		movs	r3, #2
+ 1366 005c 0122     		movs	r2, #1
+ 1367 005e 4FF04021 		mov	r1, #1073758208
+ 1368 0062 2F48     		ldr	r0, .L105+80
+ 1369 0064 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 272:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR1((uint32_t *)0x40008000, 2, 4, 2);
+ 1370              		.loc 1 272 0
+ 1371 0068 0223     		movs	r3, #2
+ 1372 006a 0093     		str	r3, [sp]
+ 1373 006c 0423     		movs	r3, #4
+ 1374 006e 0222     		movs	r2, #2
+ 1375 0070 2C49     		ldr	r1, .L105+84
+ 1376 0072 2D48     		ldr	r0, .L105+88
+ 1377 0074 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 273:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR2((uint32_t *)0x40090000, 22, 12, 3);
+ 1378              		.loc 1 273 0
+ 1379 0078 0323     		movs	r3, #3
+ 1380 007a 0093     		str	r3, [sp]
+ 1381 007c 0C23     		movs	r3, #12
+ 1382 007e 1622     		movs	r2, #22
+ 1383 0080 2A49     		ldr	r1, .L105+92
+ 1384 0082 2B48     		ldr	r0, .L105+96
+ 1385 0084 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 34
+
+
+ 274:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR3((uint32_t *)0x40094000, 23, 14, 4);
+ 1386              		.loc 1 274 0
+ 1387 0088 0423     		movs	r3, #4
+ 1388 008a 0093     		str	r3, [sp]
+ 1389 008c 0E23     		movs	r3, #14
+ 1390 008e 1722     		movs	r2, #23
+ 1391 0090 2849     		ldr	r1, .L105+100
+ 1392 0092 2948     		ldr	r0, .L105+104
+ 1393 0094 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 275:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 276:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART UART0((uint32_t *)0x4000C000, 3, 6, 5);
+ 1394              		.loc 1 276 0
+ 1395 0098 0523     		movs	r3, #5
+ 1396 009a 0093     		str	r3, [sp]
+ 1397 009c 0623     		movs	r3, #6
+ 1398 009e 0322     		movs	r2, #3
+ 1399 00a0 2649     		ldr	r1, .L105+108
+ 1400 00a2 2748     		ldr	r0, .L105+112
+ 1401 00a4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 277:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Keyboard((uint32_t *)0x40098000, 24, 16, 7);
+ 1402              		.loc 1 277 0
+ 1403 00a8 0723     		movs	r3, #7
+ 1404 00aa 0093     		str	r3, [sp]
+ 1405 00ac 1023     		movs	r3, #16
+ 1406 00ae 1822     		movs	r2, #24
+ 1407 00b0 2449     		ldr	r1, .L105+116
+ 1408 00b2 2548     		ldr	r0, .L105+120
+ 1409 00b4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 278:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Console((uint32_t *)0x4009C000, 25, 18, 8);
+ 1410              		.loc 1 278 0
+ 1411 00b8 0823     		movs	r3, #8
+ 1412 00ba 0093     		str	r3, [sp]
+ 1413 00bc 1223     		movs	r3, #18
+ 1414 00be 1922     		movs	r2, #25
+ 1415 00c0 2249     		ldr	r1, .L105+124
+ 1416 00c2 2348     		ldr	r0, .L105+128
+ 1417 00c4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 1418              	.L104:
+ 1419              		.loc 2 237 0
+ 1420 00c8 00BF     		nop
+ 1421 00ca 0837     		adds	r7, r7, #8
+ 1422              		.cfi_def_cfa_offset 8
+ 1423 00cc BD46     		mov	sp, r7
+ 1424              		.cfi_def_cfa_register 13
+ 1425              		@ sp needed
+ 1426 00ce 80BD     		pop	{r7, pc}
+ 1427              	.L106:
+ 1428              		.align	2
+ 1429              	.L105:
+ 1430 00d0 68C00240 		.word	1073922152
+ 1431 00d4 00C00920 		.word	537509888
+ 1432 00d8 00C00240 		.word	1073922048
+ 1433 00dc 00000000 		.word	_ZL2P0
+ 1434 00e0 6CC00240 		.word	1073922156
+ 1435 00e4 20C00920 		.word	537509920
+ 1436 00e8 08C00240 		.word	1073922056
+ 1437 00ec 00000000 		.word	_ZL2P1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 35
+
+
+ 1438 00f0 70C00240 		.word	1073922160
+ 1439 00f4 40C00920 		.word	537509952
+ 1440 00f8 10C00240 		.word	1073922064
+ 1441 00fc 00000000 		.word	_ZL2P2
+ 1442 0100 74C00240 		.word	1073922164
+ 1443 0104 60C00920 		.word	537509984
+ 1444 0108 18C00240 		.word	1073922072
+ 1445 010c 00000000 		.word	_ZL2P3
+ 1446 0110 78C00240 		.word	1073922168
+ 1447 0114 80C00920 		.word	537510016
+ 1448 0118 20C00240 		.word	1073922080
+ 1449 011c 00000000 		.word	_ZL2P4
+ 1450 0120 00000000 		.word	_ZL4TMR0
+ 1451 0124 00800040 		.word	1073774592
+ 1452 0128 00000000 		.word	_ZL4TMR1
+ 1453 012c 00000940 		.word	1074331648
+ 1454 0130 00000000 		.word	_ZL4TMR2
+ 1455 0134 00400940 		.word	1074348032
+ 1456 0138 00000000 		.word	_ZL4TMR3
+ 1457 013c 00C00040 		.word	1073790976
+ 1458 0140 00000000 		.word	_ZL5UART0
+ 1459 0144 00800940 		.word	1074364416
+ 1460 0148 00000000 		.word	_ZL8Keyboard
+ 1461 014c 00C00940 		.word	1074380800
+ 1462 0150 00000000 		.word	_ZL7Console
+ 1463              		.cfi_endproc
+ 1464              	.LFE322:
+ 1466              		.section	.text._GLOBAL__sub_I_enterConfig,"ax",%progbits
+ 1467              		.align	1
+ 1468              		.syntax unified
+ 1469              		.thumb
+ 1470              		.thumb_func
+ 1471              		.fpu softvfp
+ 1473              	_GLOBAL__sub_I_enterConfig:
+ 1474              	.LFB323:
+ 1475              		.loc 2 237 0
+ 1476              		.cfi_startproc
+ 1477              		@ args = 0, pretend = 0, frame = 0
+ 1478              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1479 0000 80B5     		push	{r7, lr}
+ 1480              		.cfi_def_cfa_offset 8
+ 1481              		.cfi_offset 7, -8
+ 1482              		.cfi_offset 14, -4
+ 1483 0002 00AF     		add	r7, sp, #0
+ 1484              		.cfi_def_cfa_register 7
+ 1485              		.loc 2 237 0
+ 1486 0004 4FF6FF71 		movw	r1, #65535
+ 1487 0008 0120     		movs	r0, #1
+ 1488 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 1489 000e 80BD     		pop	{r7, pc}
+ 1490              		.cfi_endproc
+ 1491              	.LFE323:
+ 1493              		.section	.init_array,"aw",%init_array
+ 1494              		.align	2
+ 1495 0000 00000000 		.word	_GLOBAL__sub_I_enterConfig(target1)
+ 1496              		.text
+ 1497              	.Letext0:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 36
+
+
+ 1498              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 1499              		.file 4 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1500              		.file 5 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/ps2controller.h"
+ 1501              		.file 6 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 1502              		.file 7 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ 1503              		.file 8 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
+ 1504              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 1505              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 1506              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 1507              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 37
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ps2controller.cpp
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:16     .text._ZN6LPC_IOaSEb:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:23     .text._ZN6LPC_IOaSEb:00000000 _ZN6LPC_IOaSEb
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:58     .bss._ZL2P0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:61     .bss._ZL2P0:00000000 _ZL2P0
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:64     .bss._ZL2P1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:67     .bss._ZL2P1:00000000 _ZL2P1
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:70     .bss._ZL2P2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:73     .bss._ZL2P2:00000000 _ZL2P2
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:76     .bss._ZL2P3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:79     .bss._ZL2P3:00000000 _ZL2P3
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:82     .bss._ZL2P4:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:85     .bss._ZL2P4:00000000 _ZL2P4
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:88     .bss._ZL4TMR0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:91     .bss._ZL4TMR0:00000000 _ZL4TMR0
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:94     .bss._ZL4TMR1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:97     .bss._ZL4TMR1:00000000 _ZL4TMR1
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:100    .bss._ZL4TMR2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:103    .bss._ZL4TMR2:00000000 _ZL4TMR2
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:106    .bss._ZL4TMR3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:109    .bss._ZL4TMR3:00000000 _ZL4TMR3
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:112    .bss._ZL5UART0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:115    .bss._ZL5UART0:00000000 _ZL5UART0
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:118    .bss._ZL8Keyboard:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:121    .bss._ZL8Keyboard:00000000 _ZL8Keyboard
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:124    .bss._ZL7Console:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:127    .bss._ZL7Console:00000000 _ZL7Console
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:134    .data.enterConfig:00000000 enterConfig
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:131    .data.enterConfig:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:145    .data.setAnalogMode:00000000 setAnalogMode
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:142    .data.setAnalogMode:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:160    .data.enableRumble:00000000 enableRumble
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:157    .data.enableRumble:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:175    .data.exitConfig:00000000 exitConfig
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:172    .data.exitConfig:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:190    .data.poll:00000000 poll
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:187    .data.poll:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:197    .text._Z11reverseBitsh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:204    .text._Z11reverseBitsh:00000000 _Z11reverseBitsh
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:277    .text._Z17InitPS2Controllerb:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:284    .text._Z17InitPS2Controllerb:00000000 _Z17InitPS2Controllerb
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:731    .text._Z17InitPS2Controllerb:00000294 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:740    .text._Z17InitPS2Controllerb:000002ac $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:836    .text._Z17InitPS2Controllerb:0000032c $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:843    .text._Z14PollControllerbP12ps2_inputs_t:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:850    .text._Z14PollControllerbP12ps2_inputs_t:00000000 _Z14PollControllerbP12ps2_inputs_t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1201   .text._Z14PollControllerbP12ps2_inputs_t:000001f4 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1205   .text._Z14PollControllerbP12ps2_inputs_t:000001fc $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1295   .text._Z14PollControllerbP12ps2_inputs_t:00000290 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1301   .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1307   .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1430   .text._Z41__static_initialization_and_destruction_0ii:000000d0 $d
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1467   .text._GLOBAL__sub_I_enterConfig:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1473   .text._GLOBAL__sub_I_enterConfig:00000000 _GLOBAL__sub_I_enterConfig
+C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s:1494   .init_array:00000000 $d
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 38
+
+
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.c4e7eaf7330236ae510314a23d74e6ca
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.139632325ccc020d697d2fcf83ee170f
+                           .group:00000000 wm4.board.h.33.b3d60928436b978782af3158a25a7b77
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.187.422da5f95ac1285e95faf42258f23242
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stddef.h.39.101367dade8a53b166775e1434b00616
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccYo0awY.s 			page 39
+
+
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.f9d7979a479d57685780efa849031ac4
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.lpc_xav.h.6.5aa75daa274402c8e369cf781056e607
+
+UNDEFINED SYMBOLS
+_ZN6LPC_IO3OutEb
+Controller1Select
+_ZN4PortC1EPmS0_S0_
+_ZN5TimerC1EPmhhh
+_ZN4UARTC1EPmhhh

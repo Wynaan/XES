@@ -6,6 +6,7 @@
 #include "text.h"
 #include "geometry.h"
 #include "renderer.h"
+#include "lpc_xav.h"
 #include "map.h"
 #include <deque>
 #include "game.h"
@@ -20,6 +21,8 @@
 #define ROSE		0xE3
 #define BLANC		0xFF
 #define NOIR		0x00
+
+extern _I2C I2C_Bus;
 
 void DrawMenuArrow(uint16_t x, uint16_t y, uint8_t color, bool mirrored)
 {
@@ -197,11 +200,26 @@ Button::Button(btn_color_e color, coords_pair_t position, uint8_t sectionWidth)
 		pImage[1] = greenButton[1];
 		pImage[2] = greenButton[2];
 	}
+	else if(color == Button::LIGHT_RED){
+		pImage[0] = orangeButton[0];
+		pImage[1] = orangeButton[1];
+		pImage[2] = orangeButton[2];
+	}
+	else if(color == Button::BLUE){
+		pImage[0] = blueButton[0];
+		pImage[1] = blueButton[1];
+		pImage[2] = blueButton[2];
+	}
 	else{
 		pImage[0] = redButton[0];
 		pImage[1] = redButton[1];
 		pImage[2] = redButton[2];
 	}
+}
+
+bool UserInterface::isReady()
+{
+	return (!busy);
 }
 
 void UserInterface::AddElement(IRender* item)
@@ -213,19 +231,27 @@ bool UserInterface::ProcessGraphics(bool exit)
 {
 	switch(state){
 	case 0: // Initial entry
+		busy = true;
 		Renderer::AddToDualFrame(bg);
-		for(auto i : items) Renderer::AddToDualFrame(i);
 	case 1:
+		for(auto i : items) Renderer::AddToDualFrame(i);
+	case 2:
 		state++;
 		break;
-	case 2:
+	case 3:
 		/* delete the GUI elements  */
 		for(auto i : items) delete i;
 		items.clear();
 		state++;
-	case 3:
-		for(auto i : items) Renderer::AddToDualFrame(i);
-		if(exit) state = 9;
+		busy = false;
+		break;
+	case 4:
+		if(items.size() > 0){
+			state = 1;
+			busy = true;
+		}
+		if(exit)
+			state = 9;
 		break;
 	case 9: // Case 9 handles erasal of the UI
 		for(uint8_t y = 3; y < 13; y++){
@@ -249,6 +275,7 @@ UserInterface::UserInterface(int16_t x, int16_t y, uint8_t sectionWidth, uint8_t
 sWidth(sectionWidth),
 sHeight(sectionHeight)
 {
+	busy = false;
 	pos.x = x;
 	pos.y = y;
 	state = 0;
@@ -589,20 +616,53 @@ void TileSelector::MoveTo(Tile * destination)
 	}
 }
 
+void StartScreen::DrawText(menu_type_e menuSelect, bool visible)
+{
+	switch(menuSelect){
+		case MAIN:
+			for(int i = 0; i < 2; i++){
+				DrawStrConst("Main Menu", TextBox.topleft.x + 20, TextBox.topleft.y + 20, 16, visible? ORANGE : NOIR);
+				for(int j = 0; j < 4; j++){
+					if(j == selection){
+						textColor = visible? highlightColor : NOIR;
+						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, visible ? arrowColor : NOIR, 0);
+					}
+					else{
+						textColor = visible? BLANC : NOIR;
+						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, NOIR, 0);
+					}
+					DrawStrConst(textMenuOptions[j], TextBox.topleft.x + 30, TextBox.topleft.y + 50 + j * 30, 16, textColor);
+				}
+				MemorySwap();
+			}
+			break;
+		case LOAD:
+			for(int i = 0; i < 2; i++){
+				DrawStrConst("Select save", TextBox.topleft.x + 15, TextBox.topleft.y + 20, 16, visible? ORANGE : NOIR);
+				for(int j = 0; j < 4; j++){
+					if(j == selection){
+						textColor = visible? highlightColor : NOIR;
+						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, visible ? arrowColor : NOIR, 0);
+					}
+					else{
+						textColor = visible? BLANC : NOIR;
+						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, NOIR, 0);
+					}
+					DrawStrConst(slotName[j], TextBox.topleft.x + 30, 300 + j * 30, 16, textColor);
+				}
+				MemorySwap();
+			}
+			break;
+		}
+}
+
 uint8_t StartScreen::MainMenu()
 {
-	const uint8_t highlightColor = 0x32;
-	const uint8_t arrowColor = 0xD8;
 	ps2_inputs_t	menuInput;
 	ps2_inputs_t	keyState;
-	rectangle_t TextBox;
-	uint8_t textColor;
 	bool redrawMenu = false;
-
-	char textMenuOptions[4][10] = {{"New Game"},
-								{"Load Game"},
-								{"Tutorial"},
-								{"Credits"}};
+	menuInput.Button.digitalState = 0;
+	static bool validInput = true;
 
 	TextBox.topleft.x = 325;
 	TextBox.topleft.y = 250;
@@ -612,10 +672,9 @@ uint8_t StartScreen::MainMenu()
 	InitPS2Controller(0);
 
 	for(int i = 0; i < 2; i++){
-		Draw_Line(TextBox.topleft.x, TextBox.topleft.y, TextBox.botright.x, TextBox.topleft.y, BLANC);
-		Draw_Line(TextBox.topleft.x, TextBox.topleft.y, TextBox.topleft.x, TextBox.botright.y, BLANC);
-		Draw_Line(TextBox.botright.x, TextBox.topleft.y, TextBox.botright.x, TextBox.botright.y, BLANC);
-		Draw_Line(TextBox.topleft.x, TextBox.botright.y, TextBox.botright.x, TextBox.botright.y, BLANC);
+		DrawStrConst("Main Menu", TextBox.topleft.x + 20, TextBox.topleft.y + 20, 16, ORANGE);
+
+		Draw_Rectangle(TextBox.topleft.x, TextBox.topleft.y, 150, 210, BLANC);
 
 		DrawStrConst(textMenuOptions[0], TextBox.topleft.x + 30, 300, 16, highlightColor);
 		DrawStrConst(textMenuOptions[1], TextBox.topleft.x + 30, 330, 16, BLANC);
@@ -633,55 +692,92 @@ uint8_t StartScreen::MainMenu()
 			PollController(0, &menuInput);
 		}
 
-		if(menuInput.Button.Down){
-			if(keyState.Button.Down == RELEASED){
-				keyState.Button.Down = PRESSED;
-				redrawMenu = true;
-				selection++;
-				selection %= 4;
+		if(!menuInput.Button.digitalState)
+			validInput = true;
+
+		if(validInput){
+			if(menuInput.Button.Down){
+				if(keyState.Button.Down == RELEASED){
+					keyState.Button.Down = PRESSED;
+					redrawMenu = true;
+					selection++;
+					selection %= 4;
+				}
 			}
-		}
-		else{
-			keyState.Button.Down = RELEASED;
-		}
-		if(menuInput.Button.Up){
-			if(keyState.Button.Up == RELEASED){
-				keyState.Button.Up = PRESSED;
-				redrawMenu = true;
-				if(selection > 0)
-					selection--;
-				else
-					selection = 3;
+			else{
+				keyState.Button.Down = RELEASED;
 			}
-		}
-		else{
-			keyState.Button.Up = RELEASED;
-		}
-		if(menuInput.Button.X){
-			if(selection == 0)
-				return selection;
+			if(menuInput.Button.Up){
+				if(keyState.Button.Up == RELEASED){
+					keyState.Button.Up = PRESSED;
+					redrawMenu = true;
+					if(selection > 0)
+						selection--;
+					else
+						selection = 3;
+				}
+			}
+			else{
+				keyState.Button.Up = RELEASED;
+			}
+			if(menuInput.Button.X){
+				keyState.Button.X = PRESSED;
+				if(inView == MAIN){
+					if(selection == 0){
+						Game::InitNewGame();
+						return 0;
+					}
+					else if(selection == 1){
+						validInput = false;
+						inView = LOAD;
+						selection = 0;
+						redrawMenu = true;
+						for(uint8_t i = 0; i < 4; i++){
+							uint16_t address = 0x2000 * i;
+							I2C_Bus.New_Sequence(0xA0);
+							I2C_Bus.Add_Byte(address >> 8);
+							I2C_Bus.Add_Byte(0x00);
+							I2C_Bus.Send_Sequence();
+
+							while(I2C_Bus.Busy);
+
+							I2C_Bus.New_Sequence(0xA1, 8);
+							I2C_Bus.Send_Sequence();
+
+							while(I2C_Bus.Busy);
+
+							for(uint8_t j = 0; j < 8; j++){
+								slotName[i][j] = I2C_Bus.rx_buf[j];
+							}
+							if(slotName[i][0] == 0xFF)
+								strcpy(slotName[i], " ----  ");
+							slotName[i][8] = '\0';
+						}
+						DrawText(MAIN, false);
+					}
+				}
+				else if(inView == LOAD){
+					Game::LoadGame(selection);
+					return 0;
+				}
+			}
+			else{
+				keyState.Button.X = RELEASED;
+			}
 		}
 
 		if(redrawMenu){
 			redrawMenu = false;
 
-			for(int i = 0; i < 2; i++){
-				for(int j = 0; j < 4; j++){
-					if(j == selection){
-						textColor = highlightColor;
-						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, arrowColor, 0);
-					}
-					else{
-						textColor = BLANC;
-						DrawMenuArrow(TextBox.topleft.x + 5, TextBox.topleft.y + 57 + j * 30, NOIR, 0);
-					}
-					DrawStrConst(textMenuOptions[j], TextBox.topleft.x + 30, 300 + j * 30, 16, textColor);
-				}
-				MemorySwap();
+			switch(inView){
+			case MAIN:
+				DrawText(MAIN, true);
+				break;
+			case LOAD:
+				DrawText(LOAD, true);
 			}
 		}
 	}
-
 	return selection;
 }
 

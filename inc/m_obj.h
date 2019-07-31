@@ -6,30 +6,30 @@
 #include "gui.h"
 #include "map.h"
 
-class Default : public IMapObject{
+class Default : public IInteract{
 public:
 	void OnUserInteract();
 	Default(){}
 	~Default(){}
 };
 
-class City : public IMapObject{
+class City : public IInteract{
 public:
 	void OnUserInteract();
 	City(){}
 	~City(){}
 };
 
-class Buildable : public IMapObject, public IUpdateable{
+class Buildable : public IInteract, public IUpdate{
 	UserInterface * GUI = nullptr;
 	const resources_t * cost;
 	int8_t exitProcessCount;
 	Tile * sourceTile;
+	tile_asset_e buildType;
 	bool exit;
 	bool canBuild;
 	bool built;
 	bool validInput;
-	tile_asset_e buildType;
 public:
 	void Tick();
 	void OnUserInteract();
@@ -40,11 +40,13 @@ public:
 	~Buildable(){}
 };
 
-class ResourceMine : public IMapObject, public IUpdateable{
+class ResourceMine : public IInteract, public IUpdate{
 	UserInterface * GUI = nullptr;
 	int8_t exitProcessCount;
+	Tile * sourceTile;
 	uint8_t level;
 	tile_asset_e buildType;
+	uint8_t memorySaveID;
 	resources_t cost;
 	bool exit;
 	bool canUpgrade;
@@ -54,10 +56,10 @@ public:
 	void Tick();
 	void OnUserInteract();
 
-	ResourceMine(tile_asset_e type) :
-		buildType(type){
-		level = 1;
-	}
+	ResourceMine(Tile * selfPtr,
+				tile_asset_e type,
+				uint8_t level,
+				uint8_t saveID = 255);
 	~ResourceMine(){}
 };
 

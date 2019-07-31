@@ -1,0 +1,2593 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"geometry.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZStL19piecewise_construct,"a",%progbits
+  16              		.align	2
+  19              	_ZStL19piecewise_construct:
+  20 0000 00       		.space	1
+  21              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  22              		.align	1
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	_ZL20__gthread_key_deletei:
+  29              	.LFB599:
+  30              		.file 1 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+   1:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Copyright (C) 1997-2017 Free Software Foundation, Inc.
+   4:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   5:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   7:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** version.
+  11:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  12:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** for more details.
+  16:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  17:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  21:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  26:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  29:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 2
+
+
+  31:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  36:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  41:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  43:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  45:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  48:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  50:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  52:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  54:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  56:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  57:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  58:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  60:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  62:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  64:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  65:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  66:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  68:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  72:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return NULL;
+  74:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  75:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  76:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  78:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  80:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  82:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  83:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  84:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  86:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 3
+
+
+  88:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  90:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  91:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void
+  93:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  95:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return;
+  96:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  97:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  98:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 100:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 102:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+ 106:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 107:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 108:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 112:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 115:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 116:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 118:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 120:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 122:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 123:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 124:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void *
+ 126:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 128:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 130:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 131:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 133:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 135:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 137:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 138:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 139:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 140:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 142:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 144:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 4
+
+
+ 145:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 146:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 147:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 149:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 151:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 153:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 154:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 155:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 157:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 159:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 161:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 162:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 163:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 165:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 167:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 168:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 169:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 170:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 172:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 174:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 176:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 177:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 178:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 179:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 181:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 183:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 184:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 185:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 186:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 188:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 191:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 192:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 193:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 194:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 196:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 198:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 199:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 200:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 201:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 5
+
+
+ 202:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 203:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 205:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 206:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 207:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 208:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 210:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 211:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 213:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 214:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 215:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 216:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 217:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 219:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 220:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 221:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 222:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 225:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 226:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 227:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 228:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  31              		.loc 1 230 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  43 0006 7860     		str	r0, [r7, #4]
+ 231:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+  44              		.loc 1 231 0
+  45 0008 0023     		movs	r3, #0
+ 232:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  46              		.loc 1 232 0
+  47 000a 1846     		mov	r0, r3
+  48 000c 0C37     		adds	r7, r7, #12
+  49              		.cfi_def_cfa_offset 4
+  50 000e BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0010 80BC     		pop	{r7}
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 0012 7047     		bx	lr
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 6
+
+
+  57              		.cfi_endproc
+  58              	.LFE599:
+  60              		.section	.text._ZN7IRenderD2Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+  61              		.align	1
+  62              		.weak	_ZN7IRenderD2Ev
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  66              		.fpu softvfp
+  68              	_ZN7IRenderD2Ev:
+  69              	.LFB961:
+  70              		.file 2 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/interfaces.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #ifndef INTERFACES_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #define INTERFACES_H_
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #include "xav_data.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #include "ps2controller.h"
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** /* IRender is the interface that all classes that intend to draw something on the screen
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * must inherit from. Each subclass must implement the Draw() method. This function must be
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * implement in such a way that the Renderer::AddToFrame method can push a pointer to the
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * object as well as the copy of the drawBox of this object, declared here, to two vectors.
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * The Renderer::Update method will iterate through these vectors to render the next frame.
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * Alternatively, IRender child classes can also be added to a special "callback" vector
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * using the Renderer::AddToCallback method, which will be rendered by the wrapper class
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * two frames after the function is called. */
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** class IRender{
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	rectangle_t drawBox;
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual void Draw(rectangle_t drawBox) = 0;
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual ~IRender() {}
+  71              		.loc 2 18 0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 8
+  74              		@ frame_needed = 1, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0000 80B4     		push	{r7}
+  77              		.cfi_def_cfa_offset 4
+  78              		.cfi_offset 7, -4
+  79 0002 83B0     		sub	sp, sp, #12
+  80              		.cfi_def_cfa_offset 16
+  81 0004 00AF     		add	r7, sp, #0
+  82              		.cfi_def_cfa_register 7
+  83 0006 7860     		str	r0, [r7, #4]
+  84              	.LBB2:
+  85              		.loc 2 18 0
+  86 0008 044A     		ldr	r2, .L5
+  87 000a 7B68     		ldr	r3, [r7, #4]
+  88 000c 1A60     		str	r2, [r3]
+  89              	.LBE2:
+  90 000e 7B68     		ldr	r3, [r7, #4]
+  91 0010 1846     		mov	r0, r3
+  92 0012 0C37     		adds	r7, r7, #12
+  93              		.cfi_def_cfa_offset 4
+  94 0014 BD46     		mov	sp, r7
+  95              		.cfi_def_cfa_register 13
+  96              		@ sp needed
+  97 0016 80BC     		pop	{r7}
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 7
+
+
+  98              		.cfi_restore 7
+  99              		.cfi_def_cfa_offset 0
+ 100 0018 7047     		bx	lr
+ 101              	.L6:
+ 102 001a 00BF     		.align	2
+ 103              	.L5:
+ 104 001c 08000000 		.word	_ZTV7IRender+8
+ 105              		.cfi_endproc
+ 106              	.LFE961:
+ 108              		.weak	_ZN7IRenderD1Ev
+ 109              		.thumb_set _ZN7IRenderD1Ev,_ZN7IRenderD2Ev
+ 110              		.section	.text._ZN7IRenderD0Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+ 111              		.align	1
+ 112              		.weak	_ZN7IRenderD0Ev
+ 113              		.syntax unified
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.fpu softvfp
+ 118              	_ZN7IRenderD0Ev:
+ 119              	.LFB963:
+ 120              		.loc 2 18 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 1, uses_anonymous_args = 0
+ 124 0000 80B5     		push	{r7, lr}
+ 125              		.cfi_def_cfa_offset 8
+ 126              		.cfi_offset 7, -8
+ 127              		.cfi_offset 14, -4
+ 128 0002 82B0     		sub	sp, sp, #8
+ 129              		.cfi_def_cfa_offset 16
+ 130 0004 00AF     		add	r7, sp, #0
+ 131              		.cfi_def_cfa_register 7
+ 132 0006 7860     		str	r0, [r7, #4]
+ 133              		.loc 2 18 0
+ 134 0008 7868     		ldr	r0, [r7, #4]
+ 135 000a FFF7FEFF 		bl	_ZN7IRenderD1Ev
+ 136 000e 0C21     		movs	r1, #12
+ 137 0010 7868     		ldr	r0, [r7, #4]
+ 138 0012 FFF7FEFF 		bl	_ZdlPvj
+ 139 0016 7B68     		ldr	r3, [r7, #4]
+ 140 0018 1846     		mov	r0, r3
+ 141 001a 0837     		adds	r7, r7, #8
+ 142              		.cfi_def_cfa_offset 8
+ 143 001c BD46     		mov	sp, r7
+ 144              		.cfi_def_cfa_register 13
+ 145              		@ sp needed
+ 146 001e 80BD     		pop	{r7, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE963:
+ 150              		.section	.bss._ZL2P0,"aw",%nobits
+ 151              		.align	2
+ 154              	_ZL2P0:
+ 155 0000 00000000 		.space	12
+ 155      00000000 
+ 155      00000000 
+ 156              		.section	.bss._ZL2P1,"aw",%nobits
+ 157              		.align	2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 8
+
+
+ 160              	_ZL2P1:
+ 161 0000 00000000 		.space	12
+ 161      00000000 
+ 161      00000000 
+ 162              		.section	.bss._ZL2P2,"aw",%nobits
+ 163              		.align	2
+ 166              	_ZL2P2:
+ 167 0000 00000000 		.space	12
+ 167      00000000 
+ 167      00000000 
+ 168              		.section	.bss._ZL2P3,"aw",%nobits
+ 169              		.align	2
+ 172              	_ZL2P3:
+ 173 0000 00000000 		.space	12
+ 173      00000000 
+ 173      00000000 
+ 174              		.section	.bss._ZL2P4,"aw",%nobits
+ 175              		.align	2
+ 178              	_ZL2P4:
+ 179 0000 00000000 		.space	12
+ 179      00000000 
+ 179      00000000 
+ 180              		.section	.bss._ZL4TMR0,"aw",%nobits
+ 181              		.align	2
+ 184              	_ZL4TMR0:
+ 185 0000 00000000 		.space	12
+ 185      00000000 
+ 185      00000000 
+ 186              		.section	.bss._ZL4TMR1,"aw",%nobits
+ 187              		.align	2
+ 190              	_ZL4TMR1:
+ 191 0000 00000000 		.space	12
+ 191      00000000 
+ 191      00000000 
+ 192              		.section	.bss._ZL4TMR2,"aw",%nobits
+ 193              		.align	2
+ 196              	_ZL4TMR2:
+ 197 0000 00000000 		.space	12
+ 197      00000000 
+ 197      00000000 
+ 198              		.section	.bss._ZL4TMR3,"aw",%nobits
+ 199              		.align	2
+ 202              	_ZL4TMR3:
+ 203 0000 00000000 		.space	12
+ 203      00000000 
+ 203      00000000 
+ 204              		.section	.bss._ZL5UART0,"aw",%nobits
+ 205              		.align	2
+ 208              	_ZL5UART0:
+ 209 0000 00000000 		.space	8
+ 209      00000000 
+ 210              		.section	.bss._ZL8Keyboard,"aw",%nobits
+ 211              		.align	2
+ 214              	_ZL8Keyboard:
+ 215 0000 00000000 		.space	8
+ 215      00000000 
+ 216              		.section	.bss._ZL7Console,"aw",%nobits
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 9
+
+
+ 217              		.align	2
+ 220              	_ZL7Console:
+ 221 0000 00000000 		.space	8
+ 221      00000000 
+ 222              		.section	.text._Z20Draw_Horizontal_Linettth,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	_Z20Draw_Horizontal_Linettth
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.fpu softvfp
+ 230              	_Z20Draw_Horizontal_Linettth:
+ 231              	.LFB1501:
+ 232              		.file 3 "../src/geometry.cpp"
+   1:../src/geometry.cpp **** #include "geometry.h"
+   2:../src/geometry.cpp **** #include "lpc_xav.h"
+   3:../src/geometry.cpp **** #include "math.h"
+   4:../src/geometry.cpp **** 
+   5:../src/geometry.cpp **** extern SSP DDC860_Bus;
+   6:../src/geometry.cpp **** extern bool Transfer_Done;
+   7:../src/geometry.cpp **** #define SSP_DATA (*((uint32_t *)0x40088008))
+   8:../src/geometry.cpp **** 
+   9:../src/geometry.cpp **** void Draw_Horizontal_Line(uint16_t x, uint16_t y, uint16_t end_x, uint8_t color)
+  10:../src/geometry.cpp **** {
+ 233              		.loc 3 10 0
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 16
+ 236              		@ frame_needed = 1, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+ 238 0000 90B4     		push	{r4, r7}
+ 239              		.cfi_def_cfa_offset 8
+ 240              		.cfi_offset 4, -8
+ 241              		.cfi_offset 7, -4
+ 242 0002 84B0     		sub	sp, sp, #16
+ 243              		.cfi_def_cfa_offset 24
+ 244 0004 00AF     		add	r7, sp, #0
+ 245              		.cfi_def_cfa_register 7
+ 246 0006 0446     		mov	r4, r0
+ 247 0008 0846     		mov	r0, r1
+ 248 000a 1146     		mov	r1, r2
+ 249 000c 1A46     		mov	r2, r3
+ 250 000e 2346     		mov	r3, r4	@ movhi
+ 251 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 252 0012 0346     		mov	r3, r0	@ movhi
+ 253 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 254 0016 0B46     		mov	r3, r1	@ movhi
+ 255 0018 7B80     		strh	r3, [r7, #2]	@ movhi
+ 256 001a 1346     		mov	r3, r2
+ 257 001c 7B70     		strb	r3, [r7, #1]
+  11:../src/geometry.cpp **** 	uint32_t Pixel_Address = 0x800000 + (y * 0x420) + x;
+ 258              		.loc 3 11 0
+ 259 001e BA88     		ldrh	r2, [r7, #4]
+ 260 0020 1346     		mov	r3, r2
+ 261 0022 5B01     		lsls	r3, r3, #5
+ 262 0024 1344     		add	r3, r3, r2
+ 263 0026 5B01     		lsls	r3, r3, #5
+ 264 0028 03F50002 		add	r2, r3, #8388608
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 10
+
+
+ 265 002c FB88     		ldrh	r3, [r7, #6]
+ 266 002e 1344     		add	r3, r3, r2
+ 267 0030 FB60     		str	r3, [r7, #12]
+  12:../src/geometry.cpp **** 	uint16_t i = 0;
+ 268              		.loc 3 12 0
+ 269 0032 0023     		movs	r3, #0
+ 270 0034 7B81     		strh	r3, [r7, #10]	@ movhi
+ 271              	.L14:
+ 272              	.LBB3:
+  13:../src/geometry.cpp **** 
+  14:../src/geometry.cpp **** 	while(1){
+  15:../src/geometry.cpp **** 		SSP_DATA = ((Pixel_Address >> 8) & 0xFFFF);
+ 273              		.loc 3 15 0
+ 274 0036 FB68     		ldr	r3, [r7, #12]
+ 275 0038 1B0A     		lsrs	r3, r3, #8
+ 276 003a 134A     		ldr	r2, .L17
+ 277 003c 9BB2     		uxth	r3, r3
+ 278 003e 1360     		str	r3, [r2]
+  16:../src/geometry.cpp **** 		SSP_DATA = (((Pixel_Address & 0xFF) << 8) | color);
+ 279              		.loc 3 16 0
+ 280 0040 FB68     		ldr	r3, [r7, #12]
+ 281 0042 1B02     		lsls	r3, r3, #8
+ 282 0044 9AB2     		uxth	r2, r3
+ 283 0046 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 284 0048 0F49     		ldr	r1, .L17
+ 285 004a 1343     		orrs	r3, r3, r2
+ 286 004c 0B60     		str	r3, [r1]
+ 287              	.LBB4:
+  17:../src/geometry.cpp **** 		for(uint8_t i = 0; i < 9; i++);
+ 288              		.loc 3 17 0
+ 289 004e 0023     		movs	r3, #0
+ 290 0050 7B72     		strb	r3, [r7, #9]
+ 291              	.L11:
+ 292              		.loc 3 17 0 is_stmt 0 discriminator 3
+ 293 0052 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 294 0054 082B     		cmp	r3, #8
+ 295 0056 03D8     		bhi	.L10
+ 296              		.loc 3 17 0 discriminator 2
+ 297 0058 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 298 005a 0133     		adds	r3, r3, #1
+ 299 005c 7B72     		strb	r3, [r7, #9]
+ 300 005e F8E7     		b	.L11
+ 301              	.L10:
+ 302              	.LBE4:
+  18:../src/geometry.cpp **** 		Pixel_Address += 1;
+ 303              		.loc 3 18 0 is_stmt 1
+ 304 0060 FB68     		ldr	r3, [r7, #12]
+ 305 0062 0133     		adds	r3, r3, #1
+ 306 0064 FB60     		str	r3, [r7, #12]
+  19:../src/geometry.cpp **** 
+  20:../src/geometry.cpp **** 		if((x + i) == end_x)
+ 307              		.loc 3 20 0
+ 308 0066 FA88     		ldrh	r2, [r7, #6]
+ 309 0068 7B89     		ldrh	r3, [r7, #10]
+ 310 006a 1A44     		add	r2, r2, r3
+ 311 006c 7B88     		ldrh	r3, [r7, #2]
+ 312 006e 9A42     		cmp	r2, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 11
+
+
+ 313 0070 03D0     		beq	.L16
+  21:../src/geometry.cpp **** 			break;
+  22:../src/geometry.cpp **** 
+  23:../src/geometry.cpp **** 		i++;
+ 314              		.loc 3 23 0
+ 315 0072 7B89     		ldrh	r3, [r7, #10]
+ 316 0074 0133     		adds	r3, r3, #1
+ 317 0076 7B81     		strh	r3, [r7, #10]	@ movhi
+ 318              	.LBE3:
+  24:../src/geometry.cpp **** 	}
+ 319              		.loc 3 24 0
+ 320 0078 DDE7     		b	.L14
+ 321              	.L16:
+ 322              	.LBB5:
+  21:../src/geometry.cpp **** 			break;
+ 323              		.loc 3 21 0
+ 324 007a 00BF     		nop
+ 325              	.LBE5:
+  25:../src/geometry.cpp **** }
+ 326              		.loc 3 25 0
+ 327 007c 00BF     		nop
+ 328 007e 1037     		adds	r7, r7, #16
+ 329              		.cfi_def_cfa_offset 8
+ 330 0080 BD46     		mov	sp, r7
+ 331              		.cfi_def_cfa_register 13
+ 332              		@ sp needed
+ 333 0082 90BC     		pop	{r4, r7}
+ 334              		.cfi_restore 7
+ 335              		.cfi_restore 4
+ 336              		.cfi_def_cfa_offset 0
+ 337 0084 7047     		bx	lr
+ 338              	.L18:
+ 339 0086 00BF     		.align	2
+ 340              	.L17:
+ 341 0088 08800840 		.word	1074298888
+ 342              		.cfi_endproc
+ 343              	.LFE1501:
+ 345              		.section	.text._Z4signs,"ax",%progbits
+ 346              		.align	1
+ 347              		.global	_Z4signs
+ 348              		.syntax unified
+ 349              		.thumb
+ 350              		.thumb_func
+ 351              		.fpu softvfp
+ 353              	_Z4signs:
+ 354              	.LFB1502:
+  26:../src/geometry.cpp **** 
+  27:../src/geometry.cpp **** int16_t sign(int16_t x)
+  28:../src/geometry.cpp **** {
+ 355              		.loc 3 28 0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 8
+ 358              		@ frame_needed = 1, uses_anonymous_args = 0
+ 359              		@ link register save eliminated.
+ 360 0000 80B4     		push	{r7}
+ 361              		.cfi_def_cfa_offset 4
+ 362              		.cfi_offset 7, -4
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 12
+
+
+ 363 0002 83B0     		sub	sp, sp, #12
+ 364              		.cfi_def_cfa_offset 16
+ 365 0004 00AF     		add	r7, sp, #0
+ 366              		.cfi_def_cfa_register 7
+ 367 0006 0346     		mov	r3, r0
+ 368 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+  29:../src/geometry.cpp **** 	if(x>0)
+ 369              		.loc 3 29 0
+ 370 000a B7F90630 		ldrsh	r3, [r7, #6]
+ 371 000e 002B     		cmp	r3, #0
+ 372 0010 01DD     		ble	.L20
+  30:../src/geometry.cpp **** 		return 1;
+ 373              		.loc 3 30 0
+ 374 0012 0123     		movs	r3, #1
+ 375 0014 07E0     		b	.L21
+ 376              	.L20:
+  31:../src/geometry.cpp **** 	else if(x<0)
+ 377              		.loc 3 31 0
+ 378 0016 B7F90630 		ldrsh	r3, [r7, #6]
+ 379 001a 002B     		cmp	r3, #0
+ 380 001c 02DA     		bge	.L22
+  32:../src/geometry.cpp **** 		return -1;
+ 381              		.loc 3 32 0
+ 382 001e 4FF0FF33 		mov	r3, #-1
+ 383 0022 00E0     		b	.L21
+ 384              	.L22:
+  33:../src/geometry.cpp **** 	else
+  34:../src/geometry.cpp **** 		return 0;
+ 385              		.loc 3 34 0
+ 386 0024 0023     		movs	r3, #0
+ 387              	.L21:
+  35:../src/geometry.cpp **** }
+ 388              		.loc 3 35 0
+ 389 0026 1846     		mov	r0, r3
+ 390 0028 0C37     		adds	r7, r7, #12
+ 391              		.cfi_def_cfa_offset 4
+ 392 002a BD46     		mov	sp, r7
+ 393              		.cfi_def_cfa_register 13
+ 394              		@ sp needed
+ 395 002c 80BC     		pop	{r7}
+ 396              		.cfi_restore 7
+ 397              		.cfi_def_cfa_offset 0
+ 398 002e 7047     		bx	lr
+ 399              		.cfi_endproc
+ 400              	.LFE1502:
+ 402              		.section	.text._Z9Draw_Linetttth,"ax",%progbits
+ 403              		.align	1
+ 404              		.global	_Z9Draw_Linetttth
+ 405              		.syntax unified
+ 406              		.thumb
+ 407              		.thumb_func
+ 408              		.fpu softvfp
+ 410              	_Z9Draw_Linetttth:
+ 411              	.LFB1503:
+  36:../src/geometry.cpp **** 
+  37:../src/geometry.cpp **** void Draw_Line(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t color)
+  38:../src/geometry.cpp **** {
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 13
+
+
+ 412              		.loc 3 38 0
+ 413              		.cfi_startproc
+ 414              		@ args = 4, pretend = 0, frame = 32
+ 415              		@ frame_needed = 1, uses_anonymous_args = 0
+ 416 0000 90B5     		push	{r4, r7, lr}
+ 417              		.cfi_def_cfa_offset 12
+ 418              		.cfi_offset 4, -12
+ 419              		.cfi_offset 7, -8
+ 420              		.cfi_offset 14, -4
+ 421 0002 89B0     		sub	sp, sp, #36
+ 422              		.cfi_def_cfa_offset 48
+ 423 0004 00AF     		add	r7, sp, #0
+ 424              		.cfi_def_cfa_register 7
+ 425 0006 0446     		mov	r4, r0
+ 426 0008 0846     		mov	r0, r1
+ 427 000a 1146     		mov	r1, r2
+ 428 000c 1A46     		mov	r2, r3
+ 429 000e 2346     		mov	r3, r4	@ movhi
+ 430 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 431 0012 0346     		mov	r3, r0	@ movhi
+ 432 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 433 0016 0B46     		mov	r3, r1	@ movhi
+ 434 0018 7B80     		strh	r3, [r7, #2]	@ movhi
+ 435 001a 1346     		mov	r3, r2	@ movhi
+ 436 001c 3B80     		strh	r3, [r7]	@ movhi
+  39:../src/geometry.cpp **** 	uint32_t Pixel_Address;
+  40:../src/geometry.cpp **** 	int16_t steep = abs(y1 - y0) > abs(x1 - x0);
+ 437              		.loc 3 40 0
+ 438 001e 3A88     		ldrh	r2, [r7]
+ 439 0020 BB88     		ldrh	r3, [r7, #4]
+ 440 0022 D31A     		subs	r3, r2, r3
+ 441 0024 1846     		mov	r0, r3
+ 442 0026 FFF7FEFF 		bl	abs
+ 443 002a 0446     		mov	r4, r0
+ 444 002c 7A88     		ldrh	r2, [r7, #2]
+ 445 002e FB88     		ldrh	r3, [r7, #6]
+ 446 0030 D31A     		subs	r3, r2, r3
+ 447 0032 1846     		mov	r0, r3
+ 448 0034 FFF7FEFF 		bl	abs
+ 449 0038 0346     		mov	r3, r0
+ 450 003a 9C42     		cmp	r4, r3
+ 451 003c CCBF     		ite	gt
+ 452 003e 0123     		movgt	r3, #1
+ 453 0040 0023     		movle	r3, #0
+ 454 0042 DBB2     		uxtb	r3, r3
+ 455 0044 BB82     		strh	r3, [r7, #20]	@ movhi
+  41:../src/geometry.cpp **** 	int16_t temp;
+  42:../src/geometry.cpp ****     if (steep){
+ 456              		.loc 3 42 0
+ 457 0046 B7F91430 		ldrsh	r3, [r7, #20]
+ 458 004a 002B     		cmp	r3, #0
+ 459 004c 0BD0     		beq	.L24
+  43:../src/geometry.cpp ****         temp = x0;
+ 460              		.loc 3 43 0
+ 461 004e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 462 0050 7B82     		strh	r3, [r7, #18]	@ movhi
+  44:../src/geometry.cpp ****         x0 = y0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 14
+
+
+ 463              		.loc 3 44 0
+ 464 0052 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 465 0054 FB80     		strh	r3, [r7, #6]	@ movhi
+  45:../src/geometry.cpp ****         y0 = temp;
+ 466              		.loc 3 45 0
+ 467 0056 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 468 0058 BB80     		strh	r3, [r7, #4]	@ movhi
+  46:../src/geometry.cpp **** 
+  47:../src/geometry.cpp ****         temp = x1;
+ 469              		.loc 3 47 0
+ 470 005a 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 471 005c 7B82     		strh	r3, [r7, #18]	@ movhi
+  48:../src/geometry.cpp ****         x1 = y1;
+ 472              		.loc 3 48 0
+ 473 005e 3B88     		ldrh	r3, [r7]	@ movhi
+ 474 0060 7B80     		strh	r3, [r7, #2]	@ movhi
+  49:../src/geometry.cpp ****         y1 = temp;
+ 475              		.loc 3 49 0
+ 476 0062 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 477 0064 3B80     		strh	r3, [r7]	@ movhi
+ 478              	.L24:
+  50:../src/geometry.cpp ****     }
+  51:../src/geometry.cpp **** 
+  52:../src/geometry.cpp ****     if (x0 > x1)
+ 479              		.loc 3 52 0
+ 480 0066 FA88     		ldrh	r2, [r7, #6]
+ 481 0068 7B88     		ldrh	r3, [r7, #2]
+ 482 006a 9A42     		cmp	r2, r3
+ 483 006c 0BD9     		bls	.L25
+  53:../src/geometry.cpp **** 	{
+  54:../src/geometry.cpp ****         temp = x0;
+ 484              		.loc 3 54 0
+ 485 006e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 486 0070 7B82     		strh	r3, [r7, #18]	@ movhi
+  55:../src/geometry.cpp ****         x0 = x1;
+ 487              		.loc 3 55 0
+ 488 0072 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 489 0074 FB80     		strh	r3, [r7, #6]	@ movhi
+  56:../src/geometry.cpp ****         x1 = temp;
+ 490              		.loc 3 56 0
+ 491 0076 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 492 0078 7B80     		strh	r3, [r7, #2]	@ movhi
+  57:../src/geometry.cpp **** 
+  58:../src/geometry.cpp ****         temp = y0;
+ 493              		.loc 3 58 0
+ 494 007a BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 495 007c 7B82     		strh	r3, [r7, #18]	@ movhi
+  59:../src/geometry.cpp ****         y0 = y1;
+ 496              		.loc 3 59 0
+ 497 007e 3B88     		ldrh	r3, [r7]	@ movhi
+ 498 0080 BB80     		strh	r3, [r7, #4]	@ movhi
+  60:../src/geometry.cpp ****         y1 = temp;
+ 499              		.loc 3 60 0
+ 500 0082 7B8A     		ldrh	r3, [r7, #18]	@ movhi
+ 501 0084 3B80     		strh	r3, [r7]	@ movhi
+ 502              	.L25:
+  61:../src/geometry.cpp ****     }
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 15
+
+
+  62:../src/geometry.cpp **** 
+  63:../src/geometry.cpp ****     int16_t dx, dy;
+  64:../src/geometry.cpp ****     dx = x1 - x0;
+ 503              		.loc 3 64 0
+ 504 0086 7A88     		ldrh	r2, [r7, #2]	@ movhi
+ 505 0088 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 506 008a D31A     		subs	r3, r2, r3
+ 507 008c 9BB2     		uxth	r3, r3
+ 508 008e 3B82     		strh	r3, [r7, #16]	@ movhi
+  65:../src/geometry.cpp ****     dy = abs(y1 - y0);
+ 509              		.loc 3 65 0
+ 510 0090 3A88     		ldrh	r2, [r7]
+ 511 0092 BB88     		ldrh	r3, [r7, #4]
+ 512 0094 D31A     		subs	r3, r2, r3
+ 513 0096 1846     		mov	r0, r3
+ 514 0098 FFF7FEFF 		bl	abs
+ 515 009c 0346     		mov	r3, r0
+ 516 009e FB81     		strh	r3, [r7, #14]	@ movhi
+  66:../src/geometry.cpp **** 
+  67:../src/geometry.cpp ****     int16_t err = dx / 2;
+ 517              		.loc 3 67 0
+ 518 00a0 B7F91030 		ldrsh	r3, [r7, #16]
+ 519 00a4 DA0F     		lsrs	r2, r3, #31
+ 520 00a6 1344     		add	r3, r3, r2
+ 521 00a8 5B10     		asrs	r3, r3, #1
+ 522 00aa 7B83     		strh	r3, [r7, #26]	@ movhi
+  68:../src/geometry.cpp ****     int16_t ystep;
+  69:../src/geometry.cpp **** 
+  70:../src/geometry.cpp ****     if (y0 < y1) {
+ 523              		.loc 3 70 0
+ 524 00ac BA88     		ldrh	r2, [r7, #4]
+ 525 00ae 3B88     		ldrh	r3, [r7]
+ 526 00b0 9A42     		cmp	r2, r3
+ 527 00b2 02D2     		bcs	.L26
+  71:../src/geometry.cpp ****         ystep = 1;
+ 528              		.loc 3 71 0
+ 529 00b4 0123     		movs	r3, #1
+ 530 00b6 3B83     		strh	r3, [r7, #24]	@ movhi
+ 531 00b8 02E0     		b	.L34
+ 532              	.L26:
+  72:../src/geometry.cpp ****     }
+  73:../src/geometry.cpp ****     else {
+  74:../src/geometry.cpp ****         ystep = -1;
+ 533              		.loc 3 74 0
+ 534 00ba 4FF6FF73 		movw	r3, #65535
+ 535 00be 3B83     		strh	r3, [r7, #24]	@ movhi
+ 536              	.L34:
+ 537              	.LBB6:
+  75:../src/geometry.cpp ****     }
+  76:../src/geometry.cpp **** 
+  77:../src/geometry.cpp ****     for (; x0<=x1; x0++)
+ 538              		.loc 3 77 0 discriminator 1
+ 539 00c0 FA88     		ldrh	r2, [r7, #6]
+ 540 00c2 7B88     		ldrh	r3, [r7, #2]
+ 541 00c4 9A42     		cmp	r2, r3
+ 542 00c6 4BD8     		bhi	.L35
+ 543              	.LBB7:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 16
+
+
+  78:../src/geometry.cpp ****     {
+  79:../src/geometry.cpp ****         if (steep)
+ 544              		.loc 3 79 0
+ 545 00c8 B7F91430 		ldrsh	r3, [r7, #20]
+ 546 00cc 002B     		cmp	r3, #0
+ 547 00ce 10D0     		beq	.L29
+  80:../src/geometry.cpp ****             Pixel_Address = 0x80000000 + (((x0 * 0x420) + y0) << 8) + color;
+ 548              		.loc 3 80 0
+ 549 00d0 FA88     		ldrh	r2, [r7, #6]
+ 550 00d2 1346     		mov	r3, r2
+ 551 00d4 5B01     		lsls	r3, r3, #5
+ 552 00d6 1344     		add	r3, r3, r2
+ 553 00d8 5B01     		lsls	r3, r3, #5
+ 554 00da 1A46     		mov	r2, r3
+ 555 00dc BB88     		ldrh	r3, [r7, #4]
+ 556 00de 1344     		add	r3, r3, r2
+ 557 00e0 1B02     		lsls	r3, r3, #8
+ 558 00e2 1A46     		mov	r2, r3
+ 559 00e4 97F83030 		ldrb	r3, [r7, #48]	@ zero_extendqisi2
+ 560 00e8 1344     		add	r3, r3, r2
+ 561 00ea 03F10043 		add	r3, r3, #-2147483648
+ 562 00ee FB61     		str	r3, [r7, #28]
+ 563 00f0 0FE0     		b	.L30
+ 564              	.L29:
+  81:../src/geometry.cpp ****         else
+  82:../src/geometry.cpp ****             Pixel_Address = 0x80000000 + (((y0 * 0x420) + x0) << 8) + color;
+ 565              		.loc 3 82 0
+ 566 00f2 BA88     		ldrh	r2, [r7, #4]
+ 567 00f4 1346     		mov	r3, r2
+ 568 00f6 5B01     		lsls	r3, r3, #5
+ 569 00f8 1344     		add	r3, r3, r2
+ 570 00fa 5B01     		lsls	r3, r3, #5
+ 571 00fc 1A46     		mov	r2, r3
+ 572 00fe FB88     		ldrh	r3, [r7, #6]
+ 573 0100 1344     		add	r3, r3, r2
+ 574 0102 1B02     		lsls	r3, r3, #8
+ 575 0104 1A46     		mov	r2, r3
+ 576 0106 97F83030 		ldrb	r3, [r7, #48]	@ zero_extendqisi2
+ 577 010a 1344     		add	r3, r3, r2
+ 578 010c 03F10043 		add	r3, r3, #-2147483648
+ 579 0110 FB61     		str	r3, [r7, #28]
+ 580              	.L30:
+  83:../src/geometry.cpp **** 
+  84:../src/geometry.cpp ****         SSP_DATA = (Pixel_Address >> 16) & 0xFFFF;
+ 581              		.loc 3 84 0
+ 582 0112 154A     		ldr	r2, .L36
+ 583 0114 FB69     		ldr	r3, [r7, #28]
+ 584 0116 1B0C     		lsrs	r3, r3, #16
+ 585 0118 1360     		str	r3, [r2]
+  85:../src/geometry.cpp **** 		SSP_DATA = Pixel_Address & 0xFFFF;
+ 586              		.loc 3 85 0
+ 587 011a 134A     		ldr	r2, .L36
+ 588 011c FB69     		ldr	r3, [r7, #28]
+ 589 011e 9BB2     		uxth	r3, r3
+ 590 0120 1360     		str	r3, [r2]
+ 591              	.LBB8:
+  86:../src/geometry.cpp **** 		for(uint8_t i = 0; i < 9; i++);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 17
+
+
+ 592              		.loc 3 86 0
+ 593 0122 0023     		movs	r3, #0
+ 594 0124 FB75     		strb	r3, [r7, #23]
+ 595              	.L32:
+ 596              		.loc 3 86 0 is_stmt 0 discriminator 3
+ 597 0126 FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 598 0128 082B     		cmp	r3, #8
+ 599 012a 03D8     		bhi	.L31
+ 600              		.loc 3 86 0 discriminator 2
+ 601 012c FB7D     		ldrb	r3, [r7, #23]	@ zero_extendqisi2
+ 602 012e 0133     		adds	r3, r3, #1
+ 603 0130 FB75     		strb	r3, [r7, #23]
+ 604 0132 F8E7     		b	.L32
+ 605              	.L31:
+ 606              	.LBE8:
+  87:../src/geometry.cpp **** 
+  88:../src/geometry.cpp ****         err -= dy;
+ 607              		.loc 3 88 0 is_stmt 1
+ 608 0134 7A8B     		ldrh	r2, [r7, #26]
+ 609 0136 FB89     		ldrh	r3, [r7, #14]
+ 610 0138 D31A     		subs	r3, r2, r3
+ 611 013a 9BB2     		uxth	r3, r3
+ 612 013c 7B83     		strh	r3, [r7, #26]	@ movhi
+  89:../src/geometry.cpp ****         if (err < 0)
+ 613              		.loc 3 89 0
+ 614 013e B7F91A30 		ldrsh	r3, [r7, #26]
+ 615 0142 002B     		cmp	r3, #0
+ 616 0144 08DA     		bge	.L33
+  90:../src/geometry.cpp ****         {
+  91:../src/geometry.cpp ****             y0 += ystep;
+ 617              		.loc 3 91 0
+ 618 0146 3A8B     		ldrh	r2, [r7, #24]
+ 619 0148 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 620 014a 1344     		add	r3, r3, r2
+ 621 014c BB80     		strh	r3, [r7, #4]	@ movhi
+  92:../src/geometry.cpp ****             err += dx;
+ 622              		.loc 3 92 0
+ 623 014e 7A8B     		ldrh	r2, [r7, #26]
+ 624 0150 3B8A     		ldrh	r3, [r7, #16]
+ 625 0152 1344     		add	r3, r3, r2
+ 626 0154 9BB2     		uxth	r3, r3
+ 627 0156 7B83     		strh	r3, [r7, #26]	@ movhi
+ 628              	.L33:
+ 629              	.LBE7:
+  77:../src/geometry.cpp ****     {
+ 630              		.loc 3 77 0
+ 631 0158 FB88     		ldrh	r3, [r7, #6]
+ 632 015a 0133     		adds	r3, r3, #1
+ 633 015c FB80     		strh	r3, [r7, #6]	@ movhi
+ 634 015e AFE7     		b	.L34
+ 635              	.L35:
+ 636              	.LBE6:
+  93:../src/geometry.cpp ****         }
+  94:../src/geometry.cpp ****     }
+  95:../src/geometry.cpp **** }
+ 637              		.loc 3 95 0
+ 638 0160 00BF     		nop
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 18
+
+
+ 639 0162 2437     		adds	r7, r7, #36
+ 640              		.cfi_def_cfa_offset 12
+ 641 0164 BD46     		mov	sp, r7
+ 642              		.cfi_def_cfa_register 13
+ 643              		@ sp needed
+ 644 0166 90BD     		pop	{r4, r7, pc}
+ 645              	.L37:
+ 646              		.align	2
+ 647              	.L36:
+ 648 0168 08800840 		.word	1074298888
+ 649              		.cfi_endproc
+ 650              	.LFE1503:
+ 652              		.section	.text._Z11Draw_Circlettth,"ax",%progbits
+ 653              		.align	1
+ 654              		.global	_Z11Draw_Circlettth
+ 655              		.syntax unified
+ 656              		.thumb
+ 657              		.thumb_func
+ 658              		.fpu softvfp
+ 660              	_Z11Draw_Circlettth:
+ 661              	.LFB1504:
+  96:../src/geometry.cpp **** 
+  97:../src/geometry.cpp **** void Draw_Circle(uint16_t x_center, uint16_t y_center, uint16_t radius, uint8_t color)
+  98:../src/geometry.cpp **** {
+ 662              		.loc 3 98 0
+ 663              		.cfi_startproc
+ 664              		@ args = 0, pretend = 0, frame = 16
+ 665              		@ frame_needed = 1, uses_anonymous_args = 0
+ 666 0000 90B5     		push	{r4, r7, lr}
+ 667              		.cfi_def_cfa_offset 12
+ 668              		.cfi_offset 4, -12
+ 669              		.cfi_offset 7, -8
+ 670              		.cfi_offset 14, -4
+ 671 0002 85B0     		sub	sp, sp, #20
+ 672              		.cfi_def_cfa_offset 32
+ 673 0004 00AF     		add	r7, sp, #0
+ 674              		.cfi_def_cfa_register 7
+ 675 0006 0446     		mov	r4, r0
+ 676 0008 0846     		mov	r0, r1
+ 677 000a 1146     		mov	r1, r2
+ 678 000c 1A46     		mov	r2, r3
+ 679 000e 2346     		mov	r3, r4	@ movhi
+ 680 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 681 0012 0346     		mov	r3, r0	@ movhi
+ 682 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 683 0016 0B46     		mov	r3, r1	@ movhi
+ 684 0018 7B80     		strh	r3, [r7, #2]	@ movhi
+ 685 001a 1346     		mov	r3, r2
+ 686 001c 7B70     		strb	r3, [r7, #1]
+  99:../src/geometry.cpp **** 	uint16_t x = 0, y = radius;
+ 687              		.loc 3 99 0
+ 688 001e 0023     		movs	r3, #0
+ 689 0020 FB81     		strh	r3, [r7, #14]	@ movhi
+ 690 0022 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 691 0024 BB81     		strh	r3, [r7, #12]	@ movhi
+ 100:../src/geometry.cpp **** 	int16_t d = 3 - 2 * radius;
+ 692              		.loc 3 100 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 19
+
+
+ 693 0026 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 694 0028 5B00     		lsls	r3, r3, #1
+ 695 002a 9BB2     		uxth	r3, r3
+ 696 002c C3F10303 		rsb	r3, r3, #3
+ 697 0030 9BB2     		uxth	r3, r3
+ 698 0032 7B81     		strh	r3, [r7, #10]	@ movhi
+ 101:../src/geometry.cpp **** 
+ 102:../src/geometry.cpp **** 	Draw_Horizontal_Line(x_center - x, y_center + y, x_center + x, color);
+ 699              		.loc 3 102 0
+ 700 0034 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 701 0036 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 702 0038 D31A     		subs	r3, r2, r3
+ 703 003a 98B2     		uxth	r0, r3
+ 704 003c BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 705 003e BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 706 0040 1344     		add	r3, r3, r2
+ 707 0042 99B2     		uxth	r1, r3
+ 708 0044 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 709 0046 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 710 0048 1344     		add	r3, r3, r2
+ 711 004a 9AB2     		uxth	r2, r3
+ 712 004c 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 713 004e FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 103:../src/geometry.cpp **** 	Draw_Horizontal_Line(x_center - x, y_center - y, x_center + x, color);
+ 714              		.loc 3 103 0
+ 715 0052 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 716 0054 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 717 0056 D31A     		subs	r3, r2, r3
+ 718 0058 98B2     		uxth	r0, r3
+ 719 005a BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 720 005c BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 721 005e D31A     		subs	r3, r2, r3
+ 722 0060 99B2     		uxth	r1, r3
+ 723 0062 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 724 0064 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 725 0066 1344     		add	r3, r3, r2
+ 726 0068 9AB2     		uxth	r2, r3
+ 727 006a 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 728 006c FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 104:../src/geometry.cpp **** 	Draw_Horizontal_Line(x_center - y, y_center + x, x_center + y, color);
+ 729              		.loc 3 104 0
+ 730 0070 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 731 0072 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 732 0074 D31A     		subs	r3, r2, r3
+ 733 0076 98B2     		uxth	r0, r3
+ 734 0078 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 735 007a FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 736 007c 1344     		add	r3, r3, r2
+ 737 007e 99B2     		uxth	r1, r3
+ 738 0080 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 739 0082 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 740 0084 1344     		add	r3, r3, r2
+ 741 0086 9AB2     		uxth	r2, r3
+ 742 0088 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 743 008a FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 105:../src/geometry.cpp **** 	Draw_Horizontal_Line(x_center - y, y_center - x, x_center + y, color);
+ 744              		.loc 3 105 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 20
+
+
+ 745 008e FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 746 0090 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 747 0092 D31A     		subs	r3, r2, r3
+ 748 0094 98B2     		uxth	r0, r3
+ 749 0096 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 750 0098 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 751 009a D31A     		subs	r3, r2, r3
+ 752 009c 99B2     		uxth	r1, r3
+ 753 009e FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 754 00a0 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 755 00a2 1344     		add	r3, r3, r2
+ 756 00a4 9AB2     		uxth	r2, r3
+ 757 00a6 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 758 00a8 FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 759              	.L42:
+ 106:../src/geometry.cpp **** 
+ 107:../src/geometry.cpp **** 	while (y >= x)
+ 760              		.loc 3 107 0
+ 761 00ac BA89     		ldrh	r2, [r7, #12]
+ 762 00ae FB89     		ldrh	r3, [r7, #14]
+ 763 00b0 9A42     		cmp	r2, r3
+ 764 00b2 5CD3     		bcc	.L43
+ 108:../src/geometry.cpp **** 	{
+ 109:../src/geometry.cpp **** 	    x++;
+ 765              		.loc 3 109 0
+ 766 00b4 FB89     		ldrh	r3, [r7, #14]
+ 767 00b6 0133     		adds	r3, r3, #1
+ 768 00b8 FB81     		strh	r3, [r7, #14]	@ movhi
+ 110:../src/geometry.cpp **** 
+ 111:../src/geometry.cpp **** 	    if (d > 0) { // decision parameter for under/over ideal circle line
+ 769              		.loc 3 111 0
+ 770 00ba B7F90A30 		ldrsh	r3, [r7, #10]
+ 771 00be 002B     		cmp	r3, #0
+ 772 00c0 0FDD     		ble	.L40
+ 112:../src/geometry.cpp **** 	    	y--;
+ 773              		.loc 3 112 0
+ 774 00c2 BB89     		ldrh	r3, [r7, #12]
+ 775 00c4 013B     		subs	r3, r3, #1
+ 776 00c6 BB81     		strh	r3, [r7, #12]	@ movhi
+ 113:../src/geometry.cpp **** 	        d = d + 4 * (x - y) + 10;
+ 777              		.loc 3 113 0
+ 778 00c8 FA89     		ldrh	r2, [r7, #14]
+ 779 00ca BB89     		ldrh	r3, [r7, #12]
+ 780 00cc D31A     		subs	r3, r2, r3
+ 781 00ce 9BB2     		uxth	r3, r3
+ 782 00d0 9B00     		lsls	r3, r3, #2
+ 783 00d2 9AB2     		uxth	r2, r3
+ 784 00d4 7B89     		ldrh	r3, [r7, #10]
+ 785 00d6 1344     		add	r3, r3, r2
+ 786 00d8 9BB2     		uxth	r3, r3
+ 787 00da 0A33     		adds	r3, r3, #10
+ 788 00dc 9BB2     		uxth	r3, r3
+ 789 00de 7B81     		strh	r3, [r7, #10]	@ movhi
+ 790 00e0 08E0     		b	.L41
+ 791              	.L40:
+ 114:../src/geometry.cpp **** 	    }
+ 115:../src/geometry.cpp **** 	    else{
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 21
+
+
+ 116:../src/geometry.cpp **** 	    	d = d + 4 * x + 6;
+ 792              		.loc 3 116 0
+ 793 00e2 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 794 00e4 9B00     		lsls	r3, r3, #2
+ 795 00e6 9AB2     		uxth	r2, r3
+ 796 00e8 7B89     		ldrh	r3, [r7, #10]
+ 797 00ea 1344     		add	r3, r3, r2
+ 798 00ec 9BB2     		uxth	r3, r3
+ 799 00ee 0633     		adds	r3, r3, #6
+ 800 00f0 9BB2     		uxth	r3, r3
+ 801 00f2 7B81     		strh	r3, [r7, #10]	@ movhi
+ 802              	.L41:
+ 117:../src/geometry.cpp **** 	    }
+ 118:../src/geometry.cpp **** 
+ 119:../src/geometry.cpp **** 	    Draw_Horizontal_Line(x_center - x, y_center + y, x_center + x, color);
+ 803              		.loc 3 119 0
+ 804 00f4 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 805 00f6 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 806 00f8 D31A     		subs	r3, r2, r3
+ 807 00fa 98B2     		uxth	r0, r3
+ 808 00fc BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 809 00fe BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 810 0100 1344     		add	r3, r3, r2
+ 811 0102 99B2     		uxth	r1, r3
+ 812 0104 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 813 0106 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 814 0108 1344     		add	r3, r3, r2
+ 815 010a 9AB2     		uxth	r2, r3
+ 816 010c 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 817 010e FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 120:../src/geometry.cpp **** 	    Draw_Horizontal_Line(x_center - x, y_center - y, x_center + x, color);
+ 818              		.loc 3 120 0
+ 819 0112 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 820 0114 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 821 0116 D31A     		subs	r3, r2, r3
+ 822 0118 98B2     		uxth	r0, r3
+ 823 011a BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 824 011c BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 825 011e D31A     		subs	r3, r2, r3
+ 826 0120 99B2     		uxth	r1, r3
+ 827 0122 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 828 0124 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 829 0126 1344     		add	r3, r3, r2
+ 830 0128 9AB2     		uxth	r2, r3
+ 831 012a 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 832 012c FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 121:../src/geometry.cpp **** 	    Draw_Horizontal_Line(x_center - y, y_center + x, x_center + y, color);
+ 833              		.loc 3 121 0
+ 834 0130 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 835 0132 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 836 0134 D31A     		subs	r3, r2, r3
+ 837 0136 98B2     		uxth	r0, r3
+ 838 0138 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 839 013a FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 840 013c 1344     		add	r3, r3, r2
+ 841 013e 99B2     		uxth	r1, r3
+ 842 0140 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 22
+
+
+ 843 0142 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 844 0144 1344     		add	r3, r3, r2
+ 845 0146 9AB2     		uxth	r2, r3
+ 846 0148 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 847 014a FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 122:../src/geometry.cpp **** 	    Draw_Horizontal_Line(x_center - y, y_center - x, x_center + y, color);
+ 848              		.loc 3 122 0
+ 849 014e FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 850 0150 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 851 0152 D31A     		subs	r3, r2, r3
+ 852 0154 98B2     		uxth	r0, r3
+ 853 0156 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 854 0158 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 855 015a D31A     		subs	r3, r2, r3
+ 856 015c 99B2     		uxth	r1, r3
+ 857 015e FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 858 0160 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 859 0162 1344     		add	r3, r3, r2
+ 860 0164 9AB2     		uxth	r2, r3
+ 861 0166 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 862 0168 FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 107:../src/geometry.cpp **** 	{
+ 863              		.loc 3 107 0
+ 864 016c 9EE7     		b	.L42
+ 865              	.L43:
+ 123:../src/geometry.cpp **** 	}
+ 124:../src/geometry.cpp **** }
+ 866              		.loc 3 124 0
+ 867 016e 00BF     		nop
+ 868 0170 1437     		adds	r7, r7, #20
+ 869              		.cfi_def_cfa_offset 12
+ 870 0172 BD46     		mov	sp, r7
+ 871              		.cfi_def_cfa_register 13
+ 872              		@ sp needed
+ 873 0174 90BD     		pop	{r4, r7, pc}
+ 874              		.cfi_endproc
+ 875              	.LFE1504:
+ 877              		.section	.text._Z9Draw_Plustthh,"ax",%progbits
+ 878              		.align	1
+ 879              		.global	_Z9Draw_Plustthh
+ 880              		.syntax unified
+ 881              		.thumb
+ 882              		.thumb_func
+ 883              		.fpu softvfp
+ 885              	_Z9Draw_Plustthh:
+ 886              	.LFB1505:
+ 125:../src/geometry.cpp **** 
+ 126:../src/geometry.cpp **** void Draw_Plus(uint16_t xtop, uint16_t ytop, uint8_t size, uint8_t color)
+ 127:../src/geometry.cpp **** {
+ 887              		.loc 3 127 0
+ 888              		.cfi_startproc
+ 889              		@ args = 0, pretend = 0, frame = 8
+ 890              		@ frame_needed = 1, uses_anonymous_args = 0
+ 891 0000 90B5     		push	{r4, r7, lr}
+ 892              		.cfi_def_cfa_offset 12
+ 893              		.cfi_offset 4, -12
+ 894              		.cfi_offset 7, -8
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 23
+
+
+ 895              		.cfi_offset 14, -4
+ 896 0002 85B0     		sub	sp, sp, #20
+ 897              		.cfi_def_cfa_offset 32
+ 898 0004 02AF     		add	r7, sp, #8
+ 899              		.cfi_def_cfa 7, 24
+ 900 0006 0446     		mov	r4, r0
+ 901 0008 0846     		mov	r0, r1
+ 902 000a 1146     		mov	r1, r2
+ 903 000c 1A46     		mov	r2, r3
+ 904 000e 2346     		mov	r3, r4	@ movhi
+ 905 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 906 0012 0346     		mov	r3, r0	@ movhi
+ 907 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 908 0016 0B46     		mov	r3, r1
+ 909 0018 FB70     		strb	r3, [r7, #3]
+ 910 001a 1346     		mov	r3, r2
+ 911 001c BB70     		strb	r3, [r7, #2]
+ 128:../src/geometry.cpp **** 	Draw_Line(xtop, ytop + (size >> 1), xtop + size, ytop + (size >> 1), color);
+ 912              		.loc 3 128 0
+ 913 001e FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 914 0020 5B10     		asrs	r3, r3, #1
+ 915 0022 9AB2     		uxth	r2, r3
+ 916 0024 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 917 0026 1344     		add	r3, r3, r2
+ 918 0028 99B2     		uxth	r1, r3
+ 919 002a FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 920 002c 9AB2     		uxth	r2, r3
+ 921 002e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 922 0030 1344     		add	r3, r3, r2
+ 923 0032 9CB2     		uxth	r4, r3
+ 924 0034 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 925 0036 5B10     		asrs	r3, r3, #1
+ 926 0038 9AB2     		uxth	r2, r3
+ 927 003a BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 928 003c 1344     		add	r3, r3, r2
+ 929 003e 9AB2     		uxth	r2, r3
+ 930 0040 F888     		ldrh	r0, [r7, #6]
+ 931 0042 BB78     		ldrb	r3, [r7, #2]	@ zero_extendqisi2
+ 932 0044 0093     		str	r3, [sp]
+ 933 0046 1346     		mov	r3, r2
+ 934 0048 2246     		mov	r2, r4
+ 935 004a FFF7FEFF 		bl	_Z9Draw_Linetttth
+ 129:../src/geometry.cpp **** 	Draw_Line(xtop + (size >> 1), ytop, xtop + (size >> 1), ytop + size, color);
+ 936              		.loc 3 129 0
+ 937 004e FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 938 0050 5B10     		asrs	r3, r3, #1
+ 939 0052 9AB2     		uxth	r2, r3
+ 940 0054 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 941 0056 1344     		add	r3, r3, r2
+ 942 0058 98B2     		uxth	r0, r3
+ 943 005a FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 944 005c 5B10     		asrs	r3, r3, #1
+ 945 005e 9AB2     		uxth	r2, r3
+ 946 0060 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 947 0062 1344     		add	r3, r3, r2
+ 948 0064 9CB2     		uxth	r4, r3
+ 949 0066 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 24
+
+
+ 950 0068 9AB2     		uxth	r2, r3
+ 951 006a BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 952 006c 1344     		add	r3, r3, r2
+ 953 006e 9AB2     		uxth	r2, r3
+ 954 0070 B988     		ldrh	r1, [r7, #4]
+ 955 0072 BB78     		ldrb	r3, [r7, #2]	@ zero_extendqisi2
+ 956 0074 0093     		str	r3, [sp]
+ 957 0076 1346     		mov	r3, r2
+ 958 0078 2246     		mov	r2, r4
+ 959 007a FFF7FEFF 		bl	_Z9Draw_Linetttth
+ 130:../src/geometry.cpp **** }
+ 960              		.loc 3 130 0
+ 961 007e 00BF     		nop
+ 962 0080 0C37     		adds	r7, r7, #12
+ 963              		.cfi_def_cfa_offset 12
+ 964 0082 BD46     		mov	sp, r7
+ 965              		.cfi_def_cfa_register 13
+ 966              		@ sp needed
+ 967 0084 90BD     		pop	{r4, r7, pc}
+ 968              		.cfi_endproc
+ 969              	.LFE1505:
+ 971              		.section	.text._Z14Draw_Rectangletttth,"ax",%progbits
+ 972              		.align	1
+ 973              		.global	_Z14Draw_Rectangletttth
+ 974              		.syntax unified
+ 975              		.thumb
+ 976              		.thumb_func
+ 977              		.fpu softvfp
+ 979              	_Z14Draw_Rectangletttth:
+ 980              	.LFB1506:
+ 131:../src/geometry.cpp **** 
+ 132:../src/geometry.cpp **** void Draw_Rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t color)
+ 133:../src/geometry.cpp **** {
+ 981              		.loc 3 133 0
+ 982              		.cfi_startproc
+ 983              		@ args = 4, pretend = 0, frame = 8
+ 984              		@ frame_needed = 1, uses_anonymous_args = 0
+ 985 0000 90B5     		push	{r4, r7, lr}
+ 986              		.cfi_def_cfa_offset 12
+ 987              		.cfi_offset 4, -12
+ 988              		.cfi_offset 7, -8
+ 989              		.cfi_offset 14, -4
+ 990 0002 85B0     		sub	sp, sp, #20
+ 991              		.cfi_def_cfa_offset 32
+ 992 0004 02AF     		add	r7, sp, #8
+ 993              		.cfi_def_cfa 7, 24
+ 994 0006 0446     		mov	r4, r0
+ 995 0008 0846     		mov	r0, r1
+ 996 000a 1146     		mov	r1, r2
+ 997 000c 1A46     		mov	r2, r3
+ 998 000e 2346     		mov	r3, r4	@ movhi
+ 999 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 1000 0012 0346     		mov	r3, r0	@ movhi
+ 1001 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 1002 0016 0B46     		mov	r3, r1	@ movhi
+ 1003 0018 7B80     		strh	r3, [r7, #2]	@ movhi
+ 1004 001a 1346     		mov	r3, r2	@ movhi
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 25
+
+
+ 1005 001c 3B80     		strh	r3, [r7]	@ movhi
+ 134:../src/geometry.cpp **** 	Draw_Horizontal_Line(x, y, x + width - 1, color);
+ 1006              		.loc 3 134 0
+ 1007 001e FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 1008 0020 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 1009 0022 1344     		add	r3, r3, r2
+ 1010 0024 9BB2     		uxth	r3, r3
+ 1011 0026 013B     		subs	r3, r3, #1
+ 1012 0028 9AB2     		uxth	r2, r3
+ 1013 002a 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 1014 002c B988     		ldrh	r1, [r7, #4]
+ 1015 002e F888     		ldrh	r0, [r7, #6]
+ 1016 0030 FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 135:../src/geometry.cpp **** 	Draw_Horizontal_Line(x, y + height - 1, x + width - 1, color);
+ 1017              		.loc 3 135 0
+ 1018 0034 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 1019 0036 3B88     		ldrh	r3, [r7]	@ movhi
+ 1020 0038 1344     		add	r3, r3, r2
+ 1021 003a 9BB2     		uxth	r3, r3
+ 1022 003c 013B     		subs	r3, r3, #1
+ 1023 003e 99B2     		uxth	r1, r3
+ 1024 0040 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 1025 0042 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 1026 0044 1344     		add	r3, r3, r2
+ 1027 0046 9BB2     		uxth	r3, r3
+ 1028 0048 013B     		subs	r3, r3, #1
+ 1029 004a 9AB2     		uxth	r2, r3
+ 1030 004c 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 1031 004e F888     		ldrh	r0, [r7, #6]
+ 1032 0050 FFF7FEFF 		bl	_Z20Draw_Horizontal_Linettth
+ 136:../src/geometry.cpp **** 	Draw_Line(x, y, x, y + height - 1, color);
+ 1033              		.loc 3 136 0
+ 1034 0054 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 1035 0056 3B88     		ldrh	r3, [r7]	@ movhi
+ 1036 0058 1344     		add	r3, r3, r2
+ 1037 005a 9BB2     		uxth	r3, r3
+ 1038 005c 013B     		subs	r3, r3, #1
+ 1039 005e 9CB2     		uxth	r4, r3
+ 1040 0060 FA88     		ldrh	r2, [r7, #6]
+ 1041 0062 B988     		ldrh	r1, [r7, #4]
+ 1042 0064 F888     		ldrh	r0, [r7, #6]
+ 1043 0066 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 1044 0068 0093     		str	r3, [sp]
+ 1045 006a 2346     		mov	r3, r4
+ 1046 006c FFF7FEFF 		bl	_Z9Draw_Linetttth
+ 137:../src/geometry.cpp **** 	Draw_Line(x + width - 1, y, x + width - 1, y + height - 1, color);
+ 1047              		.loc 3 137 0
+ 1048 0070 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 1049 0072 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 1050 0074 1344     		add	r3, r3, r2
+ 1051 0076 9BB2     		uxth	r3, r3
+ 1052 0078 013B     		subs	r3, r3, #1
+ 1053 007a 98B2     		uxth	r0, r3
+ 1054 007c FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 1055 007e 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 1056 0080 1344     		add	r3, r3, r2
+ 1057 0082 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 26
+
+
+ 1058 0084 013B     		subs	r3, r3, #1
+ 1059 0086 9CB2     		uxth	r4, r3
+ 1060 0088 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 1061 008a 3B88     		ldrh	r3, [r7]	@ movhi
+ 1062 008c 1344     		add	r3, r3, r2
+ 1063 008e 9BB2     		uxth	r3, r3
+ 1064 0090 013B     		subs	r3, r3, #1
+ 1065 0092 9AB2     		uxth	r2, r3
+ 1066 0094 B988     		ldrh	r1, [r7, #4]
+ 1067 0096 3B7E     		ldrb	r3, [r7, #24]	@ zero_extendqisi2
+ 1068 0098 0093     		str	r3, [sp]
+ 1069 009a 1346     		mov	r3, r2
+ 1070 009c 2246     		mov	r2, r4
+ 1071 009e FFF7FEFF 		bl	_Z9Draw_Linetttth
+ 138:../src/geometry.cpp **** }
+ 1072              		.loc 3 138 0
+ 1073 00a2 00BF     		nop
+ 1074 00a4 0C37     		adds	r7, r7, #12
+ 1075              		.cfi_def_cfa_offset 12
+ 1076 00a6 BD46     		mov	sp, r7
+ 1077              		.cfi_def_cfa_register 13
+ 1078              		@ sp needed
+ 1079 00a8 90BD     		pop	{r4, r7, pc}
+ 1080              		.cfi_endproc
+ 1081              	.LFE1506:
+ 1083              		.section	.text._ZN9Rectangle4DrawE11rectangle_t,"ax",%progbits
+ 1084              		.align	1
+ 1085              		.global	_ZN9Rectangle4DrawE11rectangle_t
+ 1086              		.syntax unified
+ 1087              		.thumb
+ 1088              		.thumb_func
+ 1089              		.fpu softvfp
+ 1091              	_ZN9Rectangle4DrawE11rectangle_t:
+ 1092              	.LFB1507:
+ 139:../src/geometry.cpp **** 
+ 140:../src/geometry.cpp **** void Rectangle::Draw(rectangle_t drawBox){
+ 1093              		.loc 3 140 0
+ 1094              		.cfi_startproc
+ 1095              		@ args = 0, pretend = 0, frame = 16
+ 1096              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1097 0000 90B5     		push	{r4, r7, lr}
+ 1098              		.cfi_def_cfa_offset 12
+ 1099              		.cfi_offset 4, -12
+ 1100              		.cfi_offset 7, -8
+ 1101              		.cfi_offset 14, -4
+ 1102 0002 87B0     		sub	sp, sp, #28
+ 1103              		.cfi_def_cfa_offset 40
+ 1104 0004 02AF     		add	r7, sp, #8
+ 1105              		.cfi_def_cfa 7, 32
+ 1106 0006 F860     		str	r0, [r7, #12]
+ 1107 0008 3B1D     		adds	r3, r7, #4
+ 1108 000a 83E80600 		stm	r3, {r1, r2}
+ 141:../src/geometry.cpp **** 	Draw_Rectangle(x, y, width, height, color);
+ 1109              		.loc 3 141 0
+ 1110 000e FB68     		ldr	r3, [r7, #12]
+ 1111 0010 9889     		ldrh	r0, [r3, #12]
+ 1112 0012 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 27
+
+
+ 1113 0014 D989     		ldrh	r1, [r3, #14]
+ 1114 0016 FB68     		ldr	r3, [r7, #12]
+ 1115 0018 1A8A     		ldrh	r2, [r3, #16]
+ 1116 001a FB68     		ldr	r3, [r7, #12]
+ 1117 001c 5C8A     		ldrh	r4, [r3, #18]
+ 1118 001e FB68     		ldr	r3, [r7, #12]
+ 1119 0020 1B7D     		ldrb	r3, [r3, #20]	@ zero_extendqisi2
+ 1120 0022 0093     		str	r3, [sp]
+ 1121 0024 2346     		mov	r3, r4
+ 1122 0026 FFF7FEFF 		bl	_Z14Draw_Rectangletttth
+ 142:../src/geometry.cpp **** }
+ 1123              		.loc 3 142 0
+ 1124 002a 00BF     		nop
+ 1125 002c 1437     		adds	r7, r7, #20
+ 1126              		.cfi_def_cfa_offset 12
+ 1127 002e BD46     		mov	sp, r7
+ 1128              		.cfi_def_cfa_register 13
+ 1129              		@ sp needed
+ 1130 0030 90BD     		pop	{r4, r7, pc}
+ 1131              		.cfi_endproc
+ 1132              	.LFE1507:
+ 1134              		.section	.text._ZN7IRenderC2Ev,"axG",%progbits,_ZN7IRenderC5Ev,comdat
+ 1135              		.align	1
+ 1136              		.weak	_ZN7IRenderC2Ev
+ 1137              		.syntax unified
+ 1138              		.thumb
+ 1139              		.thumb_func
+ 1140              		.fpu softvfp
+ 1142              	_ZN7IRenderC2Ev:
+ 1143              	.LFB1510:
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+ 1144              		.loc 2 14 0
+ 1145              		.cfi_startproc
+ 1146              		@ args = 0, pretend = 0, frame = 8
+ 1147              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1148              		@ link register save eliminated.
+ 1149 0000 80B4     		push	{r7}
+ 1150              		.cfi_def_cfa_offset 4
+ 1151              		.cfi_offset 7, -4
+ 1152 0002 83B0     		sub	sp, sp, #12
+ 1153              		.cfi_def_cfa_offset 16
+ 1154 0004 00AF     		add	r7, sp, #0
+ 1155              		.cfi_def_cfa_register 7
+ 1156 0006 7860     		str	r0, [r7, #4]
+ 1157              	.LBB9:
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+ 1158              		.loc 2 14 0
+ 1159 0008 044A     		ldr	r2, .L49
+ 1160 000a 7B68     		ldr	r3, [r7, #4]
+ 1161 000c 1A60     		str	r2, [r3]
+ 1162              	.LBE9:
+ 1163 000e 7B68     		ldr	r3, [r7, #4]
+ 1164 0010 1846     		mov	r0, r3
+ 1165 0012 0C37     		adds	r7, r7, #12
+ 1166              		.cfi_def_cfa_offset 4
+ 1167 0014 BD46     		mov	sp, r7
+ 1168              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 28
+
+
+ 1169              		@ sp needed
+ 1170 0016 80BC     		pop	{r7}
+ 1171              		.cfi_restore 7
+ 1172              		.cfi_def_cfa_offset 0
+ 1173 0018 7047     		bx	lr
+ 1174              	.L50:
+ 1175 001a 00BF     		.align	2
+ 1176              	.L49:
+ 1177 001c 08000000 		.word	_ZTV7IRender+8
+ 1178              		.cfi_endproc
+ 1179              	.LFE1510:
+ 1181              		.weak	_ZN7IRenderC1Ev
+ 1182              		.thumb_set _ZN7IRenderC1Ev,_ZN7IRenderC2Ev
+ 1183              		.section	.text._ZN9RectangleC2Etttth,"ax",%progbits
+ 1184              		.align	1
+ 1185              		.global	_ZN9RectangleC2Etttth
+ 1186              		.syntax unified
+ 1187              		.thumb
+ 1188              		.thumb_func
+ 1189              		.fpu softvfp
+ 1191              	_ZN9RectangleC2Etttth:
+ 1192              	.LFB1512:
+ 143:../src/geometry.cpp **** 
+ 144:../src/geometry.cpp **** Rectangle::Rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t color) :
+ 1193              		.loc 3 144 0
+ 1194              		.cfi_startproc
+ 1195              		@ args = 8, pretend = 0, frame = 16
+ 1196              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1197 0000 80B5     		push	{r7, lr}
+ 1198              		.cfi_def_cfa_offset 8
+ 1199              		.cfi_offset 7, -8
+ 1200              		.cfi_offset 14, -4
+ 1201 0002 84B0     		sub	sp, sp, #16
+ 1202              		.cfi_def_cfa_offset 24
+ 1203 0004 00AF     		add	r7, sp, #0
+ 1204              		.cfi_def_cfa_register 7
+ 1205 0006 F860     		str	r0, [r7, #12]
+ 1206 0008 0846     		mov	r0, r1
+ 1207 000a 1146     		mov	r1, r2
+ 1208 000c 1A46     		mov	r2, r3
+ 1209 000e 0346     		mov	r3, r0	@ movhi
+ 1210 0010 7B81     		strh	r3, [r7, #10]	@ movhi
+ 1211 0012 0B46     		mov	r3, r1	@ movhi
+ 1212 0014 3B81     		strh	r3, [r7, #8]	@ movhi
+ 1213 0016 1346     		mov	r3, r2	@ movhi
+ 1214 0018 FB80     		strh	r3, [r7, #6]	@ movhi
+ 1215              	.LBB10:
+ 145:../src/geometry.cpp **** 	x(x),
+ 146:../src/geometry.cpp **** 	y(y),
+ 147:../src/geometry.cpp **** 	width(width),
+ 148:../src/geometry.cpp **** 	height(height),
+ 149:../src/geometry.cpp **** 	color(color)
+ 1216              		.loc 3 149 0
+ 1217 001a FB68     		ldr	r3, [r7, #12]
+ 1218 001c 1846     		mov	r0, r3
+ 1219 001e FFF7FEFF 		bl	_ZN7IRenderC2Ev
+ 1220 0022 0B4A     		ldr	r2, .L53
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 29
+
+
+ 1221 0024 FB68     		ldr	r3, [r7, #12]
+ 1222 0026 1A60     		str	r2, [r3]
+ 1223 0028 FB68     		ldr	r3, [r7, #12]
+ 1224 002a 7A89     		ldrh	r2, [r7, #10]	@ movhi
+ 1225 002c 9A81     		strh	r2, [r3, #12]	@ movhi
+ 1226 002e FB68     		ldr	r3, [r7, #12]
+ 1227 0030 3A89     		ldrh	r2, [r7, #8]	@ movhi
+ 1228 0032 DA81     		strh	r2, [r3, #14]	@ movhi
+ 1229 0034 FB68     		ldr	r3, [r7, #12]
+ 1230 0036 FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 1231 0038 1A82     		strh	r2, [r3, #16]	@ movhi
+ 1232 003a FB68     		ldr	r3, [r7, #12]
+ 1233 003c 3A8B     		ldrh	r2, [r7, #24]	@ movhi
+ 1234 003e 5A82     		strh	r2, [r3, #18]	@ movhi
+ 1235 0040 FB68     		ldr	r3, [r7, #12]
+ 1236 0042 3A7F     		ldrb	r2, [r7, #28]
+ 1237 0044 1A75     		strb	r2, [r3, #20]
+ 1238              	.LBE10:
+ 150:../src/geometry.cpp **** {}
+ 1239              		.loc 3 150 0
+ 1240 0046 FB68     		ldr	r3, [r7, #12]
+ 1241 0048 1846     		mov	r0, r3
+ 1242 004a 1037     		adds	r7, r7, #16
+ 1243              		.cfi_def_cfa_offset 8
+ 1244 004c BD46     		mov	sp, r7
+ 1245              		.cfi_def_cfa_register 13
+ 1246              		@ sp needed
+ 1247 004e 80BD     		pop	{r7, pc}
+ 1248              	.L54:
+ 1249              		.align	2
+ 1250              	.L53:
+ 1251 0050 08000000 		.word	_ZTV9Rectangle+8
+ 1252              		.cfi_endproc
+ 1253              	.LFE1512:
+ 1255              		.global	_ZN9RectangleC1Etttth
+ 1256              		.thumb_set _ZN9RectangleC1Etttth,_ZN9RectangleC2Etttth
+ 1257              		.global	_ZTV9Rectangle
+ 1258              		.section	.rodata._ZTV9Rectangle,"a",%progbits
+ 1259              		.align	2
+ 1262              	_ZTV9Rectangle:
+ 1263 0000 00000000 		.word	0
+ 1264 0004 00000000 		.word	0
+ 1265 0008 00000000 		.word	_ZN9Rectangle4DrawE11rectangle_t
+ 1266 000c 00000000 		.word	_ZN9RectangleD1Ev
+ 1267 0010 00000000 		.word	_ZN9RectangleD0Ev
+ 1268              		.section	.text._ZN9RectangleD2Ev,"axG",%progbits,_ZN9RectangleD5Ev,comdat
+ 1269              		.align	1
+ 1270              		.weak	_ZN9RectangleD2Ev
+ 1271              		.syntax unified
+ 1272              		.thumb
+ 1273              		.thumb_func
+ 1274              		.fpu softvfp
+ 1276              	_ZN9RectangleD2Ev:
+ 1277              	.LFB1969:
+ 1278              		.file 4 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/geometry.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #ifndef GEOMETRY_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #define GEOMETRY_H_
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 30
+
+
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #include <stdint.h>
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #include "interfaces.h"
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** 
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #define SCREEN_WIDTH 800
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** #define SCREEN_HEIGHT 600
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** 
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Clear_Screen();
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Draw_Horizontal_Line(uint16_t x, uint16_t y, uint16_t end_x, uint8_t color);
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Draw_Line(uint16_t x, uint16_t y, uint16_t end_x, uint16_t end_y, uint8_t color);
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Draw_Circle(uint16_t x_center, uint16_t y_center, uint16_t radius, uint8_t color);
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Draw_Plus(uint16_t xtop, uint16_t ytop, uint8_t size, uint8_t color);
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** void Draw_Rectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t color);
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** 
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\geometry.h **** class Rectangle : public IRender{
+ 1279              		.loc 4 16 0
+ 1280              		.cfi_startproc
+ 1281              		@ args = 0, pretend = 0, frame = 8
+ 1282              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1283 0000 80B5     		push	{r7, lr}
+ 1284              		.cfi_def_cfa_offset 8
+ 1285              		.cfi_offset 7, -8
+ 1286              		.cfi_offset 14, -4
+ 1287 0002 82B0     		sub	sp, sp, #8
+ 1288              		.cfi_def_cfa_offset 16
+ 1289 0004 00AF     		add	r7, sp, #0
+ 1290              		.cfi_def_cfa_register 7
+ 1291 0006 7860     		str	r0, [r7, #4]
+ 1292              	.LBB11:
+ 1293              		.loc 4 16 0
+ 1294 0008 054A     		ldr	r2, .L57
+ 1295 000a 7B68     		ldr	r3, [r7, #4]
+ 1296 000c 1A60     		str	r2, [r3]
+ 1297 000e 7B68     		ldr	r3, [r7, #4]
+ 1298 0010 1846     		mov	r0, r3
+ 1299 0012 FFF7FEFF 		bl	_ZN7IRenderD2Ev
+ 1300              	.LBE11:
+ 1301 0016 7B68     		ldr	r3, [r7, #4]
+ 1302 0018 1846     		mov	r0, r3
+ 1303 001a 0837     		adds	r7, r7, #8
+ 1304              		.cfi_def_cfa_offset 8
+ 1305 001c BD46     		mov	sp, r7
+ 1306              		.cfi_def_cfa_register 13
+ 1307              		@ sp needed
+ 1308 001e 80BD     		pop	{r7, pc}
+ 1309              	.L58:
+ 1310              		.align	2
+ 1311              	.L57:
+ 1312 0020 08000000 		.word	_ZTV9Rectangle+8
+ 1313              		.cfi_endproc
+ 1314              	.LFE1969:
+ 1316              		.weak	_ZN9RectangleD1Ev
+ 1317              		.thumb_set _ZN9RectangleD1Ev,_ZN9RectangleD2Ev
+ 1318              		.section	.text._ZN9RectangleD0Ev,"axG",%progbits,_ZN9RectangleD5Ev,comdat
+ 1319              		.align	1
+ 1320              		.weak	_ZN9RectangleD0Ev
+ 1321              		.syntax unified
+ 1322              		.thumb
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 31
+
+
+ 1323              		.thumb_func
+ 1324              		.fpu softvfp
+ 1326              	_ZN9RectangleD0Ev:
+ 1327              	.LFB1971:
+ 1328              		.loc 4 16 0
+ 1329              		.cfi_startproc
+ 1330              		@ args = 0, pretend = 0, frame = 8
+ 1331              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1332 0000 80B5     		push	{r7, lr}
+ 1333              		.cfi_def_cfa_offset 8
+ 1334              		.cfi_offset 7, -8
+ 1335              		.cfi_offset 14, -4
+ 1336 0002 82B0     		sub	sp, sp, #8
+ 1337              		.cfi_def_cfa_offset 16
+ 1338 0004 00AF     		add	r7, sp, #0
+ 1339              		.cfi_def_cfa_register 7
+ 1340 0006 7860     		str	r0, [r7, #4]
+ 1341              		.loc 4 16 0
+ 1342 0008 7868     		ldr	r0, [r7, #4]
+ 1343 000a FFF7FEFF 		bl	_ZN9RectangleD1Ev
+ 1344 000e 1821     		movs	r1, #24
+ 1345 0010 7868     		ldr	r0, [r7, #4]
+ 1346 0012 FFF7FEFF 		bl	_ZdlPvj
+ 1347 0016 7B68     		ldr	r3, [r7, #4]
+ 1348 0018 1846     		mov	r0, r3
+ 1349 001a 0837     		adds	r7, r7, #8
+ 1350              		.cfi_def_cfa_offset 8
+ 1351 001c BD46     		mov	sp, r7
+ 1352              		.cfi_def_cfa_register 13
+ 1353              		@ sp needed
+ 1354 001e 80BD     		pop	{r7, pc}
+ 1355              		.cfi_endproc
+ 1356              	.LFE1971:
+ 1358              		.weak	_ZTV7IRender
+ 1359              		.section	.rodata._ZTV7IRender,"aG",%progbits,_ZTV7IRender,comdat
+ 1360              		.align	2
+ 1363              	_ZTV7IRender:
+ 1364 0000 00000000 		.word	0
+ 1365 0004 00000000 		.word	0
+ 1366 0008 00000000 		.word	__cxa_pure_virtual
+ 1367 000c 00000000 		.word	0
+ 1368 0010 00000000 		.word	0
+ 1369              		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 1370              		.align	1
+ 1371              		.syntax unified
+ 1372              		.thumb
+ 1373              		.thumb_func
+ 1374              		.fpu softvfp
+ 1376              	_Z41__static_initialization_and_destruction_0ii:
+ 1377              	.LFB1972:
+ 1378              		.loc 3 150 0
+ 1379              		.cfi_startproc
+ 1380              		@ args = 0, pretend = 0, frame = 8
+ 1381              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1382 0000 80B5     		push	{r7, lr}
+ 1383              		.cfi_def_cfa_offset 8
+ 1384              		.cfi_offset 7, -8
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 32
+
+
+ 1385              		.cfi_offset 14, -4
+ 1386 0002 84B0     		sub	sp, sp, #16
+ 1387              		.cfi_def_cfa_offset 24
+ 1388 0004 02AF     		add	r7, sp, #8
+ 1389              		.cfi_def_cfa 7, 16
+ 1390 0006 7860     		str	r0, [r7, #4]
+ 1391 0008 3960     		str	r1, [r7]
+ 1392              		.loc 3 150 0
+ 1393 000a 7B68     		ldr	r3, [r7, #4]
+ 1394 000c 012B     		cmp	r3, #1
+ 1395 000e 5BD1     		bne	.L63
+ 1396              		.loc 3 150 0 is_stmt 0 discriminator 1
+ 1397 0010 3B68     		ldr	r3, [r7]
+ 1398 0012 4FF6FF72 		movw	r2, #65535
+ 1399 0016 9342     		cmp	r3, r2
+ 1400 0018 56D1     		bne	.L63
+ 1401              		.file 5 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/lpc_xav.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "chip.h"
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "board.h"
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "cr_section_macros.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #ifndef LPC_XAV_H_
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define LPC_XAV_H_
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCONP	 *((uint32_t *)0x400FC0C4)
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL0 *((uint32_t *)0x400FC1A8)
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL1 *((uint32_t *)0x400FC1AC)
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_400KHZ	120
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_100KHZ 	480
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_50KHZ 	960
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_24MHZ	4
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_100KHZ  240
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SYS_FREQ ((uint32_t)96000000)
+  19:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  20:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {GPIO, Fct0x1, Fct0x2, Fct0x3}; 				// GPIO pin function
+  21:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {IN, OUT};										// GPIO direction
+  22:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Pullup, Repeater, Float, Pulldown, Default};	// GPIO input mode
+  23:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Normal, Open_Drain}; 							// GPIO output mode
+  24:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Level_Sensitive, Edge_Sensitive};				// EXT int mode
+  25:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {UND2, Rising_Edge, Falling_Edge, Both_Edges};	// Timer capture setting
+  26:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {CLK4, CLK0, CLK2, CLK8};						// Timer clock rate (number stands for divisor)
+  27:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Nothing, Clear, Set, Toggle};					// External match setting
+  28:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {MR0 = 0x1, MR1 = 0x2, MR2 = 0x4, MR3 = 0x8, CR0 = 0x10, CR1 = 0x20};// Timer interrupt flag b
+  29:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Disabled, Odd, Even = 3};						// UART Parity control
+  30:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Single_Edge, Double_Edge};					// Motor PWM mode
+  31:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Manual, Auto};								// AD Converter mode for starting conversions
+  32:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Master = 0x40, Slave = 0x44};					// I2C Mode
+  33:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {RORIM, RTIM, RXIM, TXIM};						// SSP Interrupt sources
+  34:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  35:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO;
+  36:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  37:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void EnableIRQ(uint8_t Int_bit); // Enables periph's NVIC interrupt
+  38:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void GPIO_Enable_Int(uint8_t PortNo, uint8_t PinNo, uint8_t Edge_Select);
+  39:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void Enable_EXT_Int(uint8_t ExtIntNo, uint8_t ExtMode);
+  40:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 33
+
+
+  41:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Port{ // Port object to provide pointers for the Lpc_IO class
+  42:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	friend LPC_IO;
+  43:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _PINCB; 	// Address of the first PINSEL register for desired port
+  44:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _FIO; 	// Address of the first FIO register
+  45:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _OD;		// Address of the open drain mode register
+  46:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetFct(uint8_t PinNo, uint8_t Fct);
+  47:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetDir(uint8_t PinNo, uint8_t Dir);
+  48:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetMode(uint8_t PinNo, uint8_t Mode);
+  49:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetOpenDrain(uint8_t PinNo, uint8_t Mode );
+  50:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  51:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  52:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port(uint32_t* Pinsel_Add, // Constructor for LPC Port handles
+  53:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* FastIO_Add,
+  54:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* OpenDrain_Add);
+  55:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+  56:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  57:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO{ // Pin object to initialize all the register required for a pin functioning
+  58:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port& _Port;
+  59:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pin;
+  60:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Function;
+  61:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Direction;
+  62:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Mode;
+  63:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t OD_Mode;
+  64:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  65:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  66:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Out(bool State);
+  67:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set();
+  68:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear();
+  69:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  70:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO();
+  71:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO(	Port& PtrPort, // Constructor for IO pin handles.
+  72:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t PinNo,
+  73:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Fct,
+  74:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Dir = OUT,
+  75:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Md = Float,
+  76:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t OD = Normal);
+  77:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  78:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(bool OutputState) // Allows to use Object = boolean value; to set pin output
+  79:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  80:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		this->Out(OutputState);
+  81:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  82:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator==(bool BooleanValue)
+  83:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  84:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  85:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  86:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  87:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  88:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  89:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  90:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  91:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator!=(bool BooleanValue)
+  92:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  93:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+  94:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  95:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  96:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else{
+  97:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 34
+
+
+  98:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  99:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 100:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 101:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 102:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Bus{ // Bus object can be declared to group Lpc_IO handles together and use it as one 8-bit r
+ 103:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO * Bits[8];
+ 104:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Value;
+ 105:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 106:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 107:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Change_Value(uint8_t bus_value);
+ 108:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 109:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Bus(LPC_IO* LSB=nullptr, LPC_IO* B1=nullptr,
+ 110:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B2=nullptr, LPC_IO* B3=nullptr,
+ 111:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B4=nullptr, LPC_IO* B5=nullptr,
+ 112:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B6=nullptr, LPC_IO* MSB=nullptr);
+ 113:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 114:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(uint8_t bus_value)
+ 115:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 116:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(bus_value);
+ 117:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 118:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator+=(uint8_t increment_value)
+ 119:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 120:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(Value + increment_value);
+ 121:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 122:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 123:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 124:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Timer{ // Timer object to group together all of a timer's functions and registers
+ 125:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 126:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 127:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 128:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 129:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 130:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 131:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Edge_Sel[2];
+ 132:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Clk_Speed); // Uses the IRQ bit to determine which PCLKSEL to set
+ 133:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Counter(uint8_t Channel, uint8_t Edge_Mode);
+ 134:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Capture(uint8_t Channel, uint8_t Edge_Mode);
+ 135:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch(uint8_t Channel);
+ 136:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Match(uint8_t Channel, uint32_t Match_Value);
+ 137:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Ext_Match(uint8_t Channel, uint8_t Match_Setting);
+ 138:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Mat_Int(uint8_t Channel);
+ 139:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Cap_Int(uint8_t Channel);
+ 140:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset(); // Resets the TC
+ 141:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_IR();
+ 142:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Int(uint8_t FlagBit);
+ 143:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t get_CR(uint8_t Channel);
+ 144:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 145:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Timer(	uint32_t * PtrTimer, // Constructor function for timers
+ 146:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t P_bit,
+ 147:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t C_bit,
+ 148:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Int_bit);
+ 149:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 150:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 151:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class UART{
+ 152:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 153:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 154:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 35
+
+
+ 155:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 156:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 157:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 158:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint32_t Baudrate);
+ 159:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Transmission(uint8_t Bit_Length, uint8_t Parity);
+ 160:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_RX_Int();
+ 161:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PutByte(char Byte);
+ 162:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintStrConst(const char *StrToSend);
+ 163:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintDec(uint16_t NbrDec);
+ 164:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintFloat(uint16_t Scaled_Int);
+ 165:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void ClearScreen();
+ 166:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Int_Flag_Set();
+ 167:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_RBR();
+ 168:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 169:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	UART(uint32_t * PtrUART, uint8_t P_bit, uint8_t C_bit, uint8_t Int_bit);
+ 170:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 171:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 172:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class PWM{
+ 173:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 174:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 175:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 176:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	float Duty;
+ 177:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Set_Freq(uint32_t Freq); // Setup MR0 value that controls frequency of all single-e PW
+ 178:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch();
+ 179:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Duty(float DutyPercentage);
+ 180:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Increment_Duty();
+ 181:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Decrement_Duty();
+ 182:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Enable(); // Always use at the end of initialization, starts TC for all PWMs
+ 183:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 184:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	PWM(uint8_t Ch, uint8_t Edge_Sel);
+ 185:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 186:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 187:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class ADC{
+ 188:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 189:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 190:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 191:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Start_Burst_Conversion(uint8_t Sel_Val);
+ 192:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Stop_Burst_Conversion();
+ 193:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Start_Conversion();
+ 194:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Stop_Conversion();
+ 195:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int();
+ 196:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t get_12bit_Result();
+ 197:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 198:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	ADC(uint8_t Ch, uint32_t Target_Freq);
+ 199:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 200:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 201:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class DAC{
+ 202:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 203:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 204:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Output(uint16_t Val_10bit);
+ 205:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Out_Percent(uint8_t Percentage);
+ 206:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 207:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 208:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class _I2C{
+ 209:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 210:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 211:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 36
+
+
+ 212:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 213:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t tx_buf[512];
+ 214:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t rx_buf[512];
+ 215:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Busy;
+ 216:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_tx;
+ 217:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter_rx;
+ 218:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 219:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Read_Length;
+ 220:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 221:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Bus_Mode, uint32_t I2C_Speed);
+ 222:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_Status();
+ 223:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence(uint8_t Slave_Address, uint16_t readLength = 0);
+ 224:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 225:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 226:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 227:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint8_t ByteToSend);
+ 228:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 229:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Read_Next_Byte();
+ 230:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Address();
+ 231:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Stop();
+ 232:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_nACK();
+ 233:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 234:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Interrupt();
+ 235:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 236:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	_I2C(uint32_t * PtrI2C, uint8_t C_bit, uint8_t Int_bit);
+ 237:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 238:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 239:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class SSP{
+ 240:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 241:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 242:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 243:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t Buffer[128];
+ 244:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 245:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t MIS = *(_Periph + 7);
+ 246:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter;
+ 247:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 248:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 249:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t ClkPrescaler, uint8_t DataSizeSelect, uint8_t CPOL, uint8_t CPHA);
+ 250:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence();
+ 251:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 252:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 253:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 254:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint16_t ByteToSend);
+ 255:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 256:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 257:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void End_Transfer();
+ 258:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int(uint8_t IntSelect);
+ 259:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Disable_Int(uint8_t IntSelect);
+ 260:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 261:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	SSP(uint32_t * PtrSSP, uint8_t C_bit, uint8_t Int_bit);
+ 262:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 263:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 264:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** // Mandatory objects declaration (Peripherals)
+ 265:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P0((uint32_t *)0x4002C000, (uint32_t *)0x2009C000, (uint32_t *)0x4002C068);
+ 1402              		.loc 5 265 0 is_stmt 1
+ 1403 001a 2D4B     		ldr	r3, .L64
+ 1404 001c 2D4A     		ldr	r2, .L64+4
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 37
+
+
+ 1405 001e 2E49     		ldr	r1, .L64+8
+ 1406 0020 2E48     		ldr	r0, .L64+12
+ 1407 0022 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 266:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P1((uint32_t *)0x4002C008, (uint32_t *)0x2009C020, (uint32_t *)0x4002C06C);
+ 1408              		.loc 5 266 0
+ 1409 0026 2E4B     		ldr	r3, .L64+16
+ 1410 0028 2E4A     		ldr	r2, .L64+20
+ 1411 002a 2F49     		ldr	r1, .L64+24
+ 1412 002c 2F48     		ldr	r0, .L64+28
+ 1413 002e FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 267:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P2((uint32_t *)0x4002C010, (uint32_t *)0x2009C040, (uint32_t *)0x4002C070);
+ 1414              		.loc 5 267 0
+ 1415 0032 2F4B     		ldr	r3, .L64+32
+ 1416 0034 2F4A     		ldr	r2, .L64+36
+ 1417 0036 3049     		ldr	r1, .L64+40
+ 1418 0038 3048     		ldr	r0, .L64+44
+ 1419 003a FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 268:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P3((uint32_t *)0x4002C018, (uint32_t *)0x2009C060, (uint32_t *)0x4002C074);
+ 1420              		.loc 5 268 0
+ 1421 003e 304B     		ldr	r3, .L64+48
+ 1422 0040 304A     		ldr	r2, .L64+52
+ 1423 0042 3149     		ldr	r1, .L64+56
+ 1424 0044 3148     		ldr	r0, .L64+60
+ 1425 0046 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 269:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P4((uint32_t *)0x4002C020, (uint32_t *)0x2009C080, (uint32_t *)0x4002C078);
+ 1426              		.loc 5 269 0
+ 1427 004a 314B     		ldr	r3, .L64+64
+ 1428 004c 314A     		ldr	r2, .L64+68
+ 1429 004e 3249     		ldr	r1, .L64+72
+ 1430 0050 3248     		ldr	r0, .L64+76
+ 1431 0052 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 270:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 271:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR0((uint32_t *)0x40004000, 1, 2, 1);
+ 1432              		.loc 5 271 0
+ 1433 0056 0123     		movs	r3, #1
+ 1434 0058 0093     		str	r3, [sp]
+ 1435 005a 0223     		movs	r3, #2
+ 1436 005c 0122     		movs	r2, #1
+ 1437 005e 4FF04021 		mov	r1, #1073758208
+ 1438 0062 2F48     		ldr	r0, .L64+80
+ 1439 0064 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 272:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR1((uint32_t *)0x40008000, 2, 4, 2);
+ 1440              		.loc 5 272 0
+ 1441 0068 0223     		movs	r3, #2
+ 1442 006a 0093     		str	r3, [sp]
+ 1443 006c 0423     		movs	r3, #4
+ 1444 006e 0222     		movs	r2, #2
+ 1445 0070 2C49     		ldr	r1, .L64+84
+ 1446 0072 2D48     		ldr	r0, .L64+88
+ 1447 0074 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 273:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR2((uint32_t *)0x40090000, 22, 12, 3);
+ 1448              		.loc 5 273 0
+ 1449 0078 0323     		movs	r3, #3
+ 1450 007a 0093     		str	r3, [sp]
+ 1451 007c 0C23     		movs	r3, #12
+ 1452 007e 1622     		movs	r2, #22
+ 1453 0080 2A49     		ldr	r1, .L64+92
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 38
+
+
+ 1454 0082 2B48     		ldr	r0, .L64+96
+ 1455 0084 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 274:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR3((uint32_t *)0x40094000, 23, 14, 4);
+ 1456              		.loc 5 274 0
+ 1457 0088 0423     		movs	r3, #4
+ 1458 008a 0093     		str	r3, [sp]
+ 1459 008c 0E23     		movs	r3, #14
+ 1460 008e 1722     		movs	r2, #23
+ 1461 0090 2849     		ldr	r1, .L64+100
+ 1462 0092 2948     		ldr	r0, .L64+104
+ 1463 0094 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 275:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 276:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART UART0((uint32_t *)0x4000C000, 3, 6, 5);
+ 1464              		.loc 5 276 0
+ 1465 0098 0523     		movs	r3, #5
+ 1466 009a 0093     		str	r3, [sp]
+ 1467 009c 0623     		movs	r3, #6
+ 1468 009e 0322     		movs	r2, #3
+ 1469 00a0 2649     		ldr	r1, .L64+108
+ 1470 00a2 2748     		ldr	r0, .L64+112
+ 1471 00a4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 277:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Keyboard((uint32_t *)0x40098000, 24, 16, 7);
+ 1472              		.loc 5 277 0
+ 1473 00a8 0723     		movs	r3, #7
+ 1474 00aa 0093     		str	r3, [sp]
+ 1475 00ac 1023     		movs	r3, #16
+ 1476 00ae 1822     		movs	r2, #24
+ 1477 00b0 2449     		ldr	r1, .L64+116
+ 1478 00b2 2548     		ldr	r0, .L64+120
+ 1479 00b4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 278:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Console((uint32_t *)0x4009C000, 25, 18, 8);
+ 1480              		.loc 5 278 0
+ 1481 00b8 0823     		movs	r3, #8
+ 1482 00ba 0093     		str	r3, [sp]
+ 1483 00bc 1223     		movs	r3, #18
+ 1484 00be 1922     		movs	r2, #25
+ 1485 00c0 2249     		ldr	r1, .L64+124
+ 1486 00c2 2348     		ldr	r0, .L64+128
+ 1487 00c4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 1488              	.L63:
+ 1489              		.loc 3 150 0
+ 1490 00c8 00BF     		nop
+ 1491 00ca 0837     		adds	r7, r7, #8
+ 1492              		.cfi_def_cfa_offset 8
+ 1493 00cc BD46     		mov	sp, r7
+ 1494              		.cfi_def_cfa_register 13
+ 1495              		@ sp needed
+ 1496 00ce 80BD     		pop	{r7, pc}
+ 1497              	.L65:
+ 1498              		.align	2
+ 1499              	.L64:
+ 1500 00d0 68C00240 		.word	1073922152
+ 1501 00d4 00C00920 		.word	537509888
+ 1502 00d8 00C00240 		.word	1073922048
+ 1503 00dc 00000000 		.word	_ZL2P0
+ 1504 00e0 6CC00240 		.word	1073922156
+ 1505 00e4 20C00920 		.word	537509920
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 39
+
+
+ 1506 00e8 08C00240 		.word	1073922056
+ 1507 00ec 00000000 		.word	_ZL2P1
+ 1508 00f0 70C00240 		.word	1073922160
+ 1509 00f4 40C00920 		.word	537509952
+ 1510 00f8 10C00240 		.word	1073922064
+ 1511 00fc 00000000 		.word	_ZL2P2
+ 1512 0100 74C00240 		.word	1073922164
+ 1513 0104 60C00920 		.word	537509984
+ 1514 0108 18C00240 		.word	1073922072
+ 1515 010c 00000000 		.word	_ZL2P3
+ 1516 0110 78C00240 		.word	1073922168
+ 1517 0114 80C00920 		.word	537510016
+ 1518 0118 20C00240 		.word	1073922080
+ 1519 011c 00000000 		.word	_ZL2P4
+ 1520 0120 00000000 		.word	_ZL4TMR0
+ 1521 0124 00800040 		.word	1073774592
+ 1522 0128 00000000 		.word	_ZL4TMR1
+ 1523 012c 00000940 		.word	1074331648
+ 1524 0130 00000000 		.word	_ZL4TMR2
+ 1525 0134 00400940 		.word	1074348032
+ 1526 0138 00000000 		.word	_ZL4TMR3
+ 1527 013c 00C00040 		.word	1073790976
+ 1528 0140 00000000 		.word	_ZL5UART0
+ 1529 0144 00800940 		.word	1074364416
+ 1530 0148 00000000 		.word	_ZL8Keyboard
+ 1531 014c 00C00940 		.word	1074380800
+ 1532 0150 00000000 		.word	_ZL7Console
+ 1533              		.cfi_endproc
+ 1534              	.LFE1972:
+ 1536              		.section	.text._GLOBAL__sub_I__Z20Draw_Horizontal_Linettth,"ax",%progbits
+ 1537              		.align	1
+ 1538              		.syntax unified
+ 1539              		.thumb
+ 1540              		.thumb_func
+ 1541              		.fpu softvfp
+ 1543              	_GLOBAL__sub_I__Z20Draw_Horizontal_Linettth:
+ 1544              	.LFB1973:
+ 1545              		.loc 3 150 0
+ 1546              		.cfi_startproc
+ 1547              		@ args = 0, pretend = 0, frame = 0
+ 1548              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1549 0000 80B5     		push	{r7, lr}
+ 1550              		.cfi_def_cfa_offset 8
+ 1551              		.cfi_offset 7, -8
+ 1552              		.cfi_offset 14, -4
+ 1553 0002 00AF     		add	r7, sp, #0
+ 1554              		.cfi_def_cfa_register 7
+ 1555              		.loc 3 150 0
+ 1556 0004 4FF6FF71 		movw	r1, #65535
+ 1557 0008 0120     		movs	r0, #1
+ 1558 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 1559 000e 80BD     		pop	{r7, pc}
+ 1560              		.cfi_endproc
+ 1561              	.LFE1973:
+ 1563              		.section	.init_array,"aw",%init_array
+ 1564              		.align	2
+ 1565 0000 00000000 		.word	_GLOBAL__sub_I__Z20Draw_Horizontal_Linettth(target1)
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 40
+
+
+ 1566              		.text
+ 1567              	.Letext0:
+ 1568              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 1569              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1570              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdint.h"
+ 1571              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\type_t
+ 1572              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-n
+ 1573              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 1574              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\debug
+ 1575              		.file 13 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cwcha
+ 1576              		.file 14 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 1577              		.file 15 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 1578              		.file 16 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\new"
+ 1579              		.file 17 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cloca
+ 1580              		.file 18 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cctyp
+ 1581              		.file 19 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 1582              		.file 20 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdl
+ 1583              		.file 21 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 1584              		.file 22 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 1585              		.file 23 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cmath
+ 1586              		.file 24 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 1587              		.file 25 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 1588              		.file 26 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 1589              		.file 27 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 1590              		.file 28 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 1591              		.file 29 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 1592              		.file 30 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 1593              		.file 31 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 1594              		.file 32 "<built-in>"
+ 1595              		.file 33 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\wchar.h"
+ 1596              		.file 34 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\locale.h"
+ 1597              		.file 35 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\ctype.h"
+ 1598              		.file 36 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 1599              		.file 37 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdio.h"
+ 1600              		.file 38 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\errno.h"
+ 1601              		.file 39 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/xav_data.h"
+ 1602              		.file 40 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 1603              		.file 41 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ 1604              		.file 42 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\math.h"
+ 1605              		.file 43 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\math.
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 41
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 geometry.cpp
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:16     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:19     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:22     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:28     .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:61     .text._ZN7IRenderD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD2Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:104    .text._ZN7IRenderD2Ev:0000001c $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1363   .rodata._ZTV7IRender:00000000 _ZTV7IRender
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD1Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:111    .text._ZN7IRenderD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:118    .text._ZN7IRenderD0Ev:00000000 _ZN7IRenderD0Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:151    .bss._ZL2P0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:154    .bss._ZL2P0:00000000 _ZL2P0
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:157    .bss._ZL2P1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:160    .bss._ZL2P1:00000000 _ZL2P1
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:163    .bss._ZL2P2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:166    .bss._ZL2P2:00000000 _ZL2P2
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:169    .bss._ZL2P3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:172    .bss._ZL2P3:00000000 _ZL2P3
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:175    .bss._ZL2P4:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:178    .bss._ZL2P4:00000000 _ZL2P4
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:181    .bss._ZL4TMR0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:184    .bss._ZL4TMR0:00000000 _ZL4TMR0
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:187    .bss._ZL4TMR1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:190    .bss._ZL4TMR1:00000000 _ZL4TMR1
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:193    .bss._ZL4TMR2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:196    .bss._ZL4TMR2:00000000 _ZL4TMR2
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:199    .bss._ZL4TMR3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:202    .bss._ZL4TMR3:00000000 _ZL4TMR3
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:205    .bss._ZL5UART0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:208    .bss._ZL5UART0:00000000 _ZL5UART0
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:211    .bss._ZL8Keyboard:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:214    .bss._ZL8Keyboard:00000000 _ZL8Keyboard
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:217    .bss._ZL7Console:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:220    .bss._ZL7Console:00000000 _ZL7Console
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:223    .text._Z20Draw_Horizontal_Linettth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:230    .text._Z20Draw_Horizontal_Linettth:00000000 _Z20Draw_Horizontal_Linettth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:341    .text._Z20Draw_Horizontal_Linettth:00000088 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:346    .text._Z4signs:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:353    .text._Z4signs:00000000 _Z4signs
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:403    .text._Z9Draw_Linetttth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:410    .text._Z9Draw_Linetttth:00000000 _Z9Draw_Linetttth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:648    .text._Z9Draw_Linetttth:00000168 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:653    .text._Z11Draw_Circlettth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:660    .text._Z11Draw_Circlettth:00000000 _Z11Draw_Circlettth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:878    .text._Z9Draw_Plustthh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:885    .text._Z9Draw_Plustthh:00000000 _Z9Draw_Plustthh
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:972    .text._Z14Draw_Rectangletttth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:979    .text._Z14Draw_Rectangletttth:00000000 _Z14Draw_Rectangletttth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1084   .text._ZN9Rectangle4DrawE11rectangle_t:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1091   .text._ZN9Rectangle4DrawE11rectangle_t:00000000 _ZN9Rectangle4DrawE11rectangle_t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1135   .text._ZN7IRenderC2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1142   .text._ZN7IRenderC2Ev:00000000 _ZN7IRenderC2Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1177   .text._ZN7IRenderC2Ev:0000001c $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1142   .text._ZN7IRenderC2Ev:00000000 _ZN7IRenderC1Ev
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 42
+
+
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1184   .text._ZN9RectangleC2Etttth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1191   .text._ZN9RectangleC2Etttth:00000000 _ZN9RectangleC2Etttth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1251   .text._ZN9RectangleC2Etttth:00000050 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1262   .rodata._ZTV9Rectangle:00000000 _ZTV9Rectangle
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1191   .text._ZN9RectangleC2Etttth:00000000 _ZN9RectangleC1Etttth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1259   .rodata._ZTV9Rectangle:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1276   .text._ZN9RectangleD2Ev:00000000 _ZN9RectangleD1Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1326   .text._ZN9RectangleD0Ev:00000000 _ZN9RectangleD0Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1269   .text._ZN9RectangleD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1276   .text._ZN9RectangleD2Ev:00000000 _ZN9RectangleD2Ev
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1312   .text._ZN9RectangleD2Ev:00000020 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1319   .text._ZN9RectangleD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1360   .rodata._ZTV7IRender:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1370   .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1376   .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1500   .text._Z41__static_initialization_and_destruction_0ii:000000d0 $d
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1537   .text._GLOBAL__sub_I__Z20Draw_Horizontal_Linettth:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1543   .text._GLOBAL__sub_I__Z20Draw_Horizontal_Linettth:00000000 _GLOBAL__sub_I__Z20Draw_Horizontal_Linettth
+C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s:1564   .init_array:00000000 $d
+                           .group:00000000 _ZN7IRenderD5Ev
+                           .group:00000000 _ZN7IRenderC5Ev
+                           .group:00000000 _ZN9RectangleD5Ev
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.cpp_type_traits.h.33.9f2bfd8c4471a9a299f6da3ec24c745c
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+                           .group:00000000 wm4.concept_check.h.31.f19605d278e56917c68a56d378be308c
+                           .group:00000000 wm4.type_traits.30.32b820b957e206cbc57b9805350afbca
+                           .group:00000000 wm4.move.h.159.368bac456bc1dfb8448d51bb65764956
+                           .group:00000000 wm4.assertions.h.30.f3970bbdad8b12088edf616ddeecdc90
+                           .group:00000000 wm4.stl_iterator.h.409.7a84ee40267bb1222b7cd9a74055edfb
+                           .group:00000000 wm4.debug.h.30.70fe957e8e7c7ceba3caf19b0959f126
+                           .group:00000000 wm4.stl_algobase.h.491.ec4060988bfff82dc579decdb75c72d6
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stddef.h.39.096871ec3ca5abfedfa76e8d05f4a8d6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.wchar.h.8.acdef4366e64def8c588421024712d23
+                           .group:00000000 wm4.stddef.h.161.9f48187563b2a85291a91832aa425498
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 43
+
+
+                           .group:00000000 wm4.wchar.h.29.d3f42b20d847eb1aee8a8518919e39fd
+                           .group:00000000 wm4.wchar.h.76.90478bd2c784f576b769c4535c98839d
+                           .group:00000000 wm4.cwchar.48.c4e882638bf84f6da89479dda6fe8e17
+                           .group:00000000 wm4.cxxabi_init_exception.h.42.029852b0f286014c9c193b74ad22df55
+                           .group:00000000 wm4.allocator.h.52.0ceafb36dc1b82dbfa6b05003082e3f5
+                           .group:00000000 wm4.stddef.h.161.38688f2eb958a8ed58fdb61ffe554c94
+                           .group:00000000 wm4.locale.h.16.90d16f662e7119f5b192650a45179c6c
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.cf64fe4c5e8c0ac0f52f1143312d4909
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.stl_function.h.57.6639ab8e57d2230b4b27118173a32750
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.edc94d4398c0534988962be77dc3c2e1
+                           .group:00000000 wm4.atomic_word.h.30.9e0ac69fd462d5e650933e05133b4afa
+                           .group:00000000 wm4.alloc_traits.h.31.c41c7c4789404962122a4e991dfa3abf
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.4494b0884bb80e2bd270999c8eda1e12
+                           .group:00000000 wm4.cstdio.45.1ffaea3e7c26dce1e03f5847a7439edb
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.1ecd7b1049497a0ab61da0f6cbd4b0c6
+                           .group:00000000 wm4.functional_hash.h.31.d995554db01f631b375a95ecfc605ca0
+                           .group:00000000 wm4.geometry.h.6.3a64a0b0612b702f76b11579099131da
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.bbe1d37589d0065a120c4df50b697244
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\cca2Pcbc.s 			page 44
+
+
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.14ce7f11bede78d39ff33867e6b612e7
+                           .group:00000000 wm4.board.h.33.b3d60928436b978782af3158a25a7b77
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.lpc_xav.h.6.5aa75daa274402c8e369cf781056e607
+                           .group:00000000 wm4.math.h.13.4f1ab8d1725735081bbdb9ebcf6dba66
+                           .group:00000000 wm4.cmath.46.89ae5d13519e89e95f697bb5bcb06312
+
+UNDEFINED SYMBOLS
+_ZdlPvj
+abs
+__cxa_pure_virtual
+_ZN4PortC1EPmS0_S0_
+_ZN5TimerC1EPmhhh
+_ZN4UARTC1EPmhhh

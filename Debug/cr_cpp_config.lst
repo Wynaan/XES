@@ -1,0 +1,383 @@
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"cr_cpp_config.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._Znwj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_Znwj
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	_Znwj:
+  24              	.LFB7:
+  25              		.file 1 "../src/cr_cpp_config.cpp"
+   1:../src/cr_cpp_config.cpp **** //*****************************************************************************
+   2:../src/cr_cpp_config.cpp **** //   +--+       
+   3:../src/cr_cpp_config.cpp **** //   | ++----+   
+   4:../src/cr_cpp_config.cpp **** //   +-++    |  
+   5:../src/cr_cpp_config.cpp **** //     |     |  
+   6:../src/cr_cpp_config.cpp **** //   +-+--+  |   
+   7:../src/cr_cpp_config.cpp **** //   | +--+--+  
+   8:../src/cr_cpp_config.cpp **** //   +----+    Copyright (c) 2009-12 Code Red Technologies Ltd.
+   9:../src/cr_cpp_config.cpp **** //
+  10:../src/cr_cpp_config.cpp **** // Minimal implementations of the new/delete operators and the verbose 
+  11:../src/cr_cpp_config.cpp **** // terminate handler for exceptions suitable for embedded use,
+  12:../src/cr_cpp_config.cpp **** // plus optional "null" stubs for malloc/free (only used if symbol
+  13:../src/cr_cpp_config.cpp **** // CPP_NO_HEAP is defined).
+  14:../src/cr_cpp_config.cpp **** //
+  15:../src/cr_cpp_config.cpp **** //
+  16:../src/cr_cpp_config.cpp **** // Version : 120126
+  17:../src/cr_cpp_config.cpp **** //
+  18:../src/cr_cpp_config.cpp **** // Software License Agreement
+  19:../src/cr_cpp_config.cpp **** // 
+  20:../src/cr_cpp_config.cpp **** // The software is owned by Code Red Technologies and/or its suppliers, and is 
+  21:../src/cr_cpp_config.cpp **** // protected under applicable copyright laws.  All rights are reserved.  Any 
+  22:../src/cr_cpp_config.cpp **** // use in violation of the foregoing restrictions may subject the user to criminal 
+  23:../src/cr_cpp_config.cpp **** // sanctions under applicable laws, as well as to civil liability for the breach
+  24:../src/cr_cpp_config.cpp **** // of the terms and conditions of this license.
+  25:../src/cr_cpp_config.cpp **** // 
+  26:../src/cr_cpp_config.cpp **** // THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+  27:../src/cr_cpp_config.cpp **** // OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+  28:../src/cr_cpp_config.cpp **** // MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+  29:../src/cr_cpp_config.cpp **** // USE OF THIS SOFTWARE FOR COMMERCIAL DEVELOPMENT AND/OR EDUCATION IS SUBJECT
+  30:../src/cr_cpp_config.cpp **** // TO A CURRENT END USER LICENSE AGREEMENT (COMMERCIAL OR EDUCATIONAL) WITH
+  31:../src/cr_cpp_config.cpp **** // CODE RED TECHNOLOGIES LTD. 
+  32:../src/cr_cpp_config.cpp **** //
+  33:../src/cr_cpp_config.cpp **** //*****************************************************************************
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 2
+
+
+  34:../src/cr_cpp_config.cpp **** 
+  35:../src/cr_cpp_config.cpp **** #include <stdlib.h>
+  36:../src/cr_cpp_config.cpp **** 
+  37:../src/cr_cpp_config.cpp **** void *operator new(size_t size)
+  38:../src/cr_cpp_config.cpp **** {
+  26              		.loc 1 38 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 8
+  29              		@ frame_needed = 1, uses_anonymous_args = 0
+  30 0000 80B5     		push	{r7, lr}
+  31              		.cfi_def_cfa_offset 8
+  32              		.cfi_offset 7, -8
+  33              		.cfi_offset 14, -4
+  34 0002 82B0     		sub	sp, sp, #8
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  38 0006 7860     		str	r0, [r7, #4]
+  39:../src/cr_cpp_config.cpp ****     return malloc(size);
+  39              		.loc 1 39 0
+  40 0008 7868     		ldr	r0, [r7, #4]
+  41 000a FFF7FEFF 		bl	malloc
+  42 000e 0346     		mov	r3, r0
+  40:../src/cr_cpp_config.cpp **** }
+  43              		.loc 1 40 0
+  44 0010 1846     		mov	r0, r3
+  45 0012 0837     		adds	r7, r7, #8
+  46              		.cfi_def_cfa_offset 8
+  47 0014 BD46     		mov	sp, r7
+  48              		.cfi_def_cfa_register 13
+  49              		@ sp needed
+  50 0016 80BD     		pop	{r7, pc}
+  51              		.cfi_endproc
+  52              	.LFE7:
+  54              		.section	.text._Znaj,"ax",%progbits
+  55              		.align	1
+  56              		.global	_Znaj
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+  60              		.fpu softvfp
+  62              	_Znaj:
+  63              	.LFB8:
+  41:../src/cr_cpp_config.cpp **** 
+  42:../src/cr_cpp_config.cpp **** void *operator new[](size_t size)
+  43:../src/cr_cpp_config.cpp **** {
+  64              		.loc 1 43 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 8
+  67              		@ frame_needed = 1, uses_anonymous_args = 0
+  68 0000 80B5     		push	{r7, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 7, -8
+  71              		.cfi_offset 14, -4
+  72 0002 82B0     		sub	sp, sp, #8
+  73              		.cfi_def_cfa_offset 16
+  74 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 3
+
+
+  75              		.cfi_def_cfa_register 7
+  76 0006 7860     		str	r0, [r7, #4]
+  44:../src/cr_cpp_config.cpp ****     return malloc(size);
+  77              		.loc 1 44 0
+  78 0008 7868     		ldr	r0, [r7, #4]
+  79 000a FFF7FEFF 		bl	malloc
+  80 000e 0346     		mov	r3, r0
+  45:../src/cr_cpp_config.cpp **** }
+  81              		.loc 1 45 0
+  82 0010 1846     		mov	r0, r3
+  83 0012 0837     		adds	r7, r7, #8
+  84              		.cfi_def_cfa_offset 8
+  85 0014 BD46     		mov	sp, r7
+  86              		.cfi_def_cfa_register 13
+  87              		@ sp needed
+  88 0016 80BD     		pop	{r7, pc}
+  89              		.cfi_endproc
+  90              	.LFE8:
+  92              		.section	.text._ZdlPv,"ax",%progbits
+  93              		.align	1
+  94              		.global	_ZdlPv
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  98              		.fpu softvfp
+ 100              	_ZdlPv:
+ 101              	.LFB9:
+  46:../src/cr_cpp_config.cpp **** 
+  47:../src/cr_cpp_config.cpp **** void operator delete(void *p)
+  48:../src/cr_cpp_config.cpp **** {
+ 102              		.loc 1 48 0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 8
+ 105              		@ frame_needed = 1, uses_anonymous_args = 0
+ 106 0000 80B5     		push	{r7, lr}
+ 107              		.cfi_def_cfa_offset 8
+ 108              		.cfi_offset 7, -8
+ 109              		.cfi_offset 14, -4
+ 110 0002 82B0     		sub	sp, sp, #8
+ 111              		.cfi_def_cfa_offset 16
+ 112 0004 00AF     		add	r7, sp, #0
+ 113              		.cfi_def_cfa_register 7
+ 114 0006 7860     		str	r0, [r7, #4]
+  49:../src/cr_cpp_config.cpp ****     free(p);
+ 115              		.loc 1 49 0
+ 116 0008 7868     		ldr	r0, [r7, #4]
+ 117 000a FFF7FEFF 		bl	free
+  50:../src/cr_cpp_config.cpp **** }
+ 118              		.loc 1 50 0
+ 119 000e 00BF     		nop
+ 120 0010 0837     		adds	r7, r7, #8
+ 121              		.cfi_def_cfa_offset 8
+ 122 0012 BD46     		mov	sp, r7
+ 123              		.cfi_def_cfa_register 13
+ 124              		@ sp needed
+ 125 0014 80BD     		pop	{r7, pc}
+ 126              		.cfi_endproc
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 4
+
+
+ 127              	.LFE9:
+ 129              		.section	.text._ZdaPv,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	_ZdaPv
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 135              		.fpu softvfp
+ 137              	_ZdaPv:
+ 138              	.LFB10:
+  51:../src/cr_cpp_config.cpp **** 
+  52:../src/cr_cpp_config.cpp **** void operator delete[](void *p)
+  53:../src/cr_cpp_config.cpp **** {
+ 139              		.loc 1 53 0
+ 140              		.cfi_startproc
+ 141              		@ args = 0, pretend = 0, frame = 8
+ 142              		@ frame_needed = 1, uses_anonymous_args = 0
+ 143 0000 80B5     		push	{r7, lr}
+ 144              		.cfi_def_cfa_offset 8
+ 145              		.cfi_offset 7, -8
+ 146              		.cfi_offset 14, -4
+ 147 0002 82B0     		sub	sp, sp, #8
+ 148              		.cfi_def_cfa_offset 16
+ 149 0004 00AF     		add	r7, sp, #0
+ 150              		.cfi_def_cfa_register 7
+ 151 0006 7860     		str	r0, [r7, #4]
+  54:../src/cr_cpp_config.cpp ****     free(p);
+ 152              		.loc 1 54 0
+ 153 0008 7868     		ldr	r0, [r7, #4]
+ 154 000a FFF7FEFF 		bl	free
+  55:../src/cr_cpp_config.cpp **** }
+ 155              		.loc 1 55 0
+ 156 000e 00BF     		nop
+ 157 0010 0837     		adds	r7, r7, #8
+ 158              		.cfi_def_cfa_offset 8
+ 159 0012 BD46     		mov	sp, r7
+ 160              		.cfi_def_cfa_register 13
+ 161              		@ sp needed
+ 162 0014 80BD     		pop	{r7, pc}
+ 163              		.cfi_endproc
+ 164              	.LFE10:
+ 166              		.section	.text.__aeabi_atexit,"ax",%progbits
+ 167              		.align	1
+ 168              		.global	__aeabi_atexit
+ 169              		.syntax unified
+ 170              		.thumb
+ 171              		.thumb_func
+ 172              		.fpu softvfp
+ 174              	__aeabi_atexit:
+ 175              	.LFB11:
+  56:../src/cr_cpp_config.cpp **** 
+  57:../src/cr_cpp_config.cpp **** extern "C" int __aeabi_atexit(void *object,
+  58:../src/cr_cpp_config.cpp **** 		void (*destructor)(void *),
+  59:../src/cr_cpp_config.cpp **** 		void *dso_handle)
+  60:../src/cr_cpp_config.cpp **** {
+ 176              		.loc 1 60 0
+ 177              		.cfi_startproc
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 5
+
+
+ 178              		@ args = 0, pretend = 0, frame = 16
+ 179              		@ frame_needed = 1, uses_anonymous_args = 0
+ 180              		@ link register save eliminated.
+ 181 0000 80B4     		push	{r7}
+ 182              		.cfi_def_cfa_offset 4
+ 183              		.cfi_offset 7, -4
+ 184 0002 85B0     		sub	sp, sp, #20
+ 185              		.cfi_def_cfa_offset 24
+ 186 0004 00AF     		add	r7, sp, #0
+ 187              		.cfi_def_cfa_register 7
+ 188 0006 F860     		str	r0, [r7, #12]
+ 189 0008 B960     		str	r1, [r7, #8]
+ 190 000a 7A60     		str	r2, [r7, #4]
+  61:../src/cr_cpp_config.cpp **** 	return 0;
+ 191              		.loc 1 61 0
+ 192 000c 0023     		movs	r3, #0
+  62:../src/cr_cpp_config.cpp **** }
+ 193              		.loc 1 62 0
+ 194 000e 1846     		mov	r0, r3
+ 195 0010 1437     		adds	r7, r7, #20
+ 196              		.cfi_def_cfa_offset 4
+ 197 0012 BD46     		mov	sp, r7
+ 198              		.cfi_def_cfa_register 13
+ 199              		@ sp needed
+ 200 0014 80BC     		pop	{r7}
+ 201              		.cfi_restore 7
+ 202              		.cfi_def_cfa_offset 0
+ 203 0016 7047     		bx	lr
+ 204              		.cfi_endproc
+ 205              	.LFE11:
+ 207              		.section	.text._ZN9__gnu_cxx27__verbose_terminate_handlerEv,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	_ZN9__gnu_cxx27__verbose_terminate_handlerEv
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 213              		.fpu softvfp
+ 215              	_ZN9__gnu_cxx27__verbose_terminate_handlerEv:
+ 216              	.LFB12:
+  63:../src/cr_cpp_config.cpp **** 
+  64:../src/cr_cpp_config.cpp **** #ifdef CPP_NO_HEAP
+  65:../src/cr_cpp_config.cpp **** extern "C" void *malloc(size_t) {
+  66:../src/cr_cpp_config.cpp **** 	return (void *)0;
+  67:../src/cr_cpp_config.cpp **** }
+  68:../src/cr_cpp_config.cpp **** 
+  69:../src/cr_cpp_config.cpp **** extern "C" void free(void *) {
+  70:../src/cr_cpp_config.cpp **** }
+  71:../src/cr_cpp_config.cpp **** #endif
+  72:../src/cr_cpp_config.cpp **** 
+  73:../src/cr_cpp_config.cpp **** #ifndef CPP_USE_CPPLIBRARY_TERMINATE_HANDLER
+  74:../src/cr_cpp_config.cpp **** /******************************************************************
+  75:../src/cr_cpp_config.cpp ****  * __verbose_terminate_handler()
+  76:../src/cr_cpp_config.cpp ****  *
+  77:../src/cr_cpp_config.cpp ****  * This is the function that is called when an uncaught C++
+  78:../src/cr_cpp_config.cpp ****  * exception is encountered. The default version within the C++
+  79:../src/cr_cpp_config.cpp ****  * library prints the name of the uncaught exception, but to do so
+  80:../src/cr_cpp_config.cpp ****  * it must demangle its name - which causes a large amount of code
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 6
+
+
+  81:../src/cr_cpp_config.cpp ****  * to be pulled in. The below minimal implementation can reduce
+  82:../src/cr_cpp_config.cpp ****  * code size noticeably. Note that this function should not return.
+  83:../src/cr_cpp_config.cpp ****  ******************************************************************/
+  84:../src/cr_cpp_config.cpp **** namespace __gnu_cxx {
+  85:../src/cr_cpp_config.cpp **** void __verbose_terminate_handler()
+  86:../src/cr_cpp_config.cpp **** {
+ 217              		.loc 1 86 0
+ 218              		.cfi_startproc
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 1, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 222 0000 80B4     		push	{r7}
+ 223              		.cfi_def_cfa_offset 4
+ 224              		.cfi_offset 7, -4
+ 225 0002 00AF     		add	r7, sp, #0
+ 226              		.cfi_def_cfa_register 7
+ 227              	.L10:
+  87:../src/cr_cpp_config.cpp ****   while(1);
+ 228              		.loc 1 87 0 discriminator 1
+ 229 0004 FEE7     		b	.L10
+ 230              		.cfi_endproc
+ 231              	.LFE12:
+ 233              		.text
+ 234              	.Letext0:
+ 235              		.file 2 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\\std_a
+ 236              		.file 3 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdlib"
+ 237              		.file 4 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-none-ea
+ 238              		.file 5 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\stddef
+ 239              		.file 6 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 240              		.file 7 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 241              		.file 8 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 242              		.file 9 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 243              		.file 10 "e:\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\stdlib.h"
+ 244              		.file 11 "<built-in>"
+ARM GAS  C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cr_cpp_config.cpp
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:16     .text._Znwj:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:23     .text._Znwj:00000000 _Znwj
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:55     .text._Znaj:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:62     .text._Znaj:00000000 _Znaj
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:93     .text._ZdlPv:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:100    .text._ZdlPv:00000000 _ZdlPv
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:130    .text._ZdaPv:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:137    .text._ZdaPv:00000000 _ZdaPv
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:167    .text.__aeabi_atexit:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:174    .text.__aeabi_atexit:00000000 __aeabi_atexit
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:208    .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv:00000000 $t
+C:\Users\Xavier\AppData\Local\Temp\ccbFegpr.s:215    .text._ZN9__gnu_cxx27__verbose_terminate_handlerEv:00000000 _ZN9__gnu_cxx27__verbose_terminate_handlerEv
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.newlib.h.21.64e14ed41172bf448383d50cbb14725e
+                           .group:00000000 wm4.features.h.22.5cdadbb3efe495d1c9e38350b8c376c7
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.stddef.h.187.e3ca1cb00044c044f8b956a6107cebb6
+                           .group:00000000 wm4.stddef.h.39.a0b4bc3c8c1c07da04a816c0a1519e1d
+                           .group:00000000 wm4._default_types.h.6.959254cf5f09734ea7516c89e8bb21bd
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+
+UNDEFINED SYMBOLS
+malloc
+free

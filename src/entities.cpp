@@ -5,6 +5,7 @@
 #include "geometry.h"
 #include "ps2controller.h"
 #include "engine.h"
+#include "game.h"
 
 #define SSP_DATA (*((uint32_t *)0x40088008))
 
@@ -314,6 +315,14 @@ void Player::ProcessInput()
 	if(!playerInput.Button.X){
 		keyState.X = RELEASED;
 	}
+
+	if(playerInput.Button.Start && keyState.Start == RELEASED){
+		keyState.X = PRESSED;
+		Game::SaveHandler.OnUserInteract();
+	}
+	if(!playerInput.Button.Start){
+		keyState.Start = RELEASED;
+	}
 }
 
 void Player::InitController()
@@ -326,15 +335,15 @@ void Player::InitController()
 			LPC_TIMER0->TC = 0;
 			PollController(controllerID, &playerInput);
 		}
-	}while(playerInput.JoystickLeftY > 130 || playerInput.JoystickLeftY < 125);
+	}while(playerInput.JoystickLeftY > 135 || playerInput.JoystickLeftY < 120);
 
   	/* Add a delay to prevent main loop from double-polling after init */
 	while(LPC_TIMER0->TC < 1600000);
 }
 
-IUpdateable* Player::getMenuUpdateHandle()
+IUpdate* Player::getMenuUpdateHandle()
 {
-	return (IUpdateable *)this->selectedTile->object;
+	return (IUpdate *)this->selectedTile->object;
 }
 
 void Player::Tick()

@@ -1,0 +1,820 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"irq_handlers.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZL19PtrRI_TIMER_COMPVAL,"a",%progbits
+  16              		.align	2
+  19              	_ZL19PtrRI_TIMER_COMPVAL:
+  20 0000 00000B40 		.word	1074462720
+  21              		.section	.rodata._ZL16PtrRI_TIMER_MASK,"a",%progbits
+  22              		.align	2
+  25              	_ZL16PtrRI_TIMER_MASK:
+  26 0000 04000B40 		.word	1074462724
+  27              		.section	.rodata._ZL16PtrRI_TIMER_CTRL,"a",%progbits
+  28              		.align	2
+  31              	_ZL16PtrRI_TIMER_CTRL:
+  32 0000 08000B40 		.word	1074462728
+  33              		.section	.rodata._ZL17PtrRI_TIMER_COUNT,"a",%progbits
+  34              		.align	2
+  37              	_ZL17PtrRI_TIMER_COUNT:
+  38 0000 0C000B40 		.word	1074462732
+  39              		.section	.bss._ZL2P0,"aw",%nobits
+  40              		.align	2
+  43              	_ZL2P0:
+  44 0000 00000000 		.space	12
+  44      00000000 
+  44      00000000 
+  45              		.section	.bss._ZL2P1,"aw",%nobits
+  46              		.align	2
+  49              	_ZL2P1:
+  50 0000 00000000 		.space	12
+  50      00000000 
+  50      00000000 
+  51              		.section	.bss._ZL2P2,"aw",%nobits
+  52              		.align	2
+  55              	_ZL2P2:
+  56 0000 00000000 		.space	12
+  56      00000000 
+  56      00000000 
+  57              		.section	.bss._ZL2P3,"aw",%nobits
+  58              		.align	2
+  61              	_ZL2P3:
+  62 0000 00000000 		.space	12
+  62      00000000 
+  62      00000000 
+  63              		.section	.bss._ZL2P4,"aw",%nobits
+  64              		.align	2
+  67              	_ZL2P4:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 2
+
+
+  68 0000 00000000 		.space	12
+  68      00000000 
+  68      00000000 
+  69              		.section	.bss._ZL4TMR0,"aw",%nobits
+  70              		.align	2
+  73              	_ZL4TMR0:
+  74 0000 00000000 		.space	12
+  74      00000000 
+  74      00000000 
+  75              		.section	.bss._ZL4TMR1,"aw",%nobits
+  76              		.align	2
+  79              	_ZL4TMR1:
+  80 0000 00000000 		.space	12
+  80      00000000 
+  80      00000000 
+  81              		.section	.bss._ZL4TMR2,"aw",%nobits
+  82              		.align	2
+  85              	_ZL4TMR2:
+  86 0000 00000000 		.space	12
+  86      00000000 
+  86      00000000 
+  87              		.section	.bss._ZL4TMR3,"aw",%nobits
+  88              		.align	2
+  91              	_ZL4TMR3:
+  92 0000 00000000 		.space	12
+  92      00000000 
+  92      00000000 
+  93              		.section	.bss._ZL5UART0,"aw",%nobits
+  94              		.align	2
+  97              	_ZL5UART0:
+  98 0000 00000000 		.space	8
+  98      00000000 
+  99              		.section	.bss._ZL8Keyboard,"aw",%nobits
+ 100              		.align	2
+ 103              	_ZL8Keyboard:
+ 104 0000 00000000 		.space	8
+ 104      00000000 
+ 105              		.section	.bss._ZL7Console,"aw",%nobits
+ 106              		.align	2
+ 109              	_ZL7Console:
+ 110 0000 00000000 		.space	8
+ 110      00000000 
+ 111              		.global	Transfer_Done
+ 112              		.section	.bss.Transfer_Done,"aw",%nobits
+ 115              	Transfer_Done:
+ 116 0000 00       		.space	1
+ 117              		.section	.text.SSP0_IRQHandler,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	SSP0_IRQHandler
+ 120              		.syntax unified
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.fpu softvfp
+ 125              	SSP0_IRQHandler:
+ 126              	.LFB318:
+ 127              		.file 1 "../src/irq_handlers.cpp"
+   1:../src/irq_handlers.cpp **** #include <cr_section_macros.h>
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 3
+
+
+   2:../src/irq_handlers.cpp **** #include <segdisplay.h>
+   3:../src/irq_handlers.cpp **** #include "chip.h"
+   4:../src/irq_handlers.cpp **** #include "board.h"
+   5:../src/irq_handlers.cpp **** #include "lpc_xav.h"
+   6:../src/irq_handlers.cpp **** 
+   7:../src/irq_handlers.cpp **** extern SSP DDC860_Bus;
+   8:../src/irq_handlers.cpp **** 
+   9:../src/irq_handlers.cpp **** bool Transfer_Done;
+  10:../src/irq_handlers.cpp **** 
+  11:../src/irq_handlers.cpp **** extern "C" void SSP0_IRQHandler(void)
+  12:../src/irq_handlers.cpp **** {
+ 128              		.loc 1 12 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 1, uses_anonymous_args = 0
+ 132 0000 80B5     		push	{r7, lr}
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 7, -8
+ 135              		.cfi_offset 14, -4
+ 136 0002 00AF     		add	r7, sp, #0
+ 137              		.cfi_def_cfa_register 7
+  13:../src/irq_handlers.cpp **** 	if(DDC860_Bus.MIS & 0x08){
+ 138              		.loc 1 13 0
+ 139 0004 0D4B     		ldr	r3, .L6
+ 140 0006 D3F80831 		ldr	r3, [r3, #264]
+ 141 000a 03F00803 		and	r3, r3, #8
+ 142 000e 002B     		cmp	r3, #0
+ 143 0010 11D0     		beq	.L5
+  14:../src/irq_handlers.cpp **** 		if(DDC860_Bus.M_Counter == DDC860_Bus.Msg_Length){
+ 144              		.loc 1 14 0
+ 145 0012 0A4B     		ldr	r3, .L6
+ 146 0014 93F80C21 		ldrb	r2, [r3, #268]	@ zero_extendqisi2
+ 147 0018 084B     		ldr	r3, .L6
+ 148 001a 93F80D31 		ldrb	r3, [r3, #269]	@ zero_extendqisi2
+ 149 001e 9A42     		cmp	r2, r3
+ 150 0020 06D1     		bne	.L3
+  15:../src/irq_handlers.cpp **** 			DDC860_Bus.End_Transfer();
+ 151              		.loc 1 15 0
+ 152 0022 0648     		ldr	r0, .L6
+ 153 0024 FFF7FEFF 		bl	_ZN3SSP12End_TransferEv
+  16:../src/irq_handlers.cpp **** 			Transfer_Done = true;
+ 154              		.loc 1 16 0
+ 155 0028 054B     		ldr	r3, .L6+4
+ 156 002a 0122     		movs	r2, #1
+ 157 002c 1A70     		strb	r2, [r3]
+  17:../src/irq_handlers.cpp **** 		}
+  18:../src/irq_handlers.cpp **** 		else{
+  19:../src/irq_handlers.cpp **** 			DDC860_Bus.Send_Next_Byte();
+  20:../src/irq_handlers.cpp **** 		}
+  21:../src/irq_handlers.cpp **** 	}
+  22:../src/irq_handlers.cpp **** }
+ 158              		.loc 1 22 0
+ 159 002e 02E0     		b	.L5
+ 160              	.L3:
+  19:../src/irq_handlers.cpp **** 		}
+ 161              		.loc 1 19 0
+ 162 0030 0248     		ldr	r0, .L6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 4
+
+
+ 163 0032 FFF7FEFF 		bl	_ZN3SSP14Send_Next_ByteEv
+ 164              	.L5:
+ 165              		.loc 1 22 0
+ 166 0036 00BF     		nop
+ 167 0038 80BD     		pop	{r7, pc}
+ 168              	.L7:
+ 169 003a 00BF     		.align	2
+ 170              	.L6:
+ 171 003c 00000000 		.word	DDC860_Bus
+ 172 0040 00000000 		.word	Transfer_Done
+ 173              		.cfi_endproc
+ 174              	.LFE318:
+ 176              		.section	.text._Z41__static_initialization_and_destruction_0ii,"ax",%progbits
+ 177              		.align	1
+ 178              		.syntax unified
+ 179              		.thumb
+ 180              		.thumb_func
+ 181              		.fpu softvfp
+ 183              	_Z41__static_initialization_and_destruction_0ii:
+ 184              	.LFB319:
+ 185              		.loc 1 22 0
+ 186              		.cfi_startproc
+ 187              		@ args = 0, pretend = 0, frame = 8
+ 188              		@ frame_needed = 1, uses_anonymous_args = 0
+ 189 0000 80B5     		push	{r7, lr}
+ 190              		.cfi_def_cfa_offset 8
+ 191              		.cfi_offset 7, -8
+ 192              		.cfi_offset 14, -4
+ 193 0002 84B0     		sub	sp, sp, #16
+ 194              		.cfi_def_cfa_offset 24
+ 195 0004 02AF     		add	r7, sp, #8
+ 196              		.cfi_def_cfa 7, 16
+ 197 0006 7860     		str	r0, [r7, #4]
+ 198 0008 3960     		str	r1, [r7]
+ 199              		.loc 1 22 0
+ 200 000a 7B68     		ldr	r3, [r7, #4]
+ 201 000c 012B     		cmp	r3, #1
+ 202 000e 5BD1     		bne	.L10
+ 203              		.loc 1 22 0 is_stmt 0 discriminator 1
+ 204 0010 3B68     		ldr	r3, [r7]
+ 205 0012 4FF6FF72 		movw	r2, #65535
+ 206 0016 9342     		cmp	r3, r2
+ 207 0018 56D1     		bne	.L10
+ 208              		.file 2 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/lpc_xav.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "chip.h"
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "board.h"
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #include "cr_section_macros.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #ifndef LPC_XAV_H_
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define LPC_XAV_H_
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCONP	 *((uint32_t *)0x400FC0C4)
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL0 *((uint32_t *)0x400FC1A8)
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define PCLKSEL1 *((uint32_t *)0x400FC1AC)
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_100KHZ 	480
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define I2C_50KHZ 	960
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 5
+
+
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_24MHZ	4
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SPI_100KHZ  240
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** #define SYS_FREQ ((uint32_t)96000000)
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  19:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {GPIO, Fct0x1, Fct0x2, Fct0x3}; 				// GPIO pin function
+  20:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {IN, OUT};										// GPIO direction
+  21:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Pullup, Repeater, Float, Pulldown, Default};	// GPIO input mode
+  22:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Normal, Open_Drain}; 							// GPIO output mode
+  23:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Level_Sensitive, Edge_Sensitive};				// EXT int mode
+  24:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {UND2, Rising_Edge, Falling_Edge, Both_Edges};	// Timer capture setting
+  25:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {CLK4, CLK0, CLK2, CLK8};						// Timer clock rate (number stands for divisor)
+  26:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Nothing, Clear, Set, Toggle};					// External match setting
+  27:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {MR0 = 0x1, MR1 = 0x2, MR2 = 0x4, MR3 = 0x8, CR0 = 0x10, CR1 = 0x20};// Timer interrupt flag b
+  28:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Disabled, Odd, Even = 3};						// UART Parity control
+  29:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Single_Edge, Double_Edge};					// Motor PWM mode
+  30:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Manual, Auto};								// AD Converter mode for starting conversions
+  31:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {Master = 0x40, Slave = 0x44};					// I2C Mode
+  32:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** enum {RORIM, RTIM, RXIM, TXIM};						// SSP Interrupt sources
+  33:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  34:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO;
+  35:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  36:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void EnableIRQ(uint8_t Int_bit); // Enables periph's NVIC interrupt
+  37:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void GPIO_Enable_Int(uint8_t PortNo, uint8_t PinNo, uint8_t Edge_Select);
+  38:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** void Enable_EXT_Int(uint8_t ExtIntNo, uint8_t ExtMode);
+  39:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  40:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Port{ // Port object to provide pointers for the Lpc_IO class
+  41:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	friend LPC_IO;
+  42:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _PINCB; 	// Address of the first PINSEL register for desired port
+  43:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _FIO; 	// Address of the first FIO register
+  44:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _OD;		// Address of the open drain mode register
+  45:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetFct(uint8_t PinNo, uint8_t Fct);
+  46:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetDir(uint8_t PinNo, uint8_t Dir);
+  47:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetMode(uint8_t PinNo, uint8_t Mode);
+  48:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void SetOpenDrain(uint8_t PinNo, uint8_t Mode );
+  49:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  50:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  51:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port(uint32_t* Pinsel_Add, // Constructor for LPC Port handles
+  52:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* FastIO_Add,
+  53:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		 uint32_t* OpenDrain_Add);
+  54:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+  55:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  56:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class LPC_IO{ // Pin object to initialize all the register required for a pin functioning
+  57:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Port& _Port;
+  58:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pin;
+  59:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Function;
+  60:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Direction;
+  61:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Mode;
+  62:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t OD_Mode;
+  63:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  64:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  65:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Out(bool State);
+  66:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set();
+  67:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear();
+  68:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  69:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO();
+  70:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO(	Port& PtrPort, // Constructor for IO pin handles.
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 6
+
+
+  71:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t PinNo,
+  72:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Fct,
+  73:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Dir = OUT,
+  74:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Md = Float,
+  75:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t OD = Normal);
+  76:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  77:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(bool OutputState) // Allows to use Object = boolean value; to set pin output
+  78:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  79:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		this->Out(OutputState);
+  80:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  81:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool operator!=(bool BooleanValue)
+  82:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+  83:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		if(BooleanValue & ((*(_Port._FIO + 5) >> this->Pin) & 0x1))
+  84:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		{
+  85:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return false;
+  86:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  87:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		else
+  88:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		{
+  89:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			return true;
+  90:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		}
+  91:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+  92:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+  93:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+  94:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Bus{ // Bus object can be declared to group Lpc_IO handles together and use it as one 8-bit r
+  95:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	LPC_IO * Bits[8];
+  96:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Value;
+  97:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+  98:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+  99:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Change_Value(uint8_t bus_value);
+ 100:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 101:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Bus(LPC_IO* LSB=nullptr, LPC_IO* B1=nullptr,
+ 102:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B2=nullptr, LPC_IO* B3=nullptr,
+ 103:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B4=nullptr, LPC_IO* B5=nullptr,
+ 104:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		LPC_IO* B6=nullptr, LPC_IO* MSB=nullptr);
+ 105:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 106:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator=(uint8_t bus_value)
+ 107:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 108:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(bus_value);
+ 109:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 110:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void operator+=(uint8_t increment_value)
+ 111:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	{
+ 112:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 		Change_Value(Value + increment_value);
+ 113:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	}
+ 114:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 115:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 116:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class Timer{ // Timer object to group together all of a timer's functions and registers
+ 117:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 118:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 119:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 120:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 121:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 122:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 123:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Edge_Sel[2];
+ 124:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Clk_Speed); // Uses the IRQ bit to determine which PCLKSEL to set
+ 125:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Counter(uint8_t Channel, uint8_t Edge_Mode);
+ 126:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Capture(uint8_t Channel, uint8_t Edge_Mode);
+ 127:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch(uint8_t Channel);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 7
+
+
+ 128:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Match(uint8_t Channel, uint32_t Match_Value);
+ 129:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Ext_Match(uint8_t Channel, uint8_t Match_Setting);
+ 130:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Mat_Int(uint8_t Channel);
+ 131:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Cap_Int(uint8_t Channel);
+ 132:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset(); // Resets the TC
+ 133:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_IR();
+ 134:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Int(uint8_t FlagBit);
+ 135:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t get_CR(uint8_t Channel);
+ 136:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 137:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	Timer(	uint32_t * PtrTimer, // Constructor function for timers
+ 138:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t P_bit,
+ 139:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t C_bit,
+ 140:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 			uint8_t Int_bit);
+ 141:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 142:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 143:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class UART{
+ 144:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 145:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Pwr_bit;
+ 146:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 147:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 148:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 149:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 150:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint32_t Baudrate);
+ 151:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Transmission(uint8_t Bit_Length, uint8_t Parity);
+ 152:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_RX_Int();
+ 153:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PutByte(char Byte);
+ 154:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintStrConst(const char *StrToSend);
+ 155:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintDec(uint16_t NbrDec);
+ 156:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void PrintFloat(uint16_t Scaled_Int);
+ 157:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void ClearScreen();
+ 158:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Int_Flag_Set();
+ 159:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_RBR();
+ 160:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 161:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	UART(uint32_t * PtrUART, uint8_t P_bit, uint8_t C_bit, uint8_t Int_bit);
+ 162:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 163:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 164:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class PWM{
+ 165:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 166:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 167:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 168:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	float Duty;
+ 169:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Set_Freq(uint32_t Freq); // Setup MR0 value that controls frequency of all single-e PW
+ 170:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Reset_onMatch();
+ 171:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Duty(float DutyPercentage);
+ 172:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Increment_Duty();
+ 173:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Decrement_Duty();
+ 174:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Enable(); // Always use at the end of initialization, starts TC for all PWMs
+ 175:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 176:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	PWM(uint8_t Ch, uint8_t Edge_Sel);
+ 177:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 178:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 179:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class ADC{
+ 180:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 181:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Output_Channel;
+ 182:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 183:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Start_Burst_Conversion(uint8_t Sel_Val);
+ 184:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static void Stop_Burst_Conversion();
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 8
+
+
+ 185:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Start_Conversion();
+ 186:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Stop_Conversion();
+ 187:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int();
+ 188:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t get_12bit_Result();
+ 189:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 190:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	ADC(uint8_t Ch, uint32_t Target_Freq);
+ 191:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 192:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 193:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class DAC{
+ 194:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	static uint32_t * _Periph;
+ 195:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 196:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Output(uint16_t Val_10bit);
+ 197:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Set_Out_Percent(uint8_t Percentage);
+ 198:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 199:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 200:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class _I2C{
+ 201:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 202:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 203:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 204:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Buffer[100];
+ 205:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 206:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	bool Busy;
+ 207:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter;
+ 208:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 209:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 210:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t Bus_Mode, uint32_t I2C_Speed);
+ 211:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t get_Status();
+ 212:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence(uint8_t Slave_Address);
+ 213:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 214:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 215:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 216:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint8_t ByteToSend);
+ 217:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 218:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Address();
+ 219:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Stop();
+ 220:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 221:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Clear_Interrupt();
+ 222:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 223:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	_I2C(uint32_t * PtrI2C, uint8_t C_bit, uint8_t Int_bit);
+ 224:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 225:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 226:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** class SSP{
+ 227:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t * _Periph;
+ 228:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Clk_bit;
+ 229:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t IRQ_bit;
+ 230:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint16_t Buffer[128];
+ 231:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** public:
+ 232:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint32_t MIS = *(_Periph + 7);
+ 233:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t M_Counter;
+ 234:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	uint8_t Msg_Length;
+ 235:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 236:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Init(uint8_t ClkPrescaler, uint8_t DataSizeSelect, uint8_t CPOL, uint8_t CPHA);
+ 237:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void New_Sequence();
+ 238:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_String(const char * StrToSend);
+ 239:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
+ 240:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
+ 241:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Add_Byte(uint16_t ByteToSend);
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 9
+
+
+ 242:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Next_Byte();
+ 243:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Send_Sequence();
+ 244:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void End_Transfer();
+ 245:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Enable_Int(uint8_t IntSelect);
+ 246:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	void Disable_Int(uint8_t IntSelect);
+ 247:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 248:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 	SSP(uint32_t * PtrSSP, uint8_t C_bit, uint8_t Int_bit);
+ 249:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** };
+ 250:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** /**************************************************************************************************
+ 251:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** // Mandatory objects declaration (Peripherals)
+ 252:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P0((uint32_t *)0x4002C000, (uint32_t *)0x2009C000, (uint32_t *)0x4002C068);
+ 209              		.loc 2 252 0 is_stmt 1
+ 210 001a 2D4B     		ldr	r3, .L11
+ 211 001c 2D4A     		ldr	r2, .L11+4
+ 212 001e 2E49     		ldr	r1, .L11+8
+ 213 0020 2E48     		ldr	r0, .L11+12
+ 214 0022 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 253:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P1((uint32_t *)0x4002C008, (uint32_t *)0x2009C020, (uint32_t *)0x4002C06C);
+ 215              		.loc 2 253 0
+ 216 0026 2E4B     		ldr	r3, .L11+16
+ 217 0028 2E4A     		ldr	r2, .L11+20
+ 218 002a 2F49     		ldr	r1, .L11+24
+ 219 002c 2F48     		ldr	r0, .L11+28
+ 220 002e FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 254:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P2((uint32_t *)0x4002C010, (uint32_t *)0x2009C040, (uint32_t *)0x4002C070);
+ 221              		.loc 2 254 0
+ 222 0032 2F4B     		ldr	r3, .L11+32
+ 223 0034 2F4A     		ldr	r2, .L11+36
+ 224 0036 3049     		ldr	r1, .L11+40
+ 225 0038 3048     		ldr	r0, .L11+44
+ 226 003a FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 255:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P3((uint32_t *)0x4002C018, (uint32_t *)0x2009C060, (uint32_t *)0x4002C074);
+ 227              		.loc 2 255 0
+ 228 003e 304B     		ldr	r3, .L11+48
+ 229 0040 304A     		ldr	r2, .L11+52
+ 230 0042 3149     		ldr	r1, .L11+56
+ 231 0044 3148     		ldr	r0, .L11+60
+ 232 0046 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 256:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Port P4((uint32_t *)0x4002C020, (uint32_t *)0x2009C080, (uint32_t *)0x4002C078);
+ 233              		.loc 2 256 0
+ 234 004a 314B     		ldr	r3, .L11+64
+ 235 004c 314A     		ldr	r2, .L11+68
+ 236 004e 3249     		ldr	r1, .L11+72
+ 237 0050 3248     		ldr	r0, .L11+76
+ 238 0052 FFF7FEFF 		bl	_ZN4PortC1EPmS0_S0_
+ 257:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 258:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR0((uint32_t *)0x40004000, 1, 2, 1);
+ 239              		.loc 2 258 0
+ 240 0056 0123     		movs	r3, #1
+ 241 0058 0093     		str	r3, [sp]
+ 242 005a 0223     		movs	r3, #2
+ 243 005c 0122     		movs	r2, #1
+ 244 005e 4FF04021 		mov	r1, #1073758208
+ 245 0062 2F48     		ldr	r0, .L11+80
+ 246 0064 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 259:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR1((uint32_t *)0x40008000, 2, 4, 2);
+ 247              		.loc 2 259 0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 10
+
+
+ 248 0068 0223     		movs	r3, #2
+ 249 006a 0093     		str	r3, [sp]
+ 250 006c 0423     		movs	r3, #4
+ 251 006e 0222     		movs	r2, #2
+ 252 0070 2C49     		ldr	r1, .L11+84
+ 253 0072 2D48     		ldr	r0, .L11+88
+ 254 0074 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 260:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR2((uint32_t *)0x40090000, 22, 12, 3);
+ 255              		.loc 2 260 0
+ 256 0078 0323     		movs	r3, #3
+ 257 007a 0093     		str	r3, [sp]
+ 258 007c 0C23     		movs	r3, #12
+ 259 007e 1622     		movs	r2, #22
+ 260 0080 2A49     		ldr	r1, .L11+92
+ 261 0082 2B48     		ldr	r0, .L11+96
+ 262 0084 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 261:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static Timer TMR3((uint32_t *)0x40094000, 23, 14, 4);
+ 263              		.loc 2 261 0
+ 264 0088 0423     		movs	r3, #4
+ 265 008a 0093     		str	r3, [sp]
+ 266 008c 0E23     		movs	r3, #14
+ 267 008e 1722     		movs	r2, #23
+ 268 0090 2849     		ldr	r1, .L11+100
+ 269 0092 2948     		ldr	r0, .L11+104
+ 270 0094 FFF7FEFF 		bl	_ZN5TimerC1EPmhhh
+ 262:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** 
+ 263:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART UART0((uint32_t *)0x4000C000, 3, 6, 5);
+ 271              		.loc 2 263 0
+ 272 0098 0523     		movs	r3, #5
+ 273 009a 0093     		str	r3, [sp]
+ 274 009c 0623     		movs	r3, #6
+ 275 009e 0322     		movs	r2, #3
+ 276 00a0 2649     		ldr	r1, .L11+108
+ 277 00a2 2748     		ldr	r0, .L11+112
+ 278 00a4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 264:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Keyboard((uint32_t *)0x40098000, 24, 16, 7);
+ 279              		.loc 2 264 0
+ 280 00a8 0723     		movs	r3, #7
+ 281 00aa 0093     		str	r3, [sp]
+ 282 00ac 1023     		movs	r3, #16
+ 283 00ae 1822     		movs	r2, #24
+ 284 00b0 2449     		ldr	r1, .L11+116
+ 285 00b2 2548     		ldr	r0, .L11+120
+ 286 00b4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 265:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\lpc_xav.h **** static UART Console((uint32_t *)0x4009C000, 25, 18, 8);
+ 287              		.loc 2 265 0
+ 288 00b8 0823     		movs	r3, #8
+ 289 00ba 0093     		str	r3, [sp]
+ 290 00bc 1223     		movs	r3, #18
+ 291 00be 1922     		movs	r2, #25
+ 292 00c0 2249     		ldr	r1, .L11+124
+ 293 00c2 2348     		ldr	r0, .L11+128
+ 294 00c4 FFF7FEFF 		bl	_ZN4UARTC1EPmhhh
+ 295              	.L10:
+ 296              		.loc 1 22 0
+ 297 00c8 00BF     		nop
+ 298 00ca 0837     		adds	r7, r7, #8
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 11
+
+
+ 299              		.cfi_def_cfa_offset 8
+ 300 00cc BD46     		mov	sp, r7
+ 301              		.cfi_def_cfa_register 13
+ 302              		@ sp needed
+ 303 00ce 80BD     		pop	{r7, pc}
+ 304              	.L12:
+ 305              		.align	2
+ 306              	.L11:
+ 307 00d0 68C00240 		.word	1073922152
+ 308 00d4 00C00920 		.word	537509888
+ 309 00d8 00C00240 		.word	1073922048
+ 310 00dc 00000000 		.word	_ZL2P0
+ 311 00e0 6CC00240 		.word	1073922156
+ 312 00e4 20C00920 		.word	537509920
+ 313 00e8 08C00240 		.word	1073922056
+ 314 00ec 00000000 		.word	_ZL2P1
+ 315 00f0 70C00240 		.word	1073922160
+ 316 00f4 40C00920 		.word	537509952
+ 317 00f8 10C00240 		.word	1073922064
+ 318 00fc 00000000 		.word	_ZL2P2
+ 319 0100 74C00240 		.word	1073922164
+ 320 0104 60C00920 		.word	537509984
+ 321 0108 18C00240 		.word	1073922072
+ 322 010c 00000000 		.word	_ZL2P3
+ 323 0110 78C00240 		.word	1073922168
+ 324 0114 80C00920 		.word	537510016
+ 325 0118 20C00240 		.word	1073922080
+ 326 011c 00000000 		.word	_ZL2P4
+ 327 0120 00000000 		.word	_ZL4TMR0
+ 328 0124 00800040 		.word	1073774592
+ 329 0128 00000000 		.word	_ZL4TMR1
+ 330 012c 00000940 		.word	1074331648
+ 331 0130 00000000 		.word	_ZL4TMR2
+ 332 0134 00400940 		.word	1074348032
+ 333 0138 00000000 		.word	_ZL4TMR3
+ 334 013c 00C00040 		.word	1073790976
+ 335 0140 00000000 		.word	_ZL5UART0
+ 336 0144 00800940 		.word	1074364416
+ 337 0148 00000000 		.word	_ZL8Keyboard
+ 338 014c 00C00940 		.word	1074380800
+ 339 0150 00000000 		.word	_ZL7Console
+ 340              		.cfi_endproc
+ 341              	.LFE319:
+ 343              		.section	.text._GLOBAL__sub_I_Transfer_Done,"ax",%progbits
+ 344              		.align	1
+ 345              		.syntax unified
+ 346              		.thumb
+ 347              		.thumb_func
+ 348              		.fpu softvfp
+ 350              	_GLOBAL__sub_I_Transfer_Done:
+ 351              	.LFB320:
+ 352              		.loc 1 22 0
+ 353              		.cfi_startproc
+ 354              		@ args = 0, pretend = 0, frame = 0
+ 355              		@ frame_needed = 1, uses_anonymous_args = 0
+ 356 0000 80B5     		push	{r7, lr}
+ 357              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 12
+
+
+ 358              		.cfi_offset 7, -8
+ 359              		.cfi_offset 14, -4
+ 360 0002 00AF     		add	r7, sp, #0
+ 361              		.cfi_def_cfa_register 7
+ 362              		.loc 1 22 0
+ 363 0004 4FF6FF71 		movw	r1, #65535
+ 364 0008 0120     		movs	r0, #1
+ 365 000a FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 366 000e 80BD     		pop	{r7, pc}
+ 367              		.cfi_endproc
+ 368              	.LFE320:
+ 370              		.section	.init_array,"aw",%init_array
+ 371              		.align	2
+ 372 0000 00000000 		.word	_GLOBAL__sub_I_Transfer_Done(target1)
+ 373              		.text
+ 374              	.Letext0:
+ 375              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 376              		.file 4 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 377              		.file 5 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/segdisplay.h"
+ 378              		.file 6 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 379              		.file 7 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ 380              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 381              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 382              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 383              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 irq_handlers.cpp
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:16     .rodata._ZL19PtrRI_TIMER_COMPVAL:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:19     .rodata._ZL19PtrRI_TIMER_COMPVAL:00000000 _ZL19PtrRI_TIMER_COMPVAL
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:22     .rodata._ZL16PtrRI_TIMER_MASK:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:25     .rodata._ZL16PtrRI_TIMER_MASK:00000000 _ZL16PtrRI_TIMER_MASK
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:28     .rodata._ZL16PtrRI_TIMER_CTRL:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:31     .rodata._ZL16PtrRI_TIMER_CTRL:00000000 _ZL16PtrRI_TIMER_CTRL
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:34     .rodata._ZL17PtrRI_TIMER_COUNT:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:37     .rodata._ZL17PtrRI_TIMER_COUNT:00000000 _ZL17PtrRI_TIMER_COUNT
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:40     .bss._ZL2P0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:43     .bss._ZL2P0:00000000 _ZL2P0
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:46     .bss._ZL2P1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:49     .bss._ZL2P1:00000000 _ZL2P1
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:52     .bss._ZL2P2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:55     .bss._ZL2P2:00000000 _ZL2P2
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:58     .bss._ZL2P3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:61     .bss._ZL2P3:00000000 _ZL2P3
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:64     .bss._ZL2P4:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:67     .bss._ZL2P4:00000000 _ZL2P4
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:70     .bss._ZL4TMR0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:73     .bss._ZL4TMR0:00000000 _ZL4TMR0
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:76     .bss._ZL4TMR1:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:79     .bss._ZL4TMR1:00000000 _ZL4TMR1
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:82     .bss._ZL4TMR2:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:85     .bss._ZL4TMR2:00000000 _ZL4TMR2
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:88     .bss._ZL4TMR3:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:91     .bss._ZL4TMR3:00000000 _ZL4TMR3
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:94     .bss._ZL5UART0:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:97     .bss._ZL5UART0:00000000 _ZL5UART0
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:100    .bss._ZL8Keyboard:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:103    .bss._ZL8Keyboard:00000000 _ZL8Keyboard
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:106    .bss._ZL7Console:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:109    .bss._ZL7Console:00000000 _ZL7Console
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:115    .bss.Transfer_Done:00000000 Transfer_Done
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:116    .bss.Transfer_Done:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:118    .text.SSP0_IRQHandler:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:125    .text.SSP0_IRQHandler:00000000 SSP0_IRQHandler
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:171    .text.SSP0_IRQHandler:0000003c $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:177    .text._Z41__static_initialization_and_destruction_0ii:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:183    .text._Z41__static_initialization_and_destruction_0ii:00000000 _Z41__static_initialization_and_destruction_0ii
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:307    .text._Z41__static_initialization_and_destruction_0ii:000000d0 $d
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:344    .text._GLOBAL__sub_I_Transfer_Done:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:350    .text._GLOBAL__sub_I_Transfer_Done:00000000 _GLOBAL__sub_I_Transfer_Done
+C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s:371    .init_array:00000000 $d
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.segdisplay.h.9.98326a2fbd989aebe1b364b73354de3a
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.c4e7eaf7330236ae510314a23d74e6ca
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 14
+
+
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.139632325ccc020d697d2fcf83ee170f
+                           .group:00000000 wm4.board.h.33.b3d60928436b978782af3158a25a7b77
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.187.422da5f95ac1285e95faf42258f23242
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stddef.h.39.101367dade8a53b166775e1434b00616
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.f9d7979a479d57685780efa849031ac4
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccQqbFvJ.s 			page 15
+
+
+                           .group:00000000 wm4.lpc_xav.h.6.6f98cf85a3f0e090e01e98c7fdc4f91b
+
+UNDEFINED SYMBOLS
+_ZN3SSP12End_TransferEv
+_ZN3SSP14Send_Next_ByteEv
+DDC860_Bus
+_ZN4PortC1EPmS0_S0_
+_ZN5TimerC1EPmhhh
+_ZN4UARTC1EPmhhh

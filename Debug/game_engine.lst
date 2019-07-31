@@ -1,0 +1,2517 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"game_engine.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZStL19piecewise_construct,"a",%progbits
+  16              		.align	2
+  19              	_ZStL19piecewise_construct:
+  20 0000 00       		.space	1
+  21              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  22              		.align	1
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	_ZL20__gthread_key_deletei:
+  29              	.LFB599:
+  30              		.file 1 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+   1:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Copyright (C) 1997-2017 Free Software Foundation, Inc.
+   4:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   5:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   7:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** version.
+  11:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  12:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** for more details.
+  16:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  17:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  21:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  26:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  29:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 2
+
+
+  31:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  36:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  41:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  43:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  45:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  48:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  50:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  52:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  54:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  56:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  57:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  58:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  60:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  62:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  64:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  65:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  66:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  68:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  72:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return NULL;
+  74:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  75:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  76:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  78:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  80:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  82:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  83:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  84:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  86:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 3
+
+
+  88:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  90:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  91:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void
+  93:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  95:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return;
+  96:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  97:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  98:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 100:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 102:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+ 106:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 107:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 108:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 112:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 115:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 116:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 118:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 120:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 122:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 123:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 124:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void *
+ 126:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 128:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 130:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 131:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 133:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 135:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 137:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 138:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 139:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 140:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 142:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 144:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 4
+
+
+ 145:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 146:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 147:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 149:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 151:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 153:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 154:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 155:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 157:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 159:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 161:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 162:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 163:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 165:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 167:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 168:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 169:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 170:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 172:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 174:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 176:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 177:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 178:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 179:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 181:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 183:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 184:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 185:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 186:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 188:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 191:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 192:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 193:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 194:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 196:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 198:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 199:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 200:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 201:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 5
+
+
+ 202:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 203:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 205:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 206:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 207:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 208:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 210:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 211:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 213:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 214:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 215:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 216:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 217:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 219:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 220:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 221:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 222:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 225:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 226:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 227:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 228:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  31              		.loc 1 230 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  43 0006 7860     		str	r0, [r7, #4]
+ 231:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+  44              		.loc 1 231 0
+  45 0008 0023     		movs	r3, #0
+ 232:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  46              		.loc 1 232 0
+  47 000a 1846     		mov	r0, r3
+  48 000c 0C37     		adds	r7, r7, #12
+  49              		.cfi_def_cfa_offset 4
+  50 000e BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0010 80BC     		pop	{r7}
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 0012 7047     		bx	lr
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 6
+
+
+  57              		.cfi_endproc
+  58              	.LFE599:
+  60              		.section	.rodata._ZL9OTF_16X19,"a",%progbits
+  61              		.align	2
+  64              	_ZL9OTF_16X19:
+  65 0000 0000     		.short	0
+  66 0002 0000     		.short	0
+  67 0004 0000     		.short	0
+  68 0006 0000     		.short	0
+  69 0008 F801     		.short	504
+  70 000a 9C03     		.short	924
+  71 000c 0603     		.short	774
+  72 000e 0003     		.short	768
+  73 0010 E003     		.short	992
+  74 0012 FC03     		.short	1020
+  75 0014 0E03     		.short	782
+  76 0016 0603     		.short	774
+  77 0018 0603     		.short	774
+  78 001a CE03     		.short	974
+  79 001c 7C03     		.short	892
+  80 001e 0000     		.short	0
+  81 0020 0000     		.short	0
+  82 0022 0000     		.short	0
+  83 0024 0000     		.short	0
+  84 0026 0600     		.short	6
+  85 0028 0600     		.short	6
+  86 002a 0600     		.short	6
+  87 002c 0600     		.short	6
+  88 002e F601     		.short	502
+  89 0030 9E03     		.short	926
+  90 0032 0E03     		.short	782
+  91 0034 0606     		.short	1542
+  92 0036 0606     		.short	1542
+  93 0038 0606     		.short	1542
+  94 003a 0606     		.short	1542
+  95 003c 0606     		.short	1542
+  96 003e 0603     		.short	774
+  97 0040 9E03     		.short	926
+  98 0042 F601     		.short	502
+  99 0044 0000     		.short	0
+ 100 0046 0000     		.short	0
+ 101 0048 0000     		.short	0
+ 102 004a 0000     		.short	0
+ 103 004c 0000     		.short	0
+ 104 004e 0000     		.short	0
+ 105 0050 0000     		.short	0
+ 106 0052 0000     		.short	0
+ 107 0054 F800     		.short	248
+ 108 0056 9C03     		.short	924
+ 109 0058 0E03     		.short	782
+ 110 005a 0600     		.short	6
+ 111 005c 0600     		.short	6
+ 112 005e 0600     		.short	6
+ 113 0060 0600     		.short	6
+ 114 0062 0600     		.short	6
+ 115 0064 0603     		.short	774
+ 116 0066 9C03     		.short	924
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 7
+
+
+ 117 0068 F801     		.short	504
+ 118 006a 0000     		.short	0
+ 119 006c 0000     		.short	0
+ 120 006e 0000     		.short	0
+ 121 0070 0000     		.short	0
+ 122 0072 0003     		.short	768
+ 123 0074 0003     		.short	768
+ 124 0076 0003     		.short	768
+ 125 0078 0003     		.short	768
+ 126 007a F803     		.short	1016
+ 127 007c DC03     		.short	988
+ 128 007e 0603     		.short	774
+ 129 0080 0603     		.short	774
+ 130 0082 0603     		.short	774
+ 131 0084 0603     		.short	774
+ 132 0086 0603     		.short	774
+ 133 0088 0603     		.short	774
+ 134 008a 0603     		.short	774
+ 135 008c CC03     		.short	972
+ 136 008e 7803     		.short	888
+ 137 0090 0000     		.short	0
+ 138 0092 0000     		.short	0
+ 139 0094 0000     		.short	0
+ 140 0096 0000     		.short	0
+ 141 0098 0000     		.short	0
+ 142 009a 0000     		.short	0
+ 143 009c 0000     		.short	0
+ 144 009e 0000     		.short	0
+ 145 00a0 F800     		.short	248
+ 146 00a2 9C03     		.short	924
+ 147 00a4 0E03     		.short	782
+ 148 00a6 0606     		.short	1542
+ 149 00a8 0606     		.short	1542
+ 150 00aa FE07     		.short	2046
+ 151 00ac 0600     		.short	6
+ 152 00ae 0600     		.short	6
+ 153 00b0 0E06     		.short	1550
+ 154 00b2 9C03     		.short	924
+ 155 00b4 F801     		.short	504
+ 156 00b6 0000     		.short	0
+ 157 00b8 0000     		.short	0
+ 158 00ba 0000     		.short	0
+ 159 00bc 0000     		.short	0
+ 160 00be 3800     		.short	56
+ 161 00c0 2C00     		.short	44
+ 162 00c2 0C00     		.short	12
+ 163 00c4 0C00     		.short	12
+ 164 00c6 3F00     		.short	63
+ 165 00c8 3F00     		.short	63
+ 166 00ca 0C00     		.short	12
+ 167 00cc 0C00     		.short	12
+ 168 00ce 0C00     		.short	12
+ 169 00d0 0C00     		.short	12
+ 170 00d2 0C00     		.short	12
+ 171 00d4 0C00     		.short	12
+ 172 00d6 0C00     		.short	12
+ 173 00d8 0C00     		.short	12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 8
+
+
+ 174 00da 0C00     		.short	12
+ 175 00dc 0000     		.short	0
+ 176 00de 0000     		.short	0
+ 177 00e0 0000     		.short	0
+ 178 00e2 0000     		.short	0
+ 179 00e4 0000     		.short	0
+ 180 00e6 0000     		.short	0
+ 181 00e8 0000     		.short	0
+ 182 00ea 0000     		.short	0
+ 183 00ec F803     		.short	1016
+ 184 00ee DC03     		.short	988
+ 185 00f0 0603     		.short	774
+ 186 00f2 0603     		.short	774
+ 187 00f4 0603     		.short	774
+ 188 00f6 0603     		.short	774
+ 189 00f8 0603     		.short	774
+ 190 00fa 0603     		.short	774
+ 191 00fc 0603     		.short	774
+ 192 00fe CC03     		.short	972
+ 193 0100 7803     		.short	888
+ 194 0102 0003     		.short	768
+ 195 0104 0603     		.short	774
+ 196 0106 8E01     		.short	398
+ 197 0108 FC01     		.short	508
+ 198 010a 0600     		.short	6
+ 199 010c 0600     		.short	6
+ 200 010e 0600     		.short	6
+ 201 0110 0600     		.short	6
+ 202 0112 E601     		.short	486
+ 203 0114 BE03     		.short	958
+ 204 0116 0E03     		.short	782
+ 205 0118 0603     		.short	774
+ 206 011a 0603     		.short	774
+ 207 011c 0603     		.short	774
+ 208 011e 0603     		.short	774
+ 209 0120 0603     		.short	774
+ 210 0122 0603     		.short	774
+ 211 0124 0603     		.short	774
+ 212 0126 0603     		.short	774
+ 213 0128 0000     		.short	0
+ 214 012a 0000     		.short	0
+ 215 012c 0000     		.short	0
+ 216 012e 0000     		.short	0
+ 217 0130 0600     		.short	6
+ 218 0132 0600     		.short	6
+ 219 0134 0000     		.short	0
+ 220 0136 0000     		.short	0
+ 221 0138 0600     		.short	6
+ 222 013a 0600     		.short	6
+ 223 013c 0600     		.short	6
+ 224 013e 0600     		.short	6
+ 225 0140 0600     		.short	6
+ 226 0142 0600     		.short	6
+ 227 0144 0600     		.short	6
+ 228 0146 0600     		.short	6
+ 229 0148 0600     		.short	6
+ 230 014a 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 9
+
+
+ 231 014c 0600     		.short	6
+ 232 014e 0000     		.short	0
+ 233 0150 0000     		.short	0
+ 234 0152 0000     		.short	0
+ 235 0154 0000     		.short	0
+ 236 0156 0600     		.short	6
+ 237 0158 0600     		.short	6
+ 238 015a 0000     		.short	0
+ 239 015c 0000     		.short	0
+ 240 015e 0600     		.short	6
+ 241 0160 0600     		.short	6
+ 242 0162 0600     		.short	6
+ 243 0164 0600     		.short	6
+ 244 0166 0600     		.short	6
+ 245 0168 0600     		.short	6
+ 246 016a 0600     		.short	6
+ 247 016c 0600     		.short	6
+ 248 016e 0600     		.short	6
+ 249 0170 0600     		.short	6
+ 250 0172 0600     		.short	6
+ 251 0174 0600     		.short	6
+ 252 0176 0600     		.short	6
+ 253 0178 0600     		.short	6
+ 254 017a 0700     		.short	7
+ 255 017c 0600     		.short	6
+ 256 017e 0600     		.short	6
+ 257 0180 0600     		.short	6
+ 258 0182 0600     		.short	6
+ 259 0184 8603     		.short	902
+ 260 0186 C601     		.short	454
+ 261 0188 E600     		.short	230
+ 262 018a 7600     		.short	118
+ 263 018c 3E00     		.short	62
+ 264 018e 7E00     		.short	126
+ 265 0190 6E00     		.short	110
+ 266 0192 C600     		.short	198
+ 267 0194 8601     		.short	390
+ 268 0196 8601     		.short	390
+ 269 0198 0603     		.short	774
+ 270 019a 0000     		.short	0
+ 271 019c 0000     		.short	0
+ 272 019e 0000     		.short	0
+ 273 01a0 0000     		.short	0
+ 274 01a2 0600     		.short	6
+ 275 01a4 0600     		.short	6
+ 276 01a6 0600     		.short	6
+ 277 01a8 0600     		.short	6
+ 278 01aa 0600     		.short	6
+ 279 01ac 0600     		.short	6
+ 280 01ae 0600     		.short	6
+ 281 01b0 0600     		.short	6
+ 282 01b2 0600     		.short	6
+ 283 01b4 0600     		.short	6
+ 284 01b6 0600     		.short	6
+ 285 01b8 0600     		.short	6
+ 286 01ba 0600     		.short	6
+ 287 01bc 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 10
+
+
+ 288 01be 0600     		.short	6
+ 289 01c0 0000     		.short	0
+ 290 01c2 0000     		.short	0
+ 291 01c4 0000     		.short	0
+ 292 01c6 0000     		.short	0
+ 293 01c8 0000     		.short	0
+ 294 01ca 0000     		.short	0
+ 295 01cc 0000     		.short	0
+ 296 01ce 0000     		.short	0
+ 297 01d0 F679     		.short	31222
+ 298 01d2 BEED     		.short	-4674
+ 299 01d4 0EC3     		.short	-15602
+ 300 01d6 06C3     		.short	-15610
+ 301 01d8 06C3     		.short	-15610
+ 302 01da 06C3     		.short	-15610
+ 303 01dc 06C3     		.short	-15610
+ 304 01de 06C3     		.short	-15610
+ 305 01e0 06C3     		.short	-15610
+ 306 01e2 06C3     		.short	-15610
+ 307 01e4 06C3     		.short	-15610
+ 308 01e6 0000     		.short	0
+ 309 01e8 0000     		.short	0
+ 310 01ea 0000     		.short	0
+ 311 01ec 0000     		.short	0
+ 312 01ee 0000     		.short	0
+ 313 01f0 0000     		.short	0
+ 314 01f2 0000     		.short	0
+ 315 01f4 0000     		.short	0
+ 316 01f6 E601     		.short	486
+ 317 01f8 BE03     		.short	958
+ 318 01fa 0E03     		.short	782
+ 319 01fc 0603     		.short	774
+ 320 01fe 0603     		.short	774
+ 321 0200 0603     		.short	774
+ 322 0202 0603     		.short	774
+ 323 0204 0603     		.short	774
+ 324 0206 0603     		.short	774
+ 325 0208 0603     		.short	774
+ 326 020a 0603     		.short	774
+ 327 020c 0000     		.short	0
+ 328 020e 0000     		.short	0
+ 329 0210 0000     		.short	0
+ 330 0212 0000     		.short	0
+ 331 0214 0000     		.short	0
+ 332 0216 0000     		.short	0
+ 333 0218 0000     		.short	0
+ 334 021a 0000     		.short	0
+ 335 021c F800     		.short	248
+ 336 021e 9C03     		.short	924
+ 337 0220 0E03     		.short	782
+ 338 0222 0606     		.short	1542
+ 339 0224 0606     		.short	1542
+ 340 0226 0606     		.short	1542
+ 341 0228 0606     		.short	1542
+ 342 022a 0606     		.short	1542
+ 343 022c 0603     		.short	774
+ 344 022e 9C03     		.short	924
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 11
+
+
+ 345 0230 F801     		.short	504
+ 346 0232 0000     		.short	0
+ 347 0234 0000     		.short	0
+ 348 0236 0000     		.short	0
+ 349 0238 0000     		.short	0
+ 350 023a 0000     		.short	0
+ 351 023c 0000     		.short	0
+ 352 023e 0000     		.short	0
+ 353 0240 0000     		.short	0
+ 354 0242 F601     		.short	502
+ 355 0244 9E03     		.short	926
+ 356 0246 0E03     		.short	782
+ 357 0248 0606     		.short	1542
+ 358 024a 0606     		.short	1542
+ 359 024c 0606     		.short	1542
+ 360 024e 0606     		.short	1542
+ 361 0250 0606     		.short	1542
+ 362 0252 0603     		.short	774
+ 363 0254 9E03     		.short	926
+ 364 0256 F601     		.short	502
+ 365 0258 0600     		.short	6
+ 366 025a 0600     		.short	6
+ 367 025c 0600     		.short	6
+ 368 025e 0600     		.short	6
+ 369 0260 0000     		.short	0
+ 370 0262 0000     		.short	0
+ 371 0264 0000     		.short	0
+ 372 0266 0000     		.short	0
+ 373 0268 F803     		.short	1016
+ 374 026a DC03     		.short	988
+ 375 026c 0603     		.short	774
+ 376 026e 0603     		.short	774
+ 377 0270 0603     		.short	774
+ 378 0272 0603     		.short	774
+ 379 0274 0603     		.short	774
+ 380 0276 0603     		.short	774
+ 381 0278 0603     		.short	774
+ 382 027a CC03     		.short	972
+ 383 027c 7803     		.short	888
+ 384 027e 0003     		.short	768
+ 385 0280 0003     		.short	768
+ 386 0282 0003     		.short	768
+ 387 0284 0003     		.short	768
+ 388 0286 0000     		.short	0
+ 389 0288 0000     		.short	0
+ 390 028a 0000     		.short	0
+ 391 028c 0000     		.short	0
+ 392 028e 7600     		.short	118
+ 393 0290 7E00     		.short	126
+ 394 0292 0E00     		.short	14
+ 395 0294 0600     		.short	6
+ 396 0296 0600     		.short	6
+ 397 0298 0600     		.short	6
+ 398 029a 0600     		.short	6
+ 399 029c 0600     		.short	6
+ 400 029e 0600     		.short	6
+ 401 02a0 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 12
+
+
+ 402 02a2 0600     		.short	6
+ 403 02a4 0000     		.short	0
+ 404 02a6 0000     		.short	0
+ 405 02a8 0000     		.short	0
+ 406 02aa 0000     		.short	0
+ 407 02ac 0000     		.short	0
+ 408 02ae 0000     		.short	0
+ 409 02b0 0000     		.short	0
+ 410 02b2 0000     		.short	0
+ 411 02b4 FC00     		.short	252
+ 412 02b6 CE01     		.short	462
+ 413 02b8 8601     		.short	390
+ 414 02ba 0600     		.short	6
+ 415 02bc 3E00     		.short	62
+ 416 02be F801     		.short	504
+ 417 02c0 C001     		.short	448
+ 418 02c2 0003     		.short	768
+ 419 02c4 0603     		.short	774
+ 420 02c6 8E01     		.short	398
+ 421 02c8 FC00     		.short	252
+ 422 02ca 0000     		.short	0
+ 423 02cc 0000     		.short	0
+ 424 02ce 0000     		.short	0
+ 425 02d0 0000     		.short	0
+ 426 02d2 0000     		.short	0
+ 427 02d4 0C00     		.short	12
+ 428 02d6 0C00     		.short	12
+ 429 02d8 0C00     		.short	12
+ 430 02da 1F00     		.short	31
+ 431 02dc 1F00     		.short	31
+ 432 02de 0C00     		.short	12
+ 433 02e0 0C00     		.short	12
+ 434 02e2 0C00     		.short	12
+ 435 02e4 0C00     		.short	12
+ 436 02e6 0C00     		.short	12
+ 437 02e8 0C00     		.short	12
+ 438 02ea 0C00     		.short	12
+ 439 02ec 0C00     		.short	12
+ 440 02ee 3C00     		.short	60
+ 441 02f0 0000     		.short	0
+ 442 02f2 0000     		.short	0
+ 443 02f4 0000     		.short	0
+ 444 02f6 0000     		.short	0
+ 445 02f8 0000     		.short	0
+ 446 02fa 0000     		.short	0
+ 447 02fc 0000     		.short	0
+ 448 02fe 0000     		.short	0
+ 449 0300 0603     		.short	774
+ 450 0302 0603     		.short	774
+ 451 0304 0603     		.short	774
+ 452 0306 0603     		.short	774
+ 453 0308 0603     		.short	774
+ 454 030a 0603     		.short	774
+ 455 030c 0603     		.short	774
+ 456 030e 0603     		.short	774
+ 457 0310 0E03     		.short	782
+ 458 0312 CC03     		.short	972
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 13
+
+
+ 459 0314 7803     		.short	888
+ 460 0316 0000     		.short	0
+ 461 0318 0000     		.short	0
+ 462 031a 0000     		.short	0
+ 463 031c 0000     		.short	0
+ 464 031e 0000     		.short	0
+ 465 0320 0000     		.short	0
+ 466 0322 0000     		.short	0
+ 467 0324 0000     		.short	0
+ 468 0326 0703     		.short	775
+ 469 0328 0603     		.short	774
+ 470 032a 8601     		.short	390
+ 471 032c 8C01     		.short	396
+ 472 032e 8C01     		.short	396
+ 473 0330 CC00     		.short	204
+ 474 0332 D800     		.short	216
+ 475 0334 5800     		.short	88
+ 476 0336 7800     		.short	120
+ 477 0338 7000     		.short	112
+ 478 033a 3000     		.short	48
+ 479 033c 0000     		.short	0
+ 480 033e 0000     		.short	0
+ 481 0340 0000     		.short	0
+ 482 0342 0000     		.short	0
+ 483 0344 0000     		.short	0
+ 484 0346 0000     		.short	0
+ 485 0348 0000     		.short	0
+ 486 034a 0000     		.short	0
+ 487 034c 8361     		.short	24963
+ 488 034e C661     		.short	25030
+ 489 0350 C631     		.short	12742
+ 490 0352 4631     		.short	12614
+ 491 0354 6633     		.short	13158
+ 492 0356 6C13     		.short	4972
+ 493 0358 6C1A     		.short	6764
+ 494 035a 2C1E     		.short	7724
+ 495 035c 381E     		.short	7736
+ 496 035e 380E     		.short	3640
+ 497 0360 180C     		.short	3096
+ 498 0362 0000     		.short	0
+ 499 0364 0000     		.short	0
+ 500 0366 0000     		.short	0
+ 501 0368 0000     		.short	0
+ 502 036a 0000     		.short	0
+ 503 036c 0000     		.short	0
+ 504 036e 0000     		.short	0
+ 505 0370 0000     		.short	0
+ 506 0372 8703     		.short	903
+ 507 0374 8E01     		.short	398
+ 508 0376 CC00     		.short	204
+ 509 0378 D800     		.short	216
+ 510 037a 7000     		.short	112
+ 511 037c 3000     		.short	48
+ 512 037e 7800     		.short	120
+ 513 0380 D800     		.short	216
+ 514 0382 CC01     		.short	460
+ 515 0384 8E01     		.short	398
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 14
+
+
+ 516 0386 0703     		.short	775
+ 517 0388 0000     		.short	0
+ 518 038a 0000     		.short	0
+ 519 038c 0000     		.short	0
+ 520 038e 0000     		.short	0
+ 521 0390 0000     		.short	0
+ 522 0392 0000     		.short	0
+ 523 0394 0000     		.short	0
+ 524 0396 0000     		.short	0
+ 525 0398 0703     		.short	775
+ 526 039a 0603     		.short	774
+ 527 039c 8601     		.short	390
+ 528 039e 8C01     		.short	396
+ 529 03a0 8C01     		.short	396
+ 530 03a2 CC00     		.short	204
+ 531 03a4 D800     		.short	216
+ 532 03a6 5800     		.short	88
+ 533 03a8 7800     		.short	120
+ 534 03aa 7000     		.short	112
+ 535 03ac 3000     		.short	48
+ 536 03ae 3000     		.short	48
+ 537 03b0 3000     		.short	48
+ 538 03b2 1A00     		.short	26
+ 539 03b4 0E00     		.short	14
+ 540 03b6 0000     		.short	0
+ 541 03b8 0000     		.short	0
+ 542 03ba 0000     		.short	0
+ 543 03bc 0000     		.short	0
+ 544 03be FE03     		.short	1022
+ 545 03c0 FE03     		.short	1022
+ 546 03c2 8001     		.short	384
+ 547 03c4 C000     		.short	192
+ 548 03c6 6000     		.short	96
+ 549 03c8 3000     		.short	48
+ 550 03ca 1800     		.short	24
+ 551 03cc 1C00     		.short	28
+ 552 03ce 0E00     		.short	14
+ 553 03d0 FF03     		.short	1023
+ 554 03d2 FF03     		.short	1023
+ 555 03d4 0000     		.short	0
+ 556 03d6 0000     		.short	0
+ 557 03d8 0000     		.short	0
+ 558 03da 0000     		.short	0
+ 559 03dc C000     		.short	192
+ 560 03de E001     		.short	480
+ 561 03e0 E001     		.short	480
+ 562 03e2 B001     		.short	432
+ 563 03e4 3003     		.short	816
+ 564 03e6 1003     		.short	784
+ 565 03e8 1806     		.short	1560
+ 566 03ea 1806     		.short	1560
+ 567 03ec 0C06     		.short	1548
+ 568 03ee FC0F     		.short	4092
+ 569 03f0 0C0C     		.short	3084
+ 570 03f2 061C     		.short	7174
+ 571 03f4 0618     		.short	6150
+ 572 03f6 0618     		.short	6150
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 15
+
+
+ 573 03f8 0330     		.short	12291
+ 574 03fa 0000     		.short	0
+ 575 03fc 0000     		.short	0
+ 576 03fe 0000     		.short	0
+ 577 0400 0000     		.short	0
+ 578 0402 FC03     		.short	1020
+ 579 0404 FC07     		.short	2044
+ 580 0406 0C0C     		.short	3084
+ 581 0408 0C0C     		.short	3084
+ 582 040a 0C0C     		.short	3084
+ 583 040c 0C0C     		.short	3084
+ 584 040e FC07     		.short	2044
+ 585 0410 FC07     		.short	2044
+ 586 0412 0C0C     		.short	3084
+ 587 0414 0C18     		.short	6156
+ 588 0416 0C18     		.short	6156
+ 589 0418 0C18     		.short	6156
+ 590 041a 0C1C     		.short	7180
+ 591 041c FC0F     		.short	4092
+ 592 041e FC03     		.short	1020
+ 593 0420 0000     		.short	0
+ 594 0422 0000     		.short	0
+ 595 0424 0000     		.short	0
+ 596 0426 0000     		.short	0
+ 597 0428 E007     		.short	2016
+ 598 042a 781E     		.short	7800
+ 599 042c 1C18     		.short	6172
+ 600 042e 0C30     		.short	12300
+ 601 0430 0E30     		.short	12302
+ 602 0432 0600     		.short	6
+ 603 0434 0600     		.short	6
+ 604 0436 0600     		.short	6
+ 605 0438 0600     		.short	6
+ 606 043a 0600     		.short	6
+ 607 043c 0E30     		.short	12302
+ 608 043e 0C30     		.short	12300
+ 609 0440 1C18     		.short	6172
+ 610 0442 781E     		.short	7800
+ 611 0444 E007     		.short	2016
+ 612 0446 0000     		.short	0
+ 613 0448 0000     		.short	0
+ 614 044a 0000     		.short	0
+ 615 044c 0000     		.short	0
+ 616 044e FC03     		.short	1020
+ 617 0450 FC0F     		.short	4092
+ 618 0452 0C1C     		.short	7180
+ 619 0454 0C18     		.short	6156
+ 620 0456 0C30     		.short	12300
+ 621 0458 0C30     		.short	12300
+ 622 045a 0C30     		.short	12300
+ 623 045c 0C30     		.short	12300
+ 624 045e 0C30     		.short	12300
+ 625 0460 0C30     		.short	12300
+ 626 0462 0C30     		.short	12300
+ 627 0464 0C18     		.short	6156
+ 628 0466 0C1C     		.short	7180
+ 629 0468 FC0F     		.short	4092
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 16
+
+
+ 630 046a FC03     		.short	1020
+ 631 046c 0000     		.short	0
+ 632 046e 0000     		.short	0
+ 633 0470 0000     		.short	0
+ 634 0472 0000     		.short	0
+ 635 0474 FC1F     		.short	8188
+ 636 0476 FC1F     		.short	8188
+ 637 0478 0C00     		.short	12
+ 638 047a 0C00     		.short	12
+ 639 047c 0C00     		.short	12
+ 640 047e 0C00     		.short	12
+ 641 0480 FC0F     		.short	4092
+ 642 0482 FC0F     		.short	4092
+ 643 0484 0C00     		.short	12
+ 644 0486 0C00     		.short	12
+ 645 0488 0C00     		.short	12
+ 646 048a 0C00     		.short	12
+ 647 048c 0C00     		.short	12
+ 648 048e FC1F     		.short	8188
+ 649 0490 FC1F     		.short	8188
+ 650 0492 0000     		.short	0
+ 651 0494 0000     		.short	0
+ 652 0496 0000     		.short	0
+ 653 0498 0000     		.short	0
+ 654 049a FC0F     		.short	4092
+ 655 049c FC0F     		.short	4092
+ 656 049e 0C00     		.short	12
+ 657 04a0 0C00     		.short	12
+ 658 04a2 0C00     		.short	12
+ 659 04a4 0C00     		.short	12
+ 660 04a6 FC07     		.short	2044
+ 661 04a8 FC07     		.short	2044
+ 662 04aa 0C00     		.short	12
+ 663 04ac 0C00     		.short	12
+ 664 04ae 0C00     		.short	12
+ 665 04b0 0C00     		.short	12
+ 666 04b2 0C00     		.short	12
+ 667 04b4 0C00     		.short	12
+ 668 04b6 0C00     		.short	12
+ 669 04b8 0000     		.short	0
+ 670 04ba 0000     		.short	0
+ 671 04bc 0000     		.short	0
+ 672 04be 0000     		.short	0
+ 673 04c0 E00F     		.short	4064
+ 674 04c2 781E     		.short	7800
+ 675 04c4 1C30     		.short	12316
+ 676 04c6 0C70     		.short	28684
+ 677 04c8 0E60     		.short	24590
+ 678 04ca 0600     		.short	6
+ 679 04cc 0600     		.short	6
+ 680 04ce 067E     		.short	32262
+ 681 04d0 067E     		.short	32262
+ 682 04d2 0660     		.short	24582
+ 683 04d4 0E60     		.short	24590
+ 684 04d6 0C60     		.short	24588
+ 685 04d8 1C70     		.short	28700
+ 686 04da 787E     		.short	32376
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 17
+
+
+ 687 04dc E06F     		.short	28640
+ 688 04de 0000     		.short	0
+ 689 04e0 0000     		.short	0
+ 690 04e2 0000     		.short	0
+ 691 04e4 0000     		.short	0
+ 692 04e6 0C18     		.short	6156
+ 693 04e8 0C18     		.short	6156
+ 694 04ea 0C18     		.short	6156
+ 695 04ec 0C18     		.short	6156
+ 696 04ee 0C18     		.short	6156
+ 697 04f0 0C18     		.short	6156
+ 698 04f2 FC1F     		.short	8188
+ 699 04f4 FC1F     		.short	8188
+ 700 04f6 0C18     		.short	6156
+ 701 04f8 0C18     		.short	6156
+ 702 04fa 0C18     		.short	6156
+ 703 04fc 0C18     		.short	6156
+ 704 04fe 0C18     		.short	6156
+ 705 0500 0C18     		.short	6156
+ 706 0502 0C18     		.short	6156
+ 707 0504 0000     		.short	0
+ 708 0506 0000     		.short	0
+ 709 0508 0000     		.short	0
+ 710 050a 0000     		.short	0
+ 711 050c 0C00     		.short	12
+ 712 050e 0C00     		.short	12
+ 713 0510 0C00     		.short	12
+ 714 0512 0C00     		.short	12
+ 715 0514 0C00     		.short	12
+ 716 0516 0C00     		.short	12
+ 717 0518 0C00     		.short	12
+ 718 051a 0C00     		.short	12
+ 719 051c 0C00     		.short	12
+ 720 051e 0C00     		.short	12
+ 721 0520 0C00     		.short	12
+ 722 0522 0C00     		.short	12
+ 723 0524 0C00     		.short	12
+ 724 0526 0C00     		.short	12
+ 725 0528 0C00     		.short	12
+ 726 052a 0000     		.short	0
+ 727 052c 0000     		.short	0
+ 728 052e 0000     		.short	0
+ 729 0530 0000     		.short	0
+ 730 0532 8001     		.short	384
+ 731 0534 8001     		.short	384
+ 732 0536 8001     		.short	384
+ 733 0538 8001     		.short	384
+ 734 053a 8001     		.short	384
+ 735 053c 8001     		.short	384
+ 736 053e 8001     		.short	384
+ 737 0540 8001     		.short	384
+ 738 0542 8001     		.short	384
+ 739 0544 8001     		.short	384
+ 740 0546 8001     		.short	384
+ 741 0548 8601     		.short	390
+ 742 054a C601     		.short	454
+ 743 054c FE00     		.short	254
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 18
+
+
+ 744 054e 7C00     		.short	124
+ 745 0550 0000     		.short	0
+ 746 0552 0000     		.short	0
+ 747 0554 0000     		.short	0
+ 748 0556 0000     		.short	0
+ 749 0558 0C3C     		.short	15372
+ 750 055a 0C0E     		.short	3596
+ 751 055c 0C06     		.short	1548
+ 752 055e 0C03     		.short	780
+ 753 0560 8C01     		.short	396
+ 754 0562 CC00     		.short	204
+ 755 0564 EC00     		.short	236
+ 756 0566 FC00     		.short	252
+ 757 0568 9C01     		.short	412
+ 758 056a 8C03     		.short	908
+ 759 056c 0C07     		.short	1804
+ 760 056e 0C06     		.short	1548
+ 761 0570 0C0C     		.short	3084
+ 762 0572 0C1C     		.short	7180
+ 763 0574 0C38     		.short	14348
+ 764 0576 0000     		.short	0
+ 765 0578 0000     		.short	0
+ 766 057a 0000     		.short	0
+ 767 057c 0000     		.short	0
+ 768 057e 0C00     		.short	12
+ 769 0580 0C00     		.short	12
+ 770 0582 0C00     		.short	12
+ 771 0584 0C00     		.short	12
+ 772 0586 0C00     		.short	12
+ 773 0588 0C00     		.short	12
+ 774 058a 0C00     		.short	12
+ 775 058c 0C00     		.short	12
+ 776 058e 0C00     		.short	12
+ 777 0590 0C00     		.short	12
+ 778 0592 0C00     		.short	12
+ 779 0594 0C00     		.short	12
+ 780 0596 0C00     		.short	12
+ 781 0598 FC07     		.short	2044
+ 782 059a FC07     		.short	2044
+ 783 059c 0000     		.short	0
+ 784 059e 0000     		.short	0
+ 785 05a0 0000     		.short	0
+ 786 05a2 0000     		.short	0
+ 787 05a4 1CE0     		.short	-8164
+ 788 05a6 1CF0     		.short	-4068
+ 789 05a8 1CF0     		.short	-4068
+ 790 05aa 3CD0     		.short	-12228
+ 791 05ac 3CD8     		.short	-10180
+ 792 05ae 2CD8     		.short	-10196
+ 793 05b0 6CC8     		.short	-14228
+ 794 05b2 6CCC     		.short	-13204
+ 795 05b4 4CCC     		.short	-13236
+ 796 05b6 CCC4     		.short	-15156
+ 797 05b8 CCC6     		.short	-14644
+ 798 05ba 8CC6     		.short	-14708
+ 799 05bc 8CC3     		.short	-15476
+ 800 05be 8CC3     		.short	-15476
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 19
+
+
+ 801 05c0 0CC3     		.short	-15604
+ 802 05c2 0000     		.short	0
+ 803 05c4 0000     		.short	0
+ 804 05c6 0000     		.short	0
+ 805 05c8 0000     		.short	0
+ 806 05ca 0C10     		.short	4108
+ 807 05cc 1C10     		.short	4124
+ 808 05ce 1C10     		.short	4124
+ 809 05d0 3C10     		.short	4156
+ 810 05d2 7C10     		.short	4220
+ 811 05d4 6C10     		.short	4204
+ 812 05d6 CC10     		.short	4300
+ 813 05d8 CC11     		.short	4556
+ 814 05da 8C11     		.short	4492
+ 815 05dc 0C13     		.short	4876
+ 816 05de 0C17     		.short	5900
+ 817 05e0 0C16     		.short	5644
+ 818 05e2 0C1C     		.short	7180
+ 819 05e4 0C1C     		.short	7180
+ 820 05e6 0C18     		.short	6156
+ 821 05e8 0000     		.short	0
+ 822 05ea 0000     		.short	0
+ 823 05ec 0000     		.short	0
+ 824 05ee 0000     		.short	0
+ 825 05f0 E00F     		.short	4064
+ 826 05f2 781E     		.short	7800
+ 827 05f4 1C38     		.short	14364
+ 828 05f6 0C70     		.short	28684
+ 829 05f8 0E60     		.short	24590
+ 830 05fa 0660     		.short	24582
+ 831 05fc 0660     		.short	24582
+ 832 05fe 0660     		.short	24582
+ 833 0600 0660     		.short	24582
+ 834 0602 0660     		.short	24582
+ 835 0604 0E60     		.short	24590
+ 836 0606 0C30     		.short	12300
+ 837 0608 1C38     		.short	14364
+ 838 060a 781E     		.short	7800
+ 839 060c E00F     		.short	4064
+ 840 060e 0000     		.short	0
+ 841 0610 0000     		.short	0
+ 842 0612 0000     		.short	0
+ 843 0614 0000     		.short	0
+ 844 0616 FC07     		.short	2044
+ 845 0618 FC0F     		.short	4092
+ 846 061a 0C1C     		.short	7180
+ 847 061c 0C18     		.short	6156
+ 848 061e 0C18     		.short	6156
+ 849 0620 0C18     		.short	6156
+ 850 0622 0C1C     		.short	7180
+ 851 0624 FC0F     		.short	4092
+ 852 0626 FC03     		.short	1020
+ 853 0628 0C00     		.short	12
+ 854 062a 0C00     		.short	12
+ 855 062c 0C00     		.short	12
+ 856 062e 0C00     		.short	12
+ 857 0630 0C00     		.short	12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 20
+
+
+ 858 0632 0C00     		.short	12
+ 859 0634 0000     		.short	0
+ 860 0636 0000     		.short	0
+ 861 0638 0000     		.short	0
+ 862 063a 0000     		.short	0
+ 863 063c E00F     		.short	4064
+ 864 063e 781E     		.short	7800
+ 865 0640 1C38     		.short	14364
+ 866 0642 0C70     		.short	28684
+ 867 0644 0E60     		.short	24590
+ 868 0646 0660     		.short	24582
+ 869 0648 0660     		.short	24582
+ 870 064a 0660     		.short	24582
+ 871 064c 0660     		.short	24582
+ 872 064e 0660     		.short	24582
+ 873 0650 0E64     		.short	25614
+ 874 0652 0C36     		.short	13836
+ 875 0654 1C3C     		.short	15388
+ 876 0656 783E     		.short	15992
+ 877 0658 E0F7     		.short	-2080
+ 878 065a 0040     		.short	16384
+ 879 065c 0000     		.short	0
+ 880 065e 0000     		.short	0
+ 881 0660 0000     		.short	0
+ 882 0662 FC0F     		.short	4092
+ 883 0664 FC1F     		.short	8188
+ 884 0666 0C18     		.short	6156
+ 885 0668 0C30     		.short	12300
+ 886 066a 0C30     		.short	12300
+ 887 066c 0C38     		.short	14348
+ 888 066e 0C1C     		.short	7180
+ 889 0670 FC0F     		.short	4092
+ 890 0672 FC07     		.short	2044
+ 891 0674 0C0C     		.short	3084
+ 892 0676 0C1C     		.short	7180
+ 893 0678 0C18     		.short	6156
+ 894 067a 0C18     		.short	6156
+ 895 067c 0C30     		.short	12300
+ 896 067e 0C30     		.short	12300
+ 897 0680 0000     		.short	0
+ 898 0682 0000     		.short	0
+ 899 0684 0000     		.short	0
+ 900 0686 0000     		.short	0
+ 901 0688 F803     		.short	1016
+ 902 068a FC0F     		.short	4092
+ 903 068c 0C0C     		.short	3084
+ 904 068e 061C     		.short	7174
+ 905 0690 0C00     		.short	12
+ 906 0692 1C00     		.short	28
+ 907 0694 F801     		.short	504
+ 908 0696 E007     		.short	2016
+ 909 0698 000F     		.short	3840
+ 910 069a 001C     		.short	7168
+ 911 069c 0618     		.short	6150
+ 912 069e 0618     		.short	6150
+ 913 06a0 0C1C     		.short	7180
+ 914 06a2 FC0F     		.short	4092
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 21
+
+
+ 915 06a4 F007     		.short	2032
+ 916 06a6 0000     		.short	0
+ 917 06a8 0000     		.short	0
+ 918 06aa 0000     		.short	0
+ 919 06ac 0000     		.short	0
+ 920 06ae FF0F     		.short	4095
+ 921 06b0 FF0F     		.short	4095
+ 922 06b2 6000     		.short	96
+ 923 06b4 6000     		.short	96
+ 924 06b6 6000     		.short	96
+ 925 06b8 6000     		.short	96
+ 926 06ba 6000     		.short	96
+ 927 06bc 6000     		.short	96
+ 928 06be 6000     		.short	96
+ 929 06c0 6000     		.short	96
+ 930 06c2 6000     		.short	96
+ 931 06c4 6000     		.short	96
+ 932 06c6 6000     		.short	96
+ 933 06c8 6000     		.short	96
+ 934 06ca 6000     		.short	96
+ 935 06cc 0000     		.short	0
+ 936 06ce 0000     		.short	0
+ 937 06d0 0000     		.short	0
+ 938 06d2 0000     		.short	0
+ 939 06d4 0C18     		.short	6156
+ 940 06d6 0C18     		.short	6156
+ 941 06d8 0C18     		.short	6156
+ 942 06da 0C18     		.short	6156
+ 943 06dc 0C18     		.short	6156
+ 944 06de 0C18     		.short	6156
+ 945 06e0 0C18     		.short	6156
+ 946 06e2 0C18     		.short	6156
+ 947 06e4 0C18     		.short	6156
+ 948 06e6 0C18     		.short	6156
+ 949 06e8 0C18     		.short	6156
+ 950 06ea 0C18     		.short	6156
+ 951 06ec 1C18     		.short	6172
+ 952 06ee F80F     		.short	4088
+ 953 06f0 F007     		.short	2032
+ 954 06f2 0000     		.short	0
+ 955 06f4 0000     		.short	0
+ 956 06f6 0000     		.short	0
+ 957 06f8 0000     		.short	0
+ 958 06fa 0330     		.short	12291
+ 959 06fc 0618     		.short	6150
+ 960 06fe 0618     		.short	6150
+ 961 0700 0E0C     		.short	3086
+ 962 0702 0C0C     		.short	3084
+ 963 0704 0C0C     		.short	3084
+ 964 0706 1806     		.short	1560
+ 965 0708 1806     		.short	1560
+ 966 070a 1806     		.short	1560
+ 967 070c 3003     		.short	816
+ 968 070e 3003     		.short	816
+ 969 0710 A001     		.short	416
+ 970 0712 E001     		.short	480
+ 971 0714 E001     		.short	480
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 22
+
+
+ 972 0716 C000     		.short	192
+ 973 0718 0000     		.short	0
+ 974 071a 0000     		.short	0
+ 975 071c 0000     		.short	0
+ 976 071e 0000     		.short	0
+ 977 0720 0306     		.short	1539
+ 978 0722 060F     		.short	3846
+ 979 0724 060F     		.short	3846
+ 980 0726 060F     		.short	3846
+ 981 0728 8409     		.short	2436
+ 982 072a 8C19     		.short	6540
+ 983 072c 8C19     		.short	6540
+ 984 072e 8C18     		.short	6284
+ 985 0730 C890     		.short	-28472
+ 986 0732 D8B0     		.short	-20264
+ 987 0734 D8B0     		.short	-20264
+ 988 0736 58A0     		.short	-24488
+ 989 0738 70E0     		.short	-8080
+ 990 073a 70E0     		.short	-8080
+ 991 073c 30E0     		.short	-8144
+ 992 073e 0000     		.short	0
+ 993 0740 0000     		.short	0
+ 994 0742 0000     		.short	0
+ 995 0744 0000     		.short	0
+ 996 0746 0618     		.short	6150
+ 997 0748 0C0C     		.short	3084
+ 998 074a 1806     		.short	1560
+ 999 074c 3807     		.short	1848
+ 1000 074e 3003     		.short	816
+ 1001 0750 E001     		.short	480
+ 1002 0752 E001     		.short	480
+ 1003 0754 C000     		.short	192
+ 1004 0756 E001     		.short	480
+ 1005 0758 3003     		.short	816
+ 1006 075a 3807     		.short	1848
+ 1007 075c 1806     		.short	1560
+ 1008 075e 0C0C     		.short	3084
+ 1009 0760 0E1C     		.short	7182
+ 1010 0762 0738     		.short	14343
+ 1011 0764 0000     		.short	0
+ 1012 0766 0000     		.short	0
+ 1013 0768 0000     		.short	0
+ 1014 076a 0000     		.short	0
+ 1015 076c 0738     		.short	14343
+ 1016 076e 0E1C     		.short	7182
+ 1017 0770 0C0C     		.short	3084
+ 1018 0772 1806     		.short	1560
+ 1019 0774 1806     		.short	1560
+ 1020 0776 3003     		.short	816
+ 1021 0778 E001     		.short	480
+ 1022 077a E001     		.short	480
+ 1023 077c C000     		.short	192
+ 1024 077e C000     		.short	192
+ 1025 0780 C000     		.short	192
+ 1026 0782 C000     		.short	192
+ 1027 0784 C000     		.short	192
+ 1028 0786 C000     		.short	192
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 23
+
+
+ 1029 0788 C000     		.short	192
+ 1030 078a 0000     		.short	0
+ 1031 078c 0000     		.short	0
+ 1032 078e 0000     		.short	0
+ 1033 0790 0000     		.short	0
+ 1034 0792 FE0F     		.short	4094
+ 1035 0794 FE0F     		.short	4094
+ 1036 0796 0006     		.short	1536
+ 1037 0798 0007     		.short	1792
+ 1038 079a 8003     		.short	896
+ 1039 079c 8001     		.short	384
+ 1040 079e C000     		.short	192
+ 1041 07a0 6000     		.short	96
+ 1042 07a2 7000     		.short	112
+ 1043 07a4 3800     		.short	56
+ 1044 07a6 1800     		.short	24
+ 1045 07a8 0C00     		.short	12
+ 1046 07aa 0600     		.short	6
+ 1047 07ac FF0F     		.short	4095
+ 1048 07ae FF0F     		.short	4095
+ 1049 07b0 0000     		.short	0
+ 1050 07b2 0000     		.short	0
+ 1051 07b4 0000     		.short	0
+ 1052 07b6 0000     		.short	0
+ 1053 07b8 F800     		.short	248
+ 1054 07ba 9C01     		.short	412
+ 1055 07bc 0C03     		.short	780
+ 1056 07be 0603     		.short	774
+ 1057 07c0 0606     		.short	1542
+ 1058 07c2 0606     		.short	1542
+ 1059 07c4 0606     		.short	1542
+ 1060 07c6 0606     		.short	1542
+ 1061 07c8 0606     		.short	1542
+ 1062 07ca 0606     		.short	1542
+ 1063 07cc 0606     		.short	1542
+ 1064 07ce 0603     		.short	774
+ 1065 07d0 0C03     		.short	780
+ 1066 07d2 9C01     		.short	412
+ 1067 07d4 F800     		.short	248
+ 1068 07d6 0000     		.short	0
+ 1069 07d8 0000     		.short	0
+ 1070 07da 0000     		.short	0
+ 1071 07dc 0000     		.short	0
+ 1072 07de C000     		.short	192
+ 1073 07e0 E000     		.short	224
+ 1074 07e2 FC00     		.short	252
+ 1075 07e4 DC00     		.short	220
+ 1076 07e6 C000     		.short	192
+ 1077 07e8 C000     		.short	192
+ 1078 07ea C000     		.short	192
+ 1079 07ec C000     		.short	192
+ 1080 07ee C000     		.short	192
+ 1081 07f0 C000     		.short	192
+ 1082 07f2 C000     		.short	192
+ 1083 07f4 C000     		.short	192
+ 1084 07f6 C000     		.short	192
+ 1085 07f8 C000     		.short	192
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 24
+
+
+ 1086 07fa C000     		.short	192
+ 1087 07fc 0000     		.short	0
+ 1088 07fe 0000     		.short	0
+ 1089 0800 0000     		.short	0
+ 1090 0802 0000     		.short	0
+ 1091 0804 F801     		.short	504
+ 1092 0806 9C03     		.short	924
+ 1093 0808 0603     		.short	774
+ 1094 080a 0606     		.short	1542
+ 1095 080c 0006     		.short	1536
+ 1096 080e 0003     		.short	768
+ 1097 0810 0003     		.short	768
+ 1098 0812 8001     		.short	384
+ 1099 0814 C000     		.short	192
+ 1100 0816 7000     		.short	112
+ 1101 0818 3800     		.short	56
+ 1102 081a 1C00     		.short	28
+ 1103 081c 0E00     		.short	14
+ 1104 081e FE07     		.short	2046
+ 1105 0820 FE07     		.short	2046
+ 1106 0822 0000     		.short	0
+ 1107 0824 0000     		.short	0
+ 1108 0826 0000     		.short	0
+ 1109 0828 0000     		.short	0
+ 1110 082a F800     		.short	248
+ 1111 082c 8C01     		.short	396
+ 1112 082e 0603     		.short	774
+ 1113 0830 0603     		.short	774
+ 1114 0832 0003     		.short	768
+ 1115 0834 8001     		.short	384
+ 1116 0836 E000     		.short	224
+ 1117 0838 E001     		.short	480
+ 1118 083a 0003     		.short	768
+ 1119 083c 0006     		.short	1536
+ 1120 083e 0006     		.short	1536
+ 1121 0840 0606     		.short	1542
+ 1122 0842 0603     		.short	774
+ 1123 0844 8C03     		.short	908
+ 1124 0846 F801     		.short	504
+ 1125 0848 0000     		.short	0
+ 1126 084a 0000     		.short	0
+ 1127 084c 0000     		.short	0
+ 1128 084e 0000     		.short	0
+ 1129 0850 8001     		.short	384
+ 1130 0852 C001     		.short	448
+ 1131 0854 E001     		.short	480
+ 1132 0856 A001     		.short	416
+ 1133 0858 B001     		.short	432
+ 1134 085a 9801     		.short	408
+ 1135 085c 8801     		.short	392
+ 1136 085e 8C01     		.short	396
+ 1137 0860 8601     		.short	390
+ 1138 0862 8301     		.short	387
+ 1139 0864 FF07     		.short	2047
+ 1140 0866 8001     		.short	384
+ 1141 0868 8001     		.short	384
+ 1142 086a 8001     		.short	384
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 25
+
+
+ 1143 086c 8001     		.short	384
+ 1144 086e 0000     		.short	0
+ 1145 0870 0000     		.short	0
+ 1146 0872 0000     		.short	0
+ 1147 0874 0000     		.short	0
+ 1148 0876 FC03     		.short	1020
+ 1149 0878 FC03     		.short	1020
+ 1150 087a 0C00     		.short	12
+ 1151 087c 0C00     		.short	12
+ 1152 087e 0C00     		.short	12
+ 1153 0880 F400     		.short	244
+ 1154 0882 FC03     		.short	1020
+ 1155 0884 0603     		.short	774
+ 1156 0886 0006     		.short	1536
+ 1157 0888 0006     		.short	1536
+ 1158 088a 0006     		.short	1536
+ 1159 088c 0606     		.short	1542
+ 1160 088e 0603     		.short	774
+ 1161 0890 9C03     		.short	924
+ 1162 0892 F801     		.short	504
+ 1163 0894 0000     		.short	0
+ 1164 0896 0000     		.short	0
+ 1165 0898 0000     		.short	0
+ 1166 089a 0000     		.short	0
+ 1167 089c F801     		.short	504
+ 1168 089e 9C03     		.short	924
+ 1169 08a0 0C03     		.short	780
+ 1170 08a2 0E04     		.short	1038
+ 1171 08a4 0600     		.short	6
+ 1172 08a6 E600     		.short	230
+ 1173 08a8 FE01     		.short	510
+ 1174 08aa 0E03     		.short	782
+ 1175 08ac 0607     		.short	1798
+ 1176 08ae 0606     		.short	1542
+ 1177 08b0 0606     		.short	1542
+ 1178 08b2 0606     		.short	1542
+ 1179 08b4 0C03     		.short	780
+ 1180 08b6 9C03     		.short	924
+ 1181 08b8 F801     		.short	504
+ 1182 08ba 0000     		.short	0
+ 1183 08bc 0000     		.short	0
+ 1184 08be 0000     		.short	0
+ 1185 08c0 0000     		.short	0
+ 1186 08c2 FE07     		.short	2046
+ 1187 08c4 FE07     		.short	2046
+ 1188 08c6 0003     		.short	768
+ 1189 08c8 0003     		.short	768
+ 1190 08ca 0001     		.short	256
+ 1191 08cc 8001     		.short	384
+ 1192 08ce 8001     		.short	384
+ 1193 08d0 C000     		.short	192
+ 1194 08d2 C000     		.short	192
+ 1195 08d4 6000     		.short	96
+ 1196 08d6 6000     		.short	96
+ 1197 08d8 6000     		.short	96
+ 1198 08da 3000     		.short	48
+ 1199 08dc 3000     		.short	48
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 26
+
+
+ 1200 08de 1800     		.short	24
+ 1201 08e0 0000     		.short	0
+ 1202 08e2 0000     		.short	0
+ 1203 08e4 0000     		.short	0
+ 1204 08e6 0000     		.short	0
+ 1205 08e8 F801     		.short	504
+ 1206 08ea 9C03     		.short	924
+ 1207 08ec 0C03     		.short	780
+ 1208 08ee 0603     		.short	774
+ 1209 08f0 0C03     		.short	780
+ 1210 08f2 9C03     		.short	924
+ 1211 08f4 F801     		.short	504
+ 1212 08f6 F800     		.short	248
+ 1213 08f8 9C03     		.short	924
+ 1214 08fa 0603     		.short	774
+ 1215 08fc 0606     		.short	1542
+ 1216 08fe 0606     		.short	1542
+ 1217 0900 0607     		.short	1798
+ 1218 0902 8C03     		.short	908
+ 1219 0904 F801     		.short	504
+ 1220 0906 0000     		.short	0
+ 1221 0908 0000     		.short	0
+ 1222 090a 0000     		.short	0
+ 1223 090c 0000     		.short	0
+ 1224 090e F800     		.short	248
+ 1225 0910 8C01     		.short	396
+ 1226 0912 0603     		.short	774
+ 1227 0914 0603     		.short	774
+ 1228 0916 0606     		.short	1542
+ 1229 0918 0606     		.short	1542
+ 1230 091a 0606     		.short	1542
+ 1231 091c 0C07     		.short	1804
+ 1232 091e FC06     		.short	1788
+ 1233 0920 7006     		.short	1648
+ 1234 0922 0003     		.short	768
+ 1235 0924 0003     		.short	768
+ 1236 0926 0603     		.short	774
+ 1237 0928 8C01     		.short	396
+ 1238 092a F800     		.short	248
+ 1239 092c 0000     		.short	0
+ 1240 092e 0000     		.short	0
+ 1241 0930 0000     		.short	0
+ 1242 0932 0000     		.short	0
+ 1243              		.section	.rodata._ZL9OTF_10X12,"a",%progbits
+ 1244              		.align	2
+ 1247              	_ZL9OTF_10X12:
+ 1248 0000 0000     		.short	0
+ 1249 0002 0000     		.short	0
+ 1250 0004 0E00     		.short	14
+ 1251 0006 1100     		.short	17
+ 1252 0008 1000     		.short	16
+ 1253 000a 1F00     		.short	31
+ 1254 000c 1100     		.short	17
+ 1255 000e 1100     		.short	17
+ 1256 0010 1F00     		.short	31
+ 1257 0012 0000     		.short	0
+ 1258 0014 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 27
+
+
+ 1259 0016 0000     		.short	0
+ 1260 0018 0100     		.short	1
+ 1261 001a 0100     		.short	1
+ 1262 001c 0D00     		.short	13
+ 1263 001e 1300     		.short	19
+ 1264 0020 3100     		.short	49
+ 1265 0022 2100     		.short	33
+ 1266 0024 3100     		.short	49
+ 1267 0026 1100     		.short	17
+ 1268 0028 1F00     		.short	31
+ 1269 002a 0000     		.short	0
+ 1270 002c 0000     		.short	0
+ 1271 002e 0000     		.short	0
+ 1272 0030 0000     		.short	0
+ 1273 0032 0000     		.short	0
+ 1274 0034 0E00     		.short	14
+ 1275 0036 1100     		.short	17
+ 1276 0038 0100     		.short	1
+ 1277 003a 0100     		.short	1
+ 1278 003c 0100     		.short	1
+ 1279 003e 1100     		.short	17
+ 1280 0040 1E00     		.short	30
+ 1281 0042 0000     		.short	0
+ 1282 0044 0000     		.short	0
+ 1283 0046 0000     		.short	0
+ 1284 0048 1000     		.short	16
+ 1285 004a 1000     		.short	16
+ 1286 004c 1E00     		.short	30
+ 1287 004e 1100     		.short	17
+ 1288 0050 1100     		.short	17
+ 1289 0052 1100     		.short	17
+ 1290 0054 1100     		.short	17
+ 1291 0056 1100     		.short	17
+ 1292 0058 1F00     		.short	31
+ 1293 005a 0000     		.short	0
+ 1294 005c 0000     		.short	0
+ 1295 005e 0000     		.short	0
+ 1296 0060 0000     		.short	0
+ 1297 0062 0000     		.short	0
+ 1298 0064 0E00     		.short	14
+ 1299 0066 1100     		.short	17
+ 1300 0068 3100     		.short	49
+ 1301 006a 3F00     		.short	63
+ 1302 006c 0100     		.short	1
+ 1303 006e 3100     		.short	49
+ 1304 0070 1E00     		.short	30
+ 1305 0072 0000     		.short	0
+ 1306 0074 0000     		.short	0
+ 1307 0076 0000     		.short	0
+ 1308 0078 0700     		.short	7
+ 1309 007a 0100     		.short	1
+ 1310 007c 0700     		.short	7
+ 1311 007e 0100     		.short	1
+ 1312 0080 0100     		.short	1
+ 1313 0082 0100     		.short	1
+ 1314 0084 0100     		.short	1
+ 1315 0086 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 28
+
+
+ 1316 0088 0100     		.short	1
+ 1317 008a 0000     		.short	0
+ 1318 008c 0000     		.short	0
+ 1319 008e 0000     		.short	0
+ 1320 0090 0000     		.short	0
+ 1321 0092 0000     		.short	0
+ 1322 0094 1E00     		.short	30
+ 1323 0096 1100     		.short	17
+ 1324 0098 1100     		.short	17
+ 1325 009a 1100     		.short	17
+ 1326 009c 1100     		.short	17
+ 1327 009e 1100     		.short	17
+ 1328 00a0 1F00     		.short	31
+ 1329 00a2 1000     		.short	16
+ 1330 00a4 1900     		.short	25
+ 1331 00a6 0E00     		.short	14
+ 1332 00a8 0100     		.short	1
+ 1333 00aa 0100     		.short	1
+ 1334 00ac 1D00     		.short	29
+ 1335 00ae 1300     		.short	19
+ 1336 00b0 1100     		.short	17
+ 1337 00b2 1100     		.short	17
+ 1338 00b4 1100     		.short	17
+ 1339 00b6 1100     		.short	17
+ 1340 00b8 1100     		.short	17
+ 1341 00ba 0000     		.short	0
+ 1342 00bc 0000     		.short	0
+ 1343 00be 0000     		.short	0
+ 1344 00c0 0100     		.short	1
+ 1345 00c2 0000     		.short	0
+ 1346 00c4 0100     		.short	1
+ 1347 00c6 0100     		.short	1
+ 1348 00c8 0100     		.short	1
+ 1349 00ca 0100     		.short	1
+ 1350 00cc 0100     		.short	1
+ 1351 00ce 0100     		.short	1
+ 1352 00d0 0100     		.short	1
+ 1353 00d2 0000     		.short	0
+ 1354 00d4 0000     		.short	0
+ 1355 00d6 0000     		.short	0
+ 1356 00d8 0100     		.short	1
+ 1357 00da 0000     		.short	0
+ 1358 00dc 0100     		.short	1
+ 1359 00de 0100     		.short	1
+ 1360 00e0 0100     		.short	1
+ 1361 00e2 0100     		.short	1
+ 1362 00e4 0100     		.short	1
+ 1363 00e6 0100     		.short	1
+ 1364 00e8 0100     		.short	1
+ 1365 00ea 0100     		.short	1
+ 1366 00ec 0100     		.short	1
+ 1367 00ee 0000     		.short	0
+ 1368 00f0 0100     		.short	1
+ 1369 00f2 0100     		.short	1
+ 1370 00f4 1900     		.short	25
+ 1371 00f6 0D00     		.short	13
+ 1372 00f8 0500     		.short	5
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 29
+
+
+ 1373 00fa 0700     		.short	7
+ 1374 00fc 0D00     		.short	13
+ 1375 00fe 0900     		.short	9
+ 1376 0100 1100     		.short	17
+ 1377 0102 0000     		.short	0
+ 1378 0104 0000     		.short	0
+ 1379 0106 0000     		.short	0
+ 1380 0108 0100     		.short	1
+ 1381 010a 0100     		.short	1
+ 1382 010c 0100     		.short	1
+ 1383 010e 0100     		.short	1
+ 1384 0110 0100     		.short	1
+ 1385 0112 0100     		.short	1
+ 1386 0114 0100     		.short	1
+ 1387 0116 0100     		.short	1
+ 1388 0118 0100     		.short	1
+ 1389 011a 0000     		.short	0
+ 1390 011c 0000     		.short	0
+ 1391 011e 0000     		.short	0
+ 1392 0120 0000     		.short	0
+ 1393 0122 0000     		.short	0
+ 1394 0124 CD00     		.short	205
+ 1395 0126 3301     		.short	307
+ 1396 0128 1101     		.short	273
+ 1397 012a 1101     		.short	273
+ 1398 012c 1101     		.short	273
+ 1399 012e 1101     		.short	273
+ 1400 0130 1101     		.short	273
+ 1401 0132 0000     		.short	0
+ 1402 0134 0000     		.short	0
+ 1403 0136 0000     		.short	0
+ 1404 0138 0000     		.short	0
+ 1405 013a 0000     		.short	0
+ 1406 013c 1D00     		.short	29
+ 1407 013e 1300     		.short	19
+ 1408 0140 1100     		.short	17
+ 1409 0142 1100     		.short	17
+ 1410 0144 1100     		.short	17
+ 1411 0146 1100     		.short	17
+ 1412 0148 1100     		.short	17
+ 1413 014a 0000     		.short	0
+ 1414 014c 0000     		.short	0
+ 1415 014e 0000     		.short	0
+ 1416 0150 0000     		.short	0
+ 1417 0152 0000     		.short	0
+ 1418 0154 0E00     		.short	14
+ 1419 0156 1100     		.short	17
+ 1420 0158 3100     		.short	49
+ 1421 015a 2100     		.short	33
+ 1422 015c 3100     		.short	49
+ 1423 015e 1100     		.short	17
+ 1424 0160 1E00     		.short	30
+ 1425 0162 0000     		.short	0
+ 1426 0164 0000     		.short	0
+ 1427 0166 0000     		.short	0
+ 1428 0168 0000     		.short	0
+ 1429 016a 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 30
+
+
+ 1430 016c 0D00     		.short	13
+ 1431 016e 1300     		.short	19
+ 1432 0170 3100     		.short	49
+ 1433 0172 2100     		.short	33
+ 1434 0174 3100     		.short	49
+ 1435 0176 1100     		.short	17
+ 1436 0178 1F00     		.short	31
+ 1437 017a 0100     		.short	1
+ 1438 017c 0100     		.short	1
+ 1439 017e 0100     		.short	1
+ 1440 0180 0000     		.short	0
+ 1441 0182 0000     		.short	0
+ 1442 0184 1E00     		.short	30
+ 1443 0186 1100     		.short	17
+ 1444 0188 1100     		.short	17
+ 1445 018a 1100     		.short	17
+ 1446 018c 1100     		.short	17
+ 1447 018e 1100     		.short	17
+ 1448 0190 1F00     		.short	31
+ 1449 0192 1000     		.short	16
+ 1450 0194 1000     		.short	16
+ 1451 0196 1000     		.short	16
+ 1452 0198 0000     		.short	0
+ 1453 019a 0000     		.short	0
+ 1454 019c 0500     		.short	5
+ 1455 019e 0300     		.short	3
+ 1456 01a0 0100     		.short	1
+ 1457 01a2 0100     		.short	1
+ 1458 01a4 0100     		.short	1
+ 1459 01a6 0100     		.short	1
+ 1460 01a8 0100     		.short	1
+ 1461 01aa 0000     		.short	0
+ 1462 01ac 0000     		.short	0
+ 1463 01ae 0000     		.short	0
+ 1464 01b0 0000     		.short	0
+ 1465 01b2 0000     		.short	0
+ 1466 01b4 0F00     		.short	15
+ 1467 01b6 1900     		.short	25
+ 1468 01b8 0100     		.short	1
+ 1469 01ba 0F00     		.short	15
+ 1470 01bc 1800     		.short	24
+ 1471 01be 1100     		.short	17
+ 1472 01c0 0F00     		.short	15
+ 1473 01c2 0000     		.short	0
+ 1474 01c4 0000     		.short	0
+ 1475 01c6 0000     		.short	0
+ 1476 01c8 0000     		.short	0
+ 1477 01ca 0100     		.short	1
+ 1478 01cc 0300     		.short	3
+ 1479 01ce 0100     		.short	1
+ 1480 01d0 0100     		.short	1
+ 1481 01d2 0100     		.short	1
+ 1482 01d4 0100     		.short	1
+ 1483 01d6 0100     		.short	1
+ 1484 01d8 0700     		.short	7
+ 1485 01da 0000     		.short	0
+ 1486 01dc 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 31
+
+
+ 1487 01de 0000     		.short	0
+ 1488 01e0 0000     		.short	0
+ 1489 01e2 0000     		.short	0
+ 1490 01e4 1100     		.short	17
+ 1491 01e6 1100     		.short	17
+ 1492 01e8 1100     		.short	17
+ 1493 01ea 1100     		.short	17
+ 1494 01ec 1100     		.short	17
+ 1495 01ee 1100     		.short	17
+ 1496 01f0 1F00     		.short	31
+ 1497 01f2 0000     		.short	0
+ 1498 01f4 0000     		.short	0
+ 1499 01f6 0000     		.short	0
+ 1500 01f8 0000     		.short	0
+ 1501 01fa 0000     		.short	0
+ 1502 01fc 1100     		.short	17
+ 1503 01fe 1100     		.short	17
+ 1504 0200 0900     		.short	9
+ 1505 0202 0B00     		.short	11
+ 1506 0204 0A00     		.short	10
+ 1507 0206 0600     		.short	6
+ 1508 0208 0400     		.short	4
+ 1509 020a 0000     		.short	0
+ 1510 020c 0000     		.short	0
+ 1511 020e 0000     		.short	0
+ 1512 0210 0000     		.short	0
+ 1513 0212 0000     		.short	0
+ 1514 0214 8800     		.short	136
+ 1515 0216 9900     		.short	153
+ 1516 0218 DD00     		.short	221
+ 1517 021a 5500     		.short	85
+ 1518 021c 5500     		.short	85
+ 1519 021e 6600     		.short	102
+ 1520 0220 2200     		.short	34
+ 1521 0222 0000     		.short	0
+ 1522 0224 0000     		.short	0
+ 1523 0226 0000     		.short	0
+ 1524 0228 0000     		.short	0
+ 1525 022a 0000     		.short	0
+ 1526 022c 1100     		.short	17
+ 1527 022e 0B00     		.short	11
+ 1528 0230 0E00     		.short	14
+ 1529 0232 0400     		.short	4
+ 1530 0234 0E00     		.short	14
+ 1531 0236 0B00     		.short	11
+ 1532 0238 1100     		.short	17
+ 1533 023a 0000     		.short	0
+ 1534 023c 0000     		.short	0
+ 1535 023e 0000     		.short	0
+ 1536 0240 0000     		.short	0
+ 1537 0242 0000     		.short	0
+ 1538 0244 1100     		.short	17
+ 1539 0246 1100     		.short	17
+ 1540 0248 0900     		.short	9
+ 1541 024a 0B00     		.short	11
+ 1542 024c 0A00     		.short	10
+ 1543 024e 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 32
+
+
+ 1544 0250 0400     		.short	4
+ 1545 0252 0400     		.short	4
+ 1546 0254 0200     		.short	2
+ 1547 0256 0100     		.short	1
+ 1548 0258 0000     		.short	0
+ 1549 025a 0000     		.short	0
+ 1550 025c 1F00     		.short	31
+ 1551 025e 1800     		.short	24
+ 1552 0260 0C00     		.short	12
+ 1553 0262 0600     		.short	6
+ 1554 0264 0200     		.short	2
+ 1555 0266 0100     		.short	1
+ 1556 0268 1F00     		.short	31
+ 1557 026a 0000     		.short	0
+ 1558 026c 0000     		.short	0
+ 1559 026e 0000     		.short	0
+ 1560 0270 0C00     		.short	12
+ 1561 0272 1C00     		.short	28
+ 1562 0274 1600     		.short	22
+ 1563 0276 1200     		.short	18
+ 1564 0278 2200     		.short	34
+ 1565 027a 3F00     		.short	63
+ 1566 027c 6100     		.short	97
+ 1567 027e 4100     		.short	65
+ 1568 0280 C000     		.short	192
+ 1569 0282 0000     		.short	0
+ 1570 0284 0000     		.short	0
+ 1571 0286 0000     		.short	0
+ 1572 0288 3F00     		.short	63
+ 1573 028a 2100     		.short	33
+ 1574 028c 6100     		.short	97
+ 1575 028e 3100     		.short	49
+ 1576 0290 3F00     		.short	63
+ 1577 0292 4100     		.short	65
+ 1578 0294 4100     		.short	65
+ 1579 0296 6100     		.short	97
+ 1580 0298 3F00     		.short	63
+ 1581 029a 0000     		.short	0
+ 1582 029c 0000     		.short	0
+ 1583 029e 0000     		.short	0
+ 1584 02a0 7E00     		.short	126
+ 1585 02a2 4300     		.short	67
+ 1586 02a4 C100     		.short	193
+ 1587 02a6 0100     		.short	1
+ 1588 02a8 0100     		.short	1
+ 1589 02aa 0100     		.short	1
+ 1590 02ac C100     		.short	193
+ 1591 02ae 4200     		.short	66
+ 1592 02b0 3C00     		.short	60
+ 1593 02b2 0000     		.short	0
+ 1594 02b4 0000     		.short	0
+ 1595 02b6 0000     		.short	0
+ 1596 02b8 3F00     		.short	63
+ 1597 02ba 4100     		.short	65
+ 1598 02bc C100     		.short	193
+ 1599 02be C100     		.short	193
+ 1600 02c0 C100     		.short	193
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 33
+
+
+ 1601 02c2 C100     		.short	193
+ 1602 02c4 4100     		.short	65
+ 1603 02c6 6100     		.short	97
+ 1604 02c8 3F00     		.short	63
+ 1605 02ca 0000     		.short	0
+ 1606 02cc 0000     		.short	0
+ 1607 02ce 0000     		.short	0
+ 1608 02d0 7F00     		.short	127
+ 1609 02d2 0100     		.short	1
+ 1610 02d4 0100     		.short	1
+ 1611 02d6 0100     		.short	1
+ 1612 02d8 3F00     		.short	63
+ 1613 02da 0100     		.short	1
+ 1614 02dc 0100     		.short	1
+ 1615 02de 0100     		.short	1
+ 1616 02e0 7F00     		.short	127
+ 1617 02e2 0000     		.short	0
+ 1618 02e4 0000     		.short	0
+ 1619 02e6 0000     		.short	0
+ 1620 02e8 3F00     		.short	63
+ 1621 02ea 0100     		.short	1
+ 1622 02ec 0100     		.short	1
+ 1623 02ee 0100     		.short	1
+ 1624 02f0 3F00     		.short	63
+ 1625 02f2 0100     		.short	1
+ 1626 02f4 0100     		.short	1
+ 1627 02f6 0100     		.short	1
+ 1628 02f8 0100     		.short	1
+ 1629 02fa 0000     		.short	0
+ 1630 02fc 0000     		.short	0
+ 1631 02fe 0000     		.short	0
+ 1632 0300 7E00     		.short	126
+ 1633 0302 C300     		.short	195
+ 1634 0304 8100     		.short	129
+ 1635 0306 0100     		.short	1
+ 1636 0308 E100     		.short	225
+ 1637 030a 8100     		.short	129
+ 1638 030c 8100     		.short	129
+ 1639 030e C200     		.short	194
+ 1640 0310 FC00     		.short	252
+ 1641 0312 0000     		.short	0
+ 1642 0314 0000     		.short	0
+ 1643 0316 0000     		.short	0
+ 1644 0318 4100     		.short	65
+ 1645 031a 4100     		.short	65
+ 1646 031c 4100     		.short	65
+ 1647 031e 4100     		.short	65
+ 1648 0320 7F00     		.short	127
+ 1649 0322 4100     		.short	65
+ 1650 0324 4100     		.short	65
+ 1651 0326 4100     		.short	65
+ 1652 0328 4100     		.short	65
+ 1653 032a 0000     		.short	0
+ 1654 032c 0000     		.short	0
+ 1655 032e 0000     		.short	0
+ 1656 0330 0100     		.short	1
+ 1657 0332 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 34
+
+
+ 1658 0334 0100     		.short	1
+ 1659 0336 0100     		.short	1
+ 1660 0338 0100     		.short	1
+ 1661 033a 0100     		.short	1
+ 1662 033c 0100     		.short	1
+ 1663 033e 0100     		.short	1
+ 1664 0340 0100     		.short	1
+ 1665 0342 0000     		.short	0
+ 1666 0344 0000     		.short	0
+ 1667 0346 0000     		.short	0
+ 1668 0348 0800     		.short	8
+ 1669 034a 0800     		.short	8
+ 1670 034c 0800     		.short	8
+ 1671 034e 0800     		.short	8
+ 1672 0350 0800     		.short	8
+ 1673 0352 0800     		.short	8
+ 1674 0354 0900     		.short	9
+ 1675 0356 0900     		.short	9
+ 1676 0358 0F00     		.short	15
+ 1677 035a 0000     		.short	0
+ 1678 035c 0000     		.short	0
+ 1679 035e 0000     		.short	0
+ 1680 0360 6100     		.short	97
+ 1681 0362 3100     		.short	49
+ 1682 0364 1900     		.short	25
+ 1683 0366 0D00     		.short	13
+ 1684 0368 0F00     		.short	15
+ 1685 036a 1300     		.short	19
+ 1686 036c 3100     		.short	49
+ 1687 036e 6100     		.short	97
+ 1688 0370 C100     		.short	193
+ 1689 0372 0000     		.short	0
+ 1690 0374 0000     		.short	0
+ 1691 0376 0000     		.short	0
+ 1692 0378 0100     		.short	1
+ 1693 037a 0100     		.short	1
+ 1694 037c 0100     		.short	1
+ 1695 037e 0100     		.short	1
+ 1696 0380 0100     		.short	1
+ 1697 0382 0100     		.short	1
+ 1698 0384 0100     		.short	1
+ 1699 0386 0100     		.short	1
+ 1700 0388 3F00     		.short	63
+ 1701 038a 0000     		.short	0
+ 1702 038c 0000     		.short	0
+ 1703 038e 0000     		.short	0
+ 1704 0390 8301     		.short	387
+ 1705 0392 4301     		.short	323
+ 1706 0394 4501     		.short	325
+ 1707 0396 4501     		.short	325
+ 1708 0398 2501     		.short	293
+ 1709 039a 2901     		.short	297
+ 1710 039c 2901     		.short	297
+ 1711 039e 1901     		.short	281
+ 1712 03a0 1101     		.short	273
+ 1713 03a2 0000     		.short	0
+ 1714 03a4 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 35
+
+
+ 1715 03a6 0000     		.short	0
+ 1716 03a8 4300     		.short	67
+ 1717 03aa 4700     		.short	71
+ 1718 03ac 4500     		.short	69
+ 1719 03ae 4D00     		.short	77
+ 1720 03b0 4900     		.short	73
+ 1721 03b2 5100     		.short	81
+ 1722 03b4 7100     		.short	113
+ 1723 03b6 6100     		.short	97
+ 1724 03b8 4100     		.short	65
+ 1725 03ba 0000     		.short	0
+ 1726 03bc 0000     		.short	0
+ 1727 03be 0000     		.short	0
+ 1728 03c0 7E00     		.short	126
+ 1729 03c2 C300     		.short	195
+ 1730 03c4 8100     		.short	129
+ 1731 03c6 8100     		.short	129
+ 1732 03c8 8101     		.short	385
+ 1733 03ca 8100     		.short	129
+ 1734 03cc 8100     		.short	129
+ 1735 03ce C200     		.short	194
+ 1736 03d0 3C00     		.short	60
+ 1737 03d2 0000     		.short	0
+ 1738 03d4 0000     		.short	0
+ 1739 03d6 0000     		.short	0
+ 1740 03d8 3F00     		.short	63
+ 1741 03da 4100     		.short	65
+ 1742 03dc 4100     		.short	65
+ 1743 03de 4100     		.short	65
+ 1744 03e0 3F00     		.short	63
+ 1745 03e2 0100     		.short	1
+ 1746 03e4 0100     		.short	1
+ 1747 03e6 0100     		.short	1
+ 1748 03e8 0100     		.short	1
+ 1749 03ea 0000     		.short	0
+ 1750 03ec 0000     		.short	0
+ 1751 03ee 0000     		.short	0
+ 1752 03f0 7E00     		.short	126
+ 1753 03f2 C300     		.short	195
+ 1754 03f4 8100     		.short	129
+ 1755 03f6 8100     		.short	129
+ 1756 03f8 8101     		.short	385
+ 1757 03fa 8100     		.short	129
+ 1758 03fc A100     		.short	161
+ 1759 03fe E200     		.short	226
+ 1760 0400 FC01     		.short	508
+ 1761 0402 8000     		.short	128
+ 1762 0404 0000     		.short	0
+ 1763 0406 0000     		.short	0
+ 1764 0408 7F00     		.short	127
+ 1765 040a 4100     		.short	65
+ 1766 040c 4100     		.short	65
+ 1767 040e 4100     		.short	65
+ 1768 0410 3F00     		.short	63
+ 1769 0412 2100     		.short	33
+ 1770 0414 4100     		.short	65
+ 1771 0416 4100     		.short	65
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 36
+
+
+ 1772 0418 C100     		.short	193
+ 1773 041a 0000     		.short	0
+ 1774 041c 0000     		.short	0
+ 1775 041e 0000     		.short	0
+ 1776 0420 3E00     		.short	62
+ 1777 0422 6100     		.short	97
+ 1778 0424 0100     		.short	1
+ 1779 0426 0700     		.short	7
+ 1780 0428 3C00     		.short	60
+ 1781 042a 6000     		.short	96
+ 1782 042c 4100     		.short	65
+ 1783 042e 6300     		.short	99
+ 1784 0430 3E00     		.short	62
+ 1785 0432 0000     		.short	0
+ 1786 0434 0000     		.short	0
+ 1787 0436 0000     		.short	0
+ 1788 0438 7F00     		.short	127
+ 1789 043a 0C00     		.short	12
+ 1790 043c 0C00     		.short	12
+ 1791 043e 0C00     		.short	12
+ 1792 0440 0C00     		.short	12
+ 1793 0442 0C00     		.short	12
+ 1794 0444 0C00     		.short	12
+ 1795 0446 0C00     		.short	12
+ 1796 0448 0C00     		.short	12
+ 1797 044a 0000     		.short	0
+ 1798 044c 0000     		.short	0
+ 1799 044e 0000     		.short	0
+ 1800 0450 4100     		.short	65
+ 1801 0452 4100     		.short	65
+ 1802 0454 4100     		.short	65
+ 1803 0456 4100     		.short	65
+ 1804 0458 4100     		.short	65
+ 1805 045a 4100     		.short	65
+ 1806 045c 4100     		.short	65
+ 1807 045e 6300     		.short	99
+ 1808 0460 3E00     		.short	62
+ 1809 0462 0000     		.short	0
+ 1810 0464 0000     		.short	0
+ 1811 0466 0000     		.short	0
+ 1812 0468 C100     		.short	193
+ 1813 046a 4100     		.short	65
+ 1814 046c 2100     		.short	33
+ 1815 046e 2200     		.short	34
+ 1816 0470 3200     		.short	50
+ 1817 0472 1600     		.short	22
+ 1818 0474 1400     		.short	20
+ 1819 0476 1C00     		.short	28
+ 1820 0478 0C00     		.short	12
+ 1821 047a 0000     		.short	0
+ 1822 047c 0000     		.short	0
+ 1823 047e 0000     		.short	0
+ 1824 0480 3100     		.short	49
+ 1825 0482 3102     		.short	561
+ 1826 0484 5102     		.short	593
+ 1827 0486 4902     		.short	585
+ 1828 0488 4B02     		.short	587
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 37
+
+
+ 1829 048a 4A03     		.short	842
+ 1830 048c 8A01     		.short	394
+ 1831 048e 8601     		.short	390
+ 1832 0490 8401     		.short	388
+ 1833 0492 0000     		.short	0
+ 1834 0494 0000     		.short	0
+ 1835 0496 0000     		.short	0
+ 1836 0498 6100     		.short	97
+ 1837 049a 3200     		.short	50
+ 1838 049c 1600     		.short	22
+ 1839 049e 0C00     		.short	12
+ 1840 04a0 0C00     		.short	12
+ 1841 04a2 1400     		.short	20
+ 1842 04a4 3200     		.short	50
+ 1843 04a6 6300     		.short	99
+ 1844 04a8 C100     		.short	193
+ 1845 04aa 0000     		.short	0
+ 1846 04ac 0000     		.short	0
+ 1847 04ae 0000     		.short	0
+ 1848 04b0 C100     		.short	193
+ 1849 04b2 2300     		.short	35
+ 1850 04b4 3200     		.short	50
+ 1851 04b6 1400     		.short	20
+ 1852 04b8 0C00     		.short	12
+ 1853 04ba 0800     		.short	8
+ 1854 04bc 0800     		.short	8
+ 1855 04be 0800     		.short	8
+ 1856 04c0 0800     		.short	8
+ 1857 04c2 0000     		.short	0
+ 1858 04c4 0000     		.short	0
+ 1859 04c6 0000     		.short	0
+ 1860 04c8 3F00     		.short	63
+ 1861 04ca 3000     		.short	48
+ 1862 04cc 1000     		.short	16
+ 1863 04ce 0800     		.short	8
+ 1864 04d0 0400     		.short	4
+ 1865 04d2 0600     		.short	6
+ 1866 04d4 0300     		.short	3
+ 1867 04d6 0100     		.short	1
+ 1868 04d8 7F00     		.short	127
+ 1869 04da 0000     		.short	0
+ 1870 04dc 0000     		.short	0
+ 1871 04de 0000     		.short	0
+ 1872 04e0 1E00     		.short	30
+ 1873 04e2 1100     		.short	17
+ 1874 04e4 1100     		.short	17
+ 1875 04e6 3100     		.short	49
+ 1876 04e8 3100     		.short	49
+ 1877 04ea 3100     		.short	49
+ 1878 04ec 1100     		.short	17
+ 1879 04ee 1100     		.short	17
+ 1880 04f0 0E00     		.short	14
+ 1881 04f2 0000     		.short	0
+ 1882 04f4 0000     		.short	0
+ 1883 04f6 0000     		.short	0
+ 1884 04f8 0800     		.short	8
+ 1885 04fa 0F00     		.short	15
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 38
+
+
+ 1886 04fc 0800     		.short	8
+ 1887 04fe 0800     		.short	8
+ 1888 0500 0800     		.short	8
+ 1889 0502 0800     		.short	8
+ 1890 0504 0800     		.short	8
+ 1891 0506 0800     		.short	8
+ 1892 0508 0800     		.short	8
+ 1893 050a 0000     		.short	0
+ 1894 050c 0000     		.short	0
+ 1895 050e 0000     		.short	0
+ 1896 0510 1F00     		.short	31
+ 1897 0512 1100     		.short	17
+ 1898 0514 3000     		.short	48
+ 1899 0516 1000     		.short	16
+ 1900 0518 1800     		.short	24
+ 1901 051a 0400     		.short	4
+ 1902 051c 0200     		.short	2
+ 1903 051e 0100     		.short	1
+ 1904 0520 3F00     		.short	63
+ 1905 0522 0000     		.short	0
+ 1906 0524 0000     		.short	0
+ 1907 0526 0000     		.short	0
+ 1908 0528 1F00     		.short	31
+ 1909 052a 1100     		.short	17
+ 1910 052c 1000     		.short	16
+ 1911 052e 1800     		.short	24
+ 1912 0530 1C00     		.short	28
+ 1913 0532 3000     		.short	48
+ 1914 0534 3000     		.short	48
+ 1915 0536 1100     		.short	17
+ 1916 0538 1E00     		.short	30
+ 1917 053a 0000     		.short	0
+ 1918 053c 0000     		.short	0
+ 1919 053e 0000     		.short	0
+ 1920 0540 1000     		.short	16
+ 1921 0542 1800     		.short	24
+ 1922 0544 1800     		.short	24
+ 1923 0546 1400     		.short	20
+ 1924 0548 1200     		.short	18
+ 1925 054a 1100     		.short	17
+ 1926 054c 3F00     		.short	63
+ 1927 054e 1000     		.short	16
+ 1928 0550 1000     		.short	16
+ 1929 0552 0000     		.short	0
+ 1930 0554 0000     		.short	0
+ 1931 0556 0000     		.short	0
+ 1932 0558 1F00     		.short	31
+ 1933 055a 0100     		.short	1
+ 1934 055c 0100     		.short	1
+ 1935 055e 1F00     		.short	31
+ 1936 0560 1100     		.short	17
+ 1937 0562 3000     		.short	48
+ 1938 0564 3000     		.short	48
+ 1939 0566 1100     		.short	17
+ 1940 0568 1E00     		.short	30
+ 1941 056a 0000     		.short	0
+ 1942 056c 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 39
+
+
+ 1943 056e 0000     		.short	0
+ 1944 0570 1E00     		.short	30
+ 1945 0572 3100     		.short	49
+ 1946 0574 0100     		.short	1
+ 1947 0576 1F00     		.short	31
+ 1948 0578 1100     		.short	17
+ 1949 057a 3100     		.short	49
+ 1950 057c 3100     		.short	49
+ 1951 057e 1100     		.short	17
+ 1952 0580 1E00     		.short	30
+ 1953 0582 0000     		.short	0
+ 1954 0584 0000     		.short	0
+ 1955 0586 0000     		.short	0
+ 1956 0588 3F00     		.short	63
+ 1957 058a 1000     		.short	16
+ 1958 058c 1000     		.short	16
+ 1959 058e 0800     		.short	8
+ 1960 0590 0800     		.short	8
+ 1961 0592 0C00     		.short	12
+ 1962 0594 0400     		.short	4
+ 1963 0596 0400     		.short	4
+ 1964 0598 0200     		.short	2
+ 1965 059a 0000     		.short	0
+ 1966 059c 0000     		.short	0
+ 1967 059e 0000     		.short	0
+ 1968 05a0 1F00     		.short	31
+ 1969 05a2 1100     		.short	17
+ 1970 05a4 1100     		.short	17
+ 1971 05a6 1A00     		.short	26
+ 1972 05a8 0E00     		.short	14
+ 1973 05aa 1100     		.short	17
+ 1974 05ac 3100     		.short	49
+ 1975 05ae 3100     		.short	49
+ 1976 05b0 1F00     		.short	31
+ 1977 05b2 0000     		.short	0
+ 1978 05b4 0000     		.short	0
+ 1979 05b6 0000     		.short	0
+ 1980 05b8 1F00     		.short	31
+ 1981 05ba 1100     		.short	17
+ 1982 05bc 3100     		.short	49
+ 1983 05be 3100     		.short	49
+ 1984 05c0 3B00     		.short	59
+ 1985 05c2 3600     		.short	54
+ 1986 05c4 1000     		.short	16
+ 1987 05c6 1100     		.short	17
+ 1988 05c8 0E00     		.short	14
+ 1989 05ca 0000     		.short	0
+ 1990 05cc 0000     		.short	0
+ 1991 05ce 0000     		.short	0
+ 1992              		.text
+ 1993              	.Letext0:
+ 1994              		.file 2 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 1995              		.file 3 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1996              		.file 4 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdint.h"
+ 1997              		.file 5 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\type_t
+ 1998              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+ 1999              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\\
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 40
+
+
+ 2000              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\debug\
+ 2001              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cwchar
+ 2002              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 2003              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2004              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\new"
+ 2005              		.file 13 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cloca
+ 2006              		.file 14 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cctyp
+ 2007              		.file 15 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2008              		.file 16 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdl
+ 2009              		.file 17 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 2010              		.file 18 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2011              		.file 19 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2012              		.file 20 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2013              		.file 21 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 2014              		.file 22 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 2015              		.file 23 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 2016              		.file 24 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 2017              		.file 25 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 2018              		.file 26 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 2019              		.file 27 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 2020              		.file 28 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 2021              		.file 29 "<built-in>"
+ 2022              		.file 30 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\wchar.h"
+ 2023              		.file 31 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\locale.h"
+ 2024              		.file 32 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\ctype.h"
+ 2025              		.file 33 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 2026              		.file 34 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdio.h"
+ 2027              		.file 35 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\errno.h"
+ 2028              		.file 36 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/lpc_types.h"
+ 2029              		.file 37 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/cmsis_175x_6x.h"
+ 2030              		.file 38 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/core_cm3.h"
+ 2031              		.file 39 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/chip.h"
+ 2032              		.file 40 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/sysctl_17xx_40xx.h"
+ 2033              		.file 41 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/clock_17xx_40xx.h"
+ 2034              		.file 42 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/iocon_17xx_40xx.h"
+ 2035              		.file 43 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/can_17xx_40xx.h"
+ 2036              		.file 44 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/i2s_17xx_40xx.h"
+ 2037              		.file 45 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/rtc_17xx_40xx.h"
+ 2038              		.file 46 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/spi_17xx_40xx.h"
+ 2039              		.file 47 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/error.h"
+ 2040              		.file 48 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/font.h"
+ 2041              		.file 49 "C:\\Users\\xavie\\Cegep\\Processeurs\\lpc_chip_175x_6x\\inc/ssp_17xx_40xx.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 41
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 game_engine.cpp
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:16     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:19     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:22     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:28     .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:61     .rodata._ZL9OTF_16X19:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:64     .rodata._ZL9OTF_16X19:00000000 _ZL9OTF_16X19
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:1244   .rodata._ZL9OTF_10X12:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s:1247   .rodata._ZL9OTF_10X12:00000000 _ZL9OTF_10X12
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.cr_section_macros.h.33.9e7c9c82e85b060f15a6d1b56a42fef2
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.cpp_type_traits.h.33.9f2bfd8c4471a9a299f6da3ec24c745c
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+                           .group:00000000 wm4.concept_check.h.31.f19605d278e56917c68a56d378be308c
+                           .group:00000000 wm4.type_traits.30.32b820b957e206cbc57b9805350afbca
+                           .group:00000000 wm4.move.h.159.368bac456bc1dfb8448d51bb65764956
+                           .group:00000000 wm4.assertions.h.30.f3970bbdad8b12088edf616ddeecdc90
+                           .group:00000000 wm4.stl_iterator.h.409.7a84ee40267bb1222b7cd9a74055edfb
+                           .group:00000000 wm4.debug.h.30.70fe957e8e7c7ceba3caf19b0959f126
+                           .group:00000000 wm4.stl_algobase.h.491.ec4060988bfff82dc579decdb75c72d6
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stddef.h.39.096871ec3ca5abfedfa76e8d05f4a8d6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.wchar.h.8.acdef4366e64def8c588421024712d23
+                           .group:00000000 wm4.stddef.h.161.9f48187563b2a85291a91832aa425498
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.wchar.h.29.d3f42b20d847eb1aee8a8518919e39fd
+                           .group:00000000 wm4.wchar.h.76.90478bd2c784f576b769c4535c98839d
+                           .group:00000000 wm4.cwchar.48.c4e882638bf84f6da89479dda6fe8e17
+                           .group:00000000 wm4.cxxabi_init_exception.h.42.029852b0f286014c9c193b74ad22df55
+                           .group:00000000 wm4.allocator.h.52.0ceafb36dc1b82dbfa6b05003082e3f5
+                           .group:00000000 wm4.stddef.h.161.38688f2eb958a8ed58fdb61ffe554c94
+                           .group:00000000 wm4.locale.h.16.90d16f662e7119f5b192650a45179c6c
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.cf64fe4c5e8c0ac0f52f1143312d4909
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.stl_function.h.57.6639ab8e57d2230b4b27118173a32750
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 42
+
+
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.edc94d4398c0534988962be77dc3c2e1
+                           .group:00000000 wm4.atomic_word.h.30.9e0ac69fd462d5e650933e05133b4afa
+                           .group:00000000 wm4.alloc_traits.h.31.c41c7c4789404962122a4e991dfa3abf
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.4494b0884bb80e2bd270999c8eda1e12
+                           .group:00000000 wm4.cstdio.45.1ffaea3e7c26dce1e03f5847a7439edb
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.1ecd7b1049497a0ab61da0f6cbd4b0c6
+                           .group:00000000 wm4.functional_hash.h.31.d995554db01f631b375a95ecfc605ca0
+                           .group:00000000 wm4.map.h.9.a59b4e1233d5777952b9a6cfa331d012
+                           .group:00000000 wm4.utility.158.7c70a6d34a442db3c2c1c48c450d507e
+                           .group:00000000 wm4.limits.38.60dcee91746348a1c05bc517a2a30e56
+                           .group:00000000 wm4.stdbool.h.29.01580e438512fc255c0619569742ffd3
+                           .group:00000000 wm4.lpc_types.h.63.bbe1d37589d0065a120c4df50b697244
+                           .group:00000000 wm4.sys_config.h.31.f8c315d4b1b74f49c8745dcf1114f978
+                           .group:00000000 wm4.cmsis_175x_6x.h.33.75b091e3b445a2d3d6fff2c163abfea4
+                           .group:00000000 wm4.core_cm3.h.47.c45d264953076019d6b3b1c20e8ad771
+                           .group:00000000 wm4.core_cmInstr.h.39.3d3d1b4a79aef37532666dc6ee87c6ac
+                           .group:00000000 wm4.core_cm3.h.144.13c1820b08b053ff2afcbecd6c121769
+                           .group:00000000 wm4.chip_lpc175x_6x.h.33.eb00dd5e876bba2d92e5365aaa2adcc9
+                           .group:00000000 wm4.sysctl_17xx_40xx.h.33.60ea2b0c038b570d16b743be456c0a3c
+                           .group:00000000 wm4.clock_17xx_40xx.h.33.ac1c09ba10bd275fd518dc893f69b719
+                           .group:00000000 wm4.iocon_17xx_40xx.h.33.30efb695138835ce45b969a383622df1
+                           .group:00000000 wm4.adc_17xx_40xx.h.33.4ccfb2b64a214dfbd42dcc57b951adea
+                           .group:00000000 wm4.can_17xx_40xx.h.33.998a7ac704f1a68b2cd5e0b56d8d5982
+                           .group:00000000 wm4.dac_17xx_40xx.h.33.c6b24d203fe35c404313549726e8b471
+                           .group:00000000 wm4.enet_17xx_40xx.h.33.7cbc246ead5985e9ded0581894620518
+                           .group:00000000 wm4.gpdma_17xx_40xx.h.33.48ff5e223f8561d024da95b445b6412f
+                           .group:00000000 wm4.gpio_17xx_40xx.h.33.ccf33f35e6ec854f4c17216560fb0e2d
+                           .group:00000000 wm4.i2c_17xx_40xx.h.33.251f9e2630fa2e1c5f956a841fad976e
+                           .group:00000000 wm4.i2s_17xx_40xx.h.33.c4dac649f14353e74f7ad13206e59212
+                           .group:00000000 wm4.pmu_17xx_40xx.h.33.6df98f4a15b545c975b3d7e285b1914a
+                           .group:00000000 wm4.ritimer_17xx_40xx.h.33.2353edabf0d761fc5545c38574ab0483
+                           .group:00000000 wm4.rtc_17xx_40xx.h.33.1b92c4cdbb0e30811f9b658793f1692a
+                           .group:00000000 wm4.spi_17xx_40xx.h.33.29890397a2d0d2f7c45c9629c75ce288
+                           .group:00000000 wm4.ssp_17xx_40xx.h.33.2caafe5625dd4e0c436aadef2d04967e
+                           .group:00000000 wm4.timer_17xx_40xx.h.33.cf1ff612c99670767f5f971c7f8e9fde
+                           .group:00000000 wm4.ring_buffer.h.33.ffd8153954783612f9c626df1ed9e770
+                           .group:00000000 wm4.uart_17xx_40xx.h.98.24bad698225619af11e644944c69bb64
+                           .group:00000000 wm4.wwdt_17xx_40xx.h.33.c6b9b47b39d0af231ccdbbe61f2e586a
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccRUKRAV.s 			page 43
+
+
+                           .group:00000000 wm4.fmc_17xx_40xx.h.33.50d936806f8521fe9e7b0b5d644ffe41
+                           .group:00000000 wm4.iap.h.33.bfa6a5070920deda981787d64c9b1d6d
+                           .group:00000000 wm4.error.h.38.14ce7f11bede78d39ff33867e6b612e7
+                           .group:00000000 wm4.board.h.58.43e2a020e238f3a03713d0d4b05aa2db
+                           .group:00000000 wm4.board_api.h.166.63aa07b58758871d5b14e460a43bd11e
+                           .group:00000000 wm4.lpc_phy.h.56.88cb0dd4e85f8d7768db24fbc73d4911
+                           .group:00000000 wm4.geometry.h.2.9a30ea606b85ffbc09fad35b93bd75ed
+
+NO UNDEFINED SYMBOLS

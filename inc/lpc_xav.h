@@ -9,6 +9,7 @@
 #define PCLKSEL0 *((uint32_t *)0x400FC1A8)
 #define PCLKSEL1 *((uint32_t *)0x400FC1AC)
 
+#define I2C_400KHZ	120
 #define I2C_100KHZ 	480
 #define I2C_50KHZ 	960
 #define SPI_24MHZ	4
@@ -77,6 +78,15 @@ public:
 	void operator=(bool OutputState) // Allows to use Object = boolean value; to set pin output
 	{
 		this->Out(OutputState);
+	}
+	bool operator==(bool BooleanValue)
+	{
+		if(BooleanValue == ((*(_Port._FIO + 5) >> this->Pin) & 0x1)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	bool operator!=(bool BooleanValue)
 	{
@@ -199,22 +209,27 @@ class _I2C{
 	uint32_t * _Periph;
 	uint8_t Clk_bit;
 	uint8_t IRQ_bit;
-	uint8_t Buffer[100];
 public:
+	uint8_t tx_buf[512];
+	uint8_t rx_buf[512];
 	bool Busy;
-	uint8_t M_Counter;
+	uint8_t M_Counter_tx;
+	uint8_t M_Counter_rx;
 	uint8_t Msg_Length;
+	uint8_t Read_Length;
 
 	void Init(uint8_t Bus_Mode, uint32_t I2C_Speed);
 	uint8_t get_Status();
-	void New_Sequence(uint8_t Slave_Address);
+	void New_Sequence(uint8_t Slave_Address, uint16_t readLength = 0);
 	void Add_String(const char * StrToSend);
 	void Add_BCD_Integer(uint32_t NumberToSend, uint8_t NbDigits);
 	void Add_BCD_Float(uint32_t NumberToSend, uint8_t NbDigits, uint8_t DP_Position);
 	void Add_Byte(uint8_t ByteToSend);
 	void Send_Next_Byte();
+	void Read_Next_Byte();
 	void Send_Address();
 	void Send_Stop();
+	void Send_nACK();
 	void Send_Sequence();
 	void Clear_Interrupt();
 

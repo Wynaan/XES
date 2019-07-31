@@ -1,0 +1,3878 @@
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"text.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata._ZStL19piecewise_construct,"a",%progbits
+  16              		.align	2
+  19              	_ZStL19piecewise_construct:
+  20 0000 00       		.space	1
+  21              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  22              		.align	1
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	_ZL20__gthread_key_deletei:
+  29              	.LFB599:
+  30              		.file 1 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-no
+   1:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Copyright (C) 1997-2017 Free Software Foundation, Inc.
+   4:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   5:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+   7:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** version.
+  11:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  12:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** for more details.
+  16:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  17:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  21:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  26:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  29:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 2
+
+
+  31:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  36:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  41:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  43:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  45:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  48:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  50:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  52:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  54:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  56:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  57:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  58:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  60:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  62:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  64:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  65:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  66:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  68:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  72:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return NULL;
+  74:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  75:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  76:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  78:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  80:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+  82:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  83:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  84:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+  86:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 3
+
+
+  88:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  90:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  91:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void
+  93:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  95:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return;
+  96:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  97:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+  98:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 100:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 102:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return -1;
+ 106:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 107:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 108:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 112:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 115:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 116:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 118:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 120:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 122:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 123:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 124:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline void *
+ 126:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 128:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 130:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 131:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 133:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 135:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 137:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 138:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 139:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 140:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 142:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 143:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 144:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 4
+
+
+ 145:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 146:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 147:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 149:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 151:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 153:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 154:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 155:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 157:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 159:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 161:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 162:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 163:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 165:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 167:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 168:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 169:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 170:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 172:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 174:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 176:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 177:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 178:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 179:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 181:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 183:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 184:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 185:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 186:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 188:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 191:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 192:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 193:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 194:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 196:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 198:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 199:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 200:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 201:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 5
+
+
+ 202:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 203:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 205:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 206:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 207:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 208:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 210:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 211:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 213:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 214:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 215:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 216:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int
+ 217:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 219:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 220:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 221:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 222:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+ 225:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+ 226:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+ 227:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** 
+ 228:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** {
+  31              		.loc 1 230 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 1, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36 0000 80B4     		push	{r7}
+  37              		.cfi_def_cfa_offset 4
+  38              		.cfi_offset 7, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              		.cfi_def_cfa_offset 16
+  41 0004 00AF     		add	r7, sp, #0
+  42              		.cfi_def_cfa_register 7
+  43 0006 7860     		str	r0, [r7, #4]
+ 231:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h ****   return 0;
+  44              		.loc 1 231 0
+  45 0008 0023     		movs	r3, #0
+ 232:c:\nxp\mcuxpressoide_10.2.1_795\ide\tools\arm-none-eabi\include\c++\7.2.1\arm-none-eabi\thumb\v7-m\bits\gthr-default.h **** }
+  46              		.loc 1 232 0
+  47 000a 1846     		mov	r0, r3
+  48 000c 0C37     		adds	r7, r7, #12
+  49              		.cfi_def_cfa_offset 4
+  50 000e BD46     		mov	sp, r7
+  51              		.cfi_def_cfa_register 13
+  52              		@ sp needed
+  53 0010 80BC     		pop	{r7}
+  54              		.cfi_restore 7
+  55              		.cfi_def_cfa_offset 0
+  56 0012 7047     		bx	lr
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 6
+
+
+  57              		.cfi_endproc
+  58              	.LFE599:
+  60              		.section	.text._ZN7IRenderD2Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+  61              		.align	1
+  62              		.weak	_ZN7IRenderD2Ev
+  63              		.syntax unified
+  64              		.thumb
+  65              		.thumb_func
+  66              		.fpu softvfp
+  68              	_ZN7IRenderD2Ev:
+  69              	.LFB961:
+  70              		.file 2 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/interfaces.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #ifndef INTERFACES_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #define INTERFACES_H_
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #include "xav_data.h"
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** #include "ps2controller.h"
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** /* IRender is the interface that all classes that intend to draw something on the screen
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * must inherit from. Each subclass must implement the Draw() method. This function must be
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * implement in such a way that the Renderer::AddToFrame method can push a pointer to the
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * object as well as the copy of the drawBox of this object, declared here, to two vectors.
+  10:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * The Renderer::Update method will iterate through these vectors to render the next frame.
+  11:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * Alternatively, IRender child classes can also be added to a special "callback" vector
+  12:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * using the Renderer::AddToCallback method, which will be rendered by the wrapper class
+  13:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h ****  * two frames after the function is called. */
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** class IRender{
+  15:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+  16:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	rectangle_t drawBox;
+  17:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual void Draw(rectangle_t drawBox) = 0;
+  18:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** 	virtual ~IRender() {}
+  71              		.loc 2 18 0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 8
+  74              		@ frame_needed = 1, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  76 0000 80B4     		push	{r7}
+  77              		.cfi_def_cfa_offset 4
+  78              		.cfi_offset 7, -4
+  79 0002 83B0     		sub	sp, sp, #12
+  80              		.cfi_def_cfa_offset 16
+  81 0004 00AF     		add	r7, sp, #0
+  82              		.cfi_def_cfa_register 7
+  83 0006 7860     		str	r0, [r7, #4]
+  84              	.LBB2:
+  85              		.loc 2 18 0
+  86 0008 044A     		ldr	r2, .L5
+  87 000a 7B68     		ldr	r3, [r7, #4]
+  88 000c 1A60     		str	r2, [r3]
+  89              	.LBE2:
+  90 000e 7B68     		ldr	r3, [r7, #4]
+  91 0010 1846     		mov	r0, r3
+  92 0012 0C37     		adds	r7, r7, #12
+  93              		.cfi_def_cfa_offset 4
+  94 0014 BD46     		mov	sp, r7
+  95              		.cfi_def_cfa_register 13
+  96              		@ sp needed
+  97 0016 80BC     		pop	{r7}
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 7
+
+
+  98              		.cfi_restore 7
+  99              		.cfi_def_cfa_offset 0
+ 100 0018 7047     		bx	lr
+ 101              	.L6:
+ 102 001a 00BF     		.align	2
+ 103              	.L5:
+ 104 001c 08000000 		.word	_ZTV7IRender+8
+ 105              		.cfi_endproc
+ 106              	.LFE961:
+ 108              		.weak	_ZN7IRenderD1Ev
+ 109              		.thumb_set _ZN7IRenderD1Ev,_ZN7IRenderD2Ev
+ 110              		.section	.text._ZN7IRenderD0Ev,"axG",%progbits,_ZN7IRenderD5Ev,comdat
+ 111              		.align	1
+ 112              		.weak	_ZN7IRenderD0Ev
+ 113              		.syntax unified
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.fpu softvfp
+ 118              	_ZN7IRenderD0Ev:
+ 119              	.LFB963:
+ 120              		.loc 2 18 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 1, uses_anonymous_args = 0
+ 124 0000 80B5     		push	{r7, lr}
+ 125              		.cfi_def_cfa_offset 8
+ 126              		.cfi_offset 7, -8
+ 127              		.cfi_offset 14, -4
+ 128 0002 82B0     		sub	sp, sp, #8
+ 129              		.cfi_def_cfa_offset 16
+ 130 0004 00AF     		add	r7, sp, #0
+ 131              		.cfi_def_cfa_register 7
+ 132 0006 7860     		str	r0, [r7, #4]
+ 133              		.loc 2 18 0
+ 134 0008 7868     		ldr	r0, [r7, #4]
+ 135 000a FFF7FEFF 		bl	_ZN7IRenderD1Ev
+ 136 000e 0C21     		movs	r1, #12
+ 137 0010 7868     		ldr	r0, [r7, #4]
+ 138 0012 FFF7FEFF 		bl	_ZdlPvj
+ 139 0016 7B68     		ldr	r3, [r7, #4]
+ 140 0018 1846     		mov	r0, r3
+ 141 001a 0837     		adds	r7, r7, #8
+ 142              		.cfi_def_cfa_offset 8
+ 143 001c BD46     		mov	sp, r7
+ 144              		.cfi_def_cfa_register 13
+ 145              		@ sp needed
+ 146 001e 80BD     		pop	{r7, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE963:
+ 150              		.section	.rodata._ZL9OTF_16X19,"a",%progbits
+ 151              		.align	2
+ 154              	_ZL9OTF_16X19:
+ 155 0000 0000     		.short	0
+ 156 0002 0000     		.short	0
+ 157 0004 0000     		.short	0
+ 158 0006 0000     		.short	0
+ 159 0008 F801     		.short	504
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 8
+
+
+ 160 000a 9C03     		.short	924
+ 161 000c 0603     		.short	774
+ 162 000e 0003     		.short	768
+ 163 0010 E003     		.short	992
+ 164 0012 FC03     		.short	1020
+ 165 0014 0E03     		.short	782
+ 166 0016 0603     		.short	774
+ 167 0018 0603     		.short	774
+ 168 001a CE03     		.short	974
+ 169 001c 7C03     		.short	892
+ 170 001e 0000     		.short	0
+ 171 0020 0000     		.short	0
+ 172 0022 0000     		.short	0
+ 173 0024 0000     		.short	0
+ 174 0026 0600     		.short	6
+ 175 0028 0600     		.short	6
+ 176 002a 0600     		.short	6
+ 177 002c 0600     		.short	6
+ 178 002e F601     		.short	502
+ 179 0030 9E03     		.short	926
+ 180 0032 0E03     		.short	782
+ 181 0034 0606     		.short	1542
+ 182 0036 0606     		.short	1542
+ 183 0038 0606     		.short	1542
+ 184 003a 0606     		.short	1542
+ 185 003c 0606     		.short	1542
+ 186 003e 0603     		.short	774
+ 187 0040 9E03     		.short	926
+ 188 0042 F601     		.short	502
+ 189 0044 0000     		.short	0
+ 190 0046 0000     		.short	0
+ 191 0048 0000     		.short	0
+ 192 004a 0000     		.short	0
+ 193 004c 0000     		.short	0
+ 194 004e 0000     		.short	0
+ 195 0050 0000     		.short	0
+ 196 0052 0000     		.short	0
+ 197 0054 F800     		.short	248
+ 198 0056 9C03     		.short	924
+ 199 0058 0E03     		.short	782
+ 200 005a 0600     		.short	6
+ 201 005c 0600     		.short	6
+ 202 005e 0600     		.short	6
+ 203 0060 0600     		.short	6
+ 204 0062 0600     		.short	6
+ 205 0064 0603     		.short	774
+ 206 0066 9C03     		.short	924
+ 207 0068 F801     		.short	504
+ 208 006a 0000     		.short	0
+ 209 006c 0000     		.short	0
+ 210 006e 0000     		.short	0
+ 211 0070 0000     		.short	0
+ 212 0072 0003     		.short	768
+ 213 0074 0003     		.short	768
+ 214 0076 0003     		.short	768
+ 215 0078 0003     		.short	768
+ 216 007a F803     		.short	1016
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 9
+
+
+ 217 007c DC03     		.short	988
+ 218 007e 0603     		.short	774
+ 219 0080 0603     		.short	774
+ 220 0082 0603     		.short	774
+ 221 0084 0603     		.short	774
+ 222 0086 0603     		.short	774
+ 223 0088 0603     		.short	774
+ 224 008a 0603     		.short	774
+ 225 008c CC03     		.short	972
+ 226 008e 7803     		.short	888
+ 227 0090 0000     		.short	0
+ 228 0092 0000     		.short	0
+ 229 0094 0000     		.short	0
+ 230 0096 0000     		.short	0
+ 231 0098 0000     		.short	0
+ 232 009a 0000     		.short	0
+ 233 009c 0000     		.short	0
+ 234 009e 0000     		.short	0
+ 235 00a0 F800     		.short	248
+ 236 00a2 9C03     		.short	924
+ 237 00a4 0E03     		.short	782
+ 238 00a6 0606     		.short	1542
+ 239 00a8 0606     		.short	1542
+ 240 00aa FE07     		.short	2046
+ 241 00ac 0600     		.short	6
+ 242 00ae 0600     		.short	6
+ 243 00b0 0E06     		.short	1550
+ 244 00b2 9C03     		.short	924
+ 245 00b4 F801     		.short	504
+ 246 00b6 0000     		.short	0
+ 247 00b8 0000     		.short	0
+ 248 00ba 0000     		.short	0
+ 249 00bc 0000     		.short	0
+ 250 00be 3800     		.short	56
+ 251 00c0 2C00     		.short	44
+ 252 00c2 0C00     		.short	12
+ 253 00c4 0C00     		.short	12
+ 254 00c6 3F00     		.short	63
+ 255 00c8 3F00     		.short	63
+ 256 00ca 0C00     		.short	12
+ 257 00cc 0C00     		.short	12
+ 258 00ce 0C00     		.short	12
+ 259 00d0 0C00     		.short	12
+ 260 00d2 0C00     		.short	12
+ 261 00d4 0C00     		.short	12
+ 262 00d6 0C00     		.short	12
+ 263 00d8 0C00     		.short	12
+ 264 00da 0C00     		.short	12
+ 265 00dc 0000     		.short	0
+ 266 00de 0000     		.short	0
+ 267 00e0 0000     		.short	0
+ 268 00e2 0000     		.short	0
+ 269 00e4 0000     		.short	0
+ 270 00e6 0000     		.short	0
+ 271 00e8 0000     		.short	0
+ 272 00ea 0000     		.short	0
+ 273 00ec F803     		.short	1016
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 10
+
+
+ 274 00ee DC03     		.short	988
+ 275 00f0 0603     		.short	774
+ 276 00f2 0603     		.short	774
+ 277 00f4 0603     		.short	774
+ 278 00f6 0603     		.short	774
+ 279 00f8 0603     		.short	774
+ 280 00fa 0603     		.short	774
+ 281 00fc 0603     		.short	774
+ 282 00fe CC03     		.short	972
+ 283 0100 7803     		.short	888
+ 284 0102 0003     		.short	768
+ 285 0104 0603     		.short	774
+ 286 0106 8E01     		.short	398
+ 287 0108 FC01     		.short	508
+ 288 010a 0600     		.short	6
+ 289 010c 0600     		.short	6
+ 290 010e 0600     		.short	6
+ 291 0110 0600     		.short	6
+ 292 0112 E601     		.short	486
+ 293 0114 BE03     		.short	958
+ 294 0116 0E03     		.short	782
+ 295 0118 0603     		.short	774
+ 296 011a 0603     		.short	774
+ 297 011c 0603     		.short	774
+ 298 011e 0603     		.short	774
+ 299 0120 0603     		.short	774
+ 300 0122 0603     		.short	774
+ 301 0124 0603     		.short	774
+ 302 0126 0603     		.short	774
+ 303 0128 0000     		.short	0
+ 304 012a 0000     		.short	0
+ 305 012c 0000     		.short	0
+ 306 012e 0000     		.short	0
+ 307 0130 0600     		.short	6
+ 308 0132 0600     		.short	6
+ 309 0134 0000     		.short	0
+ 310 0136 0000     		.short	0
+ 311 0138 0600     		.short	6
+ 312 013a 0600     		.short	6
+ 313 013c 0600     		.short	6
+ 314 013e 0600     		.short	6
+ 315 0140 0600     		.short	6
+ 316 0142 0600     		.short	6
+ 317 0144 0600     		.short	6
+ 318 0146 0600     		.short	6
+ 319 0148 0600     		.short	6
+ 320 014a 0600     		.short	6
+ 321 014c 0600     		.short	6
+ 322 014e 0000     		.short	0
+ 323 0150 0000     		.short	0
+ 324 0152 0000     		.short	0
+ 325 0154 0000     		.short	0
+ 326 0156 0600     		.short	6
+ 327 0158 0600     		.short	6
+ 328 015a 0000     		.short	0
+ 329 015c 0000     		.short	0
+ 330 015e 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 11
+
+
+ 331 0160 0600     		.short	6
+ 332 0162 0600     		.short	6
+ 333 0164 0600     		.short	6
+ 334 0166 0600     		.short	6
+ 335 0168 0600     		.short	6
+ 336 016a 0600     		.short	6
+ 337 016c 0600     		.short	6
+ 338 016e 0600     		.short	6
+ 339 0170 0600     		.short	6
+ 340 0172 0600     		.short	6
+ 341 0174 0600     		.short	6
+ 342 0176 0600     		.short	6
+ 343 0178 0600     		.short	6
+ 344 017a 0700     		.short	7
+ 345 017c 0600     		.short	6
+ 346 017e 0600     		.short	6
+ 347 0180 0600     		.short	6
+ 348 0182 0600     		.short	6
+ 349 0184 8603     		.short	902
+ 350 0186 C601     		.short	454
+ 351 0188 E600     		.short	230
+ 352 018a 7600     		.short	118
+ 353 018c 3E00     		.short	62
+ 354 018e 7E00     		.short	126
+ 355 0190 6E00     		.short	110
+ 356 0192 C600     		.short	198
+ 357 0194 8601     		.short	390
+ 358 0196 8601     		.short	390
+ 359 0198 0603     		.short	774
+ 360 019a 0000     		.short	0
+ 361 019c 0000     		.short	0
+ 362 019e 0000     		.short	0
+ 363 01a0 0000     		.short	0
+ 364 01a2 0600     		.short	6
+ 365 01a4 0600     		.short	6
+ 366 01a6 0600     		.short	6
+ 367 01a8 0600     		.short	6
+ 368 01aa 0600     		.short	6
+ 369 01ac 0600     		.short	6
+ 370 01ae 0600     		.short	6
+ 371 01b0 0600     		.short	6
+ 372 01b2 0600     		.short	6
+ 373 01b4 0600     		.short	6
+ 374 01b6 0600     		.short	6
+ 375 01b8 0600     		.short	6
+ 376 01ba 0600     		.short	6
+ 377 01bc 0600     		.short	6
+ 378 01be 0600     		.short	6
+ 379 01c0 0000     		.short	0
+ 380 01c2 0000     		.short	0
+ 381 01c4 0000     		.short	0
+ 382 01c6 0000     		.short	0
+ 383 01c8 0000     		.short	0
+ 384 01ca 0000     		.short	0
+ 385 01cc 0000     		.short	0
+ 386 01ce 0000     		.short	0
+ 387 01d0 F679     		.short	31222
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 12
+
+
+ 388 01d2 BEED     		.short	-4674
+ 389 01d4 0EC3     		.short	-15602
+ 390 01d6 06C3     		.short	-15610
+ 391 01d8 06C3     		.short	-15610
+ 392 01da 06C3     		.short	-15610
+ 393 01dc 06C3     		.short	-15610
+ 394 01de 06C3     		.short	-15610
+ 395 01e0 06C3     		.short	-15610
+ 396 01e2 06C3     		.short	-15610
+ 397 01e4 06C3     		.short	-15610
+ 398 01e6 0000     		.short	0
+ 399 01e8 0000     		.short	0
+ 400 01ea 0000     		.short	0
+ 401 01ec 0000     		.short	0
+ 402 01ee 0000     		.short	0
+ 403 01f0 0000     		.short	0
+ 404 01f2 0000     		.short	0
+ 405 01f4 0000     		.short	0
+ 406 01f6 E601     		.short	486
+ 407 01f8 BE03     		.short	958
+ 408 01fa 0E03     		.short	782
+ 409 01fc 0603     		.short	774
+ 410 01fe 0603     		.short	774
+ 411 0200 0603     		.short	774
+ 412 0202 0603     		.short	774
+ 413 0204 0603     		.short	774
+ 414 0206 0603     		.short	774
+ 415 0208 0603     		.short	774
+ 416 020a 0603     		.short	774
+ 417 020c 0000     		.short	0
+ 418 020e 0000     		.short	0
+ 419 0210 0000     		.short	0
+ 420 0212 0000     		.short	0
+ 421 0214 0000     		.short	0
+ 422 0216 0000     		.short	0
+ 423 0218 0000     		.short	0
+ 424 021a 0000     		.short	0
+ 425 021c F800     		.short	248
+ 426 021e 9C03     		.short	924
+ 427 0220 0E03     		.short	782
+ 428 0222 0606     		.short	1542
+ 429 0224 0606     		.short	1542
+ 430 0226 0606     		.short	1542
+ 431 0228 0606     		.short	1542
+ 432 022a 0606     		.short	1542
+ 433 022c 0603     		.short	774
+ 434 022e 9C03     		.short	924
+ 435 0230 F801     		.short	504
+ 436 0232 0000     		.short	0
+ 437 0234 0000     		.short	0
+ 438 0236 0000     		.short	0
+ 439 0238 0000     		.short	0
+ 440 023a 0000     		.short	0
+ 441 023c 0000     		.short	0
+ 442 023e 0000     		.short	0
+ 443 0240 0000     		.short	0
+ 444 0242 F601     		.short	502
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 13
+
+
+ 445 0244 9E03     		.short	926
+ 446 0246 0E03     		.short	782
+ 447 0248 0606     		.short	1542
+ 448 024a 0606     		.short	1542
+ 449 024c 0606     		.short	1542
+ 450 024e 0606     		.short	1542
+ 451 0250 0606     		.short	1542
+ 452 0252 0603     		.short	774
+ 453 0254 9E03     		.short	926
+ 454 0256 F601     		.short	502
+ 455 0258 0600     		.short	6
+ 456 025a 0600     		.short	6
+ 457 025c 0600     		.short	6
+ 458 025e 0600     		.short	6
+ 459 0260 0000     		.short	0
+ 460 0262 0000     		.short	0
+ 461 0264 0000     		.short	0
+ 462 0266 0000     		.short	0
+ 463 0268 F803     		.short	1016
+ 464 026a DC03     		.short	988
+ 465 026c 0603     		.short	774
+ 466 026e 0603     		.short	774
+ 467 0270 0603     		.short	774
+ 468 0272 0603     		.short	774
+ 469 0274 0603     		.short	774
+ 470 0276 0603     		.short	774
+ 471 0278 0603     		.short	774
+ 472 027a CC03     		.short	972
+ 473 027c 7803     		.short	888
+ 474 027e 0003     		.short	768
+ 475 0280 0003     		.short	768
+ 476 0282 0003     		.short	768
+ 477 0284 0003     		.short	768
+ 478 0286 0000     		.short	0
+ 479 0288 0000     		.short	0
+ 480 028a 0000     		.short	0
+ 481 028c 0000     		.short	0
+ 482 028e 7600     		.short	118
+ 483 0290 7E00     		.short	126
+ 484 0292 0E00     		.short	14
+ 485 0294 0600     		.short	6
+ 486 0296 0600     		.short	6
+ 487 0298 0600     		.short	6
+ 488 029a 0600     		.short	6
+ 489 029c 0600     		.short	6
+ 490 029e 0600     		.short	6
+ 491 02a0 0600     		.short	6
+ 492 02a2 0600     		.short	6
+ 493 02a4 0000     		.short	0
+ 494 02a6 0000     		.short	0
+ 495 02a8 0000     		.short	0
+ 496 02aa 0000     		.short	0
+ 497 02ac 0000     		.short	0
+ 498 02ae 0000     		.short	0
+ 499 02b0 0000     		.short	0
+ 500 02b2 0000     		.short	0
+ 501 02b4 FC00     		.short	252
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 14
+
+
+ 502 02b6 CE01     		.short	462
+ 503 02b8 8601     		.short	390
+ 504 02ba 0600     		.short	6
+ 505 02bc 3E00     		.short	62
+ 506 02be F801     		.short	504
+ 507 02c0 C001     		.short	448
+ 508 02c2 0003     		.short	768
+ 509 02c4 0603     		.short	774
+ 510 02c6 8E01     		.short	398
+ 511 02c8 FC00     		.short	252
+ 512 02ca 0000     		.short	0
+ 513 02cc 0000     		.short	0
+ 514 02ce 0000     		.short	0
+ 515 02d0 0000     		.short	0
+ 516 02d2 0000     		.short	0
+ 517 02d4 0C00     		.short	12
+ 518 02d6 0C00     		.short	12
+ 519 02d8 0C00     		.short	12
+ 520 02da 1F00     		.short	31
+ 521 02dc 1F00     		.short	31
+ 522 02de 0C00     		.short	12
+ 523 02e0 0C00     		.short	12
+ 524 02e2 0C00     		.short	12
+ 525 02e4 0C00     		.short	12
+ 526 02e6 0C00     		.short	12
+ 527 02e8 0C00     		.short	12
+ 528 02ea 0C00     		.short	12
+ 529 02ec 0C00     		.short	12
+ 530 02ee 3C00     		.short	60
+ 531 02f0 0000     		.short	0
+ 532 02f2 0000     		.short	0
+ 533 02f4 0000     		.short	0
+ 534 02f6 0000     		.short	0
+ 535 02f8 0000     		.short	0
+ 536 02fa 0000     		.short	0
+ 537 02fc 0000     		.short	0
+ 538 02fe 0000     		.short	0
+ 539 0300 0603     		.short	774
+ 540 0302 0603     		.short	774
+ 541 0304 0603     		.short	774
+ 542 0306 0603     		.short	774
+ 543 0308 0603     		.short	774
+ 544 030a 0603     		.short	774
+ 545 030c 0603     		.short	774
+ 546 030e 0603     		.short	774
+ 547 0310 0E03     		.short	782
+ 548 0312 CC03     		.short	972
+ 549 0314 7803     		.short	888
+ 550 0316 0000     		.short	0
+ 551 0318 0000     		.short	0
+ 552 031a 0000     		.short	0
+ 553 031c 0000     		.short	0
+ 554 031e 0000     		.short	0
+ 555 0320 0000     		.short	0
+ 556 0322 0000     		.short	0
+ 557 0324 0000     		.short	0
+ 558 0326 0703     		.short	775
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 15
+
+
+ 559 0328 0603     		.short	774
+ 560 032a 8601     		.short	390
+ 561 032c 8C01     		.short	396
+ 562 032e 8C01     		.short	396
+ 563 0330 CC00     		.short	204
+ 564 0332 D800     		.short	216
+ 565 0334 5800     		.short	88
+ 566 0336 7800     		.short	120
+ 567 0338 7000     		.short	112
+ 568 033a 3000     		.short	48
+ 569 033c 0000     		.short	0
+ 570 033e 0000     		.short	0
+ 571 0340 0000     		.short	0
+ 572 0342 0000     		.short	0
+ 573 0344 0000     		.short	0
+ 574 0346 0000     		.short	0
+ 575 0348 0000     		.short	0
+ 576 034a 0000     		.short	0
+ 577 034c 8361     		.short	24963
+ 578 034e C661     		.short	25030
+ 579 0350 C631     		.short	12742
+ 580 0352 4631     		.short	12614
+ 581 0354 6633     		.short	13158
+ 582 0356 6C13     		.short	4972
+ 583 0358 6C1A     		.short	6764
+ 584 035a 2C1E     		.short	7724
+ 585 035c 381E     		.short	7736
+ 586 035e 380E     		.short	3640
+ 587 0360 180C     		.short	3096
+ 588 0362 0000     		.short	0
+ 589 0364 0000     		.short	0
+ 590 0366 0000     		.short	0
+ 591 0368 0000     		.short	0
+ 592 036a 0000     		.short	0
+ 593 036c 0000     		.short	0
+ 594 036e 0000     		.short	0
+ 595 0370 0000     		.short	0
+ 596 0372 8703     		.short	903
+ 597 0374 8E01     		.short	398
+ 598 0376 CC00     		.short	204
+ 599 0378 D800     		.short	216
+ 600 037a 7000     		.short	112
+ 601 037c 3000     		.short	48
+ 602 037e 7800     		.short	120
+ 603 0380 D800     		.short	216
+ 604 0382 CC01     		.short	460
+ 605 0384 8E01     		.short	398
+ 606 0386 0703     		.short	775
+ 607 0388 0000     		.short	0
+ 608 038a 0000     		.short	0
+ 609 038c 0000     		.short	0
+ 610 038e 0000     		.short	0
+ 611 0390 0000     		.short	0
+ 612 0392 0000     		.short	0
+ 613 0394 0000     		.short	0
+ 614 0396 0000     		.short	0
+ 615 0398 0703     		.short	775
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 16
+
+
+ 616 039a 0603     		.short	774
+ 617 039c 8601     		.short	390
+ 618 039e 8C01     		.short	396
+ 619 03a0 8C01     		.short	396
+ 620 03a2 CC00     		.short	204
+ 621 03a4 D800     		.short	216
+ 622 03a6 5800     		.short	88
+ 623 03a8 7800     		.short	120
+ 624 03aa 7000     		.short	112
+ 625 03ac 3000     		.short	48
+ 626 03ae 3000     		.short	48
+ 627 03b0 3000     		.short	48
+ 628 03b2 1A00     		.short	26
+ 629 03b4 0E00     		.short	14
+ 630 03b6 0000     		.short	0
+ 631 03b8 0000     		.short	0
+ 632 03ba 0000     		.short	0
+ 633 03bc 0000     		.short	0
+ 634 03be FE03     		.short	1022
+ 635 03c0 FE03     		.short	1022
+ 636 03c2 8001     		.short	384
+ 637 03c4 C000     		.short	192
+ 638 03c6 6000     		.short	96
+ 639 03c8 3000     		.short	48
+ 640 03ca 1800     		.short	24
+ 641 03cc 1C00     		.short	28
+ 642 03ce 0E00     		.short	14
+ 643 03d0 FF03     		.short	1023
+ 644 03d2 FF03     		.short	1023
+ 645 03d4 0000     		.short	0
+ 646 03d6 0000     		.short	0
+ 647 03d8 0000     		.short	0
+ 648 03da 0000     		.short	0
+ 649 03dc C000     		.short	192
+ 650 03de E001     		.short	480
+ 651 03e0 E001     		.short	480
+ 652 03e2 B001     		.short	432
+ 653 03e4 3003     		.short	816
+ 654 03e6 1003     		.short	784
+ 655 03e8 1806     		.short	1560
+ 656 03ea 1806     		.short	1560
+ 657 03ec 0C06     		.short	1548
+ 658 03ee FC0F     		.short	4092
+ 659 03f0 0C0C     		.short	3084
+ 660 03f2 061C     		.short	7174
+ 661 03f4 0618     		.short	6150
+ 662 03f6 0618     		.short	6150
+ 663 03f8 0330     		.short	12291
+ 664 03fa 0000     		.short	0
+ 665 03fc 0000     		.short	0
+ 666 03fe 0000     		.short	0
+ 667 0400 0000     		.short	0
+ 668 0402 FC03     		.short	1020
+ 669 0404 FC07     		.short	2044
+ 670 0406 0C0C     		.short	3084
+ 671 0408 0C0C     		.short	3084
+ 672 040a 0C0C     		.short	3084
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 17
+
+
+ 673 040c 0C0C     		.short	3084
+ 674 040e FC07     		.short	2044
+ 675 0410 FC07     		.short	2044
+ 676 0412 0C0C     		.short	3084
+ 677 0414 0C18     		.short	6156
+ 678 0416 0C18     		.short	6156
+ 679 0418 0C18     		.short	6156
+ 680 041a 0C1C     		.short	7180
+ 681 041c FC0F     		.short	4092
+ 682 041e FC03     		.short	1020
+ 683 0420 0000     		.short	0
+ 684 0422 0000     		.short	0
+ 685 0424 0000     		.short	0
+ 686 0426 0000     		.short	0
+ 687 0428 E007     		.short	2016
+ 688 042a 781E     		.short	7800
+ 689 042c 1C18     		.short	6172
+ 690 042e 0C30     		.short	12300
+ 691 0430 0E30     		.short	12302
+ 692 0432 0600     		.short	6
+ 693 0434 0600     		.short	6
+ 694 0436 0600     		.short	6
+ 695 0438 0600     		.short	6
+ 696 043a 0600     		.short	6
+ 697 043c 0E30     		.short	12302
+ 698 043e 0C30     		.short	12300
+ 699 0440 1C18     		.short	6172
+ 700 0442 781E     		.short	7800
+ 701 0444 E007     		.short	2016
+ 702 0446 0000     		.short	0
+ 703 0448 0000     		.short	0
+ 704 044a 0000     		.short	0
+ 705 044c 0000     		.short	0
+ 706 044e FC03     		.short	1020
+ 707 0450 FC0F     		.short	4092
+ 708 0452 0C1C     		.short	7180
+ 709 0454 0C18     		.short	6156
+ 710 0456 0C30     		.short	12300
+ 711 0458 0C30     		.short	12300
+ 712 045a 0C30     		.short	12300
+ 713 045c 0C30     		.short	12300
+ 714 045e 0C30     		.short	12300
+ 715 0460 0C30     		.short	12300
+ 716 0462 0C30     		.short	12300
+ 717 0464 0C18     		.short	6156
+ 718 0466 0C1C     		.short	7180
+ 719 0468 FC0F     		.short	4092
+ 720 046a FC03     		.short	1020
+ 721 046c 0000     		.short	0
+ 722 046e 0000     		.short	0
+ 723 0470 0000     		.short	0
+ 724 0472 0000     		.short	0
+ 725 0474 FC1F     		.short	8188
+ 726 0476 FC1F     		.short	8188
+ 727 0478 0C00     		.short	12
+ 728 047a 0C00     		.short	12
+ 729 047c 0C00     		.short	12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 18
+
+
+ 730 047e 0C00     		.short	12
+ 731 0480 FC0F     		.short	4092
+ 732 0482 FC0F     		.short	4092
+ 733 0484 0C00     		.short	12
+ 734 0486 0C00     		.short	12
+ 735 0488 0C00     		.short	12
+ 736 048a 0C00     		.short	12
+ 737 048c 0C00     		.short	12
+ 738 048e FC1F     		.short	8188
+ 739 0490 FC1F     		.short	8188
+ 740 0492 0000     		.short	0
+ 741 0494 0000     		.short	0
+ 742 0496 0000     		.short	0
+ 743 0498 0000     		.short	0
+ 744 049a FC0F     		.short	4092
+ 745 049c FC0F     		.short	4092
+ 746 049e 0C00     		.short	12
+ 747 04a0 0C00     		.short	12
+ 748 04a2 0C00     		.short	12
+ 749 04a4 0C00     		.short	12
+ 750 04a6 FC07     		.short	2044
+ 751 04a8 FC07     		.short	2044
+ 752 04aa 0C00     		.short	12
+ 753 04ac 0C00     		.short	12
+ 754 04ae 0C00     		.short	12
+ 755 04b0 0C00     		.short	12
+ 756 04b2 0C00     		.short	12
+ 757 04b4 0C00     		.short	12
+ 758 04b6 0C00     		.short	12
+ 759 04b8 0000     		.short	0
+ 760 04ba 0000     		.short	0
+ 761 04bc 0000     		.short	0
+ 762 04be 0000     		.short	0
+ 763 04c0 E00F     		.short	4064
+ 764 04c2 781E     		.short	7800
+ 765 04c4 1C30     		.short	12316
+ 766 04c6 0C70     		.short	28684
+ 767 04c8 0E60     		.short	24590
+ 768 04ca 0600     		.short	6
+ 769 04cc 0600     		.short	6
+ 770 04ce 067E     		.short	32262
+ 771 04d0 067E     		.short	32262
+ 772 04d2 0660     		.short	24582
+ 773 04d4 0E60     		.short	24590
+ 774 04d6 0C60     		.short	24588
+ 775 04d8 1C70     		.short	28700
+ 776 04da 787E     		.short	32376
+ 777 04dc E06F     		.short	28640
+ 778 04de 0000     		.short	0
+ 779 04e0 0000     		.short	0
+ 780 04e2 0000     		.short	0
+ 781 04e4 0000     		.short	0
+ 782 04e6 0C18     		.short	6156
+ 783 04e8 0C18     		.short	6156
+ 784 04ea 0C18     		.short	6156
+ 785 04ec 0C18     		.short	6156
+ 786 04ee 0C18     		.short	6156
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 19
+
+
+ 787 04f0 0C18     		.short	6156
+ 788 04f2 FC1F     		.short	8188
+ 789 04f4 FC1F     		.short	8188
+ 790 04f6 0C18     		.short	6156
+ 791 04f8 0C18     		.short	6156
+ 792 04fa 0C18     		.short	6156
+ 793 04fc 0C18     		.short	6156
+ 794 04fe 0C18     		.short	6156
+ 795 0500 0C18     		.short	6156
+ 796 0502 0C18     		.short	6156
+ 797 0504 0000     		.short	0
+ 798 0506 0000     		.short	0
+ 799 0508 0000     		.short	0
+ 800 050a 0000     		.short	0
+ 801 050c 0C00     		.short	12
+ 802 050e 0C00     		.short	12
+ 803 0510 0C00     		.short	12
+ 804 0512 0C00     		.short	12
+ 805 0514 0C00     		.short	12
+ 806 0516 0C00     		.short	12
+ 807 0518 0C00     		.short	12
+ 808 051a 0C00     		.short	12
+ 809 051c 0C00     		.short	12
+ 810 051e 0C00     		.short	12
+ 811 0520 0C00     		.short	12
+ 812 0522 0C00     		.short	12
+ 813 0524 0C00     		.short	12
+ 814 0526 0C00     		.short	12
+ 815 0528 0C00     		.short	12
+ 816 052a 0000     		.short	0
+ 817 052c 0000     		.short	0
+ 818 052e 0000     		.short	0
+ 819 0530 0000     		.short	0
+ 820 0532 8001     		.short	384
+ 821 0534 8001     		.short	384
+ 822 0536 8001     		.short	384
+ 823 0538 8001     		.short	384
+ 824 053a 8001     		.short	384
+ 825 053c 8001     		.short	384
+ 826 053e 8001     		.short	384
+ 827 0540 8001     		.short	384
+ 828 0542 8001     		.short	384
+ 829 0544 8001     		.short	384
+ 830 0546 8001     		.short	384
+ 831 0548 8601     		.short	390
+ 832 054a C601     		.short	454
+ 833 054c FE00     		.short	254
+ 834 054e 7C00     		.short	124
+ 835 0550 0000     		.short	0
+ 836 0552 0000     		.short	0
+ 837 0554 0000     		.short	0
+ 838 0556 0000     		.short	0
+ 839 0558 0C3C     		.short	15372
+ 840 055a 0C0E     		.short	3596
+ 841 055c 0C06     		.short	1548
+ 842 055e 0C03     		.short	780
+ 843 0560 8C01     		.short	396
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 20
+
+
+ 844 0562 CC00     		.short	204
+ 845 0564 EC00     		.short	236
+ 846 0566 FC00     		.short	252
+ 847 0568 9C01     		.short	412
+ 848 056a 8C03     		.short	908
+ 849 056c 0C07     		.short	1804
+ 850 056e 0C06     		.short	1548
+ 851 0570 0C0C     		.short	3084
+ 852 0572 0C1C     		.short	7180
+ 853 0574 0C38     		.short	14348
+ 854 0576 0000     		.short	0
+ 855 0578 0000     		.short	0
+ 856 057a 0000     		.short	0
+ 857 057c 0000     		.short	0
+ 858 057e 0C00     		.short	12
+ 859 0580 0C00     		.short	12
+ 860 0582 0C00     		.short	12
+ 861 0584 0C00     		.short	12
+ 862 0586 0C00     		.short	12
+ 863 0588 0C00     		.short	12
+ 864 058a 0C00     		.short	12
+ 865 058c 0C00     		.short	12
+ 866 058e 0C00     		.short	12
+ 867 0590 0C00     		.short	12
+ 868 0592 0C00     		.short	12
+ 869 0594 0C00     		.short	12
+ 870 0596 0C00     		.short	12
+ 871 0598 FC07     		.short	2044
+ 872 059a FC07     		.short	2044
+ 873 059c 0000     		.short	0
+ 874 059e 0000     		.short	0
+ 875 05a0 0000     		.short	0
+ 876 05a2 0000     		.short	0
+ 877 05a4 1CE0     		.short	-8164
+ 878 05a6 1CF0     		.short	-4068
+ 879 05a8 1CF0     		.short	-4068
+ 880 05aa 3CD0     		.short	-12228
+ 881 05ac 3CD8     		.short	-10180
+ 882 05ae 2CD8     		.short	-10196
+ 883 05b0 6CC8     		.short	-14228
+ 884 05b2 6CCC     		.short	-13204
+ 885 05b4 4CCC     		.short	-13236
+ 886 05b6 CCC4     		.short	-15156
+ 887 05b8 CCC6     		.short	-14644
+ 888 05ba 8CC6     		.short	-14708
+ 889 05bc 8CC3     		.short	-15476
+ 890 05be 8CC3     		.short	-15476
+ 891 05c0 0CC3     		.short	-15604
+ 892 05c2 0000     		.short	0
+ 893 05c4 0000     		.short	0
+ 894 05c6 0000     		.short	0
+ 895 05c8 0000     		.short	0
+ 896 05ca 0C10     		.short	4108
+ 897 05cc 1C10     		.short	4124
+ 898 05ce 1C10     		.short	4124
+ 899 05d0 3C10     		.short	4156
+ 900 05d2 7C10     		.short	4220
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 21
+
+
+ 901 05d4 6C10     		.short	4204
+ 902 05d6 CC10     		.short	4300
+ 903 05d8 CC11     		.short	4556
+ 904 05da 8C11     		.short	4492
+ 905 05dc 0C13     		.short	4876
+ 906 05de 0C17     		.short	5900
+ 907 05e0 0C16     		.short	5644
+ 908 05e2 0C1C     		.short	7180
+ 909 05e4 0C1C     		.short	7180
+ 910 05e6 0C18     		.short	6156
+ 911 05e8 0000     		.short	0
+ 912 05ea 0000     		.short	0
+ 913 05ec 0000     		.short	0
+ 914 05ee 0000     		.short	0
+ 915 05f0 E00F     		.short	4064
+ 916 05f2 781E     		.short	7800
+ 917 05f4 1C38     		.short	14364
+ 918 05f6 0C70     		.short	28684
+ 919 05f8 0E60     		.short	24590
+ 920 05fa 0660     		.short	24582
+ 921 05fc 0660     		.short	24582
+ 922 05fe 0660     		.short	24582
+ 923 0600 0660     		.short	24582
+ 924 0602 0660     		.short	24582
+ 925 0604 0E60     		.short	24590
+ 926 0606 0C30     		.short	12300
+ 927 0608 1C38     		.short	14364
+ 928 060a 781E     		.short	7800
+ 929 060c E00F     		.short	4064
+ 930 060e 0000     		.short	0
+ 931 0610 0000     		.short	0
+ 932 0612 0000     		.short	0
+ 933 0614 0000     		.short	0
+ 934 0616 FC07     		.short	2044
+ 935 0618 FC0F     		.short	4092
+ 936 061a 0C1C     		.short	7180
+ 937 061c 0C18     		.short	6156
+ 938 061e 0C18     		.short	6156
+ 939 0620 0C18     		.short	6156
+ 940 0622 0C1C     		.short	7180
+ 941 0624 FC0F     		.short	4092
+ 942 0626 FC03     		.short	1020
+ 943 0628 0C00     		.short	12
+ 944 062a 0C00     		.short	12
+ 945 062c 0C00     		.short	12
+ 946 062e 0C00     		.short	12
+ 947 0630 0C00     		.short	12
+ 948 0632 0C00     		.short	12
+ 949 0634 0000     		.short	0
+ 950 0636 0000     		.short	0
+ 951 0638 0000     		.short	0
+ 952 063a 0000     		.short	0
+ 953 063c E00F     		.short	4064
+ 954 063e 781E     		.short	7800
+ 955 0640 1C38     		.short	14364
+ 956 0642 0C70     		.short	28684
+ 957 0644 0E60     		.short	24590
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 22
+
+
+ 958 0646 0660     		.short	24582
+ 959 0648 0660     		.short	24582
+ 960 064a 0660     		.short	24582
+ 961 064c 0660     		.short	24582
+ 962 064e 0660     		.short	24582
+ 963 0650 0E64     		.short	25614
+ 964 0652 0C36     		.short	13836
+ 965 0654 1C3C     		.short	15388
+ 966 0656 783E     		.short	15992
+ 967 0658 E0F7     		.short	-2080
+ 968 065a 0040     		.short	16384
+ 969 065c 0000     		.short	0
+ 970 065e 0000     		.short	0
+ 971 0660 0000     		.short	0
+ 972 0662 FC0F     		.short	4092
+ 973 0664 FC1F     		.short	8188
+ 974 0666 0C18     		.short	6156
+ 975 0668 0C30     		.short	12300
+ 976 066a 0C30     		.short	12300
+ 977 066c 0C38     		.short	14348
+ 978 066e 0C1C     		.short	7180
+ 979 0670 FC0F     		.short	4092
+ 980 0672 FC07     		.short	2044
+ 981 0674 0C0C     		.short	3084
+ 982 0676 0C1C     		.short	7180
+ 983 0678 0C18     		.short	6156
+ 984 067a 0C18     		.short	6156
+ 985 067c 0C30     		.short	12300
+ 986 067e 0C30     		.short	12300
+ 987 0680 0000     		.short	0
+ 988 0682 0000     		.short	0
+ 989 0684 0000     		.short	0
+ 990 0686 0000     		.short	0
+ 991 0688 F803     		.short	1016
+ 992 068a FC0F     		.short	4092
+ 993 068c 0C0C     		.short	3084
+ 994 068e 061C     		.short	7174
+ 995 0690 0C00     		.short	12
+ 996 0692 1C00     		.short	28
+ 997 0694 F801     		.short	504
+ 998 0696 E007     		.short	2016
+ 999 0698 000F     		.short	3840
+ 1000 069a 001C     		.short	7168
+ 1001 069c 0618     		.short	6150
+ 1002 069e 0618     		.short	6150
+ 1003 06a0 0C1C     		.short	7180
+ 1004 06a2 FC0F     		.short	4092
+ 1005 06a4 F007     		.short	2032
+ 1006 06a6 0000     		.short	0
+ 1007 06a8 0000     		.short	0
+ 1008 06aa 0000     		.short	0
+ 1009 06ac 0000     		.short	0
+ 1010 06ae FF0F     		.short	4095
+ 1011 06b0 FF0F     		.short	4095
+ 1012 06b2 6000     		.short	96
+ 1013 06b4 6000     		.short	96
+ 1014 06b6 6000     		.short	96
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 23
+
+
+ 1015 06b8 6000     		.short	96
+ 1016 06ba 6000     		.short	96
+ 1017 06bc 6000     		.short	96
+ 1018 06be 6000     		.short	96
+ 1019 06c0 6000     		.short	96
+ 1020 06c2 6000     		.short	96
+ 1021 06c4 6000     		.short	96
+ 1022 06c6 6000     		.short	96
+ 1023 06c8 6000     		.short	96
+ 1024 06ca 6000     		.short	96
+ 1025 06cc 0000     		.short	0
+ 1026 06ce 0000     		.short	0
+ 1027 06d0 0000     		.short	0
+ 1028 06d2 0000     		.short	0
+ 1029 06d4 0C18     		.short	6156
+ 1030 06d6 0C18     		.short	6156
+ 1031 06d8 0C18     		.short	6156
+ 1032 06da 0C18     		.short	6156
+ 1033 06dc 0C18     		.short	6156
+ 1034 06de 0C18     		.short	6156
+ 1035 06e0 0C18     		.short	6156
+ 1036 06e2 0C18     		.short	6156
+ 1037 06e4 0C18     		.short	6156
+ 1038 06e6 0C18     		.short	6156
+ 1039 06e8 0C18     		.short	6156
+ 1040 06ea 0C18     		.short	6156
+ 1041 06ec 1C18     		.short	6172
+ 1042 06ee F80F     		.short	4088
+ 1043 06f0 F007     		.short	2032
+ 1044 06f2 0000     		.short	0
+ 1045 06f4 0000     		.short	0
+ 1046 06f6 0000     		.short	0
+ 1047 06f8 0000     		.short	0
+ 1048 06fa 0330     		.short	12291
+ 1049 06fc 0618     		.short	6150
+ 1050 06fe 0618     		.short	6150
+ 1051 0700 0E0C     		.short	3086
+ 1052 0702 0C0C     		.short	3084
+ 1053 0704 0C0C     		.short	3084
+ 1054 0706 1806     		.short	1560
+ 1055 0708 1806     		.short	1560
+ 1056 070a 1806     		.short	1560
+ 1057 070c 3003     		.short	816
+ 1058 070e 3003     		.short	816
+ 1059 0710 A001     		.short	416
+ 1060 0712 E001     		.short	480
+ 1061 0714 E001     		.short	480
+ 1062 0716 C000     		.short	192
+ 1063 0718 0000     		.short	0
+ 1064 071a 0000     		.short	0
+ 1065 071c 0000     		.short	0
+ 1066 071e 0000     		.short	0
+ 1067 0720 0306     		.short	1539
+ 1068 0722 060F     		.short	3846
+ 1069 0724 060F     		.short	3846
+ 1070 0726 060F     		.short	3846
+ 1071 0728 8409     		.short	2436
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 24
+
+
+ 1072 072a 8C19     		.short	6540
+ 1073 072c 8C19     		.short	6540
+ 1074 072e 8C18     		.short	6284
+ 1075 0730 C890     		.short	-28472
+ 1076 0732 D8B0     		.short	-20264
+ 1077 0734 D8B0     		.short	-20264
+ 1078 0736 58A0     		.short	-24488
+ 1079 0738 70E0     		.short	-8080
+ 1080 073a 70E0     		.short	-8080
+ 1081 073c 30E0     		.short	-8144
+ 1082 073e 0000     		.short	0
+ 1083 0740 0000     		.short	0
+ 1084 0742 0000     		.short	0
+ 1085 0744 0000     		.short	0
+ 1086 0746 0618     		.short	6150
+ 1087 0748 0C0C     		.short	3084
+ 1088 074a 1806     		.short	1560
+ 1089 074c 3807     		.short	1848
+ 1090 074e 3003     		.short	816
+ 1091 0750 E001     		.short	480
+ 1092 0752 E001     		.short	480
+ 1093 0754 C000     		.short	192
+ 1094 0756 E001     		.short	480
+ 1095 0758 3003     		.short	816
+ 1096 075a 3807     		.short	1848
+ 1097 075c 1806     		.short	1560
+ 1098 075e 0C0C     		.short	3084
+ 1099 0760 0E1C     		.short	7182
+ 1100 0762 0738     		.short	14343
+ 1101 0764 0000     		.short	0
+ 1102 0766 0000     		.short	0
+ 1103 0768 0000     		.short	0
+ 1104 076a 0000     		.short	0
+ 1105 076c 0738     		.short	14343
+ 1106 076e 0E1C     		.short	7182
+ 1107 0770 0C0C     		.short	3084
+ 1108 0772 1806     		.short	1560
+ 1109 0774 1806     		.short	1560
+ 1110 0776 3003     		.short	816
+ 1111 0778 E001     		.short	480
+ 1112 077a E001     		.short	480
+ 1113 077c C000     		.short	192
+ 1114 077e C000     		.short	192
+ 1115 0780 C000     		.short	192
+ 1116 0782 C000     		.short	192
+ 1117 0784 C000     		.short	192
+ 1118 0786 C000     		.short	192
+ 1119 0788 C000     		.short	192
+ 1120 078a 0000     		.short	0
+ 1121 078c 0000     		.short	0
+ 1122 078e 0000     		.short	0
+ 1123 0790 0000     		.short	0
+ 1124 0792 FE0F     		.short	4094
+ 1125 0794 FE0F     		.short	4094
+ 1126 0796 0006     		.short	1536
+ 1127 0798 0007     		.short	1792
+ 1128 079a 8003     		.short	896
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 25
+
+
+ 1129 079c 8001     		.short	384
+ 1130 079e C000     		.short	192
+ 1131 07a0 6000     		.short	96
+ 1132 07a2 7000     		.short	112
+ 1133 07a4 3800     		.short	56
+ 1134 07a6 1800     		.short	24
+ 1135 07a8 0C00     		.short	12
+ 1136 07aa 0600     		.short	6
+ 1137 07ac FF0F     		.short	4095
+ 1138 07ae FF0F     		.short	4095
+ 1139 07b0 0000     		.short	0
+ 1140 07b2 0000     		.short	0
+ 1141 07b4 0000     		.short	0
+ 1142 07b6 0000     		.short	0
+ 1143 07b8 F800     		.short	248
+ 1144 07ba 9C01     		.short	412
+ 1145 07bc 0C03     		.short	780
+ 1146 07be 0603     		.short	774
+ 1147 07c0 0606     		.short	1542
+ 1148 07c2 0606     		.short	1542
+ 1149 07c4 0606     		.short	1542
+ 1150 07c6 0606     		.short	1542
+ 1151 07c8 0606     		.short	1542
+ 1152 07ca 0606     		.short	1542
+ 1153 07cc 0606     		.short	1542
+ 1154 07ce 0603     		.short	774
+ 1155 07d0 0C03     		.short	780
+ 1156 07d2 9C01     		.short	412
+ 1157 07d4 F800     		.short	248
+ 1158 07d6 0000     		.short	0
+ 1159 07d8 0000     		.short	0
+ 1160 07da 0000     		.short	0
+ 1161 07dc 0000     		.short	0
+ 1162 07de C000     		.short	192
+ 1163 07e0 E000     		.short	224
+ 1164 07e2 FC00     		.short	252
+ 1165 07e4 DC00     		.short	220
+ 1166 07e6 C000     		.short	192
+ 1167 07e8 C000     		.short	192
+ 1168 07ea C000     		.short	192
+ 1169 07ec C000     		.short	192
+ 1170 07ee C000     		.short	192
+ 1171 07f0 C000     		.short	192
+ 1172 07f2 C000     		.short	192
+ 1173 07f4 C000     		.short	192
+ 1174 07f6 C000     		.short	192
+ 1175 07f8 C000     		.short	192
+ 1176 07fa C000     		.short	192
+ 1177 07fc 0000     		.short	0
+ 1178 07fe 0000     		.short	0
+ 1179 0800 0000     		.short	0
+ 1180 0802 0000     		.short	0
+ 1181 0804 F801     		.short	504
+ 1182 0806 9C03     		.short	924
+ 1183 0808 0603     		.short	774
+ 1184 080a 0606     		.short	1542
+ 1185 080c 0006     		.short	1536
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 26
+
+
+ 1186 080e 0003     		.short	768
+ 1187 0810 0003     		.short	768
+ 1188 0812 8001     		.short	384
+ 1189 0814 C000     		.short	192
+ 1190 0816 7000     		.short	112
+ 1191 0818 3800     		.short	56
+ 1192 081a 1C00     		.short	28
+ 1193 081c 0E00     		.short	14
+ 1194 081e FE07     		.short	2046
+ 1195 0820 FE07     		.short	2046
+ 1196 0822 0000     		.short	0
+ 1197 0824 0000     		.short	0
+ 1198 0826 0000     		.short	0
+ 1199 0828 0000     		.short	0
+ 1200 082a F800     		.short	248
+ 1201 082c 8C01     		.short	396
+ 1202 082e 0603     		.short	774
+ 1203 0830 0603     		.short	774
+ 1204 0832 0003     		.short	768
+ 1205 0834 8001     		.short	384
+ 1206 0836 E000     		.short	224
+ 1207 0838 E001     		.short	480
+ 1208 083a 0003     		.short	768
+ 1209 083c 0006     		.short	1536
+ 1210 083e 0006     		.short	1536
+ 1211 0840 0606     		.short	1542
+ 1212 0842 0603     		.short	774
+ 1213 0844 8C03     		.short	908
+ 1214 0846 F801     		.short	504
+ 1215 0848 0000     		.short	0
+ 1216 084a 0000     		.short	0
+ 1217 084c 0000     		.short	0
+ 1218 084e 0000     		.short	0
+ 1219 0850 8001     		.short	384
+ 1220 0852 C001     		.short	448
+ 1221 0854 E001     		.short	480
+ 1222 0856 A001     		.short	416
+ 1223 0858 B001     		.short	432
+ 1224 085a 9801     		.short	408
+ 1225 085c 8801     		.short	392
+ 1226 085e 8C01     		.short	396
+ 1227 0860 8601     		.short	390
+ 1228 0862 8301     		.short	387
+ 1229 0864 FF07     		.short	2047
+ 1230 0866 8001     		.short	384
+ 1231 0868 8001     		.short	384
+ 1232 086a 8001     		.short	384
+ 1233 086c 8001     		.short	384
+ 1234 086e 0000     		.short	0
+ 1235 0870 0000     		.short	0
+ 1236 0872 0000     		.short	0
+ 1237 0874 0000     		.short	0
+ 1238 0876 FC03     		.short	1020
+ 1239 0878 FC03     		.short	1020
+ 1240 087a 0C00     		.short	12
+ 1241 087c 0C00     		.short	12
+ 1242 087e 0C00     		.short	12
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 27
+
+
+ 1243 0880 F400     		.short	244
+ 1244 0882 FC03     		.short	1020
+ 1245 0884 0603     		.short	774
+ 1246 0886 0006     		.short	1536
+ 1247 0888 0006     		.short	1536
+ 1248 088a 0006     		.short	1536
+ 1249 088c 0606     		.short	1542
+ 1250 088e 0603     		.short	774
+ 1251 0890 9C03     		.short	924
+ 1252 0892 F801     		.short	504
+ 1253 0894 0000     		.short	0
+ 1254 0896 0000     		.short	0
+ 1255 0898 0000     		.short	0
+ 1256 089a 0000     		.short	0
+ 1257 089c F801     		.short	504
+ 1258 089e 9C03     		.short	924
+ 1259 08a0 0C03     		.short	780
+ 1260 08a2 0E04     		.short	1038
+ 1261 08a4 0600     		.short	6
+ 1262 08a6 E600     		.short	230
+ 1263 08a8 FE01     		.short	510
+ 1264 08aa 0E03     		.short	782
+ 1265 08ac 0607     		.short	1798
+ 1266 08ae 0606     		.short	1542
+ 1267 08b0 0606     		.short	1542
+ 1268 08b2 0606     		.short	1542
+ 1269 08b4 0C03     		.short	780
+ 1270 08b6 9C03     		.short	924
+ 1271 08b8 F801     		.short	504
+ 1272 08ba 0000     		.short	0
+ 1273 08bc 0000     		.short	0
+ 1274 08be 0000     		.short	0
+ 1275 08c0 0000     		.short	0
+ 1276 08c2 FE07     		.short	2046
+ 1277 08c4 FE07     		.short	2046
+ 1278 08c6 0003     		.short	768
+ 1279 08c8 0003     		.short	768
+ 1280 08ca 0001     		.short	256
+ 1281 08cc 8001     		.short	384
+ 1282 08ce 8001     		.short	384
+ 1283 08d0 C000     		.short	192
+ 1284 08d2 C000     		.short	192
+ 1285 08d4 6000     		.short	96
+ 1286 08d6 6000     		.short	96
+ 1287 08d8 6000     		.short	96
+ 1288 08da 3000     		.short	48
+ 1289 08dc 3000     		.short	48
+ 1290 08de 1800     		.short	24
+ 1291 08e0 0000     		.short	0
+ 1292 08e2 0000     		.short	0
+ 1293 08e4 0000     		.short	0
+ 1294 08e6 0000     		.short	0
+ 1295 08e8 F801     		.short	504
+ 1296 08ea 9C03     		.short	924
+ 1297 08ec 0C03     		.short	780
+ 1298 08ee 0603     		.short	774
+ 1299 08f0 0C03     		.short	780
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 28
+
+
+ 1300 08f2 9C03     		.short	924
+ 1301 08f4 F801     		.short	504
+ 1302 08f6 F800     		.short	248
+ 1303 08f8 9C03     		.short	924
+ 1304 08fa 0603     		.short	774
+ 1305 08fc 0606     		.short	1542
+ 1306 08fe 0606     		.short	1542
+ 1307 0900 0607     		.short	1798
+ 1308 0902 8C03     		.short	908
+ 1309 0904 F801     		.short	504
+ 1310 0906 0000     		.short	0
+ 1311 0908 0000     		.short	0
+ 1312 090a 0000     		.short	0
+ 1313 090c 0000     		.short	0
+ 1314 090e F800     		.short	248
+ 1315 0910 8C01     		.short	396
+ 1316 0912 0603     		.short	774
+ 1317 0914 0603     		.short	774
+ 1318 0916 0606     		.short	1542
+ 1319 0918 0606     		.short	1542
+ 1320 091a 0606     		.short	1542
+ 1321 091c 0C07     		.short	1804
+ 1322 091e FC06     		.short	1788
+ 1323 0920 7006     		.short	1648
+ 1324 0922 0003     		.short	768
+ 1325 0924 0003     		.short	768
+ 1326 0926 0603     		.short	774
+ 1327 0928 8C01     		.short	396
+ 1328 092a F800     		.short	248
+ 1329 092c 0000     		.short	0
+ 1330 092e 0000     		.short	0
+ 1331 0930 0000     		.short	0
+ 1332 0932 0000     		.short	0
+ 1333              		.section	.rodata._ZL9OTF_10X12,"a",%progbits
+ 1334              		.align	2
+ 1337              	_ZL9OTF_10X12:
+ 1338 0000 0000     		.short	0
+ 1339 0002 0000     		.short	0
+ 1340 0004 0E00     		.short	14
+ 1341 0006 1100     		.short	17
+ 1342 0008 1000     		.short	16
+ 1343 000a 1F00     		.short	31
+ 1344 000c 1100     		.short	17
+ 1345 000e 1100     		.short	17
+ 1346 0010 1F00     		.short	31
+ 1347 0012 0000     		.short	0
+ 1348 0014 0000     		.short	0
+ 1349 0016 0000     		.short	0
+ 1350 0018 0100     		.short	1
+ 1351 001a 0100     		.short	1
+ 1352 001c 0D00     		.short	13
+ 1353 001e 1300     		.short	19
+ 1354 0020 3100     		.short	49
+ 1355 0022 2100     		.short	33
+ 1356 0024 3100     		.short	49
+ 1357 0026 1100     		.short	17
+ 1358 0028 1F00     		.short	31
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 29
+
+
+ 1359 002a 0000     		.short	0
+ 1360 002c 0000     		.short	0
+ 1361 002e 0000     		.short	0
+ 1362 0030 0000     		.short	0
+ 1363 0032 0000     		.short	0
+ 1364 0034 0E00     		.short	14
+ 1365 0036 1100     		.short	17
+ 1366 0038 0100     		.short	1
+ 1367 003a 0100     		.short	1
+ 1368 003c 0100     		.short	1
+ 1369 003e 1100     		.short	17
+ 1370 0040 1E00     		.short	30
+ 1371 0042 0000     		.short	0
+ 1372 0044 0000     		.short	0
+ 1373 0046 0000     		.short	0
+ 1374 0048 1000     		.short	16
+ 1375 004a 1000     		.short	16
+ 1376 004c 1E00     		.short	30
+ 1377 004e 1100     		.short	17
+ 1378 0050 1100     		.short	17
+ 1379 0052 1100     		.short	17
+ 1380 0054 1100     		.short	17
+ 1381 0056 1100     		.short	17
+ 1382 0058 1F00     		.short	31
+ 1383 005a 0000     		.short	0
+ 1384 005c 0000     		.short	0
+ 1385 005e 0000     		.short	0
+ 1386 0060 0000     		.short	0
+ 1387 0062 0000     		.short	0
+ 1388 0064 0E00     		.short	14
+ 1389 0066 1100     		.short	17
+ 1390 0068 3100     		.short	49
+ 1391 006a 3F00     		.short	63
+ 1392 006c 0100     		.short	1
+ 1393 006e 3100     		.short	49
+ 1394 0070 1E00     		.short	30
+ 1395 0072 0000     		.short	0
+ 1396 0074 0000     		.short	0
+ 1397 0076 0000     		.short	0
+ 1398 0078 0700     		.short	7
+ 1399 007a 0100     		.short	1
+ 1400 007c 0700     		.short	7
+ 1401 007e 0100     		.short	1
+ 1402 0080 0100     		.short	1
+ 1403 0082 0100     		.short	1
+ 1404 0084 0100     		.short	1
+ 1405 0086 0100     		.short	1
+ 1406 0088 0100     		.short	1
+ 1407 008a 0000     		.short	0
+ 1408 008c 0000     		.short	0
+ 1409 008e 0000     		.short	0
+ 1410 0090 0000     		.short	0
+ 1411 0092 0000     		.short	0
+ 1412 0094 1E00     		.short	30
+ 1413 0096 1100     		.short	17
+ 1414 0098 1100     		.short	17
+ 1415 009a 1100     		.short	17
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 30
+
+
+ 1416 009c 1100     		.short	17
+ 1417 009e 1100     		.short	17
+ 1418 00a0 1F00     		.short	31
+ 1419 00a2 1000     		.short	16
+ 1420 00a4 1900     		.short	25
+ 1421 00a6 0E00     		.short	14
+ 1422 00a8 0100     		.short	1
+ 1423 00aa 0100     		.short	1
+ 1424 00ac 1D00     		.short	29
+ 1425 00ae 1300     		.short	19
+ 1426 00b0 1100     		.short	17
+ 1427 00b2 1100     		.short	17
+ 1428 00b4 1100     		.short	17
+ 1429 00b6 1100     		.short	17
+ 1430 00b8 1100     		.short	17
+ 1431 00ba 0000     		.short	0
+ 1432 00bc 0000     		.short	0
+ 1433 00be 0000     		.short	0
+ 1434 00c0 0100     		.short	1
+ 1435 00c2 0000     		.short	0
+ 1436 00c4 0100     		.short	1
+ 1437 00c6 0100     		.short	1
+ 1438 00c8 0100     		.short	1
+ 1439 00ca 0100     		.short	1
+ 1440 00cc 0100     		.short	1
+ 1441 00ce 0100     		.short	1
+ 1442 00d0 0100     		.short	1
+ 1443 00d2 0000     		.short	0
+ 1444 00d4 0000     		.short	0
+ 1445 00d6 0000     		.short	0
+ 1446 00d8 0100     		.short	1
+ 1447 00da 0000     		.short	0
+ 1448 00dc 0100     		.short	1
+ 1449 00de 0100     		.short	1
+ 1450 00e0 0100     		.short	1
+ 1451 00e2 0100     		.short	1
+ 1452 00e4 0100     		.short	1
+ 1453 00e6 0100     		.short	1
+ 1454 00e8 0100     		.short	1
+ 1455 00ea 0100     		.short	1
+ 1456 00ec 0100     		.short	1
+ 1457 00ee 0000     		.short	0
+ 1458 00f0 0100     		.short	1
+ 1459 00f2 0100     		.short	1
+ 1460 00f4 1900     		.short	25
+ 1461 00f6 0D00     		.short	13
+ 1462 00f8 0500     		.short	5
+ 1463 00fa 0700     		.short	7
+ 1464 00fc 0D00     		.short	13
+ 1465 00fe 0900     		.short	9
+ 1466 0100 1100     		.short	17
+ 1467 0102 0000     		.short	0
+ 1468 0104 0000     		.short	0
+ 1469 0106 0000     		.short	0
+ 1470 0108 0100     		.short	1
+ 1471 010a 0100     		.short	1
+ 1472 010c 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 31
+
+
+ 1473 010e 0100     		.short	1
+ 1474 0110 0100     		.short	1
+ 1475 0112 0100     		.short	1
+ 1476 0114 0100     		.short	1
+ 1477 0116 0100     		.short	1
+ 1478 0118 0100     		.short	1
+ 1479 011a 0000     		.short	0
+ 1480 011c 0000     		.short	0
+ 1481 011e 0000     		.short	0
+ 1482 0120 0000     		.short	0
+ 1483 0122 0000     		.short	0
+ 1484 0124 CD00     		.short	205
+ 1485 0126 3301     		.short	307
+ 1486 0128 1101     		.short	273
+ 1487 012a 1101     		.short	273
+ 1488 012c 1101     		.short	273
+ 1489 012e 1101     		.short	273
+ 1490 0130 1101     		.short	273
+ 1491 0132 0000     		.short	0
+ 1492 0134 0000     		.short	0
+ 1493 0136 0000     		.short	0
+ 1494 0138 0000     		.short	0
+ 1495 013a 0000     		.short	0
+ 1496 013c 1D00     		.short	29
+ 1497 013e 1300     		.short	19
+ 1498 0140 1100     		.short	17
+ 1499 0142 1100     		.short	17
+ 1500 0144 1100     		.short	17
+ 1501 0146 1100     		.short	17
+ 1502 0148 1100     		.short	17
+ 1503 014a 0000     		.short	0
+ 1504 014c 0000     		.short	0
+ 1505 014e 0000     		.short	0
+ 1506 0150 0000     		.short	0
+ 1507 0152 0000     		.short	0
+ 1508 0154 0E00     		.short	14
+ 1509 0156 1100     		.short	17
+ 1510 0158 3100     		.short	49
+ 1511 015a 2100     		.short	33
+ 1512 015c 3100     		.short	49
+ 1513 015e 1100     		.short	17
+ 1514 0160 1E00     		.short	30
+ 1515 0162 0000     		.short	0
+ 1516 0164 0000     		.short	0
+ 1517 0166 0000     		.short	0
+ 1518 0168 0000     		.short	0
+ 1519 016a 0000     		.short	0
+ 1520 016c 0D00     		.short	13
+ 1521 016e 1300     		.short	19
+ 1522 0170 3100     		.short	49
+ 1523 0172 2100     		.short	33
+ 1524 0174 3100     		.short	49
+ 1525 0176 1100     		.short	17
+ 1526 0178 1F00     		.short	31
+ 1527 017a 0100     		.short	1
+ 1528 017c 0100     		.short	1
+ 1529 017e 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 32
+
+
+ 1530 0180 0000     		.short	0
+ 1531 0182 0000     		.short	0
+ 1532 0184 1E00     		.short	30
+ 1533 0186 1100     		.short	17
+ 1534 0188 1100     		.short	17
+ 1535 018a 1100     		.short	17
+ 1536 018c 1100     		.short	17
+ 1537 018e 1100     		.short	17
+ 1538 0190 1F00     		.short	31
+ 1539 0192 1000     		.short	16
+ 1540 0194 1000     		.short	16
+ 1541 0196 1000     		.short	16
+ 1542 0198 0000     		.short	0
+ 1543 019a 0000     		.short	0
+ 1544 019c 0500     		.short	5
+ 1545 019e 0300     		.short	3
+ 1546 01a0 0100     		.short	1
+ 1547 01a2 0100     		.short	1
+ 1548 01a4 0100     		.short	1
+ 1549 01a6 0100     		.short	1
+ 1550 01a8 0100     		.short	1
+ 1551 01aa 0000     		.short	0
+ 1552 01ac 0000     		.short	0
+ 1553 01ae 0000     		.short	0
+ 1554 01b0 0000     		.short	0
+ 1555 01b2 0000     		.short	0
+ 1556 01b4 0F00     		.short	15
+ 1557 01b6 1900     		.short	25
+ 1558 01b8 0100     		.short	1
+ 1559 01ba 0F00     		.short	15
+ 1560 01bc 1800     		.short	24
+ 1561 01be 1100     		.short	17
+ 1562 01c0 0F00     		.short	15
+ 1563 01c2 0000     		.short	0
+ 1564 01c4 0000     		.short	0
+ 1565 01c6 0000     		.short	0
+ 1566 01c8 0000     		.short	0
+ 1567 01ca 0100     		.short	1
+ 1568 01cc 0300     		.short	3
+ 1569 01ce 0100     		.short	1
+ 1570 01d0 0100     		.short	1
+ 1571 01d2 0100     		.short	1
+ 1572 01d4 0100     		.short	1
+ 1573 01d6 0100     		.short	1
+ 1574 01d8 0700     		.short	7
+ 1575 01da 0000     		.short	0
+ 1576 01dc 0000     		.short	0
+ 1577 01de 0000     		.short	0
+ 1578 01e0 0000     		.short	0
+ 1579 01e2 0000     		.short	0
+ 1580 01e4 1100     		.short	17
+ 1581 01e6 1100     		.short	17
+ 1582 01e8 1100     		.short	17
+ 1583 01ea 1100     		.short	17
+ 1584 01ec 1100     		.short	17
+ 1585 01ee 1100     		.short	17
+ 1586 01f0 1F00     		.short	31
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 33
+
+
+ 1587 01f2 0000     		.short	0
+ 1588 01f4 0000     		.short	0
+ 1589 01f6 0000     		.short	0
+ 1590 01f8 0000     		.short	0
+ 1591 01fa 0000     		.short	0
+ 1592 01fc 1100     		.short	17
+ 1593 01fe 1100     		.short	17
+ 1594 0200 0900     		.short	9
+ 1595 0202 0B00     		.short	11
+ 1596 0204 0A00     		.short	10
+ 1597 0206 0600     		.short	6
+ 1598 0208 0400     		.short	4
+ 1599 020a 0000     		.short	0
+ 1600 020c 0000     		.short	0
+ 1601 020e 0000     		.short	0
+ 1602 0210 0000     		.short	0
+ 1603 0212 0000     		.short	0
+ 1604 0214 8900     		.short	137
+ 1605 0216 9900     		.short	153
+ 1606 0218 DD00     		.short	221
+ 1607 021a 5500     		.short	85
+ 1608 021c 5500     		.short	85
+ 1609 021e 6600     		.short	102
+ 1610 0220 2200     		.short	34
+ 1611 0222 0000     		.short	0
+ 1612 0224 0000     		.short	0
+ 1613 0226 0000     		.short	0
+ 1614 0228 0000     		.short	0
+ 1615 022a 0000     		.short	0
+ 1616 022c 1100     		.short	17
+ 1617 022e 0B00     		.short	11
+ 1618 0230 0E00     		.short	14
+ 1619 0232 0400     		.short	4
+ 1620 0234 0E00     		.short	14
+ 1621 0236 0B00     		.short	11
+ 1622 0238 1100     		.short	17
+ 1623 023a 0000     		.short	0
+ 1624 023c 0000     		.short	0
+ 1625 023e 0000     		.short	0
+ 1626 0240 0000     		.short	0
+ 1627 0242 0000     		.short	0
+ 1628 0244 1100     		.short	17
+ 1629 0246 1100     		.short	17
+ 1630 0248 0900     		.short	9
+ 1631 024a 0B00     		.short	11
+ 1632 024c 0A00     		.short	10
+ 1633 024e 0600     		.short	6
+ 1634 0250 0400     		.short	4
+ 1635 0252 0400     		.short	4
+ 1636 0254 0200     		.short	2
+ 1637 0256 0100     		.short	1
+ 1638 0258 0000     		.short	0
+ 1639 025a 0000     		.short	0
+ 1640 025c 1F00     		.short	31
+ 1641 025e 1800     		.short	24
+ 1642 0260 0C00     		.short	12
+ 1643 0262 0600     		.short	6
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 34
+
+
+ 1644 0264 0200     		.short	2
+ 1645 0266 0100     		.short	1
+ 1646 0268 1F00     		.short	31
+ 1647 026a 0000     		.short	0
+ 1648 026c 0000     		.short	0
+ 1649 026e 0000     		.short	0
+ 1650 0270 0C00     		.short	12
+ 1651 0272 1C00     		.short	28
+ 1652 0274 1600     		.short	22
+ 1653 0276 1200     		.short	18
+ 1654 0278 2200     		.short	34
+ 1655 027a 3F00     		.short	63
+ 1656 027c 6300     		.short	99
+ 1657 027e 4100     		.short	65
+ 1658 0280 C100     		.short	193
+ 1659 0282 0000     		.short	0
+ 1660 0284 0000     		.short	0
+ 1661 0286 0000     		.short	0
+ 1662 0288 3F00     		.short	63
+ 1663 028a 2100     		.short	33
+ 1664 028c 6100     		.short	97
+ 1665 028e 3100     		.short	49
+ 1666 0290 3F00     		.short	63
+ 1667 0292 4100     		.short	65
+ 1668 0294 4100     		.short	65
+ 1669 0296 6100     		.short	97
+ 1670 0298 3F00     		.short	63
+ 1671 029a 0000     		.short	0
+ 1672 029c 0000     		.short	0
+ 1673 029e 0000     		.short	0
+ 1674 02a0 7E00     		.short	126
+ 1675 02a2 4300     		.short	67
+ 1676 02a4 C100     		.short	193
+ 1677 02a6 0100     		.short	1
+ 1678 02a8 0100     		.short	1
+ 1679 02aa 0100     		.short	1
+ 1680 02ac C100     		.short	193
+ 1681 02ae 4200     		.short	66
+ 1682 02b0 3C00     		.short	60
+ 1683 02b2 0000     		.short	0
+ 1684 02b4 0000     		.short	0
+ 1685 02b6 0000     		.short	0
+ 1686 02b8 3F00     		.short	63
+ 1687 02ba 4100     		.short	65
+ 1688 02bc C100     		.short	193
+ 1689 02be C100     		.short	193
+ 1690 02c0 C100     		.short	193
+ 1691 02c2 C100     		.short	193
+ 1692 02c4 4100     		.short	65
+ 1693 02c6 6100     		.short	97
+ 1694 02c8 3F00     		.short	63
+ 1695 02ca 0000     		.short	0
+ 1696 02cc 0000     		.short	0
+ 1697 02ce 0000     		.short	0
+ 1698 02d0 7F00     		.short	127
+ 1699 02d2 0100     		.short	1
+ 1700 02d4 0100     		.short	1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 35
+
+
+ 1701 02d6 0100     		.short	1
+ 1702 02d8 3F00     		.short	63
+ 1703 02da 0100     		.short	1
+ 1704 02dc 0100     		.short	1
+ 1705 02de 0100     		.short	1
+ 1706 02e0 7F00     		.short	127
+ 1707 02e2 0000     		.short	0
+ 1708 02e4 0000     		.short	0
+ 1709 02e6 0000     		.short	0
+ 1710 02e8 3F00     		.short	63
+ 1711 02ea 0100     		.short	1
+ 1712 02ec 0100     		.short	1
+ 1713 02ee 0100     		.short	1
+ 1714 02f0 3F00     		.short	63
+ 1715 02f2 0100     		.short	1
+ 1716 02f4 0100     		.short	1
+ 1717 02f6 0100     		.short	1
+ 1718 02f8 0100     		.short	1
+ 1719 02fa 0000     		.short	0
+ 1720 02fc 0000     		.short	0
+ 1721 02fe 0000     		.short	0
+ 1722 0300 7E00     		.short	126
+ 1723 0302 C300     		.short	195
+ 1724 0304 8100     		.short	129
+ 1725 0306 0100     		.short	1
+ 1726 0308 E100     		.short	225
+ 1727 030a 8100     		.short	129
+ 1728 030c 8100     		.short	129
+ 1729 030e C200     		.short	194
+ 1730 0310 FC00     		.short	252
+ 1731 0312 0000     		.short	0
+ 1732 0314 0000     		.short	0
+ 1733 0316 0000     		.short	0
+ 1734 0318 4100     		.short	65
+ 1735 031a 4100     		.short	65
+ 1736 031c 4100     		.short	65
+ 1737 031e 4100     		.short	65
+ 1738 0320 7F00     		.short	127
+ 1739 0322 4100     		.short	65
+ 1740 0324 4100     		.short	65
+ 1741 0326 4100     		.short	65
+ 1742 0328 4100     		.short	65
+ 1743 032a 0000     		.short	0
+ 1744 032c 0000     		.short	0
+ 1745 032e 0000     		.short	0
+ 1746 0330 0100     		.short	1
+ 1747 0332 0100     		.short	1
+ 1748 0334 0100     		.short	1
+ 1749 0336 0100     		.short	1
+ 1750 0338 0100     		.short	1
+ 1751 033a 0100     		.short	1
+ 1752 033c 0100     		.short	1
+ 1753 033e 0100     		.short	1
+ 1754 0340 0100     		.short	1
+ 1755 0342 0000     		.short	0
+ 1756 0344 0000     		.short	0
+ 1757 0346 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 36
+
+
+ 1758 0348 0800     		.short	8
+ 1759 034a 0800     		.short	8
+ 1760 034c 0800     		.short	8
+ 1761 034e 0800     		.short	8
+ 1762 0350 0800     		.short	8
+ 1763 0352 0800     		.short	8
+ 1764 0354 0900     		.short	9
+ 1765 0356 0900     		.short	9
+ 1766 0358 0F00     		.short	15
+ 1767 035a 0000     		.short	0
+ 1768 035c 0000     		.short	0
+ 1769 035e 0000     		.short	0
+ 1770 0360 6100     		.short	97
+ 1771 0362 3100     		.short	49
+ 1772 0364 1900     		.short	25
+ 1773 0366 0D00     		.short	13
+ 1774 0368 0F00     		.short	15
+ 1775 036a 1300     		.short	19
+ 1776 036c 3100     		.short	49
+ 1777 036e 6100     		.short	97
+ 1778 0370 C100     		.short	193
+ 1779 0372 0000     		.short	0
+ 1780 0374 0000     		.short	0
+ 1781 0376 0000     		.short	0
+ 1782 0378 0100     		.short	1
+ 1783 037a 0100     		.short	1
+ 1784 037c 0100     		.short	1
+ 1785 037e 0100     		.short	1
+ 1786 0380 0100     		.short	1
+ 1787 0382 0100     		.short	1
+ 1788 0384 0100     		.short	1
+ 1789 0386 0100     		.short	1
+ 1790 0388 3F00     		.short	63
+ 1791 038a 0000     		.short	0
+ 1792 038c 0000     		.short	0
+ 1793 038e 0000     		.short	0
+ 1794 0390 8301     		.short	387
+ 1795 0392 4301     		.short	323
+ 1796 0394 4501     		.short	325
+ 1797 0396 4501     		.short	325
+ 1798 0398 2501     		.short	293
+ 1799 039a 2901     		.short	297
+ 1800 039c 2901     		.short	297
+ 1801 039e 1901     		.short	281
+ 1802 03a0 1101     		.short	273
+ 1803 03a2 0000     		.short	0
+ 1804 03a4 0000     		.short	0
+ 1805 03a6 0000     		.short	0
+ 1806 03a8 4300     		.short	67
+ 1807 03aa 4700     		.short	71
+ 1808 03ac 4500     		.short	69
+ 1809 03ae 4D00     		.short	77
+ 1810 03b0 4900     		.short	73
+ 1811 03b2 5100     		.short	81
+ 1812 03b4 7100     		.short	113
+ 1813 03b6 6100     		.short	97
+ 1814 03b8 4100     		.short	65
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 37
+
+
+ 1815 03ba 0000     		.short	0
+ 1816 03bc 0000     		.short	0
+ 1817 03be 0000     		.short	0
+ 1818 03c0 7E00     		.short	126
+ 1819 03c2 C300     		.short	195
+ 1820 03c4 8100     		.short	129
+ 1821 03c6 8100     		.short	129
+ 1822 03c8 8101     		.short	385
+ 1823 03ca 8100     		.short	129
+ 1824 03cc 8100     		.short	129
+ 1825 03ce C200     		.short	194
+ 1826 03d0 3C00     		.short	60
+ 1827 03d2 0000     		.short	0
+ 1828 03d4 0000     		.short	0
+ 1829 03d6 0000     		.short	0
+ 1830 03d8 3F00     		.short	63
+ 1831 03da 4100     		.short	65
+ 1832 03dc 4100     		.short	65
+ 1833 03de 4100     		.short	65
+ 1834 03e0 3F00     		.short	63
+ 1835 03e2 0100     		.short	1
+ 1836 03e4 0100     		.short	1
+ 1837 03e6 0100     		.short	1
+ 1838 03e8 0100     		.short	1
+ 1839 03ea 0000     		.short	0
+ 1840 03ec 0000     		.short	0
+ 1841 03ee 0000     		.short	0
+ 1842 03f0 7E00     		.short	126
+ 1843 03f2 C300     		.short	195
+ 1844 03f4 8100     		.short	129
+ 1845 03f6 8100     		.short	129
+ 1846 03f8 8101     		.short	385
+ 1847 03fa 8100     		.short	129
+ 1848 03fc A100     		.short	161
+ 1849 03fe E200     		.short	226
+ 1850 0400 FC01     		.short	508
+ 1851 0402 8000     		.short	128
+ 1852 0404 0000     		.short	0
+ 1853 0406 0000     		.short	0
+ 1854 0408 7F00     		.short	127
+ 1855 040a 4100     		.short	65
+ 1856 040c 4100     		.short	65
+ 1857 040e 4100     		.short	65
+ 1858 0410 3F00     		.short	63
+ 1859 0412 2100     		.short	33
+ 1860 0414 4100     		.short	65
+ 1861 0416 4100     		.short	65
+ 1862 0418 C100     		.short	193
+ 1863 041a 0000     		.short	0
+ 1864 041c 0000     		.short	0
+ 1865 041e 0000     		.short	0
+ 1866 0420 3E00     		.short	62
+ 1867 0422 6100     		.short	97
+ 1868 0424 0100     		.short	1
+ 1869 0426 0700     		.short	7
+ 1870 0428 3C00     		.short	60
+ 1871 042a 6000     		.short	96
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 38
+
+
+ 1872 042c 4100     		.short	65
+ 1873 042e 6300     		.short	99
+ 1874 0430 3E00     		.short	62
+ 1875 0432 0000     		.short	0
+ 1876 0434 0000     		.short	0
+ 1877 0436 0000     		.short	0
+ 1878 0438 7F00     		.short	127
+ 1879 043a 0C00     		.short	12
+ 1880 043c 0C00     		.short	12
+ 1881 043e 0C00     		.short	12
+ 1882 0440 0C00     		.short	12
+ 1883 0442 0C00     		.short	12
+ 1884 0444 0C00     		.short	12
+ 1885 0446 0C00     		.short	12
+ 1886 0448 0C00     		.short	12
+ 1887 044a 0000     		.short	0
+ 1888 044c 0000     		.short	0
+ 1889 044e 0000     		.short	0
+ 1890 0450 4100     		.short	65
+ 1891 0452 4100     		.short	65
+ 1892 0454 4100     		.short	65
+ 1893 0456 4100     		.short	65
+ 1894 0458 4100     		.short	65
+ 1895 045a 4100     		.short	65
+ 1896 045c 4100     		.short	65
+ 1897 045e 6300     		.short	99
+ 1898 0460 3E00     		.short	62
+ 1899 0462 0000     		.short	0
+ 1900 0464 0000     		.short	0
+ 1901 0466 0000     		.short	0
+ 1902 0468 C100     		.short	193
+ 1903 046a 4100     		.short	65
+ 1904 046c 2100     		.short	33
+ 1905 046e 2200     		.short	34
+ 1906 0470 3200     		.short	50
+ 1907 0472 1600     		.short	22
+ 1908 0474 1400     		.short	20
+ 1909 0476 1C00     		.short	28
+ 1910 0478 0C00     		.short	12
+ 1911 047a 0000     		.short	0
+ 1912 047c 0000     		.short	0
+ 1913 047e 0000     		.short	0
+ 1914 0480 3102     		.short	561
+ 1915 0482 3102     		.short	561
+ 1916 0484 5102     		.short	593
+ 1917 0486 4902     		.short	585
+ 1918 0488 4B02     		.short	587
+ 1919 048a 4A03     		.short	842
+ 1920 048c 8A01     		.short	394
+ 1921 048e 8601     		.short	390
+ 1922 0490 8401     		.short	388
+ 1923 0492 0000     		.short	0
+ 1924 0494 0000     		.short	0
+ 1925 0496 0000     		.short	0
+ 1926 0498 6100     		.short	97
+ 1927 049a 3200     		.short	50
+ 1928 049c 1600     		.short	22
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 39
+
+
+ 1929 049e 0C00     		.short	12
+ 1930 04a0 0C00     		.short	12
+ 1931 04a2 1400     		.short	20
+ 1932 04a4 3200     		.short	50
+ 1933 04a6 6300     		.short	99
+ 1934 04a8 C100     		.short	193
+ 1935 04aa 0000     		.short	0
+ 1936 04ac 0000     		.short	0
+ 1937 04ae 0000     		.short	0
+ 1938 04b0 C100     		.short	193
+ 1939 04b2 2300     		.short	35
+ 1940 04b4 3200     		.short	50
+ 1941 04b6 1400     		.short	20
+ 1942 04b8 0C00     		.short	12
+ 1943 04ba 0800     		.short	8
+ 1944 04bc 0800     		.short	8
+ 1945 04be 0800     		.short	8
+ 1946 04c0 0800     		.short	8
+ 1947 04c2 0000     		.short	0
+ 1948 04c4 0000     		.short	0
+ 1949 04c6 0000     		.short	0
+ 1950 04c8 3F00     		.short	63
+ 1951 04ca 3000     		.short	48
+ 1952 04cc 1000     		.short	16
+ 1953 04ce 0800     		.short	8
+ 1954 04d0 0400     		.short	4
+ 1955 04d2 0600     		.short	6
+ 1956 04d4 0300     		.short	3
+ 1957 04d6 0100     		.short	1
+ 1958 04d8 7F00     		.short	127
+ 1959 04da 0000     		.short	0
+ 1960 04dc 0000     		.short	0
+ 1961 04de 0000     		.short	0
+ 1962 04e0 1E00     		.short	30
+ 1963 04e2 1100     		.short	17
+ 1964 04e4 1100     		.short	17
+ 1965 04e6 3100     		.short	49
+ 1966 04e8 3100     		.short	49
+ 1967 04ea 3100     		.short	49
+ 1968 04ec 1100     		.short	17
+ 1969 04ee 1100     		.short	17
+ 1970 04f0 0E00     		.short	14
+ 1971 04f2 0000     		.short	0
+ 1972 04f4 0000     		.short	0
+ 1973 04f6 0000     		.short	0
+ 1974 04f8 0800     		.short	8
+ 1975 04fa 0F00     		.short	15
+ 1976 04fc 0800     		.short	8
+ 1977 04fe 0800     		.short	8
+ 1978 0500 0800     		.short	8
+ 1979 0502 0800     		.short	8
+ 1980 0504 0800     		.short	8
+ 1981 0506 0800     		.short	8
+ 1982 0508 0800     		.short	8
+ 1983 050a 0000     		.short	0
+ 1984 050c 0000     		.short	0
+ 1985 050e 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 40
+
+
+ 1986 0510 1F00     		.short	31
+ 1987 0512 1100     		.short	17
+ 1988 0514 3000     		.short	48
+ 1989 0516 1000     		.short	16
+ 1990 0518 1800     		.short	24
+ 1991 051a 0400     		.short	4
+ 1992 051c 0200     		.short	2
+ 1993 051e 0100     		.short	1
+ 1994 0520 3F00     		.short	63
+ 1995 0522 0000     		.short	0
+ 1996 0524 0000     		.short	0
+ 1997 0526 0000     		.short	0
+ 1998 0528 1F00     		.short	31
+ 1999 052a 1100     		.short	17
+ 2000 052c 1000     		.short	16
+ 2001 052e 1800     		.short	24
+ 2002 0530 1C00     		.short	28
+ 2003 0532 3000     		.short	48
+ 2004 0534 3000     		.short	48
+ 2005 0536 1100     		.short	17
+ 2006 0538 1E00     		.short	30
+ 2007 053a 0000     		.short	0
+ 2008 053c 0000     		.short	0
+ 2009 053e 0000     		.short	0
+ 2010 0540 1000     		.short	16
+ 2011 0542 1800     		.short	24
+ 2012 0544 1800     		.short	24
+ 2013 0546 1400     		.short	20
+ 2014 0548 1200     		.short	18
+ 2015 054a 1100     		.short	17
+ 2016 054c 3F00     		.short	63
+ 2017 054e 1000     		.short	16
+ 2018 0550 1000     		.short	16
+ 2019 0552 0000     		.short	0
+ 2020 0554 0000     		.short	0
+ 2021 0556 0000     		.short	0
+ 2022 0558 1F00     		.short	31
+ 2023 055a 0100     		.short	1
+ 2024 055c 0100     		.short	1
+ 2025 055e 1F00     		.short	31
+ 2026 0560 1100     		.short	17
+ 2027 0562 3000     		.short	48
+ 2028 0564 3000     		.short	48
+ 2029 0566 1100     		.short	17
+ 2030 0568 1E00     		.short	30
+ 2031 056a 0000     		.short	0
+ 2032 056c 0000     		.short	0
+ 2033 056e 0000     		.short	0
+ 2034 0570 1E00     		.short	30
+ 2035 0572 3100     		.short	49
+ 2036 0574 0100     		.short	1
+ 2037 0576 1F00     		.short	31
+ 2038 0578 1100     		.short	17
+ 2039 057a 3100     		.short	49
+ 2040 057c 3100     		.short	49
+ 2041 057e 1100     		.short	17
+ 2042 0580 1E00     		.short	30
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 41
+
+
+ 2043 0582 0000     		.short	0
+ 2044 0584 0000     		.short	0
+ 2045 0586 0000     		.short	0
+ 2046 0588 3F00     		.short	63
+ 2047 058a 1000     		.short	16
+ 2048 058c 1000     		.short	16
+ 2049 058e 0800     		.short	8
+ 2050 0590 0800     		.short	8
+ 2051 0592 0C00     		.short	12
+ 2052 0594 0400     		.short	4
+ 2053 0596 0400     		.short	4
+ 2054 0598 0200     		.short	2
+ 2055 059a 0000     		.short	0
+ 2056 059c 0000     		.short	0
+ 2057 059e 0000     		.short	0
+ 2058 05a0 1F00     		.short	31
+ 2059 05a2 1100     		.short	17
+ 2060 05a4 1100     		.short	17
+ 2061 05a6 1A00     		.short	26
+ 2062 05a8 0E00     		.short	14
+ 2063 05aa 1100     		.short	17
+ 2064 05ac 3100     		.short	49
+ 2065 05ae 3100     		.short	49
+ 2066 05b0 1F00     		.short	31
+ 2067 05b2 0000     		.short	0
+ 2068 05b4 0000     		.short	0
+ 2069 05b6 0000     		.short	0
+ 2070 05b8 1F00     		.short	31
+ 2071 05ba 1100     		.short	17
+ 2072 05bc 3100     		.short	49
+ 2073 05be 3100     		.short	49
+ 2074 05c0 3B00     		.short	59
+ 2075 05c2 3600     		.short	54
+ 2076 05c4 1000     		.short	16
+ 2077 05c6 1100     		.short	17
+ 2078 05c8 0E00     		.short	14
+ 2079 05ca 0000     		.short	0
+ 2080 05cc 0000     		.short	0
+ 2081 05ce 0000     		.short	0
+ 2082 05d0 2000     		.short	32
+ 2083 05d2 1000     		.short	16
+ 2084 05d4 1000     		.short	16
+ 2085 05d6 0800     		.short	8
+ 2086 05d8 0800     		.short	8
+ 2087 05da 0400     		.short	4
+ 2088 05dc 0400     		.short	4
+ 2089 05de 0200     		.short	2
+ 2090 05e0 0200     		.short	2
+ 2091 05e2 0000     		.short	0
+ 2092 05e4 0000     		.short	0
+ 2093 05e6 0000     		.short	0
+ 2094 05e8 0000     		.short	0
+ 2095 05ea 0000     		.short	0
+ 2096 05ec 1800     		.short	24
+ 2097 05ee 0000     		.short	0
+ 2098 05f0 0000     		.short	0
+ 2099 05f2 0000     		.short	0
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 42
+
+
+ 2100 05f4 1800     		.short	24
+ 2101 05f6 0000     		.short	0
+ 2102 05f8 0000     		.short	0
+ 2103 05fa 0000     		.short	0
+ 2104 05fc 0000     		.short	0
+ 2105 05fe 0000     		.short	0
+ 2106 0600 0000     		.short	0
+ 2107 0602 0800     		.short	8
+ 2108 0604 0800     		.short	8
+ 2109 0606 0800     		.short	8
+ 2110 0608 7F00     		.short	127
+ 2111 060a 0800     		.short	8
+ 2112 060c 0800     		.short	8
+ 2113 060e 0800     		.short	8
+ 2114 0610 0000     		.short	0
+ 2115 0612 0000     		.short	0
+ 2116 0614 0000     		.short	0
+ 2117 0616 0000     		.short	0
+ 2118 0618 0000     		.short	0
+ 2119 061a 0000     		.short	0
+ 2120 061c 0000     		.short	0
+ 2121 061e 0000     		.short	0
+ 2122 0620 7F00     		.short	127
+ 2123 0622 0000     		.short	0
+ 2124 0624 0000     		.short	0
+ 2125 0626 0000     		.short	0
+ 2126 0628 0000     		.short	0
+ 2127 062a 0000     		.short	0
+ 2128 062c 0000     		.short	0
+ 2129 062e 0000     		.short	0
+ 2130              		.section	.text._Z12DrawStrConstPKctthh,"ax",%progbits
+ 2131              		.align	1
+ 2132              		.global	_Z12DrawStrConstPKctthh
+ 2133              		.syntax unified
+ 2134              		.thumb
+ 2135              		.thumb_func
+ 2136              		.fpu softvfp
+ 2138              	_Z12DrawStrConstPKctthh:
+ 2139              	.LFB973:
+ 2140              		.file 3 "../src/text.cpp"
+   1:../src/text.cpp **** #include "text.h"
+   2:../src/text.cpp **** #include "font.h"
+   3:../src/text.cpp **** #include "xav_data.h"
+   4:../src/text.cpp **** #include <stdint.h>
+   5:../src/text.cpp **** 
+   6:../src/text.cpp **** #define SSP_DATA (*((uint32_t *)0x40088008))
+   7:../src/text.cpp **** 
+   8:../src/text.cpp **** void DrawStrConst(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color)
+   9:../src/text.cpp **** {
+ 2141              		.loc 3 9 0
+ 2142              		.cfi_startproc
+ 2143              		@ args = 4, pretend = 0, frame = 48
+ 2144              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2145              		@ link register save eliminated.
+ 2146 0000 80B4     		push	{r7}
+ 2147              		.cfi_def_cfa_offset 4
+ 2148              		.cfi_offset 7, -4
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 43
+
+
+ 2149 0002 8DB0     		sub	sp, sp, #52
+ 2150              		.cfi_def_cfa_offset 56
+ 2151 0004 00AF     		add	r7, sp, #0
+ 2152              		.cfi_def_cfa_register 7
+ 2153 0006 F860     		str	r0, [r7, #12]
+ 2154 0008 0846     		mov	r0, r1
+ 2155 000a 1146     		mov	r1, r2
+ 2156 000c 1A46     		mov	r2, r3
+ 2157 000e 0346     		mov	r3, r0	@ movhi
+ 2158 0010 7B81     		strh	r3, [r7, #10]	@ movhi
+ 2159 0012 0B46     		mov	r3, r1	@ movhi
+ 2160 0014 3B81     		strh	r3, [r7, #8]	@ movhi
+ 2161 0016 1346     		mov	r3, r2
+ 2162 0018 FB71     		strb	r3, [r7, #7]
+  10:../src/text.cpp **** 	uint16_t Offset = 0;
+ 2163              		.loc 3 10 0
+ 2164 001a 0023     		movs	r3, #0
+ 2165 001c FB85     		strh	r3, [r7, #46]	@ movhi
+  11:../src/text.cpp **** 	uint16_t arraySize = (fontWidth == 16)? 304 : 192;
+ 2166              		.loc 3 11 0
+ 2167 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2168 0020 102B     		cmp	r3, #16
+ 2169 0022 02D1     		bne	.L10
+ 2170              		.loc 3 11 0 is_stmt 0 discriminator 1
+ 2171 0024 4FF49873 		mov	r3, #304
+ 2172 0028 00E0     		b	.L11
+ 2173              	.L10:
+ 2174              		.loc 3 11 0 discriminator 2
+ 2175 002a C023     		movs	r3, #192
+ 2176              	.L11:
+ 2177              		.loc 3 11 0 discriminator 4
+ 2178 002c 3B83     		strh	r3, [r7, #24]	@ movhi
+  12:../src/text.cpp **** 	const uint16_t * _font;
+  13:../src/text.cpp **** 	bool valid = true;
+ 2179              		.loc 3 13 0 is_stmt 1 discriminator 4
+ 2180 002e 0123     		movs	r3, #1
+ 2181 0030 87F82730 		strb	r3, [r7, #39]
+ 2182              	.LBB3:
+  14:../src/text.cpp **** 
+  15:../src/text.cpp **** 	for(int i = 0; StrToDraw[i] != '\0'; i++){
+ 2183              		.loc 3 15 0 discriminator 4
+ 2184 0034 0023     		movs	r3, #0
+ 2185 0036 3B62     		str	r3, [r7, #32]
+ 2186              	.L53:
+ 2187              		.loc 3 15 0 is_stmt 0 discriminator 1
+ 2188 0038 3B6A     		ldr	r3, [r7, #32]
+ 2189 003a FA68     		ldr	r2, [r7, #12]
+ 2190 003c 1344     		add	r3, r3, r2
+ 2191 003e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2192 0040 002B     		cmp	r3, #0
+ 2193 0042 00F00582 		beq	.L54
+ 2194              	.LBB4:
+  16:../src/text.cpp **** 		valid = true;
+ 2195              		.loc 3 16 0 is_stmt 1
+ 2196 0046 0123     		movs	r3, #1
+ 2197 0048 87F82730 		strb	r3, [r7, #39]
+  17:../src/text.cpp **** 		if(i != 0){
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 44
+
+
+ 2198              		.loc 3 17 0
+ 2199 004c 3B6A     		ldr	r3, [r7, #32]
+ 2200 004e 002B     		cmp	r3, #0
+ 2201 0050 00F0F080 		beq	.L13
+  18:../src/text.cpp **** 			switch(StrToDraw[i - 1]){
+ 2202              		.loc 3 18 0
+ 2203 0054 3B6A     		ldr	r3, [r7, #32]
+ 2204 0056 013B     		subs	r3, r3, #1
+ 2205 0058 FA68     		ldr	r2, [r7, #12]
+ 2206 005a 1344     		add	r3, r3, r2
+ 2207 005c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2208 005e 203B     		subs	r3, r3, #32
+ 2209 0060 5A2B     		cmp	r3, #90
+ 2210 0062 00F2E180 		bhi	.L14
+ 2211 0066 01A2     		adr	r2, .L16
+ 2212 0068 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 2213              		.p2align 2
+ 2214              	.L16:
+ 2215 006c ED010000 		.word	.L15+1
+ 2216 0070 29020000 		.word	.L14+1
+ 2217 0074 29020000 		.word	.L14+1
+ 2218 0078 29020000 		.word	.L14+1
+ 2219 007c 29020000 		.word	.L14+1
+ 2220 0080 29020000 		.word	.L14+1
+ 2221 0084 29020000 		.word	.L14+1
+ 2222 0088 29020000 		.word	.L14+1
+ 2223 008c 29020000 		.word	.L14+1
+ 2224 0090 29020000 		.word	.L14+1
+ 2225 0094 29020000 		.word	.L14+1
+ 2226 0098 29020000 		.word	.L14+1
+ 2227 009c 29020000 		.word	.L14+1
+ 2228 00a0 29020000 		.word	.L14+1
+ 2229 00a4 29020000 		.word	.L14+1
+ 2230 00a8 29020000 		.word	.L14+1
+ 2231 00ac 01020000 		.word	.L17+1
+ 2232 00b0 ED010000 		.word	.L15+1
+ 2233 00b4 01020000 		.word	.L17+1
+ 2234 00b8 01020000 		.word	.L17+1
+ 2235 00bc 01020000 		.word	.L17+1
+ 2236 00c0 01020000 		.word	.L17+1
+ 2237 00c4 01020000 		.word	.L17+1
+ 2238 00c8 01020000 		.word	.L17+1
+ 2239 00cc 01020000 		.word	.L17+1
+ 2240 00d0 01020000 		.word	.L17+1
+ 2241 00d4 29020000 		.word	.L14+1
+ 2242 00d8 29020000 		.word	.L14+1
+ 2243 00dc 29020000 		.word	.L14+1
+ 2244 00e0 29020000 		.word	.L14+1
+ 2245 00e4 29020000 		.word	.L14+1
+ 2246 00e8 29020000 		.word	.L14+1
+ 2247 00ec 29020000 		.word	.L14+1
+ 2248 00f0 29020000 		.word	.L14+1
+ 2249 00f4 29020000 		.word	.L14+1
+ 2250 00f8 29020000 		.word	.L14+1
+ 2251 00fc 29020000 		.word	.L14+1
+ 2252 0100 29020000 		.word	.L14+1
+ 2253 0104 01020000 		.word	.L17+1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 45
+
+
+ 2254 0108 29020000 		.word	.L14+1
+ 2255 010c 29020000 		.word	.L14+1
+ 2256 0110 D9010000 		.word	.L18+1
+ 2257 0114 29020000 		.word	.L14+1
+ 2258 0118 29020000 		.word	.L14+1
+ 2259 011c 01020000 		.word	.L17+1
+ 2260 0120 29020000 		.word	.L14+1
+ 2261 0124 29020000 		.word	.L14+1
+ 2262 0128 29020000 		.word	.L14+1
+ 2263 012c 29020000 		.word	.L14+1
+ 2264 0130 29020000 		.word	.L14+1
+ 2265 0134 29020000 		.word	.L14+1
+ 2266 0138 29020000 		.word	.L14+1
+ 2267 013c 01020000 		.word	.L17+1
+ 2268 0140 29020000 		.word	.L14+1
+ 2269 0144 29020000 		.word	.L14+1
+ 2270 0148 15020000 		.word	.L19+1
+ 2271 014c 29020000 		.word	.L14+1
+ 2272 0150 29020000 		.word	.L14+1
+ 2273 0154 29020000 		.word	.L14+1
+ 2274 0158 29020000 		.word	.L14+1
+ 2275 015c 29020000 		.word	.L14+1
+ 2276 0160 29020000 		.word	.L14+1
+ 2277 0164 29020000 		.word	.L14+1
+ 2278 0168 29020000 		.word	.L14+1
+ 2279 016c 29020000 		.word	.L14+1
+ 2280 0170 01020000 		.word	.L17+1
+ 2281 0174 01020000 		.word	.L17+1
+ 2282 0178 01020000 		.word	.L17+1
+ 2283 017c 01020000 		.word	.L17+1
+ 2284 0180 01020000 		.word	.L17+1
+ 2285 0184 ED010000 		.word	.L15+1
+ 2286 0188 01020000 		.word	.L17+1
+ 2287 018c 01020000 		.word	.L17+1
+ 2288 0190 D9010000 		.word	.L18+1
+ 2289 0194 D9010000 		.word	.L18+1
+ 2290 0198 01020000 		.word	.L17+1
+ 2291 019c D9010000 		.word	.L18+1
+ 2292 01a0 29020000 		.word	.L14+1
+ 2293 01a4 01020000 		.word	.L17+1
+ 2294 01a8 01020000 		.word	.L17+1
+ 2295 01ac 01020000 		.word	.L17+1
+ 2296 01b0 01020000 		.word	.L17+1
+ 2297 01b4 ED010000 		.word	.L15+1
+ 2298 01b8 01020000 		.word	.L17+1
+ 2299 01bc ED010000 		.word	.L15+1
+ 2300 01c0 01020000 		.word	.L17+1
+ 2301 01c4 01020000 		.word	.L17+1
+ 2302 01c8 29020000 		.word	.L14+1
+ 2303 01cc 01020000 		.word	.L17+1
+ 2304 01d0 01020000 		.word	.L17+1
+ 2305 01d4 01020000 		.word	.L17+1
+ 2306              		.p2align 1
+ 2307              	.L18:
+  19:../src/text.cpp **** 				case 'i':
+  20:../src/text.cpp **** 				case 'j':
+  21:../src/text.cpp **** 				case 'l':
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 46
+
+
+  22:../src/text.cpp **** 				case 'I':
+  23:../src/text.cpp **** 					Offset += (fontWidth == 16)? 4 : 3;
+ 2308              		.loc 3 23 0
+ 2309 01d8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2310 01da 102B     		cmp	r3, #16
+ 2311 01dc 01D1     		bne	.L20
+ 2312              		.loc 3 23 0 is_stmt 0 discriminator 1
+ 2313 01de 0422     		movs	r2, #4
+ 2314 01e0 00E0     		b	.L21
+ 2315              	.L20:
+ 2316              		.loc 3 23 0 discriminator 2
+ 2317 01e2 0322     		movs	r2, #3
+ 2318              	.L21:
+ 2319              		.loc 3 23 0 discriminator 4
+ 2320 01e4 FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 2321 01e6 1344     		add	r3, r3, r2
+ 2322 01e8 FB85     		strh	r3, [r7, #46]	@ movhi
+  24:../src/text.cpp **** 					break;
+ 2323              		.loc 3 24 0 is_stmt 1 discriminator 4
+ 2324 01ea 23E0     		b	.L13
+ 2325              	.L15:
+  25:../src/text.cpp **** 				case 'r':
+  26:../src/text.cpp **** 				case 'f':
+  27:../src/text.cpp **** 				case '1':
+  28:../src/text.cpp **** 				case 't':
+  29:../src/text.cpp **** 				case ' ':
+  30:../src/text.cpp **** 					Offset += (fontWidth == 16)? 8 : 5;
+ 2326              		.loc 3 30 0
+ 2327 01ec FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2328 01ee 102B     		cmp	r3, #16
+ 2329 01f0 01D1     		bne	.L23
+ 2330              		.loc 3 30 0 is_stmt 0 discriminator 1
+ 2331 01f2 0822     		movs	r2, #8
+ 2332 01f4 00E0     		b	.L24
+ 2333              	.L23:
+ 2334              		.loc 3 30 0 discriminator 2
+ 2335 01f6 0522     		movs	r2, #5
+ 2336              	.L24:
+ 2337              		.loc 3 30 0 discriminator 4
+ 2338 01f8 FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 2339 01fa 1344     		add	r3, r3, r2
+ 2340 01fc FB85     		strh	r3, [r7, #46]	@ movhi
+  31:../src/text.cpp **** 					break;
+ 2341              		.loc 3 31 0 is_stmt 1 discriminator 4
+ 2342 01fe 19E0     		b	.L13
+ 2343              	.L17:
+  32:../src/text.cpp **** 				case 'a':
+  33:../src/text.cpp **** 				case 'b':
+  34:../src/text.cpp **** 				case 'c':
+  35:../src/text.cpp **** 				case 'd':
+  36:../src/text.cpp **** 				case 'e':
+  37:../src/text.cpp **** 				case 'g':
+  38:../src/text.cpp **** 				case 'h':
+  39:../src/text.cpp **** 				case 'k':
+  40:../src/text.cpp **** 				case 'n':
+  41:../src/text.cpp **** 				case 'o':
+  42:../src/text.cpp **** 				case 'p':
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 47
+
+
+  43:../src/text.cpp **** 				case 'q':
+  44:../src/text.cpp **** 				case 's':
+  45:../src/text.cpp **** 				case 'u':
+  46:../src/text.cpp **** 				case 'v':
+  47:../src/text.cpp **** 				case 'x':
+  48:../src/text.cpp **** 				case 'y':
+  49:../src/text.cpp **** 				case 'z':
+  50:../src/text.cpp **** 				case '0':
+  51:../src/text.cpp **** 				case '2':
+  52:../src/text.cpp **** 				case '3':
+  53:../src/text.cpp **** 				case '4':
+  54:../src/text.cpp **** 				case '5':
+  55:../src/text.cpp **** 				case '6':
+  56:../src/text.cpp **** 				case '7':
+  57:../src/text.cpp **** 				case '8':
+  58:../src/text.cpp **** 				case '9':
+  59:../src/text.cpp **** 				case 'L':
+  60:../src/text.cpp **** 				case 'T':
+  61:../src/text.cpp **** 				case 'F':
+  62:../src/text.cpp **** 					Offset += (fontWidth == 16)? 12 : 7;
+ 2344              		.loc 3 62 0
+ 2345 0200 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2346 0202 102B     		cmp	r3, #16
+ 2347 0204 01D1     		bne	.L25
+ 2348              		.loc 3 62 0 is_stmt 0 discriminator 1
+ 2349 0206 0C22     		movs	r2, #12
+ 2350 0208 00E0     		b	.L26
+ 2351              	.L25:
+ 2352              		.loc 3 62 0 discriminator 2
+ 2353 020a 0722     		movs	r2, #7
+ 2354              	.L26:
+ 2355              		.loc 3 62 0 discriminator 4
+ 2356 020c FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 2357 020e 1344     		add	r3, r3, r2
+ 2358 0210 FB85     		strh	r3, [r7, #46]	@ movhi
+  63:../src/text.cpp **** 					break;
+ 2359              		.loc 3 63 0 is_stmt 1 discriminator 4
+ 2360 0212 0FE0     		b	.L13
+ 2361              	.L19:
+  64:../src/text.cpp **** 				case 'W':
+  65:../src/text.cpp **** 					Offset += (fontWidth == 16)? 16: 12;
+ 2362              		.loc 3 65 0
+ 2363 0214 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2364 0216 102B     		cmp	r3, #16
+ 2365 0218 01D1     		bne	.L27
+ 2366              		.loc 3 65 0 is_stmt 0 discriminator 1
+ 2367 021a 1022     		movs	r2, #16
+ 2368 021c 00E0     		b	.L28
+ 2369              	.L27:
+ 2370              		.loc 3 65 0 discriminator 2
+ 2371 021e 0C22     		movs	r2, #12
+ 2372              	.L28:
+ 2373              		.loc 3 65 0 discriminator 4
+ 2374 0220 FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 2375 0222 1344     		add	r3, r3, r2
+ 2376 0224 FB85     		strh	r3, [r7, #46]	@ movhi
+  66:../src/text.cpp **** 					break;
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 48
+
+
+ 2377              		.loc 3 66 0 is_stmt 1 discriminator 4
+ 2378 0226 05E0     		b	.L13
+ 2379              	.L14:
+  67:../src/text.cpp **** 				default:
+  68:../src/text.cpp **** 					Offset += fontWidth;
+ 2380              		.loc 3 68 0
+ 2381 0228 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2382 022a 9AB2     		uxth	r2, r3
+ 2383 022c FB8D     		ldrh	r3, [r7, #46]	@ movhi
+ 2384 022e 1344     		add	r3, r3, r2
+ 2385 0230 FB85     		strh	r3, [r7, #46]	@ movhi
+  69:../src/text.cpp **** 					break;
+ 2386              		.loc 3 69 0
+ 2387 0232 00BF     		nop
+ 2388              	.L13:
+  70:../src/text.cpp **** 			}
+  71:../src/text.cpp **** 		}
+  72:../src/text.cpp **** 		if(StrToDraw[i] >= 'a' && StrToDraw[i] <= 'z')
+ 2389              		.loc 3 72 0
+ 2390 0234 3B6A     		ldr	r3, [r7, #32]
+ 2391 0236 FA68     		ldr	r2, [r7, #12]
+ 2392 0238 1344     		add	r3, r3, r2
+ 2393 023a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2394 023c 602B     		cmp	r3, #96
+ 2395 023e 21D9     		bls	.L29
+ 2396              		.loc 3 72 0 is_stmt 0 discriminator 1
+ 2397 0240 3B6A     		ldr	r3, [r7, #32]
+ 2398 0242 FA68     		ldr	r2, [r7, #12]
+ 2399 0244 1344     		add	r3, r3, r2
+ 2400 0246 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2401 0248 7A2B     		cmp	r3, #122
+ 2402 024a 1BD8     		bhi	.L29
+  73:../src/text.cpp **** 			_font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - 'a'] : OTF_10X12[StrToDraw[i] - 'a'];
+ 2403              		.loc 3 73 0 is_stmt 1
+ 2404 024c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2405 024e 102B     		cmp	r3, #16
+ 2406 0250 0AD1     		bne	.L30
+ 2407              		.loc 3 73 0 is_stmt 0 discriminator 1
+ 2408 0252 3B6A     		ldr	r3, [r7, #32]
+ 2409 0254 FA68     		ldr	r2, [r7, #12]
+ 2410 0256 1344     		add	r3, r3, r2
+ 2411 0258 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2412 025a 613B     		subs	r3, r3, #97
+ 2413 025c 2622     		movs	r2, #38
+ 2414 025e 02FB03F3 		mul	r3, r2, r3
+ 2415 0262 7E4A     		ldr	r2, .L55
+ 2416 0264 1344     		add	r3, r3, r2
+ 2417 0266 0BE0     		b	.L31
+ 2418              	.L30:
+ 2419              		.loc 3 73 0 discriminator 2
+ 2420 0268 3B6A     		ldr	r3, [r7, #32]
+ 2421 026a FA68     		ldr	r2, [r7, #12]
+ 2422 026c 1344     		add	r3, r3, r2
+ 2423 026e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2424 0270 A3F16102 		sub	r2, r3, #97
+ 2425 0274 1346     		mov	r3, r2
+ 2426 0276 5B00     		lsls	r3, r3, #1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 49
+
+
+ 2427 0278 1344     		add	r3, r3, r2
+ 2428 027a DB00     		lsls	r3, r3, #3
+ 2429 027c 784A     		ldr	r2, .L55+4
+ 2430 027e 1344     		add	r3, r3, r2
+ 2431              	.L31:
+ 2432              		.loc 3 73 0 discriminator 4
+ 2433 0280 BB62     		str	r3, [r7, #40]
+ 2434 0282 89E0     		b	.L32
+ 2435              	.L29:
+  74:../src/text.cpp **** 		else if(StrToDraw[i] >= 'A' && StrToDraw[i] <= 'Z')
+ 2436              		.loc 3 74 0 is_stmt 1
+ 2437 0284 3B6A     		ldr	r3, [r7, #32]
+ 2438 0286 FA68     		ldr	r2, [r7, #12]
+ 2439 0288 1344     		add	r3, r3, r2
+ 2440 028a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2441 028c 402B     		cmp	r3, #64
+ 2442 028e 21D9     		bls	.L33
+ 2443              		.loc 3 74 0 is_stmt 0 discriminator 1
+ 2444 0290 3B6A     		ldr	r3, [r7, #32]
+ 2445 0292 FA68     		ldr	r2, [r7, #12]
+ 2446 0294 1344     		add	r3, r3, r2
+ 2447 0296 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2448 0298 5A2B     		cmp	r3, #90
+ 2449 029a 1BD8     		bhi	.L33
+  75:../src/text.cpp **** 			_font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - 'A' + 26] : OTF_10X12[StrToDraw[i] - 'A' + 2
+ 2450              		.loc 3 75 0 is_stmt 1
+ 2451 029c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2452 029e 102B     		cmp	r3, #16
+ 2453 02a0 0AD1     		bne	.L34
+ 2454              		.loc 3 75 0 is_stmt 0 discriminator 1
+ 2455 02a2 3B6A     		ldr	r3, [r7, #32]
+ 2456 02a4 FA68     		ldr	r2, [r7, #12]
+ 2457 02a6 1344     		add	r3, r3, r2
+ 2458 02a8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2459 02aa 273B     		subs	r3, r3, #39
+ 2460 02ac 2622     		movs	r2, #38
+ 2461 02ae 02FB03F3 		mul	r3, r2, r3
+ 2462 02b2 6A4A     		ldr	r2, .L55
+ 2463 02b4 1344     		add	r3, r3, r2
+ 2464 02b6 0BE0     		b	.L35
+ 2465              	.L34:
+ 2466              		.loc 3 75 0 discriminator 2
+ 2467 02b8 3B6A     		ldr	r3, [r7, #32]
+ 2468 02ba FA68     		ldr	r2, [r7, #12]
+ 2469 02bc 1344     		add	r3, r3, r2
+ 2470 02be 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2471 02c0 A3F12702 		sub	r2, r3, #39
+ 2472 02c4 1346     		mov	r3, r2
+ 2473 02c6 5B00     		lsls	r3, r3, #1
+ 2474 02c8 1344     		add	r3, r3, r2
+ 2475 02ca DB00     		lsls	r3, r3, #3
+ 2476 02cc 644A     		ldr	r2, .L55+4
+ 2477 02ce 1344     		add	r3, r3, r2
+ 2478              	.L35:
+ 2479              		.loc 3 75 0 discriminator 4
+ 2480 02d0 BB62     		str	r3, [r7, #40]
+ 2481 02d2 61E0     		b	.L32
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 50
+
+
+ 2482              	.L33:
+  76:../src/text.cpp **** 		else if(StrToDraw[i] >= '0' && StrToDraw[i] <= '9')
+ 2483              		.loc 3 76 0 is_stmt 1
+ 2484 02d4 3B6A     		ldr	r3, [r7, #32]
+ 2485 02d6 FA68     		ldr	r2, [r7, #12]
+ 2486 02d8 1344     		add	r3, r3, r2
+ 2487 02da 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2488 02dc 2F2B     		cmp	r3, #47
+ 2489 02de 20D9     		bls	.L36
+ 2490              		.loc 3 76 0 is_stmt 0 discriminator 1
+ 2491 02e0 3B6A     		ldr	r3, [r7, #32]
+ 2492 02e2 FA68     		ldr	r2, [r7, #12]
+ 2493 02e4 1344     		add	r3, r3, r2
+ 2494 02e6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2495 02e8 392B     		cmp	r3, #57
+ 2496 02ea 1AD8     		bhi	.L36
+  77:../src/text.cpp **** 			 _font = (fontWidth == 16)? OTF_16X19[StrToDraw[i] - '0' + 52] : OTF_10X12[StrToDraw[i] - '0' + 
+ 2497              		.loc 3 77 0 is_stmt 1
+ 2498 02ec FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2499 02ee 102B     		cmp	r3, #16
+ 2500 02f0 0AD1     		bne	.L37
+ 2501              		.loc 3 77 0 is_stmt 0 discriminator 1
+ 2502 02f2 3B6A     		ldr	r3, [r7, #32]
+ 2503 02f4 FA68     		ldr	r2, [r7, #12]
+ 2504 02f6 1344     		add	r3, r3, r2
+ 2505 02f8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2506 02fa 0433     		adds	r3, r3, #4
+ 2507 02fc 2622     		movs	r2, #38
+ 2508 02fe 02FB03F3 		mul	r3, r2, r3
+ 2509 0302 564A     		ldr	r2, .L55
+ 2510 0304 1344     		add	r3, r3, r2
+ 2511 0306 0AE0     		b	.L38
+ 2512              	.L37:
+ 2513              		.loc 3 77 0 discriminator 2
+ 2514 0308 3B6A     		ldr	r3, [r7, #32]
+ 2515 030a FA68     		ldr	r2, [r7, #12]
+ 2516 030c 1344     		add	r3, r3, r2
+ 2517 030e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 2518 0310 1A1D     		adds	r2, r3, #4
+ 2519 0312 1346     		mov	r3, r2
+ 2520 0314 5B00     		lsls	r3, r3, #1
+ 2521 0316 1344     		add	r3, r3, r2
+ 2522 0318 DB00     		lsls	r3, r3, #3
+ 2523 031a 514A     		ldr	r2, .L55+4
+ 2524 031c 1344     		add	r3, r3, r2
+ 2525              	.L38:
+ 2526              		.loc 3 77 0 discriminator 4
+ 2527 031e BB62     		str	r3, [r7, #40]
+ 2528 0320 3AE0     		b	.L32
+ 2529              	.L36:
+  78:../src/text.cpp **** 		else{
+  79:../src/text.cpp **** 			switch(StrToDraw[i]){
+ 2530              		.loc 3 79 0 is_stmt 1
+ 2531 0322 3B6A     		ldr	r3, [r7, #32]
+ 2532 0324 FA68     		ldr	r2, [r7, #12]
+ 2533 0326 1344     		add	r3, r3, r2
+ 2534 0328 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 51
+
+
+ 2535 032a 2B3B     		subs	r3, r3, #43
+ 2536 032c 0F2B     		cmp	r3, #15
+ 2537 032e 2FD8     		bhi	.L39
+ 2538 0330 01A2     		adr	r2, .L41
+ 2539 0332 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 2540 0336 00BF     		.p2align 2
+ 2541              	.L41:
+ 2542 0338 85030000 		.word	.L40+1
+ 2543 033c 91030000 		.word	.L39+1
+ 2544 0340 8B030000 		.word	.L42+1
+ 2545 0344 91030000 		.word	.L39+1
+ 2546 0348 79030000 		.word	.L43+1
+ 2547 034c 91030000 		.word	.L39+1
+ 2548 0350 91030000 		.word	.L39+1
+ 2549 0354 91030000 		.word	.L39+1
+ 2550 0358 91030000 		.word	.L39+1
+ 2551 035c 91030000 		.word	.L39+1
+ 2552 0360 91030000 		.word	.L39+1
+ 2553 0364 91030000 		.word	.L39+1
+ 2554 0368 91030000 		.word	.L39+1
+ 2555 036c 91030000 		.word	.L39+1
+ 2556 0370 91030000 		.word	.L39+1
+ 2557 0374 7F030000 		.word	.L44+1
+ 2558              		.p2align 1
+ 2559              	.L43:
+  80:../src/text.cpp **** 				case '/':
+  81:../src/text.cpp **** 					_font = OTF_10X12[62];
+ 2560              		.loc 3 81 0
+ 2561 0378 3A4B     		ldr	r3, .L55+8
+ 2562 037a BB62     		str	r3, [r7, #40]
+  82:../src/text.cpp **** 					break;
+ 2563              		.loc 3 82 0
+ 2564 037c 0CE0     		b	.L32
+ 2565              	.L44:
+  83:../src/text.cpp **** 				case ':':
+  84:../src/text.cpp **** 					_font = OTF_10X12[63];
+ 2566              		.loc 3 84 0
+ 2567 037e 3A4B     		ldr	r3, .L55+12
+ 2568 0380 BB62     		str	r3, [r7, #40]
+  85:../src/text.cpp **** 					break;
+ 2569              		.loc 3 85 0
+ 2570 0382 09E0     		b	.L32
+ 2571              	.L40:
+  86:../src/text.cpp **** 				case '+':
+  87:../src/text.cpp **** 					_font = OTF_10X12[64];
+ 2572              		.loc 3 87 0
+ 2573 0384 394B     		ldr	r3, .L55+16
+ 2574 0386 BB62     		str	r3, [r7, #40]
+  88:../src/text.cpp **** 					break;
+ 2575              		.loc 3 88 0
+ 2576 0388 06E0     		b	.L32
+ 2577              	.L42:
+  89:../src/text.cpp **** 				case '-':
+  90:../src/text.cpp **** 					_font = OTF_10X12[65];
+ 2578              		.loc 3 90 0
+ 2579 038a 394B     		ldr	r3, .L55+20
+ 2580 038c BB62     		str	r3, [r7, #40]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 52
+
+
+  91:../src/text.cpp **** 					break;
+ 2581              		.loc 3 91 0
+ 2582 038e 03E0     		b	.L32
+ 2583              	.L39:
+  92:../src/text.cpp **** 				default:
+  93:../src/text.cpp **** 					valid = false;
+ 2584              		.loc 3 93 0
+ 2585 0390 0023     		movs	r3, #0
+ 2586 0392 87F82730 		strb	r3, [r7, #39]
+  94:../src/text.cpp **** 					break;
+ 2587              		.loc 3 94 0
+ 2588 0396 00BF     		nop
+ 2589              	.L32:
+ 2590              	.LBB5:
+  95:../src/text.cpp **** 			}
+  96:../src/text.cpp **** 		}
+  97:../src/text.cpp **** 
+  98:../src/text.cpp **** 		if(valid){
+ 2591              		.loc 3 98 0
+ 2592 0398 97F82730 		ldrb	r3, [r7, #39]	@ zero_extendqisi2
+ 2593 039c 002B     		cmp	r3, #0
+ 2594 039e 53D0     		beq	.L45
+ 2595              	.LBB6:
+ 2596              	.LBB7:
+  99:../src/text.cpp **** 			for(int j = 0; j < arraySize; j++){
+ 2597              		.loc 3 99 0
+ 2598 03a0 0023     		movs	r3, #0
+ 2599 03a2 FB61     		str	r3, [r7, #28]
+ 2600              	.L52:
+ 2601              		.loc 3 99 0 is_stmt 0 discriminator 1
+ 2602 03a4 3B8B     		ldrh	r3, [r7, #24]
+ 2603 03a6 FA69     		ldr	r2, [r7, #28]
+ 2604 03a8 9A42     		cmp	r2, r3
+ 2605 03aa 4DDA     		bge	.L45
+ 2606              	.LBB8:
+ 2607              	.LBB9:
+ 100:../src/text.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2608              		.loc 3 100 0 is_stmt 1
+ 2609 03ac FB69     		ldr	r3, [r7, #28]
+ 2610 03ae 002B     		cmp	r3, #0
+ 2611 03b0 00DA     		bge	.L47
+ 2612 03b2 0F33     		adds	r3, r3, #15
+ 2613              	.L47:
+ 2614 03b4 1B11     		asrs	r3, r3, #4
+ 2615 03b6 5B00     		lsls	r3, r3, #1
+ 2616 03b8 BA6A     		ldr	r2, [r7, #40]
+ 2617 03ba 1344     		add	r3, r3, r2
+ 2618 03bc 1B88     		ldrh	r3, [r3]
+ 2619 03be 1946     		mov	r1, r3
+ 2620 03c0 FB69     		ldr	r3, [r7, #28]
+ 2621 03c2 5A42     		rsbs	r2, r3, #0
+ 2622 03c4 03F00F03 		and	r3, r3, #15
+ 2623 03c8 02F00F02 		and	r2, r2, #15
+ 2624 03cc 58BF     		it	pl
+ 2625 03ce 5342     		rsbpl	r3, r2, #0
+ 2626 03d0 41FA03F3 		asr	r3, r1, r3
+ 2627 03d4 03F00103 		and	r3, r3, #1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 53
+
+
+ 2628 03d8 002B     		cmp	r3, #0
+ 2629 03da 31D0     		beq	.L48
+ 2630              	.LBB10:
+ 101:../src/text.cpp **** 					uint32_t PixelData = 0x80000000 + ((((y + (j / 16)) * 0x420) + x + (j % 16) + Offset) << 8) + 
+ 2631              		.loc 3 101 0
+ 2632 03dc 3A89     		ldrh	r2, [r7, #8]
+ 2633 03de FB69     		ldr	r3, [r7, #28]
+ 2634 03e0 002B     		cmp	r3, #0
+ 2635 03e2 00DA     		bge	.L49
+ 2636 03e4 0F33     		adds	r3, r3, #15
+ 2637              	.L49:
+ 2638 03e6 1B11     		asrs	r3, r3, #4
+ 2639 03e8 1A44     		add	r2, r2, r3
+ 2640 03ea 1346     		mov	r3, r2
+ 2641 03ec 5B01     		lsls	r3, r3, #5
+ 2642 03ee 1344     		add	r3, r3, r2
+ 2643 03f0 5B01     		lsls	r3, r3, #5
+ 2644 03f2 1A46     		mov	r2, r3
+ 2645 03f4 7B89     		ldrh	r3, [r7, #10]
+ 2646 03f6 1A44     		add	r2, r2, r3
+ 2647 03f8 FB69     		ldr	r3, [r7, #28]
+ 2648 03fa 5942     		rsbs	r1, r3, #0
+ 2649 03fc 03F00F03 		and	r3, r3, #15
+ 2650 0400 01F00F01 		and	r1, r1, #15
+ 2651 0404 58BF     		it	pl
+ 2652 0406 4B42     		rsbpl	r3, r1, #0
+ 2653 0408 1A44     		add	r2, r2, r3
+ 2654 040a FB8D     		ldrh	r3, [r7, #46]
+ 2655 040c 1344     		add	r3, r3, r2
+ 2656 040e 1B02     		lsls	r3, r3, #8
+ 2657 0410 1A46     		mov	r2, r3
+ 2658 0412 97F83830 		ldrb	r3, [r7, #56]	@ zero_extendqisi2
+ 2659 0416 1344     		add	r3, r3, r2
+ 2660 0418 03F10043 		add	r3, r3, #-2147483648
+ 2661 041c 7B61     		str	r3, [r7, #20]
+ 102:../src/text.cpp **** 					SSP_DATA = ((PixelData >> 16) & 0xFFFF);
+ 2662              		.loc 3 102 0
+ 2663 041e 154A     		ldr	r2, .L55+24
+ 2664 0420 7B69     		ldr	r3, [r7, #20]
+ 2665 0422 1B0C     		lsrs	r3, r3, #16
+ 2666 0424 1360     		str	r3, [r2]
+ 103:../src/text.cpp **** 					SSP_DATA = (PixelData & 0xFFFF);
+ 2667              		.loc 3 103 0
+ 2668 0426 134A     		ldr	r2, .L55+24
+ 2669 0428 7B69     		ldr	r3, [r7, #20]
+ 2670 042a 9BB2     		uxth	r3, r3
+ 2671 042c 1360     		str	r3, [r2]
+ 2672              	.LBB11:
+ 104:../src/text.cpp **** 					for(uint8_t i = 0; i < 9; i++);
+ 2673              		.loc 3 104 0
+ 2674 042e 0023     		movs	r3, #0
+ 2675 0430 FB76     		strb	r3, [r7, #27]
+ 2676              	.L51:
+ 2677              		.loc 3 104 0 is_stmt 0 discriminator 3
+ 2678 0432 FB7E     		ldrb	r3, [r7, #27]	@ zero_extendqisi2
+ 2679 0434 082B     		cmp	r3, #8
+ 2680 0436 03D8     		bhi	.L48
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 54
+
+
+ 2681              		.loc 3 104 0 discriminator 2
+ 2682 0438 FB7E     		ldrb	r3, [r7, #27]	@ zero_extendqisi2
+ 2683 043a 0133     		adds	r3, r3, #1
+ 2684 043c FB76     		strb	r3, [r7, #27]
+ 2685 043e F8E7     		b	.L51
+ 2686              	.L48:
+ 2687              	.LBE11:
+ 2688              	.LBE10:
+ 2689              	.LBE9:
+ 2690              	.LBE8:
+  99:../src/text.cpp **** 				if(_font[j / 16] & (1 << (j % 16))){
+ 2691              		.loc 3 99 0 is_stmt 1 discriminator 2
+ 2692 0440 FB69     		ldr	r3, [r7, #28]
+ 2693 0442 0133     		adds	r3, r3, #1
+ 2694 0444 FB61     		str	r3, [r7, #28]
+ 2695 0446 ADE7     		b	.L52
+ 2696              	.L45:
+ 2697              	.LBE7:
+ 2698              	.LBE6:
+ 2699              	.LBE5:
+ 2700              	.LBE4:
+  15:../src/text.cpp **** 		valid = true;
+ 2701              		.loc 3 15 0 discriminator 2
+ 2702 0448 3B6A     		ldr	r3, [r7, #32]
+ 2703 044a 0133     		adds	r3, r3, #1
+ 2704 044c 3B62     		str	r3, [r7, #32]
+ 2705 044e F3E5     		b	.L53
+ 2706              	.L54:
+ 2707              	.LBE3:
+ 105:../src/text.cpp **** 				}
+ 106:../src/text.cpp **** 			}
+ 107:../src/text.cpp **** 		}
+ 108:../src/text.cpp **** 	}
+ 109:../src/text.cpp **** }
+ 2708              		.loc 3 109 0
+ 2709 0450 00BF     		nop
+ 2710 0452 3437     		adds	r7, r7, #52
+ 2711              		.cfi_def_cfa_offset 4
+ 2712 0454 BD46     		mov	sp, r7
+ 2713              		.cfi_def_cfa_register 13
+ 2714              		@ sp needed
+ 2715 0456 80BC     		pop	{r7}
+ 2716              		.cfi_restore 7
+ 2717              		.cfi_def_cfa_offset 0
+ 2718 0458 7047     		bx	lr
+ 2719              	.L56:
+ 2720 045a 00BF     		.align	2
+ 2721              	.L55:
+ 2722 045c 00000000 		.word	_ZL9OTF_16X19
+ 2723 0460 00000000 		.word	_ZL9OTF_10X12
+ 2724 0464 D0050000 		.word	_ZL9OTF_10X12+1488
+ 2725 0468 E8050000 		.word	_ZL9OTF_10X12+1512
+ 2726 046c 00060000 		.word	_ZL9OTF_10X12+1536
+ 2727 0470 18060000 		.word	_ZL9OTF_10X12+1560
+ 2728 0474 08800840 		.word	1074298888
+ 2729              		.cfi_endproc
+ 2730              	.LFE973:
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 55
+
+
+ 2732              		.section	.text._ZN4Text4DrawE11rectangle_t,"ax",%progbits
+ 2733              		.align	1
+ 2734              		.global	_ZN4Text4DrawE11rectangle_t
+ 2735              		.syntax unified
+ 2736              		.thumb
+ 2737              		.thumb_func
+ 2738              		.fpu softvfp
+ 2740              	_ZN4Text4DrawE11rectangle_t:
+ 2741              	.LFB974:
+ 110:../src/text.cpp **** 
+ 111:../src/text.cpp **** void Text::Draw(rectangle_t drawBox)
+ 112:../src/text.cpp **** {
+ 2742              		.loc 3 112 0
+ 2743              		.cfi_startproc
+ 2744              		@ args = 0, pretend = 0, frame = 32
+ 2745              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2746 0000 90B5     		push	{r4, r7, lr}
+ 2747              		.cfi_def_cfa_offset 12
+ 2748              		.cfi_offset 4, -12
+ 2749              		.cfi_offset 7, -8
+ 2750              		.cfi_offset 14, -4
+ 2751 0002 8BB0     		sub	sp, sp, #44
+ 2752              		.cfi_def_cfa_offset 56
+ 2753 0004 02AF     		add	r7, sp, #8
+ 2754              		.cfi_def_cfa 7, 48
+ 2755 0006 F860     		str	r0, [r7, #12]
+ 2756 0008 3B1D     		adds	r3, r7, #4
+ 2757 000a 83E80600 		stm	r3, {r1, r2}
+ 2758              	.LBB12:
+ 113:../src/text.cpp **** 	if(type == TEXT)
+ 2759              		.loc 3 113 0
+ 2760 000e FB68     		ldr	r3, [r7, #12]
+ 2761 0010 1B7B     		ldrb	r3, [r3, #12]	@ zero_extendqisi2
+ 2762 0012 002B     		cmp	r3, #0
+ 2763 0014 0ED1     		bne	.L58
+ 114:../src/text.cpp **** 		DrawStrConst(str, x, y, fontWidth, color);
+ 2764              		.loc 3 114 0
+ 2765 0016 FB68     		ldr	r3, [r7, #12]
+ 2766 0018 1869     		ldr	r0, [r3, #16]
+ 2767 001a FB68     		ldr	r3, [r7, #12]
+ 2768 001c 198B     		ldrh	r1, [r3, #24]
+ 2769 001e FB68     		ldr	r3, [r7, #12]
+ 2770 0020 5A8B     		ldrh	r2, [r3, #26]
+ 2771 0022 FB68     		ldr	r3, [r7, #12]
+ 2772 0024 1C7F     		ldrb	r4, [r3, #28]	@ zero_extendqisi2
+ 2773 0026 FB68     		ldr	r3, [r7, #12]
+ 2774 0028 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 2775 002a 0093     		str	r3, [sp]
+ 2776 002c 2346     		mov	r3, r4
+ 2777 002e FFF7FEFF 		bl	_Z12DrawStrConstPKctthh
+ 2778              	.LBE12:
+ 115:../src/text.cpp **** 	else{
+ 116:../src/text.cpp **** 		char temp[10];
+ 117:../src/text.cpp **** 		itoa(nb, temp, 10);
+ 118:../src/text.cpp **** 		DrawStrConst(temp, x, y, fontWidth, color);
+ 119:../src/text.cpp **** 	}
+ 120:../src/text.cpp **** }
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 56
+
+
+ 2779              		.loc 3 120 0
+ 2780 0032 16E0     		b	.L60
+ 2781              	.L58:
+ 2782              	.LBB14:
+ 2783              	.LBB13:
+ 117:../src/text.cpp **** 		DrawStrConst(temp, x, y, fontWidth, color);
+ 2784              		.loc 3 117 0
+ 2785 0034 FB68     		ldr	r3, [r7, #12]
+ 2786 0036 5B69     		ldr	r3, [r3, #20]
+ 2787 0038 1846     		mov	r0, r3
+ 2788 003a 07F11403 		add	r3, r7, #20
+ 2789 003e 0A22     		movs	r2, #10
+ 2790 0040 1946     		mov	r1, r3
+ 2791 0042 FFF7FEFF 		bl	itoa
+ 118:../src/text.cpp **** 	}
+ 2792              		.loc 3 118 0
+ 2793 0046 FB68     		ldr	r3, [r7, #12]
+ 2794 0048 198B     		ldrh	r1, [r3, #24]
+ 2795 004a FB68     		ldr	r3, [r7, #12]
+ 2796 004c 5A8B     		ldrh	r2, [r3, #26]
+ 2797 004e FB68     		ldr	r3, [r7, #12]
+ 2798 0050 1C7F     		ldrb	r4, [r3, #28]	@ zero_extendqisi2
+ 2799 0052 FB68     		ldr	r3, [r7, #12]
+ 2800 0054 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 2801 0056 07F11400 		add	r0, r7, #20
+ 2802 005a 0093     		str	r3, [sp]
+ 2803 005c 2346     		mov	r3, r4
+ 2804 005e FFF7FEFF 		bl	_Z12DrawStrConstPKctthh
+ 2805              	.L60:
+ 2806              	.LBE13:
+ 2807              	.LBE14:
+ 2808              		.loc 3 120 0
+ 2809 0062 00BF     		nop
+ 2810 0064 2437     		adds	r7, r7, #36
+ 2811              		.cfi_def_cfa_offset 12
+ 2812 0066 BD46     		mov	sp, r7
+ 2813              		.cfi_def_cfa_register 13
+ 2814              		@ sp needed
+ 2815 0068 90BD     		pop	{r4, r7, pc}
+ 2816              		.cfi_endproc
+ 2817              	.LFE974:
+ 2819              		.section	.text._ZN7IRenderC2Ev,"axG",%progbits,_ZN7IRenderC5Ev,comdat
+ 2820              		.align	1
+ 2821              		.weak	_ZN7IRenderC2Ev
+ 2822              		.syntax unified
+ 2823              		.thumb
+ 2824              		.thumb_func
+ 2825              		.fpu softvfp
+ 2827              	_ZN7IRenderC2Ev:
+ 2828              	.LFB977:
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+ 2829              		.loc 2 14 0
+ 2830              		.cfi_startproc
+ 2831              		@ args = 0, pretend = 0, frame = 8
+ 2832              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2833              		@ link register save eliminated.
+ 2834 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 57
+
+
+ 2835              		.cfi_def_cfa_offset 4
+ 2836              		.cfi_offset 7, -4
+ 2837 0002 83B0     		sub	sp, sp, #12
+ 2838              		.cfi_def_cfa_offset 16
+ 2839 0004 00AF     		add	r7, sp, #0
+ 2840              		.cfi_def_cfa_register 7
+ 2841 0006 7860     		str	r0, [r7, #4]
+ 2842              	.LBB15:
+  14:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\interfaces.h **** public:
+ 2843              		.loc 2 14 0
+ 2844 0008 044A     		ldr	r2, .L63
+ 2845 000a 7B68     		ldr	r3, [r7, #4]
+ 2846 000c 1A60     		str	r2, [r3]
+ 2847              	.LBE15:
+ 2848 000e 7B68     		ldr	r3, [r7, #4]
+ 2849 0010 1846     		mov	r0, r3
+ 2850 0012 0C37     		adds	r7, r7, #12
+ 2851              		.cfi_def_cfa_offset 4
+ 2852 0014 BD46     		mov	sp, r7
+ 2853              		.cfi_def_cfa_register 13
+ 2854              		@ sp needed
+ 2855 0016 80BC     		pop	{r7}
+ 2856              		.cfi_restore 7
+ 2857              		.cfi_def_cfa_offset 0
+ 2858 0018 7047     		bx	lr
+ 2859              	.L64:
+ 2860 001a 00BF     		.align	2
+ 2861              	.L63:
+ 2862 001c 08000000 		.word	_ZTV7IRender+8
+ 2863              		.cfi_endproc
+ 2864              	.LFE977:
+ 2866              		.weak	_ZN7IRenderC1Ev
+ 2867              		.thumb_set _ZN7IRenderC1Ev,_ZN7IRenderC2Ev
+ 2868              		.section	.text._ZN4TextC2EPKctthh,"ax",%progbits
+ 2869              		.align	1
+ 2870              		.global	_ZN4TextC2EPKctthh
+ 2871              		.syntax unified
+ 2872              		.thumb
+ 2873              		.thumb_func
+ 2874              		.fpu softvfp
+ 2876              	_ZN4TextC2EPKctthh:
+ 2877              	.LFB979:
+ 121:../src/text.cpp **** 
+ 122:../src/text.cpp **** Text::Text(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color) :
+ 2878              		.loc 3 122 0
+ 2879              		.cfi_startproc
+ 2880              		@ args = 8, pretend = 0, frame = 16
+ 2881              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2882 0000 80B5     		push	{r7, lr}
+ 2883              		.cfi_def_cfa_offset 8
+ 2884              		.cfi_offset 7, -8
+ 2885              		.cfi_offset 14, -4
+ 2886 0002 84B0     		sub	sp, sp, #16
+ 2887              		.cfi_def_cfa_offset 24
+ 2888 0004 00AF     		add	r7, sp, #0
+ 2889              		.cfi_def_cfa_register 7
+ 2890 0006 F860     		str	r0, [r7, #12]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 58
+
+
+ 2891 0008 B960     		str	r1, [r7, #8]
+ 2892 000a 1146     		mov	r1, r2
+ 2893 000c 1A46     		mov	r2, r3
+ 2894 000e 0B46     		mov	r3, r1	@ movhi
+ 2895 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 2896 0012 1346     		mov	r3, r2	@ movhi
+ 2897 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 2898              	.LBB16:
+ 123:../src/text.cpp **** 	str(StrToDraw),
+ 124:../src/text.cpp **** 	x(x),
+ 125:../src/text.cpp **** 	y(y),
+ 126:../src/text.cpp **** 	fontWidth(fontWidth),
+ 127:../src/text.cpp **** 	color(color)
+ 2899              		.loc 3 127 0
+ 2900 0016 FB68     		ldr	r3, [r7, #12]
+ 2901 0018 1846     		mov	r0, r3
+ 2902 001a FFF7FEFF 		bl	_ZN7IRenderC2Ev
+ 2903 001e 0D4A     		ldr	r2, .L67
+ 2904 0020 FB68     		ldr	r3, [r7, #12]
+ 2905 0022 1A60     		str	r2, [r3]
+ 2906 0024 FB68     		ldr	r3, [r7, #12]
+ 2907 0026 BA68     		ldr	r2, [r7, #8]
+ 2908 0028 1A61     		str	r2, [r3, #16]
+ 2909 002a FB68     		ldr	r3, [r7, #12]
+ 2910 002c FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 2911 002e 1A83     		strh	r2, [r3, #24]	@ movhi
+ 2912 0030 FB68     		ldr	r3, [r7, #12]
+ 2913 0032 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 2914 0034 5A83     		strh	r2, [r3, #26]	@ movhi
+ 2915 0036 FB68     		ldr	r3, [r7, #12]
+ 2916 0038 3A7E     		ldrb	r2, [r7, #24]
+ 2917 003a 1A77     		strb	r2, [r3, #28]
+ 2918 003c FB68     		ldr	r3, [r7, #12]
+ 2919 003e 3A7F     		ldrb	r2, [r7, #28]
+ 2920 0040 5A77     		strb	r2, [r3, #29]
+ 128:../src/text.cpp **** {
+ 129:../src/text.cpp **** 	type = TEXT;
+ 2921              		.loc 3 129 0
+ 2922 0042 FB68     		ldr	r3, [r7, #12]
+ 2923 0044 0022     		movs	r2, #0
+ 2924 0046 1A73     		strb	r2, [r3, #12]
+ 2925              	.LBE16:
+ 130:../src/text.cpp **** }
+ 2926              		.loc 3 130 0
+ 2927 0048 FB68     		ldr	r3, [r7, #12]
+ 2928 004a 1846     		mov	r0, r3
+ 2929 004c 1037     		adds	r7, r7, #16
+ 2930              		.cfi_def_cfa_offset 8
+ 2931 004e BD46     		mov	sp, r7
+ 2932              		.cfi_def_cfa_register 13
+ 2933              		@ sp needed
+ 2934 0050 80BD     		pop	{r7, pc}
+ 2935              	.L68:
+ 2936 0052 00BF     		.align	2
+ 2937              	.L67:
+ 2938 0054 08000000 		.word	_ZTV4Text+8
+ 2939              		.cfi_endproc
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 59
+
+
+ 2940              	.LFE979:
+ 2942              		.global	_ZN4TextC1EPKctthh
+ 2943              		.thumb_set _ZN4TextC1EPKctthh,_ZN4TextC2EPKctthh
+ 2944              		.section	.text._ZN4TextC2Emtthh,"ax",%progbits
+ 2945              		.align	1
+ 2946              		.global	_ZN4TextC2Emtthh
+ 2947              		.syntax unified
+ 2948              		.thumb
+ 2949              		.thumb_func
+ 2950              		.fpu softvfp
+ 2952              	_ZN4TextC2Emtthh:
+ 2953              	.LFB982:
+ 131:../src/text.cpp **** 
+ 132:../src/text.cpp **** Text::Text(const uint32_t NbToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color) :
+ 2954              		.loc 3 132 0
+ 2955              		.cfi_startproc
+ 2956              		@ args = 8, pretend = 0, frame = 16
+ 2957              		@ frame_needed = 1, uses_anonymous_args = 0
+ 2958 0000 80B5     		push	{r7, lr}
+ 2959              		.cfi_def_cfa_offset 8
+ 2960              		.cfi_offset 7, -8
+ 2961              		.cfi_offset 14, -4
+ 2962 0002 84B0     		sub	sp, sp, #16
+ 2963              		.cfi_def_cfa_offset 24
+ 2964 0004 00AF     		add	r7, sp, #0
+ 2965              		.cfi_def_cfa_register 7
+ 2966 0006 F860     		str	r0, [r7, #12]
+ 2967 0008 B960     		str	r1, [r7, #8]
+ 2968 000a 1146     		mov	r1, r2
+ 2969 000c 1A46     		mov	r2, r3
+ 2970 000e 0B46     		mov	r3, r1	@ movhi
+ 2971 0010 FB80     		strh	r3, [r7, #6]	@ movhi
+ 2972 0012 1346     		mov	r3, r2	@ movhi
+ 2973 0014 BB80     		strh	r3, [r7, #4]	@ movhi
+ 2974              	.LBB17:
+ 133:../src/text.cpp **** 	nb(NbToDraw),
+ 134:../src/text.cpp **** 	x(x),
+ 135:../src/text.cpp **** 	y(y),
+ 136:../src/text.cpp **** 	fontWidth(fontWidth),
+ 137:../src/text.cpp **** 	color(color)
+ 2975              		.loc 3 137 0
+ 2976 0016 FB68     		ldr	r3, [r7, #12]
+ 2977 0018 1846     		mov	r0, r3
+ 2978 001a FFF7FEFF 		bl	_ZN7IRenderC2Ev
+ 2979 001e 0D4A     		ldr	r2, .L71
+ 2980 0020 FB68     		ldr	r3, [r7, #12]
+ 2981 0022 1A60     		str	r2, [r3]
+ 2982 0024 FB68     		ldr	r3, [r7, #12]
+ 2983 0026 BA68     		ldr	r2, [r7, #8]
+ 2984 0028 5A61     		str	r2, [r3, #20]
+ 2985 002a FB68     		ldr	r3, [r7, #12]
+ 2986 002c FA88     		ldrh	r2, [r7, #6]	@ movhi
+ 2987 002e 1A83     		strh	r2, [r3, #24]	@ movhi
+ 2988 0030 FB68     		ldr	r3, [r7, #12]
+ 2989 0032 BA88     		ldrh	r2, [r7, #4]	@ movhi
+ 2990 0034 5A83     		strh	r2, [r3, #26]	@ movhi
+ 2991 0036 FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 60
+
+
+ 2992 0038 3A7E     		ldrb	r2, [r7, #24]
+ 2993 003a 1A77     		strb	r2, [r3, #28]
+ 2994 003c FB68     		ldr	r3, [r7, #12]
+ 2995 003e 3A7F     		ldrb	r2, [r7, #28]
+ 2996 0040 5A77     		strb	r2, [r3, #29]
+ 138:../src/text.cpp **** {
+ 139:../src/text.cpp **** 	type = DIGITS;
+ 2997              		.loc 3 139 0
+ 2998 0042 FB68     		ldr	r3, [r7, #12]
+ 2999 0044 0122     		movs	r2, #1
+ 3000 0046 1A73     		strb	r2, [r3, #12]
+ 3001              	.LBE17:
+ 140:../src/text.cpp **** }
+ 3002              		.loc 3 140 0
+ 3003 0048 FB68     		ldr	r3, [r7, #12]
+ 3004 004a 1846     		mov	r0, r3
+ 3005 004c 1037     		adds	r7, r7, #16
+ 3006              		.cfi_def_cfa_offset 8
+ 3007 004e BD46     		mov	sp, r7
+ 3008              		.cfi_def_cfa_register 13
+ 3009              		@ sp needed
+ 3010 0050 80BD     		pop	{r7, pc}
+ 3011              	.L72:
+ 3012 0052 00BF     		.align	2
+ 3013              	.L71:
+ 3014 0054 08000000 		.word	_ZTV4Text+8
+ 3015              		.cfi_endproc
+ 3016              	.LFE982:
+ 3018              		.global	_ZN4TextC1Emtthh
+ 3019              		.thumb_set _ZN4TextC1Emtthh,_ZN4TextC2Emtthh
+ 3020              		.global	_ZTV4Text
+ 3021              		.section	.rodata._ZTV4Text,"a",%progbits
+ 3022              		.align	2
+ 3025              	_ZTV4Text:
+ 3026 0000 00000000 		.word	0
+ 3027 0004 00000000 		.word	0
+ 3028 0008 00000000 		.word	_ZN4Text4DrawE11rectangle_t
+ 3029 000c 00000000 		.word	_ZN4TextD1Ev
+ 3030 0010 00000000 		.word	_ZN4TextD0Ev
+ 3031              		.section	.text._ZN4TextD2Ev,"axG",%progbits,_ZN4TextD5Ev,comdat
+ 3032              		.align	1
+ 3033              		.weak	_ZN4TextD2Ev
+ 3034              		.syntax unified
+ 3035              		.thumb
+ 3036              		.thumb_func
+ 3037              		.fpu softvfp
+ 3039              	_ZN4TextD2Ev:
+ 3040              	.LFB1439:
+ 3041              		.file 4 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/text.h"
+   1:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** #ifndef TEXT_H_
+   2:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** #define TEXT_H_
+   3:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** #include <stdint.h>
+   4:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** #include "interfaces.h"
+   5:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** #include <cstring>
+   6:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** 
+   7:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** void DrawStrConst(const char *StrToDraw, uint16_t x, uint16_t y, uint8_t fontWidth, uint8_t color);
+   8:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** 
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 61
+
+
+   9:C:\Users\xavie\Cegep\Processeurs\HeroOrZero\inc\text.h **** class Text : public IRender{
+ 3042              		.loc 4 9 0
+ 3043              		.cfi_startproc
+ 3044              		@ args = 0, pretend = 0, frame = 8
+ 3045              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3046 0000 80B5     		push	{r7, lr}
+ 3047              		.cfi_def_cfa_offset 8
+ 3048              		.cfi_offset 7, -8
+ 3049              		.cfi_offset 14, -4
+ 3050 0002 82B0     		sub	sp, sp, #8
+ 3051              		.cfi_def_cfa_offset 16
+ 3052 0004 00AF     		add	r7, sp, #0
+ 3053              		.cfi_def_cfa_register 7
+ 3054 0006 7860     		str	r0, [r7, #4]
+ 3055              	.LBB18:
+ 3056              		.loc 4 9 0
+ 3057 0008 054A     		ldr	r2, .L75
+ 3058 000a 7B68     		ldr	r3, [r7, #4]
+ 3059 000c 1A60     		str	r2, [r3]
+ 3060 000e 7B68     		ldr	r3, [r7, #4]
+ 3061 0010 1846     		mov	r0, r3
+ 3062 0012 FFF7FEFF 		bl	_ZN7IRenderD2Ev
+ 3063              	.LBE18:
+ 3064 0016 7B68     		ldr	r3, [r7, #4]
+ 3065 0018 1846     		mov	r0, r3
+ 3066 001a 0837     		adds	r7, r7, #8
+ 3067              		.cfi_def_cfa_offset 8
+ 3068 001c BD46     		mov	sp, r7
+ 3069              		.cfi_def_cfa_register 13
+ 3070              		@ sp needed
+ 3071 001e 80BD     		pop	{r7, pc}
+ 3072              	.L76:
+ 3073              		.align	2
+ 3074              	.L75:
+ 3075 0020 08000000 		.word	_ZTV4Text+8
+ 3076              		.cfi_endproc
+ 3077              	.LFE1439:
+ 3079              		.weak	_ZN4TextD1Ev
+ 3080              		.thumb_set _ZN4TextD1Ev,_ZN4TextD2Ev
+ 3081              		.section	.text._ZN4TextD0Ev,"axG",%progbits,_ZN4TextD5Ev,comdat
+ 3082              		.align	1
+ 3083              		.weak	_ZN4TextD0Ev
+ 3084              		.syntax unified
+ 3085              		.thumb
+ 3086              		.thumb_func
+ 3087              		.fpu softvfp
+ 3089              	_ZN4TextD0Ev:
+ 3090              	.LFB1441:
+ 3091              		.loc 4 9 0
+ 3092              		.cfi_startproc
+ 3093              		@ args = 0, pretend = 0, frame = 8
+ 3094              		@ frame_needed = 1, uses_anonymous_args = 0
+ 3095 0000 80B5     		push	{r7, lr}
+ 3096              		.cfi_def_cfa_offset 8
+ 3097              		.cfi_offset 7, -8
+ 3098              		.cfi_offset 14, -4
+ 3099 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 62
+
+
+ 3100              		.cfi_def_cfa_offset 16
+ 3101 0004 00AF     		add	r7, sp, #0
+ 3102              		.cfi_def_cfa_register 7
+ 3103 0006 7860     		str	r0, [r7, #4]
+ 3104              		.loc 4 9 0
+ 3105 0008 7868     		ldr	r0, [r7, #4]
+ 3106 000a FFF7FEFF 		bl	_ZN4TextD1Ev
+ 3107 000e 2021     		movs	r1, #32
+ 3108 0010 7868     		ldr	r0, [r7, #4]
+ 3109 0012 FFF7FEFF 		bl	_ZdlPvj
+ 3110 0016 7B68     		ldr	r3, [r7, #4]
+ 3111 0018 1846     		mov	r0, r3
+ 3112 001a 0837     		adds	r7, r7, #8
+ 3113              		.cfi_def_cfa_offset 8
+ 3114 001c BD46     		mov	sp, r7
+ 3115              		.cfi_def_cfa_register 13
+ 3116              		@ sp needed
+ 3117 001e 80BD     		pop	{r7, pc}
+ 3118              		.cfi_endproc
+ 3119              	.LFE1441:
+ 3121              		.weak	_ZTV7IRender
+ 3122              		.section	.rodata._ZTV7IRender,"aG",%progbits,_ZTV7IRender,comdat
+ 3123              		.align	2
+ 3126              	_ZTV7IRender:
+ 3127 0000 00000000 		.word	0
+ 3128 0004 00000000 		.word	0
+ 3129 0008 00000000 		.word	__cxa_pure_virtual
+ 3130 000c 00000000 		.word	0
+ 3131 0010 00000000 		.word	0
+ 3132              		.text
+ 3133              	.Letext0:
+ 3134              		.file 5 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\machine\\_default_
+ 3135              		.file 6 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 3136              		.file 7 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdint.h"
+ 3137              		.file 8 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\\
+ 3138              		.file 9 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\type_t
+ 3139              		.file 10 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3140              		.file 11 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\debug
+ 3141              		.file 12 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cwcha
+ 3142              		.file 13 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\arm-n
+ 3143              		.file 14 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 3144              		.file 15 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3145              		.file 16 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3146              		.file 17 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\new"
+ 3147              		.file 18 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cloca
+ 3148              		.file 19 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cctyp
+ 3149              		.file 20 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3150              		.file 21 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdl
+ 3151              		.file 22 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstdi
+ 3152              		.file 23 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3153              		.file 24 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3154              		.file 25 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\initi
+ 3155              		.file 26 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\cstri
+ 3156              		.file 27 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3157              		.file 28 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3158              		.file 29 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 3159              		.file 30 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 63
+
+
+ 3160              		.file 31 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\ext\\
+ 3161              		.file 32 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\c++\\7.2.1\\bits\
+ 3162              		.file 33 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 3163              		.file 34 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+ 3164              		.file 35 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+ 3165              		.file 36 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+ 3166              		.file 37 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\lib\\gcc\\arm-none-eabi\\7.2.1\\include\\
+ 3167              		.file 38 "<built-in>"
+ 3168              		.file 39 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\wchar.h"
+ 3169              		.file 40 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\locale.h"
+ 3170              		.file 41 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\ctype.h"
+ 3171              		.file 42 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdlib.h"
+ 3172              		.file 43 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\stdio.h"
+ 3173              		.file 44 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\sys\\errno.h"
+ 3174              		.file 45 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\inc/xav_data.h"
+ 3175              		.file 46 "c:\\nxp\\mcuxpressoide_10.2.1_795\\ide\\tools\\arm-none-eabi\\include\\string.h"
+ 3176              		.file 47 "C:\\Users\\xavie\\Cegep\\Processeurs\\HeroOrZero\\resource/font.h"
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 64
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 text.cpp
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:16     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:19     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:22     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:28     .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:61     .text._ZN7IRenderD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD2Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:104    .text._ZN7IRenderD2Ev:0000001c $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3126   .rodata._ZTV7IRender:00000000 _ZTV7IRender
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:68     .text._ZN7IRenderD2Ev:00000000 _ZN7IRenderD1Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:111    .text._ZN7IRenderD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:118    .text._ZN7IRenderD0Ev:00000000 _ZN7IRenderD0Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:151    .rodata._ZL9OTF_16X19:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:154    .rodata._ZL9OTF_16X19:00000000 _ZL9OTF_16X19
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:1334   .rodata._ZL9OTF_10X12:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:1337   .rodata._ZL9OTF_10X12:00000000 _ZL9OTF_10X12
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2131   .text._Z12DrawStrConstPKctthh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2138   .text._Z12DrawStrConstPKctthh:00000000 _Z12DrawStrConstPKctthh
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2215   .text._Z12DrawStrConstPKctthh:0000006c $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2306   .text._Z12DrawStrConstPKctthh:000001d8 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2542   .text._Z12DrawStrConstPKctthh:00000338 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2558   .text._Z12DrawStrConstPKctthh:00000378 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2722   .text._Z12DrawStrConstPKctthh:0000045c $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2733   .text._ZN4Text4DrawE11rectangle_t:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2740   .text._ZN4Text4DrawE11rectangle_t:00000000 _ZN4Text4DrawE11rectangle_t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2820   .text._ZN7IRenderC2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2827   .text._ZN7IRenderC2Ev:00000000 _ZN7IRenderC2Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2862   .text._ZN7IRenderC2Ev:0000001c $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2827   .text._ZN7IRenderC2Ev:00000000 _ZN7IRenderC1Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2869   .text._ZN4TextC2EPKctthh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2876   .text._ZN4TextC2EPKctthh:00000000 _ZN4TextC2EPKctthh
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2938   .text._ZN4TextC2EPKctthh:00000054 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3025   .rodata._ZTV4Text:00000000 _ZTV4Text
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2876   .text._ZN4TextC2EPKctthh:00000000 _ZN4TextC1EPKctthh
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2945   .text._ZN4TextC2Emtthh:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2952   .text._ZN4TextC2Emtthh:00000000 _ZN4TextC2Emtthh
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3014   .text._ZN4TextC2Emtthh:00000054 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:2952   .text._ZN4TextC2Emtthh:00000000 _ZN4TextC1Emtthh
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3022   .rodata._ZTV4Text:00000000 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3039   .text._ZN4TextD2Ev:00000000 _ZN4TextD1Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3089   .text._ZN4TextD0Ev:00000000 _ZN4TextD0Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3032   .text._ZN4TextD2Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3039   .text._ZN4TextD2Ev:00000000 _ZN4TextD2Ev
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3075   .text._ZN4TextD2Ev:00000020 $d
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3082   .text._ZN4TextD0Ev:00000000 $t
+C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s:3123   .rodata._ZTV7IRender:00000000 $d
+                           .group:00000000 _ZN7IRenderD5Ev
+                           .group:00000000 _ZN7IRenderC5Ev
+                           .group:00000000 _ZN4TextD5Ev
+                           .group:00000000 wm4.0.0474d032b6805b4a3671280691a3da50
+                           .group:00000000 wm4.stdint.h.4.659be5aa44c4ab4eb7c7cc2b24d8ceee
+                           .group:00000000 wm4._newlib_version.h.4.3572908597b70d672d181fc7fc501c19
+                           .group:00000000 wm4.features.h.33.d97f2d646536517df901beeb5b9993f5
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.cce27fed8484c08a33f522034c30d2b5
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 65
+
+
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.cconfig.h.31.8d62951b41c03e8177558db1118caeba
+                           .group:00000000 wm4.cpu_defines.h.31.bf53b50a3b7882b34c717ebded187478
+                           .group:00000000 wm4.cconfig.h.541.3e7122a26aab9f5a5399e0379cd75f44
+                           .group:00000000 wm4.exception_defines.h.31.b944334bb23842f2d39bb0d8b467613a
+                           .group:00000000 wm4.cpp_type_traits.h.33.9f2bfd8c4471a9a299f6da3ec24c745c
+                           .group:00000000 wm4.numeric_traits.h.30.aa01a98564b7e55086aad9e53c7e5c53
+                           .group:00000000 wm4.concept_check.h.31.f19605d278e56917c68a56d378be308c
+                           .group:00000000 wm4.type_traits.30.32b820b957e206cbc57b9805350afbca
+                           .group:00000000 wm4.move.h.159.368bac456bc1dfb8448d51bb65764956
+                           .group:00000000 wm4.assertions.h.30.f3970bbdad8b12088edf616ddeecdc90
+                           .group:00000000 wm4.stl_iterator.h.409.7a84ee40267bb1222b7cd9a74055edfb
+                           .group:00000000 wm4.debug.h.30.70fe957e8e7c7ceba3caf19b0959f126
+                           .group:00000000 wm4.stl_algobase.h.491.ec4060988bfff82dc579decdb75c72d6
+                           .group:00000000 wm4.newlib.h.8.e0fd068ed40a600f7426443f865dd469
+                           .group:00000000 wm4.ieeefp.h.77.49bcce8a603f3d93a95080d6a3573782
+                           .group:00000000 wm4.config.h.220.6cac6a9685cfce5e83c17784171638d9
+                           .group:00000000 wm4._ansi.h.23.1ee1144430bedaab1a14c7b57a6c8384
+                           .group:00000000 wm4.stddef.h.39.096871ec3ca5abfedfa76e8d05f4a8d6
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4._types.h.125.5cf8a495f1f7ef36777ad868a1e32068
+                           .group:00000000 wm4.stddef.h.161.7e98c9c86da0ed2d27af2ef92af7d013
+                           .group:00000000 wm4._types.h.184.7120b8bb2e0149e2359704f4e2251b68
+                           .group:00000000 wm4.reent.h.17.87376802c2b370b32a762f0a30482d9e
+                           .group:00000000 wm4.wchar.h.8.acdef4366e64def8c588421024712d23
+                           .group:00000000 wm4.stddef.h.161.9f48187563b2a85291a91832aa425498
+                           .group:00000000 wm4.cdefs.h.47.ef8413a24f515b2210954be82adc67e2
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4.wchar.h.29.d3f42b20d847eb1aee8a8518919e39fd
+                           .group:00000000 wm4.wchar.h.76.90478bd2c784f576b769c4535c98839d
+                           .group:00000000 wm4.cwchar.48.c4e882638bf84f6da89479dda6fe8e17
+                           .group:00000000 wm4.cxxabi_init_exception.h.42.029852b0f286014c9c193b74ad22df55
+                           .group:00000000 wm4.allocator.h.52.0ceafb36dc1b82dbfa6b05003082e3f5
+                           .group:00000000 wm4.stddef.h.161.38688f2eb958a8ed58fdb61ffe554c94
+                           .group:00000000 wm4.locale.h.16.90d16f662e7119f5b192650a45179c6c
+                           .group:00000000 wm4.clocale.45.c36d2d5b631a875aa5273176b54fdf0f
+                           .group:00000000 wm4.ctype.h.2.cf64fe4c5e8c0ac0f52f1143312d4909
+                           .group:00000000 wm4.cctype.45.0da5714876b0be7f2d816b53d9670403
+                           .group:00000000 wm4.stl_function.h.57.6639ab8e57d2230b4b27118173a32750
+                           .group:00000000 wm4.gthr.h.27.ceb1c66b926f052afcba57e8784df0d4
+                           .group:00000000 wm4.gthrdefault.h.27.edc94d4398c0534988962be77dc3c2e1
+                           .group:00000000 wm4.atomic_word.h.30.9e0ac69fd462d5e650933e05133b4afa
+                           .group:00000000 wm4.alloc_traits.h.31.c41c7c4789404962122a4e991dfa3abf
+                           .group:00000000 wm4.cstdlib.44.52c5efdfb0f3c176bd11e611a0b94959
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.d4493cd3736e51e9d56335045f26df45
+                           .group:00000000 wm4.std_abs.h.31.4587ba001d85390d152353c24c92c0c8
+                           .group:00000000 wm4.cstdlib.80.9130cf66e68370da17fd25eb61f97205
+                           .group:00000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:00000000 wm4.types.h.40.e8c16e7ec36ba55f133d0616070e25fc
+                           .group:00000000 wm4._endian.h.31.65a10590763c3dde1ac4a7f66d7d4891
+                           .group:00000000 wm4.endian.h.9.49f3a4695c1b61e8a0808de3c4a106cb
+                           .group:00000000 wm4._timeval.h.30.0e8bfd94e85db17dda3286ee81496fe6
+                           .group:00000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:00000000 wm4.select.h.30.bbece7fa40993a78092dcc5805132560
+                           .group:00000000 wm4.types.h.69.ed3eae3cf73030a737515151ebcab7a1
+ARM GAS  C:\Users\xavie\AppData\Local\Temp\ccy62qPh.s 			page 66
+
+
+                           .group:00000000 wm4.sched.h.22.c60982713a5c428609783c78f9c78d95
+                           .group:00000000 wm4._pthreadtypes.h.36.fcee9961c35163dde6267ef772ad1972
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.81.4494b0884bb80e2bd270999c8eda1e12
+                           .group:00000000 wm4.cstdio.45.1ffaea3e7c26dce1e03f5847a7439edb
+                           .group:00000000 wm4.errno.h.2.ba016d646105af6cad23be83630b6a3f
+                           .group:00000000 wm4.errno.h.9.1ecd7b1049497a0ab61da0f6cbd4b0c6
+                           .group:00000000 wm4.functional_hash.h.31.d995554db01f631b375a95ecfc605ca0
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.cstring.45.6ab09de7fb97b576e744347688ddc8d7
+
+UNDEFINED SYMBOLS
+_ZdlPvj
+itoa
+__cxa_pure_virtual

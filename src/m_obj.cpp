@@ -8,8 +8,8 @@
 #include "user_interface.h"
 #include "production.h"
 #include "game.h"
-#include <stdlib.h>
-#include <math.h>
+#include <cstdlib>
+#include <cmath>
 #include "benchmarklogger.h"
 
 #define ROUGE 		0xE0
@@ -51,9 +51,7 @@ void Buildable::OnUserInteract()
 	const coords_pair_t buildButton = { .x = (int16_t)(UIPos.x + 180), .y = (int16_t)(UIPos.y + 250)};
 	std::pair<uint8_t, uint8_t> availableFields = Game::getAvailableFieldsInfo(buildType);
 	keyState.digitalState = 0;
-	static char asciiCost[5][8];
 	static char asciiProd[5][4];
-	static char asciiAvailable[2][2];
 	exit = false;
 	validInput = false;
 	built = false;
@@ -96,15 +94,6 @@ void Buildable::OnUserInteract()
 	else
 		canBuild = false;
 
-	itoa(cost->food, asciiCost[0], 10);
-	itoa(cost->wood, asciiCost[1], 10);
-	itoa(cost->stone, asciiCost[2], 10);
-	itoa(cost->iron, asciiCost[3], 10);
-	itoa(cost->gold, asciiCost[4], 10);
-
-	itoa(std::get<0>(availableFields), asciiAvailable[0], 10); // available
-	itoa(std::get<1>(availableFields), asciiAvailable[1], 10); // maximum amount
-
 	/* UI size = 320 x 300 */
 	GUI = new UserInterface(UIPos.x, UIPos.y, 14, 13);
 
@@ -117,24 +106,24 @@ void Buildable::OnUserInteract()
 	GUI->AddElement(new Text(buildName[buildType - 9], assetImage1.x + 50, assetImage1.y + 15, 16, 0xFF));
 	GUI->AddElement(new Text("Available :", UIPos.x + 60, UIPos.y + 80, 10, 0xFF));
 	GUI->AddElement(new Text("/", UIPos.x + 150, UIPos.y + 80, 10, 0xFF));
-	GUI->AddElement(new Text(asciiAvailable[0], UIPos.x + 140, UIPos.y + 80, 10, *asciiAvailable[0] > '0' ? VERT : ROUGE));
-	GUI->AddElement(new Text(asciiAvailable[1], UIPos.x + 160, UIPos.y + 80, 10, BLANC));
+	GUI->AddElement(new Text(availableFields.first, UIPos.x + 140, UIPos.y + 80, 10, availableFields.first > 0 ? VERT : ROUGE));
+	GUI->AddElement(new Text(availableFields.second, UIPos.x + 160, UIPos.y + 80, 10, BLANC));
 	GUI->AddElement(new Text("Cost", UIPos.x + 140, UIPos.y + 120, 10, ORANGE));
 	GUI->AddElement(new Text("Production", UIPos.x + 220, UIPos.y + 120, 10, 0x70));
 	GUI->AddElement(new Text("Food", UIPos.x + 60, UIPos.y + 140, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[0], UIPos.x + 140, UIPos.y + 140, 10, cost->food < Game::Resources.food ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost->food, UIPos.x + 140, UIPos.y + 140, 10, cost->food < Game::Resources.food ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0], UIPos.x + 220, UIPos.y + 140, 10, VERT));
 	GUI->AddElement(new Text("Wood", UIPos.x + 60, UIPos.y + 160, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[1], UIPos.x + 140, UIPos.y + 160, 10, cost->wood < Game::Resources.wood ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost->wood, UIPos.x + 140, UIPos.y + 160, 10, cost->wood < Game::Resources.wood ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[1], UIPos.x + 220, UIPos.y + 160, 10, VERT));
 	GUI->AddElement(new Text("Stone", UIPos.x + 60, UIPos.y + 180, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[2], UIPos.x + 140, UIPos.y + 180, 10, cost->stone < Game::Resources.stone ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost->stone, UIPos.x + 140, UIPos.y + 180, 10, cost->stone < Game::Resources.stone ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[2], UIPos.x + 220, UIPos.y + 180, 10, VERT));
 	GUI->AddElement(new Text("Iron", UIPos.x + 60, UIPos.y + 200, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[3], UIPos.x + 140, UIPos.y + 200, 10, cost->iron < Game::Resources.iron ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost->iron, UIPos.x + 140, UIPos.y + 200, 10, cost->iron < Game::Resources.iron ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[3], UIPos.x + 220, UIPos.y + 200, 10, VERT));
 	GUI->AddElement(new Text("Gold", UIPos.x + 60, UIPos.y + 220, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[4], UIPos.x + 140, UIPos.y + 220, 10, cost->gold < Game::Resources.gold ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost->gold, UIPos.x + 140, UIPos.y + 220, 10, cost->gold < Game::Resources.gold ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[4], UIPos.x + 220, UIPos.y + 220, 10, VERT));
 	GUI->AddElement(new Text("Cancel", cancelButton.x + 10, cancelButton.y + 12, 16, BLANC));
 	GUI->AddElement(new Text("Build", buildButton.x + 10, buildButton.y + 12, 16, canBuild ? BLANC : NOIR));
@@ -172,10 +161,10 @@ void Buildable::Tick()
 					Game::ProdPer5.stone += tier2Production[0];
 					break;
 				case IRON_MINE:
-					Game::ProdPer5.iron += tier1Production[0];
+					Game::ProdPer5.iron += tier3Production[0];
 					break;
 				case GOLD_MINE:
-					Game::ProdPer5.gold += tier1Production[0];
+					Game::ProdPer5.gold += tier4Production[0];
 					break;
 				default:
 					break;
@@ -230,9 +219,7 @@ void ResourceMine::OnUserInteract()
 	const coords_pair_t assetImage2 = { .x = (int16_t)(UIPos.x + 220), .y = (int16_t)(UIPos.y + 20)};
 	const coords_pair_t cancelButton = { .x = (int16_t)(UIPos.x + 20), .y = (int16_t)(UIPos.y + 250)};
 	const coords_pair_t upgradeButton = { .x = (int16_t)(UIPos.x + 160), .y = (int16_t)(UIPos.y + 250)};
-	static char asciiCost[5][8];
 	static char asciiProd[2][5][6];
-	static char asciiLevel[1][3];
 	keyState.digitalState = 0;
 	exit = false;
 	validInput = false;
@@ -262,13 +249,13 @@ void ResourceMine::OnUserInteract()
 		break;
 	case IRON_MINE:
 		cost = ironMineBaseCost;
-		itoa(tier3Production[level - 1], asciiProd[0][3], 10);
+		itoa(tier1Production[level - 1], asciiProd[0][3], 10);
 		strcpy(asciiProd[1][3], "+ ");
 		itoa(tier3Production[level] - tier3Production[level - 1], &asciiProd[1][3][2], 10);
 		break;
 	case GOLD_MINE:
 		cost = goldMineBaseCost;
-		itoa(tier4Production[level - 1], asciiProd[0][4], 10);
+		itoa(tier1Production[level - 1], asciiProd[0][4], 10);
 		strcpy(asciiProd[1][4], "+ ");
 		itoa(tier4Production[level] - tier4Production[level - 1], &asciiProd[1][4][2], 10);
 		break;
@@ -276,19 +263,12 @@ void ResourceMine::OnUserInteract()
 		break;
 	}
 
-	itoa(level, asciiLevel[0], 10);
 	cost *= pow(2, level);
 
 	if(cost < Game::Resources && level < 10)
 		canUpgrade = true;
 	else
 		canUpgrade = false;
-
-	itoa(cost.food, asciiCost[0], 10);
-	itoa(cost.wood, asciiCost[1], 10);
-	itoa(cost.stone, asciiCost[2], 10);
-	itoa(cost.iron, asciiCost[3], 10);
-	itoa(cost.gold, asciiCost[4], 10);
 
 	/* UI size = 320 x 300 */
 	GUI = new UserInterface(UIPos.x, UIPos.y, 14, 13);
@@ -301,27 +281,27 @@ void ResourceMine::OnUserInteract()
 
 	GUI->AddElement(new Text(buildName[buildType - 9], assetImage1.x + 50, assetImage1.y + 15, 16, 0xFF));
 	GUI->AddElement(new Text("Current Level :", UIPos.x + 60, UIPos.y + 80, 10, 0xFF));
-	GUI->AddElement(new Text(asciiLevel[0], UIPos.x + 160, UIPos.y + 74, 16, JAUNE));
+	GUI->AddElement(new Text(level, UIPos.x + 160, UIPos.y + 74, 16, JAUNE));
 	GUI->AddElement(new Text("Cost", UIPos.x + 140, UIPos.y + 120, 10, ORANGE));
 	GUI->AddElement(new Text("Production", UIPos.x + 220, UIPos.y + 120, 10, 0x70));
 	GUI->AddElement(new Text("Food", UIPos.x + 60, UIPos.y + 140, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[0], UIPos.x + 140, UIPos.y + 140, 10, cost.food < Game::Resources.food ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost.food, UIPos.x + 140, UIPos.y + 140, 10, cost.food < Game::Resources.food ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0][0], UIPos.x + 220, UIPos.y + 140, 10, BLANC));
 	GUI->AddElement(new Text(asciiProd[1][0], UIPos.x + 250, UIPos.y + 140, 10, VERT));
 	GUI->AddElement(new Text("Wood", UIPos.x + 60, UIPos.y + 160, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[1], UIPos.x + 140, UIPos.y + 160, 10, cost.wood < Game::Resources.wood ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost.wood, UIPos.x + 140, UIPos.y + 160, 10, cost.wood < Game::Resources.wood ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0][1], UIPos.x + 220, UIPos.y + 160, 10, BLANC));
 	GUI->AddElement(new Text(asciiProd[1][1], UIPos.x + 250, UIPos.y + 160, 10, VERT));
 	GUI->AddElement(new Text("Stone", UIPos.x + 60, UIPos.y + 180, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[2], UIPos.x + 140, UIPos.y + 180, 10, cost.stone < Game::Resources.stone ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost.stone, UIPos.x + 140, UIPos.y + 180, 10, cost.stone < Game::Resources.stone ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0][2], UIPos.x + 220, UIPos.y + 180, 10, BLANC));
 	GUI->AddElement(new Text(asciiProd[1][2], UIPos.x + 250, UIPos.y + 180, 10, VERT));
 	GUI->AddElement(new Text("Iron", UIPos.x + 60, UIPos.y + 200, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[3], UIPos.x + 140, UIPos.y + 200, 10, cost.iron < Game::Resources.iron ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost.iron, UIPos.x + 140, UIPos.y + 200, 10, cost.iron < Game::Resources.iron ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0][3], UIPos.x + 220, UIPos.y + 200, 10, BLANC));
 	GUI->AddElement(new Text(asciiProd[1][3], UIPos.x + 250, UIPos.y + 200, 10, VERT));
 	GUI->AddElement(new Text("Gold", UIPos.x + 60, UIPos.y + 220, 10, 0xFF));
-	GUI->AddElement(new Text(asciiCost[4], UIPos.x + 140, UIPos.y + 220, 10, cost.gold < Game::Resources.gold ? BLANC : ROUGE));
+	GUI->AddElement(new Text(cost.gold, UIPos.x + 140, UIPos.y + 220, 10, cost.gold < Game::Resources.gold ? BLANC : ROUGE));
 	GUI->AddElement(new Text(asciiProd[0][4], UIPos.x + 220, UIPos.y + 220, 10, BLANC));
 	GUI->AddElement(new Text(asciiProd[1][4], UIPos.x + 250, UIPos.y + 220, 10, VERT));
 	GUI->AddElement(new Text("Cancel", cancelButton.x + 10, cancelButton.y + 12, 16, BLANC));
@@ -346,7 +326,6 @@ void ResourceMine::Tick()
 			if(canUpgrade && !upgraded){
 				upgraded = true;
 				Game::Resources -= cost;
-				level++;
 
 				switch(buildType){
 				case SAWMILL:
@@ -367,6 +346,10 @@ void ResourceMine::Tick()
 				default:
 					break;
 				}
+				level++;
+
+				Game::SaveHandler.memoryBuffer.mapBuilds[this->memorySaveID].level = this->level;
+
 				exitProcessCount = 0;
 			}
 		}
@@ -381,21 +364,33 @@ void ResourceMine::Tick()
 			keyState.O = RELEASED;
 	}
 
-	/* Draws the GUI */
-	if(exitProcessCount == -1){
+	if(exitProcessCount == -1 || !GUI->isReady()){
 		// Makes sure the GUI is erased if user wants to exit
+		/* Draws the GUI */
 		if(!GUI->ProcessGraphics(exit)){
 			exitProcessCount = 0;
 			delete GUI;
 		}
 	}
-	/* Removes this map object from the update stack */
 	else if(exitProcessCount == 0){
+		/* Removes this map object from the update stack */
 		TickEngine::PopStack(Stack::L2);
 		if(upgraded){
-			delete GUI;
 			this->OnUserInteract();
 		}
 	}
+}
+
+ResourceMine::ResourceMine(Tile * selfPtr, tile_asset_e type, uint8_t level, uint8_t saveID) :
+	sourceTile(selfPtr),
+	level(level),
+	buildType(type){
+	if(saveID != 255)
+		memorySaveID = saveID;
+	else
+		memorySaveID = Game::SaveHandler.memoryBuffer.nbOfBuilds++;
+	Game::SaveHandler.memoryBuffer.mapBuilds[memorySaveID].level = level;
+	Game::SaveHandler.memoryBuffer.mapBuilds[memorySaveID].type = buildType;
+	Game::SaveHandler.memoryBuffer.mapBuilds[memorySaveID].coords = sourceTile->getTileCoords();
 }
 
