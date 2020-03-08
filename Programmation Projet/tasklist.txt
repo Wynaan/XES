@@ -1,0 +1,11 @@
+
+
+les fonction erase() sont en fait des fonction draw() de la tuile en dessous
+
+1- implémenter une classe séparé pour le selector
+2- implémenter la fonction draw() pour la classe Tile, UserInterface, Player
+
+ResourceGUI et Selector hérite de la classe UserInterface 
+
+3- implémenter une classe InputHandler
+4- implémenter le menu principal

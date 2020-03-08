@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2018-11-21T03:22:26Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.49,
+        "LayerNumber": 4,
+        "Name": {
+            "ProjectId": "Main_Board"
+        },
+        "Owner": "Xavier Dufour <dufourxavi@gmail.com>",
+        "Size": {
+            "X": 200.66,
+            "Y": 137.16
+        }
+    }
+}

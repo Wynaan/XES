@@ -1,0 +1,4 @@
+terminal A jumped with terminal NO, connected to board GND
+terminal LED connected to 3.3V
+terminal C connected to GND
+3.3V connected to board
